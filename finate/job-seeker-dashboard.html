@@ -128,16 +128,24 @@
         .tabs button:hover {
             background-color: #555;
         }
-        .btn-post-job {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+        .cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* Full viewport height */
+}
+
+.btn-apply-job {
+    background-color: #193768;
+    color: #fff;
+    border: none;
+    padding: 25px 120px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
         .btn-post-job:hover {
-            background-color: #218838;
+            background-color: #f4f7f7;
         }
 
     </style>
@@ -184,7 +192,7 @@
                     <div class="header-align-start">
                         <div class="header-logo-area">
                             <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="150" height="150"/>
+                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="120" height="40"/>
                                 <!--<img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />-->
                             </a>
                         </div>
@@ -192,7 +200,7 @@
                     <div class="header-align-center">
                         <div class="header-navigation-area position-relative">
                             <ul class="main-menu nav">
-                                <li><a href="index.html"><span>Overview</span></a></li>
+                                <li><a href="job-seeker-dashboard.html"><span>Overview</span></a></li>
                                 <li><a href="employers-details.html"><span>Job Postings</span></a></li>
                                 <li><a href="employers-details.html"><span>Applications</span></a></li>
                                 <li><a href="employers-details.html"><span>Messages</span></a></li>
@@ -205,7 +213,7 @@
                       <div class="header-action-area">
                         <div class="user-profile">
                           <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                          <a href="path-to-account-settings-page.html" class="account-settings">Account Settings</a>
+                          <a href="path-to-account-settings-page.html" class="account-settings">Settings</a>
                         </div>
                       </div>
                     </div>
@@ -305,6 +313,7 @@
                   <a href="blog-details.html"><i class="icofont-double-right"></i>Find new jobs available!!</a>
                 </li>
               </ul>
+          </div>
       </section>
   
       <section id="job-postings">
@@ -667,79 +676,137 @@
             </section>
 
             <div class="section-title text-center">
-              <h4 class="title">Application Status</h4>
+              <h2 class="title">Application Status</h2>
             </div>
             <div class="post-details-content-list">
               <div class="section-title text-center">
                 <h4 class="title">Track the progress of your Job Applications</h4>
               </div>
+            </div>
+
+            <div class="row row-gutter-20" >
+              <div class="col-sm-6 col-lg-3">
+                <!--== Start Job Category Item ==-->
+                <div class="job-category-item">
+                  <div class="content">
+                    <h3 class="title"><a href="applications.html?type=all">Total Applications: <span>(10)</span></a></h3>
+                  </div>
+                  <a class="overlay-link" href="applications.html?type=all"></a>
+                </div>
+                <!--== End Job Category Item ==-->
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <!--== Start Job Category Item ==-->
+                <div class="job-category-item">
+                  <div class="content">
+                    <h3 class="title"><a href="applications.html?type=in-progress">Applications in Progress:<span>(4)</span></a></h3>
+                  </div>
+                  <a class="overlay-link" href="applications.html?type=in-progress"></a>
+                </div>
+                <!--== End Job Category Item ==-->
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <!--== Start Job Category Item ==-->
+                <div class="job-category-item">
+                  <div class="content">
+                    <h3 class="title"><a href="applications.html?type=successful">Successful Applications: <span>(2)</span></a></h3>
+                  </div>
+                  <a class="overlay-link" href="applications.html?type=successful"></a>
+                </div>
+                <!--== End Job Category Item ==-->
+              </div>
+              <div class="col-sm-6 col-lg-3">
+                <!--== Start Job Category Item ==-->
+                <div class="job-category-item">
+                  <div class="content">
+                    <h3 class="title"><a href="applications.html?type=rejected">Rejected Applications: <span>(3)</span></a></h3>
+                  </div>
+                  <a class="overlay-link" href="applications.html?type=rejected"></a>
+                </div>
+                <!--== End Job Category Item ==-->
+              </div>
+            </div>
+
+            <div class="section-title text-center">
+              <section class="recent-job-area bg-color-gray">
+                <div class="container" data-aos="fade-down">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="section-title text-center">
+                        <h3 class="title">Search Jobs</h3>
+                        <div class="desc">
+                          <p>Search for a particular job of your interest here.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="job-search-wrap">
+                        <div class="job-search-form">
+                          <form action="#">
+                            <div class="row row-gutter-10">
+                              <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Job title or keywords">
+                                </div>
+                              </div>
+                              
+                              <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
+                                <div class="form-group">
+                                  <select class="form-control">
+                                    <option value="1" selected>Category</option>
+                                    <option value="2">Web Designer</option>
+                                    <option value="3">Web Developer</option>
+                                    <option value="4">Graphic Designer</option>
+                                    <option value="5">App Developer</option>
+                                    <option value="6">UI &amp; UX Expert</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
+                                <div class="form-group">
+                                  <button type="button" class="btn-form-search"><i class="icofont-search-1"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+              </section>
+              
+            </div>
+            <div class="cont">
+              <button class="btn-apply-job">Apply for a Job</button>
+            </div>
+            
+          </div>
+      </section>
+  
+      <section id="shortcut">
+        <div class="main-content">
+          <div class="recent-activity">
+            <div class="section-title text-center">
+              <h2 class="title">Quick Links</h2>
+            </div>
+          <div class="post-details-content-list">
               <ul class="list-style">
                 <li>
-                  <a href="applications.html?type=all"><i class="icofont-double-right"></i>Total Applications: <span id="total-applications">10</span></a>
+                  <a href="blog-details.html"><i class="icofont-double-right"></i>Go to Messages</a>
                 </li>
                 <li>
-                  <a href="applications.html?type=in-progress"><i class="icofont-double-right"></i>Applications in Progress: <span id="applications-in-progress">4</span></a>
+                  <a href="blog-details.html"><i class="icofont-double-right"></i>Go to your Profile</a>
                 </li>
                 <li>
-                  <a href="applications.html?type=successful"><i class="icofont-double-right"></i>Successful Applications: <span id="successful-applications">2</span></a>
-                </li>
-                <li>
-                  <a href="applications.html?type=rejected"><i class="icofont-double-right"></i>Rejected Applications: <span id="rejected-applications">4</span></a>
+                  <a href="blog-details.html"><i class="icofont-double-right"></i>Go to Settings</a>
                 </li>
               </ul>
-            </div>
-            <div class="section-title text-center">
-              <h4 class="title">Jobs Search</h4>
-            </div>
-              
-            <button class="btn-post-job">Apply for a Job</button>
           </div>
       </section>
-  
-      <section id="applications">
-          <h2>Applications</h2>
-          <div class="applications-dashboard">
-              <div class="tabs">
-                  <button>New</button>
-                  <button>In Review</button>
-                  <button>Interviewing</button>
-                  <button>Hired</button>
-                  <button>Rejected</button>
-              </div>
-              <div class="applications-list">
-                  <!-- List of applications based on selected tab -->
-              </div>
-          </div>
-      </section>
-  
-      <section id="messages">
-          <h2>Messages</h2>
-          <div class="inbox">
-              <!-- Messaging system -->
-          </div>
-      </section>
-  
-      <section id="profile">
-          <h2>Company Profile</h2>
-          <div class="profile-info">
-              <!-- Company profile details -->
-          </div>
-      </section>
-  
-      <section id="settings">
-          <h2>Settings</h2>
-          <div class="settings-options">
-              <div class="account-settings">
-                  <!-- Account settings options -->
-              </div>
-              <div class="billing-subscriptions">
-                  <!-- Billing and subscription details -->
-              </div>
-              <div class="user-management">
-                  <!-- User management options -->
-              </div>
-          </div>
-      </section>
+      
     </div>
 
   </main>

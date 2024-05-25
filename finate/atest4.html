@@ -1,177 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard</title>
+    <style>
+        /* Add your CSS styles here */
 
-.main-content h1 {
-    color: #272a33;
-    font-size: 24px;
-    margin-bottom: 12px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .employer-dashboard {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .navigation-menu ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .navigation-menu ul li {
+            margin: 0 10px;
+        }
+        .navigation-menu ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        .navigation-menu ul li a:hover {
+            background-color: #555;
+        }
+        .user-profile, .notifications {
+            display: flex;
+            align-items: center;
+        }
+        .user-profile img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .dropdown a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .notifications .bell-icon {
+            background: url('bell-icon.png') no-repeat center center;
+            width: 24px;
+            height: 24px;
+        }
+        .content {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            background-color: #444;
+            color: white;
+            width: 200px;
+            padding: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+        }
+        .main-content section {
+            margin-bottom: 20px;
+        }
+        .main-content h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .metric {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+        .recent-activity ul {
+            list-style: none;
+            padding: 0;
+        }
+        .recent-activity ul li {
+            background-color: #f9f9f9;
+            margin-bottom: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .tabs button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .tabs button:hover {
+            background-color: #555;
+        }
+        .btn-post-job {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-post-job:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .application-status {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 1199px) {
-    .main-content h1 {
-        font-size: 18px;
-    }
+.application-status h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-.main-content h1 a {
-    color: #272a33;
+.application-overview p {
+    margin: 5px 0;
 }
 
-.main-content h1 a:hover {
-    color: #193768;
+.application-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
 
-.main-content h2 {
-    color: #193768;
-    font-size: 16px;
-    font-weight: 500;
+.application-list th, .application-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.application-list th {
+    background-color: #f4f4f4;
+}
+
+.application-list td a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+.job-search {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.job-search h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.job-search .form-group {
     margin-bottom: 15px;
 }
 
-@media only screen and (max-width: 1199px) {
-    .main-content h2 {
-        font-size: 14px;
-    }
+.job-search .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-.main-content .desc {
-    font-size: 15px;
-    line-height: 1.87;
-    max-width: 234px;
+.job-search .form-group input,
+.job-search .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-@media only screen and (max-width: 1199px) {
-    .main-content .desc {
-        font-size: 13px;
-        max-width: none;
-    }
+.job-search button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-<div class="sidebar">
-    <h3>Quick Links</h3>
-      <ul>
-        <li><a href="index.html"><span>Job Search</span></a></li>
-        
-        <li><a href="employers-details.html"><span>Saved Jobs</span></a></li>
-        
-        <li class="has-submenu"><a href="#/"><span>Applications</span></a>
-          <ul class="submenu-nav">
-            <li><a href="blog-grid.html">Blog Grid</a></li>
-            <li><a href="blog.html">Blog Left Sidebar</a></li>
-            <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-            <li><a href="blog-details.html">Blog Details</a></li>
-          </ul>
-        </li>
-        <li class="has-submenu"><a href="#/"><span>Messages</span></a>
-          <ul class="submenu-nav">
-            <li><a href="about-us.html"><span>About us</span></a></li>
-            <li><a href="login.html"><span>Login</span></a></li>
-            <li><a href="registration.html"><span>Registration</span></a></li>
-            <li><a href="page-not-found.html"><span>Page Not Found</span></a></li>
-          </ul>
-        <li class="has-submenu"><a href="#/"><span>Profiles</span></a>
-          <ul class="submenu-nav">
-            <li><a href="about-us.html"><span>About us</span></a></li>
-            <li><a href="login.html"><span>Login</span></a></li>
-            <li><a href="registration.html"><span>Registration</span></a></li>
-            <li><a href="page-not-found.html"><span>Page Not Found</span></a></li>
-          </ul>
-        </li>
-        <li class="has-submenu"><a href="#/"><span>Settings</span></a>
-          <ul class="submenu-nav">
-            <li><a href="about-us.html"><span>About us</span></a></li>
-            <li><a href="login.html"><span>Login</span></a></li>
-            <li><a href="registration.html"><span>Registration</span></a></li>
-            <li><a href="page-not-found.html"><span>Page Not Found</span></a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html"><span>Contact</span></a></li>
-      </ul>
-    
-</div>
+.search-results {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
 
-<section class="recent-job-area recent-job-inner-area">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-lg-4">
-        <!--== Start Recent Job Item ==-->
-        <div class="recent-job-item recent-job-style2-item">
-          <div class="company-info">
-            <div class="logo">
-              <a href="company-details.html"><img src="assets/img/companies/w1.jpg" width="75" height="75" alt="Image-HasTech"></a>
+.search-results h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.search-results table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.search-results th, .search-results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.search-results th {
+    background-color: #f4f4f4;
+}
+
+.search-results td a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+      
+    </style>
+</head>
+<body>
+<div class="employer-dashboard">
+    <header>
+        <div class="logo">JobPortal</div>
+        <nav class="navigation-menu">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#job-postings">Job Postings</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <img src="profile-pic.jpg" alt="Profile Picture">
+            <div class="dropdown">
+                <a href="#account-settings">Account Settings</a>
+                <a href="#logout">Logout</a>
             </div>
-            <div class="content">
-              <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
-              <p class="address">New York, USA</p>
-            </div>
-          </div>
-          <div class="main-content">
-            <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
-            <h5 class="work-type">Full-time</h5>
-            <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-          </div>
-          <div class="recent-job-info">
-            <div class="salary">
-              <h4>$5000</h4>
-              <p>/monthly</p>
-            </div>
-            <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-          </div>
         </div>
-        <!--== End Recent Job Item ==-->
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <!--== Start Recent Job Item ==-->
-        <div class="recent-job-item recent-job-style2-item">
-          <div class="company-info">
-            <div class="logo">
-              <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
-            </div>
-            <div class="content">
-              <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
-              <p class="address">New York, USA</p>
-            </div>
-          </div>
-          <div class="main-content">
-            <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
-            <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
-            <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-          </div>
-          <div class="recent-job-info">
-            <div class="salary">
-              <h4>$5000</h4>
-              <p>/monthly</p>
-            </div>
-            <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-          </div>
+        <div class="notifications">
+            <span class="bell-icon"></span>
         </div>
-        <!--== End Recent Job Item ==-->
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <!--== Start Recent Job Item ==-->
-        <div class="recent-job-item recent-job-style2-item">
-          <div class="company-info">
-            <div class="logo">
-              <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
-            </div>
-            <div class="content">
-              <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
-              <p class="address">New York, USA</p>
-            </div>
-          </div>
-          <div class="main-content">
-            <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
-            <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
-            <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-          </div>
-          <div class="recent-job-info">
-            <div class="salary">
-              <h4>$5000</h4>
-              <p>/monthly</p>
-            </div>
-            <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-          </div>
-        </div>
-        <!--== End Recent Job Item ==-->
-      </div>
+    </header>
+
+    <div class="content">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#post-job">Post a Job</a></li>
+                <li><a href="#active-jobs">Active Jobs</a></li>
+                <li><a href="#expired-jobs">Expired Jobs</a></li>
+                <li><a href="#draft-jobs">Draft Jobs</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <section id="overview">
+                <h2>Dashboard Overview</h2>
+                <div class="metrics">
+                    <div class="metric">Total Job Postings: 5</div>
+                    <div class="metric">Applications Received: 150</div>
+                    <div class="metric">Active Postings: 3</div>
+                </div>
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <ul>
+                        <li>New application for "Software Developer" - John Doe</li>
+                        <li>Message received from Jane Smith</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="job-postings">
+                <h2>Job Postings</h2>
+                <div class="job-list">
+                    <h3>Active Jobs</h3>
+                    <!-- Active job postings list -->
+                    <h3>Expired Jobs</h3>
+                    <!-- Expired job postings list -->
+                    <h3>Draft Jobs</h3>
+                    <!-- Draft job postings list -->
+                    <button class="btn-post-job">Post a New Job</button>
+                </div>
+            </section>
+
+            <section id="applications">
+                <h2>Applications</h2>
+                <div class="applications-dashboard">
+                    <div class="tabs">
+                        <button>New</button>
+                        <button>In Review</button>
+                        <button>Interviewing</button>
+                        <button>Hired</button>
+                        <button>Rejected</button>
+                    </div>
+                    <div class="applications-list">
+                        <!-- List of applications based on selected tab -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="messages">
+                <h2>Messages</h2>
+                <div class="inbox">
+                    <!-- Messaging system -->
+                </div>
+            </section>
+
+            <section id="profile">
+                <h2>Company Profile</h2>
+                <div class="profile-info">
+                    <!-- Company profile details -->
+                </div>
+            </section>
+
+            <section id="settings">
+                <h2>Settings</h2>
+                <div class="settings-options">
+                    <div class="account-settings">
+                        <!-- Account settings options -->
+                    </div>
+                    <div class="billing-subscriptions">
+                        <!-- Billing and subscription details -->
+                    </div>
+                    <div class="user-management">
+                        <!-- User management options -->
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
-  </div>
-</section>
+
+    <footer>
+        <div class="help-support">
+            <a href="#help-center">Help Center</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact-support">Contact Support</a>
+        </div>
+        <div class="legal-info">
+            <a href="#terms">Terms of Service</a>
+            <a href="#privacy">Privacy Policy</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,86 +1,393 @@
-<div class="main-content">
-    <h1>Welcome to the Jobseeker Dashboard</h1>
-    <!-- Include sections for recommended jobs, saved jobs, recently viewed jobs, application status, job search, applications, messages, profile, and settings -->
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .scroll-to-top:hover {
+            background-color: #555;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .btn-close {
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            float: right;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        .aside-cart-wrapper, .aside-search-box-wrapper, .offcanvas-start {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .aside-cart-wrapper .minicart-content-wrap, .aside-search-box-wrapper .search-box-form-wrap, .offcanvas-start .inner-body {
+            padding: 20px;
+        }
+        .minicart-item {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .minicart-product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .product-item_img img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .product-item_title {
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        .product-item_title:hover {
+            text-decoration: underline;
+        }
+        .minicart-pricing-box, .aside-contact-info {
+            margin-top: 20px;
+        }
+        .minicart-pricing-box ul, .aside-contact-info .info-item {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .minicart-pricing-box ul li, .aside-contact-info .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .aside-contact-info .info-item .icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .aside-contact-info .info-item .content {
+            flex: 1;
+        }
+        .aside-contact-info .info-item .title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .aside-contact-info .info-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .aside-contact-info .info-item a:hover {
+            text-decoration: underline;
+        }
+        .offcanvas-menu .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .offcanvas-menu .mobile-menu ul li {
+            margin-bottom: 10px;
+        }
+        .offcanvas-menu .mobile-menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .offcanvas-menu .mobile-menu ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-content">
+        <!--== Scroll Top Button ==-->
+        <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-arrow-up"></span></div>
 
-<div class="main-content">
-    <h1>Welcome to the Jobseeker Dashboard</h1>
-    <section id="overview">
-        <h2>Dashboard Overview</h2>
-        <div class="metrics">
-            <div class="metric">Active Jobs Posted: 5</div>
-            <div class="metric">Applications Sent: 5</div>
-            <div class="metric">All Notifications: 150</div>
-            <div class="metric">Recent Searches: 3</div>
-        </div>
-        <div class="recent-activity">
-            <h3>Recent Activity</h3>
-            <ul>
-                <li>New application for "Software Developer" - John Doe</li>
-                <li>Message received from Jane Smith</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="job-postings">
-        <h2>Job Postings</h2>
-        <div class="job-list">
-            <h3>Recommended Jobs</h3>
-            
-            <h3>Saved Jobs</h3>
-            
-            <h3>Recently Viewed Jobs</h3>
-
-            <h3>Application Status</h3>
-
-            <h3>Jobs Search</h3>
-            
-            <button class="btn-post-job">Apply for a Job</button>
-        </div>
-    </section>
-
-    <section id="applications">
-        <h2>Applications</h2>
-        <div class="applications-dashboard">
-            <div class="tabs">
-                <button>New</button>
-                <button>In Review</button>
-                <button>Interviewing</button>
-                <button>Hired</button>
-                <button>Rejected</button>
+        <!--== Start Product Quick Wishlist Modal ==-->
+        <aside class="product-action-modal modal fade" id="action-WishlistModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <h3 class="modal-title">Product added to your wishlist</h3>
+                            <p class="wishlist-added">Your item has been added to the wishlist!</p>
+                            <div class="action-buttons">
+                                <a href="wishlist.html" class="btn btn-secondary">View Wishlist</a>
+                                <a href="checkout.html" class="btn btn-primary">Continue Shopping</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="applications-list">
-                <!-- List of applications based on selected tab -->
-            </div>
-        </div>
-    </section>
+        </aside>
+        <!--== End Product Quick Wishlist Modal ==-->
 
-    <section id="messages">
-        <h2>Messages</h2>
-        <div class="inbox">
-            <!-- Messaging system -->
-        </div>
-    </section>
+        <!--== Start Product Quick Add Cart Modal ==-->
+        <aside class="product-action-modal modal fade" id="action-CartAddModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <h3 class="modal-title">Product successfully added to your shopping cart</h3>
+                            <div class="action-buttons">
+                                <a href="cart.html" class="btn btn-secondary">View Cart</a>
+                                <a href="checkout.html" class="btn btn-primary">Proceed to checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--== End Product Quick Add Cart Modal ==-->
 
-    <section id="profile">
-        <h2>Company Profile</h2>
-        <div class="profile-info">
-            <!-- Company profile details -->
-        </div>
-    </section>
+        <!--== Start Aside Search Form ==-->
+        <aside class="aside-search-box-wrapper offcanvas offcanvas-top" tabindex="-1" id="AsideOffcanvasSearch" aria-labelledby="offcanvasTopLabel">
+            <div class="offcanvas-header">
+                <h5 class="d-none" id="offcanvasTopLabel">Aside Search</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="container pt--0 pb--0">
+                    <div class="search-box-form-wrap">
+                        <div class="search-note">
+                            <p>Start typing and press Enter to search</p>
+                        </div>
+                        <form action="#" method="post">
+                            <div class="search-form position-relative">
+                                <label for="search-input" class="visually-hidden">Search</label>
+                                <input id="search-input" type="search" class="form-control" placeholder="Search entire store…">
+                                <button class="search-button"><i class="icofont-search-1"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--== End Aside Search Form ==-->
 
-    <section id="settings">
-        <h2>Settings</h2>
-        <div class="settings-options">
-            <div class="account-settings">
-                <!-- Account settings options -->
+        <!--== Start Aside Menu ==-->
+        <aside class="aside-cart-wrapper offcanvas offcanvas-end" tabindex="-1" id="AsideOffcanvasCart" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="d-none" id="offcanvasRightLabel">Shopping Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="billing-subscriptions">
-                <!-- Billing and subscription details -->
+            <div class="offcanvas-body">
+                <div class="minicart-content-wrap">
+                    <div class="minicart-heading">
+                        <h4 class="mb-0">Shopping Cart</h4>
+                    </div>
+                    <ul class="minicart-item">
+                        <li class="minicart-product">
+                            <a class="product-item_remove" href="#/"><i class="icofont-close-circled"></i></a>
+                            <div class="product-item_img">
+                                <img src="assets/img/shop/shop1.jpg" alt="Product Image">
+                            </div>
+                            <div class="product-item_content">
+                                <a class="product-item_title" href="product-details.html">Complete Shoes</a>
+                                <span class="product-item_quantity">1 × $42.00</span>
+                            </div>
+                        </li>
+                        <li class="minicart-product">
+                            <a class="product-item_remove" href="#/"><i class="icofont-close-circled"></i></a>
+                            <div class="product-item_img">
+                                <img src="assets/img/shop/shop2.jpg" alt="Product Image">
+                            </div>
+                            <div class="product-item_content">
+                                <a class="product-item_title" href="product-details.html">Complete Shoes</a>
+                                <span class="product-item_quantity">1 × $42.00</span>
+                            </div>
+                        </li>
+                        <li class="minicart-product">
+                            <a class="product-item_remove" href="#/"><i class="icofont-close-circled"></i></a>
+                            <div class="product-item_img">
+                                <img src="assets/img/shop/shop3.jpg" alt="Product Image">
+                            </div>
+                            <div class="product-item_content">
+                                <a class="product-item_title" href="product-details.html">Complete Shoes</a>
+                                <span class="product-item_quantity">1 × $42.00</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="minicart-pricing-box">
+                        <ul>
+                            <li class="total">
+                                <span>Total</span>
+                                <span><strong>$42.00</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="minicart-button">
+                        <a href="cart.html" class="btn btn-secondary btn-hover-primary">View Cart</a>
+                        <a href="checkout.html" class="btn btn-primary btn-hover-secondary">Checkout</a>
+                    </div>
+                </div>
             </div>
-            <div class="user-management">
-                <!-- User management options -->
+        </aside>
+        <!--== End Aside Cart ==-->
+
+        <!--== Start Aside Menu ==-->
+        <aside class="offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="d-none" id="offcanvasRightLabel">Aside Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-        </div>
-    </section>
-</div>
+            <div class="offcanvas-body">
+                <div class="inner-body">
+                    <div class="offcanvas-top mb--30">
+                        <p>World's #1</p>
+                        <h4 class="title">Largest Job Site</h4>
+                    </div>
+                    <div class="offcanvas-menu">
+                        <div class="mobile-menu">
+                            <nav id="mobile-menu" class="menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="job-list.html">Job Listing</a></li>
+                                    <li><a href="job-details.html">Job Details</a></li>
+                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="contact.html">Support</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="offcanvas-bottom">
+                        <div class="aside-contact-info">
+                            <div class="info-item">
+                                <div class="icon">
+                                    <i class="icofont-headphone-alt"></i>
+                                </div>
+                                <div class="content">
+                                    <h4 class="title">Call Us:</h4>
+                                    <p><a href="tel:+0123456789">+0123456789</a></p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon">
+                                    <i class="icofont-email"></i>
+                                </div>
+                                <div class="content">
+                                    <h4 class="title">Email Us:</h4>
+                                    <p><a href="mailto:demo@example.com">demo@example.com</a></p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon">
+                                    <i class="icofont-location-pin"></i>
+                                </div>
+                                <div class="content">
+                                    <h4 class="title">Address:</h4>
+                                    <p>24/B Garden Street, North City, USA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--== End Aside Menu ==-->
+
+        <!--== Scroll Top Button ==-->
+        <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-arrow-up"></span></div>
+    </main>
+
+    <!--=======================Javascript============================-->
+    <!--=== Modernizr Min Js ===-->
+    <script src="assets/js/modernizr.js"></script>
+    <!--=== jQuery Min Js ===-->
+    <script src="assets/js/jquery-main.js"></script>
+    <!--=== jQuery Migration Min Js ===-->
+    <script src="assets/js/jquery-migrate.js"></script>
+    <!--=== jQuery Popper Min Js ===-->
+    <script src="assets/js/popper.min.js"></script>
+    <!--=== jQuery Bootstrap Min Js ===-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--=== jQuery Appear Js ===-->
+    <script src="assets/js/jquery.appear.js"></script>
+    <!--=== jQuery Headroom Min Js ===-->
+    <script src="assets/js/headroom.min.js"></script>
+    <!--=== jQuery Swiper Min Js ===-->
+    <script src="assets/js/swiper.min.js"></script>
+    <!--=== jQuery Wow Min Js ===-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--=== jQuery Slick Nav Js ===-->
+    <script src="assets/js/slicknav.js"></script>
+    <!--=== jQuery Countdown Js ===-->
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <!--=== jQuery Tippy Min Js ===-->
+    <script src="assets/js/tippy.all.min.js"></script>
+    <!--=== jQuery Nice Select Min Js ===-->
+    <script src="assets/js/nice-select.js"></script>
+    <!--=== jQuery Magnific Popup Min Js ===-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!--=== jQuery Zoom Min Js ===-->
+    <script src="assets/js/jquery-zoom.min.js"></script>
+    <!--=== Main Js ===-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
