@@ -10,6 +10,75 @@
     <meta name="author" content="hastech"/>
 
     <title>Candidate :: Execuget - Job Portal Website</title>
+    
+    <style>
+      /* User profile and notifications styling */
+      /* User profile and notifications styling */
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.user-profile .dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-profile .dropdown a {
+    color: #333;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.notifications {
+    position: relative;
+    margin-right: 20px;
+}
+
+.notifications .bell-icon {
+    background: url('assets/img/bell-icon.png') no-repeat center center;
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.notifications .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Additional CSS for header alignment */
+.header-align {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+    </style>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
@@ -44,65 +113,41 @@
   <!--== Start Header Wrapper ==-->
   <header class="header-area transparent">
     <div class="container">
-      <div class="row no-gutter align-items-center position-relative">
-        <div class="col-12">
-          <div class="header-align">
-            <div class="header-align-start">
-              <div class="header-logo-area">
-                <a href="index.html">
-                  <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" />
-                  <!--<img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />-->
-                </a>
-              </div>
+        <div class="row no-gutter align-items-center position-relative">
+            <div class="col-12">
+                <div class="header-align">
+                    <div class="header-align-start">
+                        <div class="header-logo-area">
+                            <a href="index.html">
+                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="150" height="150"/>
+                                <!--<img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />-->
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-align-center">
+                      <div class="header-navigation-area position-relative">
+                          <ul class="main-menu nav">
+                            <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
+                            <li><a href="postjob.html"><span>Post Job</span></a></li>
+                            <li><a href="candidate.html"><span>Candidates</span></a></li>
+                            <li><a href="applications-emp.html"><span>Applications</span></a></li>
+                            <li><a href="messages-emp.html"><span>Messages</span></a></li>
+                            <li><a href="performance.html"><span>Performance</span></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="header-align-end">
+                    <div class="header-action-area">
+                      <div class="user-profile">
+                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                        <a href="setings-emp.html" class="account-settings">Profile & Settings</a>
+                      </div>
+                    </div>
+                  </div>
+                    
+                </div>
             </div>
-            <div class="header-align-center">
-              <div class="header-navigation-area position-relative">
-                <ul class="main-menu nav">
-                  <li><a href="index.html"><span>Home</span></a></li>
-                  <li class="has-submenu"><a href="#/"><span>Find Jobs</span></a>
-                    <ul class="submenu-nav">
-                      <li><a href="job.html"><span>Jobs</span></a></li>
-                      <li><a href="job-details.html"><span>Job Details</span></a></li>
-                    </ul>
-                  </li>
-                  <li><a href="employers-details.html"><span>Employers Details</span></a></li>
-                  <li class="has-submenu"><a href="#/"><span>Candidates</span></a>
-                    <ul class="submenu-nav">
-                      <li><a href="candidate.html"><span>Candidates</span></a></li>
-                      <li><a href="candidate-details.html"><span>Candidate Details</span></a></li>
-                    </ul>
-                  </li>
-                  <li class="has-submenu"><a href="#/"><span>Blog</span></a>
-                    <ul class="submenu-nav">
-                      <li><a href="blog-grid.html">Blog Grid</a></li>
-                      <li><a href="blog.html">Blog Left Sidebar</a></li>
-                      <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                      <li><a href="blog-details.html">Blog Details</a></li>
-                    </ul>
-                  </li>
-                  <li class="has-submenu"><a href="#/"><span>Pages</span></a>
-                    <ul class="submenu-nav">
-                      <li><a href="about-us.html"><span>About us</span></a></li>
-                      <li><a href="login.html"><span>Login</span></a></li>
-                      <li><a href="registration.html"><span>Registration</span></a></li>
-                      <li><a href="page-not-found.html"><span>Page Not Found</span></a></li>
-                    </ul>
-                  </li>
-                  <li><a href="contact.html"><span>Contact</span></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="header-align-end">
-              <div class="header-action-area">
-                <a class="btn-registration" href="registration.html"><span>+</span> Registration</a>
-                <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
-                  <i class="icofont-navigation-menu"></i>
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
   </header>
   <!--== End Header Wrapper ==-->

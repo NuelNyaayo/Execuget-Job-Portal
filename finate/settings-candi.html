@@ -41,6 +41,10 @@
     position: relative;
     margin-right: 20px;
 }
+.notifications:hover  {
+    position: relative;
+    margin-right: 20px;
+}
 
 .notifications .bell-icon {
     background: url('assets/img/bell-icon.png') no-repeat center center;
@@ -76,33 +80,65 @@ body {
             background-color: #f4f4f4;
             color: #333;
         }
-        .application-list {
-            padding: 20px;
+        .main-content {
+            flex: 1;
             background-color: white;
-            border-radius: 5px;
-            margin: 20px auto;
-            width: 80%;
         }
-        .application-list h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .main-content section {
+            margin-bottom: 20px;
         }
-        .application-list table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            border-radius: 20px;
-            
+        .main-content h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
         }
-        .application-list th, .application-list td {
-            border: 1px solid #ddd;
-            padding: 15px;
-            
-        }
-        .application-list th {
-            background-color: #f4f4f4;
+        .settings-options {
+            display: flex;
+            flex-direction: column;
         }
 
+        .settings-options section {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .settings-options h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .settings-options .form-group {
+            margin-bottom: 15px;
+        }
+
+        .settings-options .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .settings-options .form-group input,
+        .settings-options .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .settings-options .btn-save {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .settings-options .btn-save:hover {
+            background-color: #0056b3;
+        }
     </style>
 
     <!--== Favicon ==-->
@@ -153,25 +189,25 @@ body {
                         </div>
                     </div>
                     <div class="header-align-center">
-                      <div class="header-navigation-area position-relative">
-                          <ul class="main-menu nav">
-                            <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
-                            <li><a href="postjob.html"><span>Post Job</span></a></li>
-                            <li><a href="candidate.html"><span>Candidates</span></a></li>
-                            <li><a href="applications-emp.html"><span>Applications</span></a></li>
-                            <li><a href="messages-emp.html"><span>Messages</span></a></li>
-                            <li><a href="performance.html"><span>Performance</span></a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  <div class="header-align-end">
-                    <div class="header-action-area">
-                      <div class="user-profile">
-                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                        <a href="setings-emp.html" class="account-settings">Profile & Settings</a>
+                        <div class="header-navigation-area position-relative">
+                            <ul class="main-menu nav">
+                                <li><a href="job-seeker-dashboard.html"><span>Overview</span></a></li>
+                                <li><a href="job.html"><span>Job Postings</span></a></li>
+                                <li><a href="applications-candi.html"><span>Applications</span></a></li>
+                                <li><a href="messages-candi.html"><span>Messages</span></a></li>
+                                <li><a href="candidate-profile.html"><span>Profile</span></a></li>
+                                <li><a href="notifications-candi.html"><span>Notifications</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-align-end">
+                      <div class="header-action-area">
+                        <div class="user-profile">
+                          <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                          <a href="settings-candi.html" class="account-settings">Settings</a>
+                        </div>
                       </div>
                     </div>
-                  </div>
                     
                 </div>
             </div>
@@ -189,7 +225,7 @@ body {
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h2 class="title">Employer</h2>
+              <h2 class="title">Candidate</h2>
             </div>
           </div>
         </div>
@@ -197,25 +233,52 @@ body {
     </div>
     <!--== End Page Header Area Wrapper ==-->
     
-    <div class="application-list">
-        <div class="section-title text-center">
-            <h4 id="table-title">Applications in Review</h4>
+    <section id="settings">
+        <h2>Settings</h2>
+        <div class="settings-options">
+            <section class="account-settings">
+                <h3>Account Settings</h3>
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <button class="btn-save">Save Changes</button>
+            </section>
+            <section class="notification-settings">
+                <h3>Notification Settings</h3>
+                <div class="form-group">
+                    <label for="email-notifications">Email Notifications</label>
+                    <select id="email-notifications" name="email-notifications">
+                        <option value="all">All Notifications</option>
+                        <option value="important">Only Important Notifications</option>
+                        <option value="none">No Notifications</option>
+                    </select>
+                </div>
+                <button class="btn-save">Update Notifications</button>
+            </section>
+            <section class="privacy-settings">
+                <h3>Privacy Settings</h3>
+                <div class="form-group">
+                    <label for="profile-visibility">Profile Visibility</label>
+                    <select id="profile-visibility" name="profile-visibility">
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                        <option value="connections">Only Connections</option>
+                    </select>
+                </div>
+                <button class="btn-save">Update Privacy</button>
+            </section>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Job Title</th>
-                    <th>Name</th>
-                    <th>Date Applied</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="application-table-body">
-                <!-- Dynamic rows will be inserted here -->
-            </tbody>
-        </table>
-    </div>
+    </section>
+    
 
   </main>
 

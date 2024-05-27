@@ -73,7 +73,6 @@
 
 .main-content {
             flex: 1;
-            padding: 20px;
             background-color: white;
         }
         .main-content section {
@@ -83,20 +82,6 @@
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
             margin-bottom: 15px;
-        }
-        .metrics {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-        .metric {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            text-align: center;
-            flex: 1;
-            margin: 0 10px;
         }
         .recent-activity ul {
             list-style: none;
@@ -148,81 +133,7 @@
             background-color: #f4f7f7;
         }
 
-        #analyze-performance {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-}
-
-#analyze-performance h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #193768;
-}
-
-.performance-metrics {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.performance-metrics .metric {
-    flex: 1 1 45%;
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.performance-metrics .metric h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #193768;
-}
-
-.performance-metrics .metric p {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #666;
-}
-
-.performance-metrics .metric .metric-value {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-}
-
-.performance-charts {
-    margin-top: 20px;
-}
-
-.performance-charts h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #193768;
-}
-
-.performance-charts .chart {
-    width: 100%;
-    height: 300px;
-    background-color: #eaeaea;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #999;
-    font-size: 16px;
-    text-align: center;
-}
-
-/* Ensure the canvas fills the container */
-canvas {
-    width: 100% !important;
-    height: auto !important;
-}
+        
     </style>
 
     <!--== Favicon ==-->
@@ -273,25 +184,25 @@ canvas {
                         </div>
                     </div>
                     <div class="header-align-center">
-                        <div class="header-navigation-area position-relative">
-                            <ul class="main-menu nav">
-                                <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
-                                <li><a href="employers-details.html"><span>Post Job</span></a></li>
-                                <li><a href="employers-details.html"><span>Applications</span></a></li>
-                                <li><a href="employers-details.html"><span>Messages</span></a></li>
-                                <li><a href="employers-details.html"><span>Profile</span></a></li>
-                                <li><a href="performance.html"><span>Performance</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="header-align-end">
-                      <div class="header-action-area">
-                        <div class="user-profile">
-                          <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                          <a href="path-to-account-settings-page.html" class="account-settings">Settings</a>
-                        </div>
+                      <div class="header-navigation-area position-relative">
+                          <ul class="main-menu nav">
+                            <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
+                            <li><a href="postjob.html"><span>Post Job</span></a></li>
+                            <li><a href="candidate.html"><span>Candidates</span></a></li>
+                            <li><a href="applications-emp.html"><span>Applications</span></a></li>
+                            <li><a href="messages-emp.html"><span>Messages</span></a></li>
+                            <li><a href="performance.html"><span>Performance</span></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="header-align-end">
+                    <div class="header-action-area">
+                      <div class="user-profile">
+                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                        <a href="setings-emp.html" class="account-settings">Profile & Settings</a>
                       </div>
                     </div>
+                  </div>
                     
                 </div>
             </div>

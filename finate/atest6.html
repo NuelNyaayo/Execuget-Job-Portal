@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages - Employer Dashboard</title>
+    <title>Job Seeker Dashboard - Profile</title>
     <style>
         /* Add your CSS styles here */
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
         }
-        .employer-dashboard {
+        .job-seeker-dashboard {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -98,100 +99,59 @@
             flex: 1;
             padding: 20px;
             background-color: white;
-            display: flex;
-            flex-direction: column;
+        }
+        .main-content section {
+            margin-bottom: 20px;
         }
         .main-content h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
             margin-bottom: 15px;
         }
-        .messages {
+        .profile-info {
             display: flex;
-            height: 80vh;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .conversation-list {
-            width: 30%;
-            border-right: 1px solid #ddd;
-            overflow-y: auto;
-        }
-        .conversation-list ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .conversation-list li {
-            padding: 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #ddd;
-            transition: background-color 0.3s;
-            display: flex;
-            align-items: center;
-        }
-        .conversation-list li:hover,
-        .conversation-list li.active {
+            flex-wrap: wrap;
             background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
         }
-        .conversation-list .profile-pic {
+        .profile-info .profile-pic {
+            margin-right: 20px;
+        }
+        .profile-info img {
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+            width: 100px;
+            height: 100px;
         }
-        .conversation {
+        .profile-info .details {
             flex: 1;
-            display: flex;
-            flex-direction: column;
         }
-        .conversation-header {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
+        .profile-info .details h3 {
+            margin-top: 0;
+        }
+        .profile-info .details p {
+            margin: 5px 0;
+        }
+        .resume-section, .skills-section, .experience-section, .education-section {
             background-color: #f4f4f4;
-        }
-        .conversation-body {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-        }
-        .message {
-            margin-bottom: 10px;
-        }
-        .message .sender {
-            font-weight: bold;
-        }
-        .message .timestamp {
-            font-size: 0.85em;
-            color: #888;
-        }
-        .message .text {
-            margin-top: 5px;
-        }
-        .conversation-footer {
-            padding: 10px;
-            border-top: 1px solid #ddd;
-            background-color: #f4f4f4;
-        }
-        .conversation-footer textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
+            padding: 20px;
             border-radius: 5px;
-            resize: none;
+            margin-bottom: 20px;
         }
-        .conversation-footer button {
-            margin-top: 10px;
+        .resume-section h3, .skills-section h3, .experience-section h3, .education-section h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        .btn-edit {
             padding: 10px 20px;
-            background-color: #28a745;
+            background-color: #007bff;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
-        .conversation-footer button:hover {
-            background-color: #218838;
+        .btn-edit:hover {
+            background-color: #0056b3;
         }
         footer {
             background-color: #333;
@@ -210,13 +170,13 @@
     </style>
 </head>
 <body>
-<div class="employer-dashboard">
+<div class="job-seeker-dashboard">
     <header>
         <div class="logo">JobPortal</div>
         <nav class="navigation-menu">
             <ul>
                 <li><a href="#overview">Overview</a></li>
-                <li><a href="#job-postings">Job Postings</a></li>
+                <li><a href="#job-search">Job Search</a></li>
                 <li><a href="#applications">Applications</a></li>
                 <li><a href="#messages">Messages</a></li>
                 <li><a href="#profile">Profile</a></li>
@@ -238,56 +198,64 @@
     <div class="content">
         <aside class="sidebar">
             <ul>
-                <li><a href="#post-job">Post a Job</a></li>
-                <li><a href="#active-jobs">Active Jobs</a></li>
-                <li><a href="#expired-jobs">Expired Jobs</a></li>
-                <li><a href="#draft-jobs">Draft Jobs</a></li>
+                <li><a href="#saved-jobs">Saved Jobs</a></li>
+                <li><a href="#applied-jobs">Applied Jobs</a></li>
+                <li><a href="#recommended-jobs">Recommended Jobs</a></li>
+                <li><a href="#notifications">Notifications</a></li>
             </ul>
         </aside>
 
         <main class="main-content">
-            <section id="messages">
-                <h2>Messages</h2>
-                <div class="messages">
-                    <div class="conversation-list">
-                        <ul>
-                            <li class="active">
-                                <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
-                                John Doe
-                            </li>
-                            <li>
-                                <img src="profile-pic-jane.jpg" alt="Jane Smith" class="profile-pic">
-                                Jane Smith
-                            </li>
-                            <li>
-                                <img src="profile-pic-bob.jpg" alt="Bob Johnson" class="profile-pic">
-                                Bob Johnson
-                            </li>
-                            <!-- Add more conversations here -->
-                        </ul>
+            <section id="profile">
+                <h2>Profile</h2>
+                <div class="profile-info">
+                    <div class="profile-pic">
+                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
                     </div>
-                    <div class="conversation">
-                        <div class="conversation-header">
-                            John Doe
-                        </div>
-                        <div class="conversation-body">
-                            <div class="message">
-                                <div class="sender">John Doe</div>
-                                <div class="timestamp">10:30 AM</div>
-                                <div class="text">Hello, I have a question about the job posting.</div>
-                            </div>
-                            <div class="message">
-                                <div class="sender">You</div>
-                                <div class="timestamp">10:32 AM</div>
-                                <div class="text">Sure, what do you need to know?</div>
-                            </div>
-                            <!-- Add more messages here -->
-                        </div>
-                        <div class="conversation-footer">
-                            <textarea placeholder="Type your message..."></textarea>
-                            <button type="button">Send</button>
-                        </div>
+                    <div class="details">
+                        <h3>John Doe</h3>
+                        <p>Email: john.doe@example.com</p>
+                        <p>Location: San Francisco, CA</p>
+                        <p>Phone: (123) 456-7890</p>
                     </div>
+                </div>
+                <div class="resume-section">
+                    <h3>Resume</h3>
+                    <p><a href="resume.pdf" download>Download Resume</a></p>
+                    <button class="btn-edit">Edit Resume</button>
+                </div>
+                <div class="skills-section">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>HTML/CSS</li>
+                        <li>React</li>
+                    </ul>
+                    <button class="btn-edit">Edit Skills</button>
+                </div>
+                <div class="experience-section">
+                    <h3>Experience</h3>
+                    <div class="experience-item">
+                        <h4>Software Engineer at TechCorp</h4>
+                        <p>Jan 2020 - Present</p>
+                        <p>Developed web applications using JavaScript and React.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4>Junior Developer at WebWorks</h4>
+                        <p>Jun 2018 - Dec 2019</p>
+                        <p>Worked on front-end development projects using HTML, CSS, and JavaScript.</p>
+                    </div>
+                    <button class="btn-edit">Edit Experience</button>
+                </div>
+                <div class="education-section">
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <h4>Bachelor of Science in Computer Science</h4>
+                        <p>University of California, Berkeley</p>
+                        <p>Graduated: May 2018</p>
+                    </div>
+                    <button class="btn-edit">Edit Education</button>
                 </div>
             </section>
         </main>

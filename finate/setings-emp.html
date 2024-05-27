@@ -76,36 +76,9 @@ body {
             background-color: #f4f4f4;
             color: #333;
         }
-        .application-list {
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            margin: 20px auto;
-            width: 80%;
-        }
-        .application-list h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .application-list table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            border-radius: 20px;
-            
-        }
-        .application-list th, .application-list td {
-            border: 1px solid #ddd;
-            padding: 15px;
-            
-        }
-        .application-list th {
-            background-color: #f4f4f4;
-        }
 
         .main-content {
             flex: 1;
-            padding: 20px;
             background-color: white;
             display: flex;
             flex-direction: column;
@@ -115,92 +88,55 @@ body {
             padding-bottom: 5px;
             margin-bottom: 15px;
         }
-        .messages {
+
+        .company-profile {
             display: flex;
-            height: 80vh;
+            flex-direction: column;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
-        .conversation-list {
-            width: 30%;
-            border-right: 1px solid #ddd;
-            overflow-y: auto;
-        }
-        .conversation-list ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .conversation-list li {
-            padding: 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #ddd;
-            transition: background-color 0.3s;
+        .company-header {
             display: flex;
             align-items: center;
+            margin-bottom: 20px;
         }
-        .conversation-list li:hover,
-        .conversation-list li.active {
-            background-color: #f4f4f4;
+        .company-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-right: 20px;
         }
-        .conversation-list .profile-pic {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-        .conversation {
-            flex: 1;
+        .company-info {
             display: flex;
             flex-direction: column;
         }
-        .conversation-header {
-            padding: 4px;
-            border-bottom: 1px solid #ddd;
-            background-color: #f4f4f4;
+        .company-info h3 {
+            margin: 0;
         }
-        .conversation-body {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
+        .company-info p {
+            margin: 5px 0;
         }
-        .message {
-            margin-bottom: 10px;
+        .company-description {
+            margin-bottom: 20px;
         }
-        .message .sender {
-            font-weight: bold;
+        .job-postings {
+            display: flex;
+            flex-direction: column;
         }
-        .message .timestamp {
-            font-size: 0.85em;
-            color: #888;
-        }
-        .message .text {
-            margin-top: 5px;
-        }
-        .conversation-footer {
-            padding: 10px;
-            border-top: 1px solid #ddd;
-            background-color: #f4f4f4;
-        }
-        .conversation-footer textarea {
-            width: 100%;
+        .job-posting {
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            resize: none;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
         }
-        .conversation-footer button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .job-posting:hover {
+            background-color: #f4f4f4;
         }
-        .conversation-footer button:hover {
-            background-color: #218838;
+        .job-posting h4 {
+            margin: 0;
         }
         
         .settings-options {
@@ -300,25 +236,25 @@ body {
                         </div>
                     </div>
                     <div class="header-align-center">
-                        <div class="header-navigation-area position-relative">
-                            <ul class="main-menu nav">
-                                <li><a href="index.html"><span>Overview</span></a></li>
-                                <li><a href="employers-details.html"><span>Job Postings</span></a></li>
-                                <li><a href="applications-emp.html"><span>Applications</span></a></li>
-                                <li><a href="messages-emp.html"><span>Messages</span></a></li>
-                                <li><a href="employers-details.html"><span>Profile</span></a></li>
-                                <li><a href="contact.html"><span>Notifications</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="header-align-end">
-                      <div class="header-action-area">
-                        <div class="user-profile">
-                          <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                          <a href="settings-emp.html" class="account-settings">Settings</a>
-                        </div>
+                      <div class="header-navigation-area position-relative">
+                          <ul class="main-menu nav">
+                            <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
+                            <li><a href="postjob.html"><span>Post Job</span></a></li>
+                            <li><a href="candidate.html"><span>Candidates</span></a></li>
+                            <li><a href="applications-emp.html"><span>Applications</span></a></li>
+                            <li><a href="messages-emp.html"><span>Messages</span></a></li>
+                            <li><a href="performance.html"><span>Performance</span></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="header-align-end">
+                    <div class="header-action-area">
+                      <div class="user-profile">
+                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                        <a href="setings-emp.html" class="account-settings">Profile & Settings</a>
                       </div>
                     </div>
+                  </div>
                     
                 </div>
             </div>
@@ -344,6 +280,40 @@ body {
     </div>
     <!--== End Page Header Area Wrapper ==-->
     
+    <section id="company-profile">
+      <h2>Company Profile</h2>
+      <div class="company-profile">
+          <div class="company-header">
+              <img src="assets/img/images/mooilogo.jpg" alt="Company Logo" class="company-logo">
+              <div class="company-info">
+                  <h3>Company Name</h3>
+                  <p><strong>Location:</strong> City, State</p>
+                  <p><strong>Industry:</strong> Industry Name</p>
+              </div>
+          </div>
+          <div class="company-description">
+              <h4>About Us</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+          </div>
+          <div class="job-postings">
+              <h4>Job Postings</h4>
+              <div class="job-posting">
+                  <h4>Job Title 1</h4>
+                  <p><strong>Location:</strong> City, State</p>
+                  <p><strong>Posted on:</strong> Date</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <div class="job-posting">
+                  <h4>Job Title 2</h4>
+                  <p><strong>Location:</strong> City, State</p>
+                  <p><strong>Posted on:</strong> Date</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+              <!-- Add more job postings as needed -->
+          </div>
+      </div>
+    </section>
+
     <section id="settings">
         <h2>Settings</h2>
         <div class="settings-options">
