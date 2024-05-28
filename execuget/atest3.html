@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5"/>
+        <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
+        <meta name="author" content="hastech"/>
+    
+        <title>Job Seeker Dashboard</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+        }
+        .navigation-menu ul {
+            list-style: none;
+            display: flex;
+        }
+        .navigation-menu ul li {
+            margin-right: 20px;
+        }
+        .navigation-menu ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .user-profile img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 20px;
+        }
+        .notifications {
+            position: relative;
+            margin-right: 20px;
+        }
+        .notifications .bell-icon {
+            background: url('bell-icon.png') no-repeat center center;
+            width: 24px;
+            height: 24px;
+            display: block;
+        }
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #555;
+            color: white;
+            padding: 20px;
+            width: 250px;
+            min-height: 100vh;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        /* Main content styles */
+        .main-content {
+            padding: 20px;
+            margin-left: 250px; /* Adjusted to accommodate sidebar width */
+        }
+        
+        .application-status {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.application-status h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.application-overview p {
+    margin: 5px 0;
+}
+
+.application-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.application-list th, .application-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.application-list th {
+    background-color: #f4f4f4;
+}
+
+.application-list td a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    
+    
+        <!--== Favicon ==-->
+        <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
+    
+        <!--== Google Fonts ==-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    
+    
+        <!--== Bootstrap CSS ==-->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+        <!--== Icofont Icon CSS ==-->
+        <link href="assets/css/icofont.css" rel="stylesheet" />
+        <!--== Swiper CSS ==-->
+        <link href="assets/css/swiper.min.css" rel="stylesheet" />
+        <!--== Fancybox Min CSS ==-->
+        <link href="assets/css/fancybox.min.css" rel="stylesheet" />
+        <!--== Aos Min CSS ==-->
+        <link href="assets/css/aos.min.css" rel="stylesheet" />
+    
+        <!--== Main Style CSS ==-->
+        <link href="assets/css/style.css" rel="stylesheet" />
+    </head>
+<body>
+
+<header>
+    <div class="logo">Job Portal</div>
+    <nav class="navigation-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#job-search">Job Search</a></li>
+            <li><a href="#saved-jobs">Saved Jobs</a></li>
+            <li><a href="#applications">Applications</a></li>
+            <li><a href="#messages">Messages</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#settings">Settings</a></li>
+        </ul>
+    </nav>
+    <div class="user-profile">
+        <img src="profile-pic.jpg" alt="Profile Picture">
+        <a href="#account-settings">Account Settings</a>
+        <a href="#logout">Logout</a>
+    </div>
+    <div class="notifications">
+        <span class="bell-icon"></span>
+        <span class="badge">3</span>
+    </div>
+</header>
+
+<div class="sidebar">
+    <h3>Quick Links</h3>
+    <ul>
+        <li><a href="#job-search">Job Search</a></li>
+        <li><a href="#saved-jobs">Saved Jobs</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#messages">Messages</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#settings">Settings</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <h1>Welcome to the Jobseeker Dashboard</h1>
+    <!-- Include sections for recommended jobs, saved jobs, recently viewed jobs, application status, job search, applications, messages, profile, and settings -->
+    
+</div>
+
+<footer>
+    <div class="help-support">
+        <a href="#help-center">Help Center</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact-support">Contact Support</a>
+    </div>
+    <div class="legal-info">
+        <a href="#terms">Terms of Service</a>
+        <a href="#privacy">Privacy Policy</a>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

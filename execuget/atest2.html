@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard - Settings</title>
+    <style>
+        /* Add your CSS styles here */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .employer-dashboard {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .navigation-menu ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .navigation-menu ul li {
+            margin: 0 10px;
+        }
+        .navigation-menu ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        .navigation-menu ul li a:hover {
+            background-color: #555;
+        }
+        .user-profile, .notifications {
+            display: flex;
+            align-items: center;
+        }
+        .user-profile img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .dropdown a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .notifications .bell-icon {
+            background: url('bell-icon.png') no-repeat center center;
+            width: 24px;
+            height: 24px;
+        }
+        .content {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            background-color: #444;
+            color: white;
+            width: 200px;
+            padding: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+        }
+        .main-content section {
+            margin-bottom: 20px;
+        }
+        .main-content h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .metric {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+        .recent-activity ul {
+            list-style: none;
+            padding: 0;
+        }
+        .recent-activity ul li {
+            background-color: #f9f9f9;
+            margin-bottom: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .tabs button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .tabs button:hover {
+            background-color: #555;
+        }
+        .btn-post-job {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-post-job:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .settings-options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .settings-options section {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .settings-options h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .settings-options .form-group {
+            margin-bottom: 15px;
+        }
+
+        .settings-options .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .settings-options .form-group input,
+        .settings-options .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .settings-options .btn-save {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .settings-options .btn-save:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="employer-dashboard">
+    <header>
+        <div class="logo">JobPortal</div>
+        <nav class="navigation-menu">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#job-postings">Job Postings</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <img src="profile-pic.jpg" alt="Profile Picture">
+            <div class="dropdown">
+                <a href="#account-settings">Account Settings</a>
+                <a href="#logout">Logout</a>
+            </div>
+        </div>
+        <div class="notifications">
+            <span class="bell-icon"></span>
+        </div>
+    </header>
+
+    <div class="content">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#post-job">Post a Job</a></li>
+                <li><a href="#active-jobs">Active Jobs</a></li>
+                <li><a href="#expired-jobs">Expired Jobs</a></li>
+                <li><a href="#draft-jobs">Draft Jobs</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <section id="settings">
+                <h2>Settings</h2>
+                <div class="settings-options">
+                    <section class="account-settings">
+                        <h3>Account Settings</h3>
+                        <div class="form-group">
+                            <label for="company-name">Company Name</label>
+                            <input type="text" id="company-name" name="company-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <button class="btn-save">Save Changes</button>
+                    </section>
+                    <section class="billing-subscriptions">
+                        <h3>Billing & Subscriptions</h3>
+                        <div class="form-group">
+                            <label for="current-plan">Current Plan</label>
+                            <select id="current-plan" name="current-plan">
+                                <option value="free">Free</option>
+                                <option value="basic">Basic</option>
+                                <option value="premium">Premium</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="payment-method">Payment Method</label>
+                            <input type="text" id="payment-method" name="payment-method">
+                        </div>
+                        <button class="btn-save">Update Billing</button>
+                    </section>
+                    <section class="user-management">
+                        <h3>User Management</h3>
+                        <div class="form-group">
+                            <label for="add-user">Add New User</label>
+                            <input type="text" id="add-user" name="add-user" placeholder="User Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="user-role">User Role</label>
+                            <select id="user-role" name="user-role">
+                                <option value="admin">Admin</option>
+                                <option value="recruiter">Recruiter</option>
+                                <option value="viewer">Viewer</option>
+                            </select>
+                        </div>
+                        <button class="btn-save">Add User</button>
+                        <h4>Existing Users</h4>
+                        <div class="existing-users">
+                            <ul>
+                                <li>user1@example.com - Admin <button>Remove</button></li>
+                                <li>user2@example.com - Recruiter <button>Remove</button></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="help-support">
+            <a href="#help-center">Help Center</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact-support">Contact Support</a>
+        </div>
+        <div class="legal-info">
+            <a href="#terms">Terms of Service</a>
+            <a href="#privacy">Privacy Policy</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
