@@ -919,7 +919,7 @@ table p {
 }
 
 .header-navigation-area .main-menu.nav > li > a:hover {
-  color: #193768;
+  color: rgb(17, 2, 146);
 }
 
 .header-navigation-area .main-menu.nav > li > a:hover:after {
@@ -7062,13 +7062,13 @@ table p {
   }
 }
 .footer-bottom .copyright a {
-  color: #193768;
+  color: #1143e7;
 }
 .footer-bottom .copyright a:hover {
   color: #fff;
 }
 .footer-bottom .copyright i {
-  color: #193768;
+  color: #1143e7;
   font-size: 16px;
   vertical-align: 0px;
   margin: 0;
