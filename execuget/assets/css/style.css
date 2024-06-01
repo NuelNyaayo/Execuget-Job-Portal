@@ -4084,6 +4084,24 @@ table p {
 }
 #contact-form .form-control:active, #contact-form .form-control:focus {
   border-color: #193768;
+  color: #000; /* New font color */
+  font-size: 16px; /* New font size */
+}
+#contact-form .form-control:focus::-webkit-input-placeholder {
+  color: #000; /* New placeholder color */
+  font-size: 16px; /* New placeholder font size */
+}
+#contact-form .form-control:focus:-moz-placeholder {
+  color: #000; /* New placeholder color */
+  font-size: 16px; /* New placeholder font size */
+}
+#contact-form .form-control:focus::-moz-placeholder {
+  color: #000; /* New placeholder color */
+  font-size: 16px; /* New placeholder font size */
+}
+#contact-form .form-control:focus:-ms-input-placeholder {
+  color: #000; /* New placeholder color */
+  font-size: 16px; /* New placeholder font size */
 }
 #contact-form textarea.form-control {
   height: 220px;
@@ -4319,7 +4337,27 @@ table p {
 }
 .login-register-form .form-control:active, .login-register-form .form-control:focus {
   border-color: #193768;
+  color: #000; /* New font color */
+  font-size: 16px; /* New font size */
 }
+
+.login-register-form .form-control:focus::-webkit-input-placeholder {
+  color: #000; /* New placeholder color */
+  font-size: 16px; /* New placeholder font size */}
+  .login-register-form .form-control:focus:-moz-placeholder {
+    color: #000; /* New placeholder color */
+    font-size: 16px; /* New placeholder font size */
+  }
+  .login-register-form .form-control:focus::-moz-placeholder {
+    color: #000; /* New placeholder color */
+    font-size: 16px; /* New placeholder font size */
+  }
+  .login-register-form .form-control:focus:-ms-input-placeholder {
+    color: #000; /* New placeholder color */
+    font-size: 16px; /* New placeholder font size */
+  }
+
+
 .login-register-form .remember-forgot-info {
   display: -webkit-box;
   display: -ms-flexbox;

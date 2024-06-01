@@ -11,8 +11,52 @@
 
     <title>Registration :: Execuget - Job Portal Website</title>
 
+    <style>
+      .position-relative {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #656565;
+}
+
+.password-toggle:hover {
+  color: #193768;
+}
+
+/* Ensure the container is positioned relatively */
+.position-relative {
+  position: relative;
+}
+
+/* Style the dropdown icon */
+.dropdown-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevent the icon from blocking clicks to the select element */
+  color: #656565; /* Set the color of the icon */
+}
+
+/* Additional styling for the select element to accommodate the icon */
+#country-code {
+  padding-right: 30px; /* Ensure there is space for the icon */
+  -webkit-appearance: none; /* Remove default dropdown arrow in some browsers */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+    </style>
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!--== Google Fonts ==-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -147,7 +191,7 @@
                           <div class="col-12">
                             <div class="form-group">
                               <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="input-group-prepend position-relative">
                                   <select class="form-control" id="country-code" name="country-code">
                                     <option value="+1">+1</option>
                                     <option value="+44">+44</option>
@@ -155,30 +199,42 @@
                                     <option value="+96">+96</option>
                                     <option value="+97">+97</option>
                                     <option value="+99">+99</option>
-                                    <option value="+254">+254</option>
+                                    <option value="+254" selected>+254</option>
                                     <option value="+255">+255</option>
                                     <option value="+256">+256</option>
-                                    
                                     <!-- Add more country codes here -->
                                   </select>
+                                  <span class="fa fa-chevron-down dropdown-icon"></span>
                                 </div>
                                 <input class="form-control" type="tel" placeholder="Phone" pattern="[0-9]{3}[0-9]{3}[0-9]{3}">
                               </div>
                             </div>
                           </div>
+                          
                           <div class="col-12">
                             <div class="form-group">
                               <input class="form-control" type="email" placeholder="Email">
                             </div>
                           </div>
                           <div class="col-12">
-                            <div class="form-group">
-                              <input class="form-control" type="password" placeholder="Password">
+                            <div class="form-group position-relative">
+                              <input class="form-control" type="password" placeholder="Password" id="candidatePassword">
+                              <span class="password-toggle" onclick="togglePassword('candidatePassword')">
+                                <i class="fas fa-eye"></i>
+                              </span>
                             </div>
                           </div>
-                          <div class="col-12">
+                          <!--<div class="col-12">
                             <div class="form-group">
                               <input class="form-control" type="password" placeholder="Confirm Password">
+                            </div>
+                          </div>-->
+                          <div class="col-12">
+                            <div class="form-group position-relative">
+                              <input class="form-control" type="password" placeholder="Confirm Password" id="candidateConfirmPassword">
+                              <span class="password-toggle" onclick="togglePassword('candidateConfirmPassword')">
+                                <i class="fas fa-eye"></i>
+                              </span>
                             </div>
                           </div>
                           <div class="col-12">
@@ -221,7 +277,7 @@
                           <div class="col-12">
                             <div class="form-group">
                               <div class="input-group">
-                                <div class="input-group-prepend">
+                                <div class="input-group-prepend position-relative">
                                   <select class="form-control" id="country-code" name="country-code">
                                     <option value="+1">+1</option>
                                     <option value="+44">+44</option>
@@ -229,12 +285,12 @@
                                     <option value="+96">+96</option>
                                     <option value="+97">+97</option>
                                     <option value="+99">+99</option>
-                                    <option value="+254">+254</option>
+                                    <option value="+254" selected>+254</option>
                                     <option value="+255">+255</option>
                                     <option value="+256">+256</option>
-                                    
                                     <!-- Add more country codes here -->
                                   </select>
+                                  <span class="fa fa-chevron-down dropdown-icon"></span>
                                 </div>
                                 <input class="form-control" type="tel" placeholder="Phone" pattern="[0-9]{3}[0-9]{3}[0-9]{3}">
                               </div>
@@ -246,13 +302,19 @@
                             </div>
                           </div>
                           <div class="col-12">
-                            <div class="form-group">
-                              <input class="form-control" type="password" placeholder="Password">
+                            <div class="form-group position-relative">
+                              <input class="form-control" type="password" placeholder="Password" id="employerPassword">
+                              <span class="password-toggle" onclick="togglePassword('employerPassword')">
+                                <i class="fas fa-eye"></i>
+                              </span>
                             </div>
                           </div>
                           <div class="col-12">
-                            <div class="form-group">
-                              <input class="form-control" type="password" placeholder="Confirm Password">
+                            <div class="form-group position-relative">
+                              <input class="form-control" type="password" placeholder="Confirm Password" id="employerConfirmPassword">
+                              <span class="password-toggle" onclick="togglePassword('employerConfirmPassword')">
+                                <i class="fas fa-eye"></i>
+                              </span>
                             </div>
                           </div>
                           <div class="col-12">
@@ -492,6 +554,22 @@
           window.location.href = 'employer-dashboard.html'; 
       });
   });
+
+  function togglePassword(fieldId) {
+  var passwordField = document.getElementById(fieldId);
+  var icon = passwordField.nextElementSibling.firstElementChild;
+  
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  } else {
+    passwordField.type = "password";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
+}
+
 
   registerForm.addEventListener('candidateSignup', async (e) => {
         e.preventDefault();
