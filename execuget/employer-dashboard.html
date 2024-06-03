@@ -70,6 +70,13 @@
     align-items: center;
     width: 100%;
 }
+.center-text {
+            text-align: center;
+            margin-top: 0;
+            padding-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
 
 .main-content {
             flex: 1;
@@ -133,6 +140,53 @@
             background-color: #f4f7f7;
         }
 
+        .overview-container {
+            margin: 20px auto;
+            padding: 80px;
+            background-color: #f4f7f7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 300px;
+        }
+        .activejobs-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #193768;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .expiredjobs-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #193768;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .draftjobs-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #193768;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .review-container {
+            margin: 20px auto;
+            padding: 80px;
+            background-color: #f4f7f7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 300px;
+        }
+
+
         
     </style>
 
@@ -188,7 +242,7 @@
                           <ul class="main-menu nav">
                             <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
                             <li><a href="postjob.html"><span>Post Job</span></a></li>
-                            <li><a href="candidate.html"><span>Candidates</span></a></li>
+                            <li><a href="candidates.html"><span>Candidates</span></a></li>
                             <li><a href="applications-emp.html"><span>Applications</span></a></li>
                             <li><a href="messages-emp.html"><span>Messages</span></a></li>
                             <li><a href="performance.html"><span>Performance</span></a></li>
@@ -220,7 +274,12 @@
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h2 class="title">Employer</h2>
+              <h1 class="title">Employer</h1>
+              <nav class="breadcrumb-area">
+                <ul class="breadcrumb justify-content-center">
+                  <li>Overview</li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -235,6 +294,7 @@
             <h2 class="title">Dashboard Overview</h2>
           </div>
 
+          <div class="overview-container">
           <div class="row row-gutter-20" >
             <div class="col-sm-6 col-lg-3">
               <!--== Start Job Category Item ==-->
@@ -277,6 +337,7 @@
               <!--== End Job Category Item ==-->
             </div>
           </div>
+        </div>
           <div class="recent-activity">
             <div class="section-title text-center">
               <h2 class="title">Recent Activity</h2>
@@ -301,372 +362,358 @@
   
       <section id="job-postings">
         <div class="section-title text-center">
-          <h2 class="title">Job Postings</h2>
+          <h2 class="title">Active Jobs</h2>
         </div>
-          <div class="job-list">
-            <div class="section-title text-center">
-              <h4 class="title">Active Jobs</h4>
-            </div>
-              <section class="recent-job-area recent-job-inner-area">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6 col-lg-4">
-                      <!--== Start Recent Job Item ==-->
-                      <div class="recent-job-item recent-job-style2-item">
-                        <div class="company-info">
-                          <div class="logo">
-                            <a href="company-details.html"><img src="assets/img/companies/w1.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                          </div>
-                          <div class="content">
-                            <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
-                            <p class="address">New York, USA</p>
-                          </div>
-                        </div>
-                        <div class="main-content">
-                          <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
-                          <h5 class="work-type">Full-time</h5>
-                          <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                        </div>
-                        <div class="recent-job-info">
-                          <div class="salary">
-                            <h4>$5000</h4>
-                            <p>/monthly</p>
-                          </div>
-                          <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                        </div>
-                      </div>
-                      <!--== End Recent Job Item ==-->
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                      <!--== Start Recent Job Item ==-->
-                      <div class="recent-job-item recent-job-style2-item">
-                        <div class="company-info">
-                          <div class="logo">
-                            <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                          </div>
-                          <div class="content">
-                            <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
-                            <p class="address">New York, USA</p>
-                          </div>
-                        </div>
-                        <div class="main-content">
-                          <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
-                          <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
-                          <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                        </div>
-                        <div class="recent-job-info">
-                          <div class="salary">
-                            <h4>$5000</h4>
-                            <p>/monthly</p>
-                          </div>
-                          <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                        </div>
-                      </div>
-                      <!--== End Recent Job Item ==-->
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                      <!--== Start Recent Job Item ==-->
-                      <div class="recent-job-item recent-job-style2-item">
-                        <div class="company-info">
-                          <div class="logo">
-                            <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                          </div>
-                          <div class="content">
-                            <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
-                            <p class="address">New York, USA</p>
-                          </div>
-                        </div>
-                        <div class="main-content">
-                          <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
-                          <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
-                          <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                        </div>
-                        <div class="recent-job-info">
-                          <div class="salary">
-                            <h4>$5000</h4>
-                            <p>/monthly</p>
-                          </div>
-                          <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                        </div>
-                      </div>
-                      <!--== End Recent Job Item ==-->
-                    </div>
+        <div class=activejobs-container>
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w1.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
+                    <p class="address">New York, USA</p>
                   </div>
                 </div>
-              </section>
-              
-            <div class="section-title text-center">
-              <h4 class="title">Expired Jobs</h4>
-            </div>
-            <section class="recent-job-area recent-job-inner-area">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
-                        <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
+                  <h5 class="work-type">Full-time</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
                   </div>
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w1.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
-                        <h5 class="work-type">Full-time</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
-                  </div>
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
-                        <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
-                  </div>
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
-                        <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
-                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Review Now</a>
                 </div>
               </div>
-            </section>
-
-            <div class="section-title text-center">
-              <h4 class="title">Draft Jobs</h4>
+              <!--== End Recent Job Item ==-->
             </div>
-            <section class="recent-job-area recent-job-inner-area">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w1.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
-                        <h5 class="work-type">Full-time</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
                   </div>
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
-                        <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
-                  </div>
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
-                        <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
-                  </div>
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
-                        <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
-                  </div>
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
-                        <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
+                    <p class="address">New York, USA</p>
                   </div>
                 </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
+                  <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Review Now</a>
+                </div>
               </div>
-            </section>
-
-            <div class="section-title text-center">
-              <h2 class="title">Review Applications</h2>
+              <!--== End Recent Job Item ==-->
             </div>
-            <div class="post-details-content-list">
-              <div class="section-title text-center">
-                <h4 class="title">Review the status of your Postings</h4>
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
+                    <p class="address">New York, USA</p>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
+                  <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Review Now</a>
+                </div>
               </div>
+              <!--== End Recent Job Item ==-->
             </div>
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
+                    <p class="address">New York, USA</p>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
+                  <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Review Now</a>
+                </div>
+              </div>
+              <!--== End Recent Job Item ==-->
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
+                    <p class="address">New York, USA</p>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
+                  <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Review Now</a>
+                </div>
+              </div>
+              <!--== End Recent Job Item ==-->
+            </div>
+          </div>
+        </div>
+        <div class="center-text">
+          <h3></h3>
+        </div>
+        <div class="section-title text-center">
+          <h2 class="title">Expired Jobs</h2>
+        </div>
+        <div class=expiredjobs-container>
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w1.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
+                    <p class="address">New York, USA</p>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
+                  <h5 class="work-type">Full-time</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Remove Now</a>
+                </div>
+              </div>
+              <!--== End Recent Job Item ==-->
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
+                    <p class="address">New York, USA</p>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
+                  <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Remove Now</a>
+                </div>
+              </div>
+              <!--== End Recent Job Item ==-->
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
+                    <p class="address">New York, USA</p>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
+                  <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Remove Now</a>
+                </div>
+              </div>
+              <!--== End Recent Job Item ==-->
+            </div>
+          </div>
+        </div>
+        <div class="section-title text-center">
+          <h2 class="title">Drafts Jobs</h2>
+        </div>
+        <div class=draftjobs-container>
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w1.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Darkento Ltd.</a></h4>
+                    <p class="address">New York, USA</p>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Front-end Developer</a></h3>
+                  <h5 class="work-type">Full-time</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Post Now</a>
+                </div>
+              </div>
+              <!--== End Recent Job Item ==-->
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
+                    <p class="address">New York, USA</p>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
+                  <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Post Now</a>
+                </div>
+              </div>
+              <!--== End Recent Job Item ==-->
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
+                    <p class="address">New York, USA</p>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
+                  <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Post Now</a>
+                </div>
+              </div>
+              <!--== End Recent Job Item ==-->
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <!--== Start Recent Job Item ==-->
+              <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                  <div class="logo">
+                    <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                  </div>
+                  <div class="content">
+                    <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
+                    <p class="address">New York, USA</p>
+                  </div>
+                </div>
+                <div class="main-content">
+                  <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
+                  <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
+                  <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                </div>
+                <div class="recent-job-info">
+                  <div class="salary">
+                    <h4>$5000</h4>
+                    <p>/monthly</p>
+                  </div>
+                  <a class="btn-theme btn-sm" href="job-details.html">Post Now</a>
+                </div>
+              </div>
+              <!--== End Recent Job Item ==-->
+            </div>
+          </div>
+        </div>
 
+        <div class="section-title text-center">
+          <h2 class="title">Review Applications</h2>
+        </div>
+        <div class="review-container">
             <div class="row row-gutter-20" >
               <div class="col-sm-6 col-lg-3">
                 <!--== Start Job Category Item ==-->
@@ -709,11 +756,11 @@
                 <!--== End Job Category Item ==-->
               </div>
             </div>
-            <div class="cont">
+            <!--<div class="cont">
               <button class="btn-apply-job">Post a Job</button>
-            </div>
+            </div>-->
             
-          </div>
+        </div>
       </section>
   
       <section id="shortcut">
@@ -724,6 +771,9 @@
             </div>
           <div class="post-details-content-list">
               <ul class="list-style">
+                <li>
+                  <a href="blog-details.html"><i class="icofont-double-right"></i>Post a New Job</a>
+                </li>
                 <li>
                   <a href="blog-details.html"><i class="icofont-double-right"></i>Go to Messages</a>
                 </li>

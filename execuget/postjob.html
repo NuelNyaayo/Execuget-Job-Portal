@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
       /* User profile and notifications styling */
-.user-profile {
+      .user-profile {
     display: flex;
     align-items: center;
     margin-right: 20px;
@@ -71,6 +71,13 @@
     width: 100%;
 }
 
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+
 .main-content {
             flex: 1;
             background-color: white;
@@ -81,7 +88,7 @@
         .main-content h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .tabs button {
@@ -186,7 +193,7 @@
                     <div class="header-align-start">
                         <div class="header-logo-area">
                             <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="120" height="40"/>
+                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="150" height="150"/>
                                 <!--<img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />-->
                             </a>
                         </div>
@@ -196,7 +203,7 @@
                           <ul class="main-menu nav">
                             <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
                             <li><a href="postjob.html"><span>Post Job</span></a></li>
-                            <li><a href="candidate.html"><span>Candidates</span></a></li>
+                            <li><a href="candidates.html"><span>Candidates</span></a></li>
                             <li><a href="applications-emp.html"><span>Applications</span></a></li>
                             <li><a href="messages-emp.html"><span>Messages</span></a></li>
                             <li><a href="performance.html"><span>Performance</span></a></li>
@@ -228,7 +235,12 @@
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h2 class="title">Employer</h2>
+              <h1 class="title">Employer</h1>
+              <nav class="breadcrumb-area">
+                <ul class="breadcrumb justify-content-center">
+                  <li>Post Job</li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -283,8 +295,8 @@
                         </div>
                       </div>
                     </form>
-                  </div>
-            </div>
+                </div>
+    
         </section>
     </div>
     
