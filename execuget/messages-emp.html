@@ -31,12 +31,14 @@
     flex-direction: column;
 }
 
-.user-profile .dropdown a {
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust as needed */
     color: #333;
     text-decoration: none;
     margin-top: 5px;
 }
-
 .notifications {
     position: relative;
     margin-right: 20px;
@@ -78,103 +80,137 @@ body {
         }
 
         .main-content {
-            flex: 1;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-        }
-        .main-content h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-        .messages {
-            display: flex;
-            height: 80vh;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .conversation-list {
-            width: 30%;
-            border-right: 1px solid #ddd;
-            overflow-y: auto;
-        }
-        .conversation-list ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .conversation-list li {
-            padding: 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #ddd;
-            transition: background-color 0.3s;
-            display: flex;
-            align-items: center;
-        }
-        .conversation-list li:hover,
-        .conversation-list li.active {
-            background-color: #f4f4f4;
-        }
-        .conversation-list .profile-pic {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-        .conversation {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .conversation-header {
-            padding: 4px;
-            border-bottom: 1px solid #ddd;
-            background-color: #f4f4f4;
-        }
-        .conversation-body {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-        }
-        .message {
-            margin-bottom: 10px;
-        }
-        .message .sender {
-            font-weight: bold;
-        }
-        .message .timestamp {
-            font-size: 0.85em;
-            color: #888;
-        }
-        .message .text {
-            margin-top: 5px;
-        }
-        .conversation-footer {
-            padding: 10px;
-            border-top: 1px solid #ddd;
-            background-color: #f4f4f4;
-        }
-        .conversation-footer textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            resize: none;
-        }
-        .conversation-footer button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .conversation-footer button:hover {
-            background-color: #218838;
-        }
+    flex: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.main-content h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+.messages {
+    display: flex;
+    height: 80vh;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.conversation-list {
+    width: 30%;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+}
+.conversation-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.conversation-list li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+.conversation-list li:hover,
+.conversation-list li.active {
+    background-color: #f4f4f4;
+}
+.conversation-list .profile-pic {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.conversation {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+}
+.conversation-header {
+    padding: 4px;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+    color: #193768;
+    text-align: center;
+}
+.conversation-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /*Center the messages horizontally */
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 40%;   
+}
+.profile-pic {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    border-radius: 50%;
+    margin-right: 40px; /* Space between image and name */
+}
+.message .sender {
+    font-weight: bold;
+    margin-left: 20px;
+    color:#000
+}
+.message .timestamp {
+    font-size: 0.85em;
+    color: #888;
+}
+.message .text {
+    margin-top: 5px;
+    color:#000
+}
+.message.other {
+    background-color: #e1ffc7;
+    align-self: flex-start; /* Align received messages to the left */
+    text-align: left;
+    margin-right: auto; /* Ensure other messages stay towards the left */
+    
+}
+.message.self {
+    background-color: #d1ecf1;
+    align-self: flex-end; /* Align self messages to the right from the center */
+    text-align: left;
+    margin-left: auto; /* Ensure self messages move towards the right */
+}
+.conversation-footer {
+    padding: 5px;
+    border-top: 1px solid #ddd;
+    background-color: #f4f7f7;
+}
+.conversation-footer textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+.conversation-footer button {
+    
+    padding: 10px 20px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.conversation-footer button:hover {
+    background-color: #193768;
+}
 
     </style>
 
@@ -240,7 +276,7 @@ body {
                   <div class="header-align-end">
                     <div class="header-action-area">
                       <div class="user-profile">
-                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                        <img src="assets/img/images/mooilogo.jpg" alt="Profile Picture">
                         <a href="setings-emp.html" class="account-settings">Profile & Settings</a>
                       </div>
                     </div>
@@ -276,51 +312,119 @@ body {
     <!--== End Page Header Area Wrapper ==-->
     
     <section id="messages">
-        <div class="messages">
-            <div class="conversation-list">
-                <div class="conversation-header">
-                    <strong>Chats</strong>
+      <div class="messages">
+          <div class="conversation-list">
+              <div class="conversation-header">
+                  <strong>CHATS</strong>
+              </div>
+              <ul>
+                  <li class="active">
+                      <img src="assets/img/images/pic2.jpg" alt="Lauran Benite" class="profile-pic">
+                      Lauran Benite
+                  </li>
+                  <li>
+                      <img src="assets/img/images/mooilogo.jpg" alt="Jane Smith" class="profile-pic">
+                      Jane Smith
+                  </li>
+                  <li>
+                      <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
+                      Bob Johnson
+                  </li>
+                  <li class="active">
+                      <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
+                      John Doe
+                  </li>
+                  <li>
+                      <img src="assets/img/images/pic4.jpg" alt="Jane Smith" class="profile-pic">
+                      Jane Smith
+                  </li>
+                  <li>
+                      <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
+                      Bob Johnson
+                  </li>
+                  <li class="active">
+                      <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
+                      John Doe
+                  </li>
+                  <li>
+                      <img src="assets/img/images/mooilogo.jpg" alt="Jane Smith" class="profile-pic">
+                      Jane Smith
+                  </li>
+                  <li>
+                      <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
+                      Bob Johnson
+                  </li>
+                  <li class="active">
+                      <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
+                      John Doe
+                  </li>
+                  <li>
+                      <img src="assets/img/images/mooilogo.jpg" alt="Jane Smith" class="profile-pic">
+                      Jane Smith
+                  </li>
+                  <li>
+                      <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
+                      Bob Johnson
+                  </li>
+                  <!-- Add more conversations here -->
+              </ul>
+          </div>
+          <div class="conversation">
+              <div class="conversation-header">
+                  <strong> CONVERSATION</strong>
+              </div>
+              <div class="conversation-body">
+                <div class="message other">
+                  <div class="user-profile">
+                      <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
+                      <div class="sender">John Doe</div>
+                  </div>
+                  <div class="text">Hi, I'm interested in the job you posted. Can we discuss more?</div>
+                  <div class="timestamp">May 24, 2024, 2:15 PM</div>
                 </div>
-                <ul>
-                    <li class="active">
-                        <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
-                        John Doe
-                    </li>
-                    <li>
-                        <img src="assets/img/images/mooilogo.jpg" alt="Jane Smith" class="profile-pic">
-                        Jane Smith
-                    </li>
-                    <li>
-                        <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
-                        Bob Johnson
-                    </li>
-                    <!-- Add more conversations here -->
-                </ul>
-            </div>
-            <div class="conversation">
-                <div class="conversation-header">
-                    <strong>Conversation with John Doe</strong>
-                </div>
-                <div class="conversation-body">
-                    <div class="message">
-                        <div class="sender">John Doe</div>
-                        <div class="timestamp">May 24, 2024, 2:15 PM</div>
-                        <div class="text">Hi, I'm interested in the job you posted. Can we discuss more?</div>
+              
+                  <div class="message self">
+                    <div class="user-profile">
+                      <img src="assets/img/images/mooilogo.jpg" alt="Mooi Cop." class="profile-pic">
+                      <div class="sender">You</div>
                     </div>
-                    <div class="message">
-                        <div class="sender">You</div>
-                        <div class="timestamp">May 24, 2024, 2:17 PM</div>
-                        <div class="text">Sure, I'd be happy to discuss. What questions do you have?</div>
+                      
+                      <div class="text">Sure, I'd be happy to discuss. What questions do you have?</div>
+                      <div class="timestamp">May 24, 2024, 2:17 PM</div>
+                  </div>
+                  <div class="message other">
+                    <div class="user-profile">
+                        <img src="assets/img/images/pic2.jpg" alt="Lauran Benite" class="profile-pic">
+                        <div class="sender">Lauran Benite</div>
                     </div>
-                    <!-- Add more messages here -->
-                </div>
-                <div class="conversation-footer">
-                    <textarea placeholder="Type your message here..."></textarea>
-                    <button type="button">Send</button>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div class="text">When is the deadline for the application?</div>
+                    <div class="timestamp">2:18 PM</div>
+                  </div>
+                  <div class="message other">
+                    <div class="text">And How can get started with the job in case I get it?</div>
+                    <div class="timestamp">May 24, 2024, 2:19 PM</div>
+                  </div>
+                  <div class="message self">
+                    <div class="user-profile">
+                      <img src="assets/img/images/mooilogo.jpg" alt="Mooi Cop." class="profile-pic">
+                      <div class="sender">You</div>
+                    </div>
+                      
+                      <div class="text">No worries, The deadline is on 30th of this Month. And in the case you get the job you will be emailed further on what you do.</div>
+                      <div class="timestamp">May 24, 2024, 2:22 PM</div>
+                  </div>
+
+                  <!-- Add more messages here -->
+              </div>
+              <div class="conversation-footer">
+                  <textarea placeholder="Type your message here..."></textarea>
+                  <button type="button">Send</button>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
     
 
   </main>

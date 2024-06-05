@@ -9,8 +9,7 @@
     <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
     <meta name="author" content="hastech"/>
 
-    <title>Candidate :: Execuget - Job Portal Website</title>
-    
+    <title>Candidate-Dashboard :: Execuget - Job Portal Website</title>
     <style>
       /* User profile and notifications styling */
       /* User profile and notifications styling */
@@ -78,7 +77,131 @@ body {
             color: #333;
         }
 
+        .main-content {
+            flex: 1;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
 
+        .company-profile {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.company-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.company-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.company-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.company-info {
+    flex-grow: 1;
+}
+
+.edit-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.company-description, .job-postings {
+    margin-top: 20px;
+}
+
+
+        .job-postings {
+            display: flex;
+            flex-direction: column;
+        }
+        .job-posting {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+        }
+        .job-posting:hover {
+            background-color: #f4f4f4;
+        }
+        .job-posting h4 {
+            margin: 0;
+        }
+        
+        .settings-options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .settings-options section {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .settings-options h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .settings-options .form-group {
+            margin-bottom: 15px;
+        }
+
+        .settings-options .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .settings-options .form-group input,
+        .settings-options .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .settings-options .btn-save {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .settings-options .btn-save:hover {
+            background-color: #0056b3;
+        }
     </style>
 
     <!--== Favicon ==-->
@@ -101,6 +224,9 @@ body {
     <link href="assets/css/fancybox.min.css" rel="stylesheet" />
     <!--== Aos Min CSS ==-->
     <link href="assets/css/aos.min.css" rel="stylesheet" />
+
+    <!--== Bootstrap Icons CSS ==-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
 
     <!--== Main Style CSS ==-->
     <link href="assets/css/style.css" rel="stylesheet" />
@@ -151,6 +277,8 @@ body {
         </div>
     </div>
   </header>
+
+
   <!--== End Header Wrapper ==-->
   
   <main class="main-content">
@@ -160,10 +288,10 @@ body {
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h2 class="title">Employer</h2>
+              <h1 class="title">Employer</h1>
               <nav class="breadcrumb-area">
                 <ul class="breadcrumb justify-content-center">
-                  <li>Candidates</li>
+                  <li>Profile & Settings</li>
                 </ul>
               </nav>
             </div>
@@ -172,61 +300,99 @@ body {
       </div>
     </div>
     <!--== End Page Header Area Wrapper ==-->
-
-    <!--== Start Team Area Wrapper ==-->
-    <div class="main-content">
-        <section id="post-job">
-                <div class="comment-form-wrap">
-                  <div class="section-title text-center">
-                    <h2 class="main-title">Post a Job</h2>
-                  </div>
-                    <form class="comment-form" action="#">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Job Title">
-                          </div>
-                        </div>
-
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <textarea class="form-control" placeholder="Job Description"></textarea>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <input class="form-control" type="email" placeholder="Job Location">
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <select class="form-control custom-select" id="job-type">
-                              <option value="">Job Type</option>
-                              <option value="full-time">Full Time</option>
-                              <option value="part-time">Part Time</option>
-                              <option value="contract">Contract</option>
-                            </select>
-                          </div>
-                        </div>
-                  
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <input class="form-control" type="email" placeholder="Salary($)" id="salary">
-                          </div>
-                        </div>
-                        
-                        <div class="col-md-12">
-                          <div class="form-group text-center mb--0">
-                            <button class="btn btn-theme" type="submit">Post Now <i class="icofont-long-arrow-right"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                </div>
     
-        </section>
-    </div>
-    <!--== End Team Area Wrapper ==-->
+    <section id="company-profile">
+      <h2>Company Profile</h2>
+      <div class="company-profile">
+          <div class="company-header">
+              <img src="assets/img/images/mooilogo.jpg" alt="Company Logo" class="company-logo" id="company-logo">
+              <div class="company-info">
+                  <h3 id="company-name">Company Name</h3>
+                  <button class="edit-btn" onclick="editField('company-name')">Edit</button>
+                  <p><strong>Location:</strong> <span id="company-location">City, State</span></p>
+                  <button class="edit-btn" onclick="editField('company-location')">Edit</button>
+                  <p><strong>Industry:</strong> <span id="company-industry">Industry Name</span></p>
+                  <button class="edit-btn" onclick="editField('company-industry')">Edit</button>
+                  <p><strong>Email:</strong> <span id="company-email">email@example.com</span></p>
+                  <button class="edit-btn" onclick="editField('company-email')">Edit</button>
+                  <p><strong>Phone:</strong> <span id="company-phone">123-456-7890</span></p>
+                  <button class="edit-btn" onclick="editField('company-phone')">Edit</button>
+                  <p><strong>Social Media:</strong> <span id="company-social">www.socialmedia.com</span></p>
+                  <button class="edit-btn" onclick="editField('company-social')">Edit</button>
+              </div>
+          </div>
+          <div class="company-description">
+              <h4>About Us</h4>
+              <p id="company-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+              <button class="edit-btn" onclick="editField('company-description')">Edit</button>
+          </div>
+          
+      </div>
+  </section>
+  
+
+    <section id="settings">
+        <h2>Settings</h2>
+        <div class="settings-options">
+            <section class="account-settings">
+                <h3>Account Settings</h3>
+                <div class="form-group">
+                    <label for="company-name">Company Name</label>
+                    <input type="text" id="company-name" name="company-name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <button class="btn-save">Save Changes</button>
+            </section>
+            <section class="billing-subscriptions">
+                <h3>Billing & Subscriptions</h3>
+                <div class="form-group">
+                    <label for="current-plan">Current Plan</label>
+                    <select id="current-plan" name="current-plan">
+                        <option value="free">Free</option>
+                        <option value="basic">Basic</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <input type="text" id="payment-method" name="payment-method">
+                </div>
+                <button class="btn-save">Update Billing</button>
+            </section>
+            <section class="user-management">
+                <h3>User Management</h3>
+                <div class="form-group">
+                    <label for="add-user">Add New User</label>
+                    <input type="text" id="add-user" name="add-user" placeholder="User Email">
+                </div>
+                <div class="form-group">
+                    <label for="user-role">User Role</label>
+                    <select id="user-role" name="user-role">
+                        <option value="admin">Admin</option>
+                        <option value="recruiter">Recruiter</option>
+                        <option value="viewer">Viewer</option>
+                    </select>
+                </div>
+                <button class="btn-save">Add User</button>
+                <h4>Existing Users</h4>
+                <div class="existing-users">
+                    <ul>
+                        <li>user1@example.com - Admin <button>Remove</button></li>
+                        <li>user2@example.com - Recruiter <button>Remove</button></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </section>
+    
+
   </main>
 
   <!--== Start Footer Area Wrapper ==-->
@@ -423,7 +589,49 @@ body {
 </div>
 
 <!--=======================Javascript============================-->
+<script>
+  function updateLogo(event) {
+    const logo = document.getElementById('company-logo');
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+        logo.src = e.target.result;
+    };
+    
+    reader.readAsDataURL(file);
+}
+  function editField(fieldId) {
+    const field = document.getElementById(fieldId);
+    const currentValue = field.innerText || field.textContent;
+    
+    // Create an input element
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = currentValue;
+    
+    // Replace the field with the input element
+    field.parentNode.replaceChild(input, field);
+    
+    // Focus the input field
+    input.focus();
+    
+    // Add an event listener to save changes on blur
+    input.addEventListener('blur', function() {
+        field.innerText = input.value;
+        input.parentNode.replaceChild(field, input);
+    });
+    
+    // Add an event listener to save changes on enter key press
+    input.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            field.innerText = input.value;
+            input.parentNode.replaceChild(field, input);
+        }
+    });
+}
 
+</script>
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
 <!--=== jQuery Min Js ===-->
@@ -447,7 +655,7 @@ body {
 
 <!--=== jQuery Custom Js ===-->
 <script src="assets/js/custom.js"></script>
-
+<script src="assets/js/applications-emp.js"></script>
 </body>
 
 </html>

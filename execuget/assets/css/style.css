@@ -307,9 +307,9 @@ table p {
   }
 }
 .btn-theme.btn-white {
-  background-color: #fff;
+  background-color: #193768;
   border: 1px solid rgba(3, 168, 78, 0.18);
-  color: #193768;
+  color: #fff;
 }
 .btn-theme.btn-white:hover {
   background-color: #193768;
@@ -6936,6 +6936,9 @@ table p {
   /* Firefox 18- */
   color: #272a33;
 }
+
+
+
 @media only screen and (max-width: 1199px) {
   .footer-newsletter-form form [type=email] {
     font-size: 14px;

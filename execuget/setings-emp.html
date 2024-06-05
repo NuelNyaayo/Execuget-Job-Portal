@@ -90,37 +90,128 @@ body {
         }
 
         .company-profile {
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.company-header {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    margin-bottom: 20px;
+}
+
+.company-logo-container {
+    position: relative; /* Make the container relative for tooltip positioning */
+    margin-bottom: 10px;
+}
+
+.company-logo {
+    width: 120px; /* Increased width */
+    height: 120px; /* Increased height */
+    border-radius: 50%;
+    cursor: pointer; /* Change cursor to pointer */
+    transition: transform 0.3s;
+}
+
+.company-logo:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.company-info h3 {
+    margin: 0;
+}
+
+.location-info {
+    margin-top: 10px;
+}
+
+.edit-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Tooltip styling */
+.company-logo-container:hover::after {
+    content: "Edit Profile";
+    position: absolute;
+    top: -30px; /* Position above the logo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #193768;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+.description-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            max-width: 1345px;
+            max-height: 1000px;
         }
-        .company-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
+        .industry-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
         }
-        .company-logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 10px;
-            margin-right: 20px;
+        .aboutus-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
         }
-        .company-info {
-            display: flex;
-            flex-direction: column;
+        .phone-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
         }
-        .company-info h3 {
-            margin: 0;
+        .socialmedia-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
         }
-        .company-info p {
-            margin: 5px 0;
-        }
-        .company-description {
-            margin-bottom: 20px;
-        }
+
         .job-postings {
             display: flex;
             flex-direction: column;
@@ -164,6 +255,7 @@ body {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
+            color: #333;
         }
 
         .settings-options .form-group input,
@@ -174,9 +266,9 @@ body {
             border-radius: 5px;
         }
 
-        .settings-options .btn-save {
+         .btn-save {
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #193768;
             color: white;
             border: none;
             border-radius: 5px;
@@ -186,10 +278,27 @@ body {
         .settings-options .btn-save:hover {
             background-color: #0056b3;
         }
+        .position-relative {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #656565;
+}
+
+.password-toggle:hover {
+  color: #193768;
+}
     </style>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!--== Google Fonts ==-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -286,97 +395,89 @@ body {
     <!--== End Page Header Area Wrapper ==-->
     
     <section id="company-profile">
-      <h2>Company Profile</h2>
+      <div class="section-title text-center">
+        <h2 class="title">Company Profile</h2>
+    </div>
       <div class="company-profile">
           <div class="company-header">
               <img src="assets/img/images/mooilogo.jpg" alt="Company Logo" class="company-logo">
               <div class="company-info">
-                  <h3>Company Name</h3>
-                  <p><strong>Location:</strong> City, State</p>
-                  <p><strong>Industry:</strong> Industry Name</p>
+                  <h3 id="company-name">MOOI Coop</h3>
+                  <div class="location-info">
+                    <h4><strong>Location</strong></h4> 
+                    <div >
+                      <address id="company-location">Dar Es Salaam, Tanzania
+                      </address>
+                    </div>
+                  </div>
+                  <button class="edit-btn" onclick="editField('company-name')">Edit Name</button>
+                  <button class="edit-btn" onclick="editField('company-location')">Edit Location</button>
               </div>
+              
+                
           </div>
-          <div class="company-description">
-              <h4>About Us</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+      </div>
+          <div class="industry-container">
+            <h4><strong>Industry</strong></h4> 
+            <div id="company-industry">Engineer/Architects</div>
+            <button class="edit-btn" onclick="editField('company-industry')">Edit</button>
           </div>
-          <div class="job-postings">
-              <h4>Job Postings</h4>
-              <div class="job-posting">
-                  <h4>Job Title 1</h4>
-                  <p><strong>Location:</strong> City, State</p>
-                  <p><strong>Posted on:</strong> Date</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-              <div class="job-posting">
-                  <h4>Job Title 2</h4>
-                  <p><strong>Location:</strong> City, State</p>
-                  <p><strong>Posted on:</strong> Date</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-              <!-- Add more job postings as needed -->
+          <div class="aboutus-container">
+            <h4><strong>About Us</strong></h4> 
+            <p id="company-description">MOOI Coop is a leading company specializing in data science and data analytics, dedicated to transforming raw data into meaningful insights. With a focus on innovation and excellence, MOOI Coop harnesses advanced analytics, machine learning, and artificial intelligence to help businesses unlock the full potential of their data. Our expert team of data scientists and analysts are proficient in handling complex datasets, providing tailored solutions that drive decision-making and strategy development.</p>
+            <button class="edit-btn" onclick="editField('company-description')">Edit</button>
           </div>
+          <div class="phone-container">
+            <h4><strong>Phone</strong></h4> 
+            <div id="company-phone">123-456-7890</div>
+            <button class="edit-btn" onclick="editField('company-phone')">Add</button>
+            <button class="edit-btn" onclick="editField('company-phone')">Edit</button>
+          </div>
+          <div class="socialmedia-container">
+            <h4><strong>Social Media</strong></h4> 
+            <div id="company-social">www.facebook.com</div>
+            <button class="edit-btn" onclick="editField('company-social')">Add</button>
+            <button class="edit-btn" onclick="editField('company-social')">Edit</button>
+          </div>
+          <button class="btn-save">Save Changes</button>
+          <button class="btn-save">Discard Changes</button>
       </div>
     </section>
 
     <section id="settings">
-        <h2>Settings</h2>
+        <div class="section-title text-center">
+          <h2 class="title">Settings</h2>
+        </div>
         <div class="settings-options">
             <section class="account-settings">
                 <h3>Account Settings</h3>
-                <div class="form-group">
-                    <label for="company-name">Company Name</label>
-                    <input type="text" id="company-name" name="company-name">
-                </div>
+                
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" placeholder="yourmail@gmail.com">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password">
+                    <div class="form-group position-relative">
+                      <input type="password" id="password" name="password">
+                      <span class="password-toggle" onclick="togglePassword('password')">
+                         <i class="fas fa-eye"></i>
+                      </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmpassword">Confirm Password</label>
+                    <div class="form-group position-relative">
+                      <input type="password" id="confirmpassword" name="confirmpassword" >
+                      <span class="password-toggle" onclick="togglePassword('confirmpassword')">
+                         <i class="fas fa-eye"></i>
+                      </span>
+                    </div>
                 </div>
                 <button class="btn-save">Save Changes</button>
+                <button class="btn-save">Discard Changes</button>
             </section>
-            <section class="billing-subscriptions">
-                <h3>Billing & Subscriptions</h3>
-                <div class="form-group">
-                    <label for="current-plan">Current Plan</label>
-                    <select id="current-plan" name="current-plan">
-                        <option value="free">Free</option>
-                        <option value="basic">Basic</option>
-                        <option value="premium">Premium</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="payment-method">Payment Method</label>
-                    <input type="text" id="payment-method" name="payment-method">
-                </div>
-                <button class="btn-save">Update Billing</button>
-            </section>
-            <section class="user-management">
-                <h3>User Management</h3>
-                <div class="form-group">
-                    <label for="add-user">Add New User</label>
-                    <input type="text" id="add-user" name="add-user" placeholder="User Email">
-                </div>
-                <div class="form-group">
-                    <label for="user-role">User Role</label>
-                    <select id="user-role" name="user-role">
-                        <option value="admin">Admin</option>
-                        <option value="recruiter">Recruiter</option>
-                        <option value="viewer">Viewer</option>
-                    </select>
-                </div>
-                <button class="btn-save">Add User</button>
-                <h4>Existing Users</h4>
-                <div class="existing-users">
-                    <ul>
-                        <li>user1@example.com - Admin <button>Remove</button></li>
-                        <li>user2@example.com - Recruiter <button>Remove</button></li>
-                    </ul>
-                </div>
-            </section>
+            
         </div>
     </section>
     
@@ -577,6 +678,69 @@ body {
 </div>
 
 <!--=======================Javascript============================-->
+
+<script>
+  document.getElementById('company-logo').addEventListener('click', function() {
+    document.getElementById('logo-upload').click();
+});
+
+function updateLogo(event) {
+    const logo = document.getElementById('company-logo');
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+        logo.src = e.target.result;
+    };
+    
+    reader.readAsDataURL(file);
+}
+
+function editField(fieldId) {
+    const field = document.getElementById(fieldId);
+    const currentValue = field.innerText || field.textContent;
+    
+    // Create an input element
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = currentValue;
+    
+    // Replace the field with the input element
+    field.parentNode.replaceChild(input, field);
+    
+    // Focus the input field
+    input.focus();
+    
+    // Add an event listener to save changes on blur
+    input.addEventListener('blur', function() {
+        field.innerText = input.value;
+        input.parentNode.replaceChild(field, input);
+    });
+    
+    // Add an event listener to save changes on enter key press
+    input.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            field.innerText = input.value;
+            input.parentNode.replaceChild(field, input);
+        }
+    });
+}
+
+function togglePassword(fieldId) {
+  var passwordField = document.getElementById(fieldId);
+  var icon = passwordField.nextElementSibling.firstElementChild;
+  
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  } else {
+    passwordField.type = "password";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
+}
+</script>
 
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
