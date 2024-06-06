@@ -146,6 +146,52 @@
         .btn-post-job:hover {
             background-color: #f4f7f7;
         }
+        .overview-container {
+            margin: 20px auto;
+            padding: 80px;
+            background-color: #f4f7f7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 300px;
+        }
+
+        .activejobs-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #193768;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .expiredjobs-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #193768;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .draftjobs-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #193768;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .review-container {
+            margin: 20px auto;
+            padding: 80px;
+            background-color: #f4f7f7;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 300px;
+        }
 
     </style>
 
@@ -233,7 +279,12 @@
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h2 class="title">Candidate</h2>
+              <h1 class="title">Candidate</h1>
+              <nav class="breadcrumb-area">
+                <ul class="breadcrumb justify-content-center">
+                  <li>Overview</li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -247,49 +298,52 @@
           <div class="section-title text-center">
             <h2 class="title">Dashboard Overview</h2>
           </div>
-
-          <div class="row row-gutter-20" >
-            <div class="col-sm-6 col-lg-3">
-              <!--== Start Job Category Item ==-->
-              <div class="job-category-item">
-                <div class="content">
-                  <h3 class="title"><a href="job-details.html">Active Jobs Posted: <span>(5)</span></a></h3>
+          
+          <div class="overview-container">
+            <div class="row row-gutter-20" >
+              <div class="col-sm-6 col-lg-3">
+                <!--== Start Job Category Item ==-->
+                <div class="job-category-item">
+                  <div class="content">
+                    <h3 class="title"><a href="job-details.html">Active Jobs Posted: <span>(5)</span></a></h3>
+                  </div>
+                  <a class="overlay-link" href="job-details.html"></a>
                 </div>
-                <a class="overlay-link" href="job-details.html"></a>
+                <!--== End Job Category Item ==-->
               </div>
-              <!--== End Job Category Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-3">
-              <!--== Start Job Category Item ==-->
-              <div class="job-category-item">
-                <div class="content">
-                  <h3 class="title"><a href="job-details.html">Applications Sent: <span>(5)</span></a></h3>
+              <div class="col-sm-6 col-lg-3">
+                <!--== Start Job Category Item ==-->
+                <div class="job-category-item">
+                  <div class="content">
+                    <h3 class="title"><a href="job-details.html">Applications Sent: <span>(5)</span></a></h3>
+                  </div>
+                  <a class="overlay-link" href="job-details.html"></a>
                 </div>
-                <a class="overlay-link" href="job-details.html"></a>
+                <!--== End Job Category Item ==-->
               </div>
-              <!--== End Job Category Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-3">
-              <!--== Start Job Category Item ==-->
-              <div class="job-category-item">
-                <div class="content">
-                  <h3 class="title"><a href="job-details.html">All Notifications: <span>(150)</span></a></h3>
+              <div class="col-sm-6 col-lg-3">
+                <!--== Start Job Category Item ==-->
+                <div class="job-category-item">
+                  <div class="content">
+                    <h3 class="title"><a href="job-details.html">All Notifications: <span>(150)</span></a></h3>
+                  </div>
+                  <a class="overlay-link" href="job-details.html"></a>
                 </div>
-                <a class="overlay-link" href="job-details.html"></a>
+                <!--== End Job Category Item ==-->
               </div>
-              <!--== End Job Category Item ==-->
-            </div>
-            <div class="col-sm-6 col-lg-3">
-              <!--== Start Job Category Item ==-->
-              <div class="job-category-item">
-                <div class="content">
-                  <h3 class="title"><a href="job-details.html">Recent Searches: <span>(3)</span></a></h3>
+              <div class="col-sm-6 col-lg-3">
+                <!--== Start Job Category Item ==-->
+                <div class="job-category-item">
+                  <div class="content">
+                    <h3 class="title"><a href="job-details.html">Recent Searches: <span>(3)</span></a></h3>
+                  </div>
+                  <a class="overlay-link" href="job-details.html"></a>
                 </div>
-                <a class="overlay-link" href="job-details.html"></a>
+                <!--== End Job Category Item ==-->
               </div>
-              <!--== End Job Category Item ==-->
             </div>
           </div>
+          
           <div class="recent-activity">
             <div class="section-title text-center">
               <h2 class="title">Recent Activity</h2>
@@ -298,9 +352,6 @@
               <ul class="list-style">
                 <li>
                   <a href="blog-details.html"><i class="icofont-double-right"></i>New application for "Software Developer" - John Doe</a>
-                </li>
-                <li>
-                  <a href="blog-details.html"><i class="icofont-double-right"></i>Message received from Jane Smith</a>
                 </li>
                 <li>
                   <a href="blog-details.html"><i class="icofont-double-right"></i>Message sent to GPT Co.</a>
@@ -317,14 +368,11 @@
   
       <section id="job-postings">
         <div class="section-title text-center">
-          <h2 class="title">Job Postings</h2>
+          <h2 class="title">Recommended Jobs</h2>
         </div>
-          <div class="job-list">
-            <div class="section-title text-center">
-              <h4 class="title">Recommended Jobs</h4>
-            </div>
+        <div class=recommendjobs-container>
               <section class="recent-job-area recent-job-inner-area">
-                <div class="container">
+                <div class=activejobs-container>
                   <div class="row">
                     <div class="col-md-6 col-lg-4">
                       <!--== Start Recent Job Item ==-->
@@ -348,7 +396,7 @@
                             <h4>$5000</h4>
                             <p>/monthly</p>
                           </div>
-                          <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
+                          <a class="btn-theme btn-sm" href="job-details.html">Review Now</a>
                         </div>
                       </div>
                       <!--== End Recent Job Item ==-->
@@ -375,7 +423,7 @@
                             <h4>$5000</h4>
                             <p>/monthly</p>
                           </div>
-                          <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
+                          <a class="btn-theme btn-sm" href="job-details.html">Review Now</a>
                         </div>
                       </div>
                       <!--== End Recent Job Item ==-->
@@ -402,7 +450,61 @@
                             <h4>$5000</h4>
                             <p>/monthly</p>
                           </div>
-                          <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
+                          <a class="btn-theme btn-sm" href="job-details.html">Review Now</a>
+                        </div>
+                      </div>
+                      <!--== End Recent Job Item ==-->
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                      <!--== Start Recent Job Item ==-->
+                      <div class="recent-job-item recent-job-style2-item">
+                        <div class="company-info">
+                          <div class="logo">
+                            <a href="company-details.html"><img src="assets/img/companies/w2.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                          </div>
+                          <div class="content">
+                            <h4 class="name"><a href="company-details.html">Inspire Fitness Co.</a></h4>
+                            <p class="address">New York, USA</p>
+                          </div>
+                        </div>
+                        <div class="main-content">
+                          <h3 class="title"><a href="job-details.html">Senior UI Designer</a></h3>
+                          <h5 class="work-type" data-text-color="#ff7e00">Part-time</h5>
+                          <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                        </div>
+                        <div class="recent-job-info">
+                          <div class="salary">
+                            <h4>$5000</h4>
+                            <p>/monthly</p>
+                          </div>
+                          <a class="btn-theme btn-sm" href="job-details.html">Review Now</a>
+                        </div>
+                      </div>
+                      <!--== End Recent Job Item ==-->
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                      <!--== Start Recent Job Item ==-->
+                      <div class="recent-job-item recent-job-style2-item">
+                        <div class="company-info">
+                          <div class="logo">
+                            <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
+                          </div>
+                          <div class="content">
+                            <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
+                            <p class="address">New York, USA</p>
+                          </div>
+                        </div>
+                        <div class="main-content">
+                          <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
+                          <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
+                          <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
+                        </div>
+                        <div class="recent-job-info">
+                          <div class="salary">
+                            <h4>$5000</h4>
+                            <p>/monthly</p>
+                          </div>
+                          <a class="btn-theme btn-sm" href="job-details.html">Review Now</a>
                         </div>
                       </div>
                       <!--== End Recent Job Item ==-->
@@ -411,39 +513,12 @@
                 </div>
               </section>
               
-            <div class="section-title text-center">
-              <h4 class="title">Saved Jobs</h4>
-            </div>
+              <div class="section-title text-center">
+                <h2 class="title">Saved Jobs</h2>
+              </div>  
             <section class="recent-job-area recent-job-inner-area">
-              <div class="container">
+              <div class=expiredjobs-container>
                 <div class="row">
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
-                        <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
-                  </div>
                   <div class="col-md-6 col-lg-4">
                     <!--== Start Recent Job Item ==-->
                     <div class="recent-job-item recent-job-style2-item">
@@ -466,7 +541,7 @@
                           <h4>$5000</h4>
                           <p>/monthly</p>
                         </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
+                        <a class="btn-theme btn-sm" href="job-details.html">Remove Now</a>
                       </div>
                     </div>
                     <!--== End Recent Job Item ==-->
@@ -493,7 +568,7 @@
                           <h4>$5000</h4>
                           <p>/monthly</p>
                         </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
+                        <a class="btn-theme btn-sm" href="job-details.html">Remove Now</a>
                       </div>
                     </div>
                     <!--== End Recent Job Item ==-->
@@ -520,7 +595,7 @@
                           <h4>$5000</h4>
                           <p>/monthly</p>
                         </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
+                        <a class="btn-theme btn-sm" href="job-details.html">Remove Now</a>
                       </div>
                     </div>
                     <!--== End Recent Job Item ==-->
@@ -530,10 +605,10 @@
             </section>
 
             <div class="section-title text-center">
-              <h4 class="title">Recently Viewed Jobs</h4>
+              <h2 class="title">Recently Viewed Jobs</h2>
             </div>
             <section class="recent-job-area recent-job-inner-area">
-              <div class="container">
+              <div class=draftjobs-container>
                 <div class="row">
                   <div class="col-md-6 col-lg-4">
                     <!--== Start Recent Job Item ==-->
@@ -557,7 +632,7 @@
                           <h4>$5000</h4>
                           <p>/monthly</p>
                         </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
+                        <a class="btn-theme btn-sm" href="job-details.html">Post Now</a>
                       </div>
                     </div>
                     <!--== End Recent Job Item ==-->
@@ -584,7 +659,7 @@
                           <h4>$5000</h4>
                           <p>/monthly</p>
                         </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
+                        <a class="btn-theme btn-sm" href="job-details.html">Post Now</a>
                       </div>
                     </div>
                     <!--== End Recent Job Item ==-->
@@ -611,7 +686,7 @@
                           <h4>$5000</h4>
                           <p>/monthly</p>
                         </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
+                        <a class="btn-theme btn-sm" href="job-details.html">Post Now</a>
                       </div>
                     </div>
                     <!--== End Recent Job Item ==-->
@@ -638,34 +713,7 @@
                           <h4>$5000</h4>
                           <p>/monthly</p>
                         </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
-                      </div>
-                    </div>
-                    <!--== End Recent Job Item ==-->
-                  </div>
-                  <div class="col-md-6 col-lg-4">
-                    <!--== Start Recent Job Item ==-->
-                    <div class="recent-job-item recent-job-style2-item">
-                      <div class="company-info">
-                        <div class="logo">
-                          <a href="company-details.html"><img src="assets/img/companies/w3.jpg" width="75" height="75" alt="Image-HasTech"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="name"><a href="company-details.html">Cogent Data</a></h4>
-                          <p class="address">New York, USA</p>
-                        </div>
-                      </div>
-                      <div class="main-content">
-                        <h3 class="title"><a href="job-details.html">Graphic Designer</a></h3>
-                        <h5 class="work-type" data-text-color="#0054ff">Remote</h5>
-                        <p class="desc">CSS3, HTML5, Javascript, Bootstrap, Jquery</p>
-                      </div>
-                      <div class="recent-job-info">
-                        <div class="salary">
-                          <h4>$5000</h4>
-                          <p>/monthly</p>
-                        </div>
-                        <a class="btn-theme btn-sm" href="job-details.html">Apply Now</a>
+                        <a class="btn-theme btn-sm" href="job-details.html">Post Now</a>
                       </div>
                     </div>
                     <!--== End Recent Job Item ==-->
@@ -677,12 +725,7 @@
             <div class="section-title text-center">
               <h2 class="title">Application Status</h2>
             </div>
-            <div class="post-details-content-list">
-              <div class="section-title text-center">
-                <h4 class="title">Track the progress of your Job Applications</h4>
-              </div>
-            </div>
-
+            <div class="review-container">
             <div class="row row-gutter-20" >
               <div class="col-sm-6 col-lg-3">
                 <!--== Start Job Category Item ==-->
@@ -725,7 +768,8 @@
                 <!--== End Job Category Item ==-->
               </div>
             </div>
-
+            </div>
+             
             <div class="section-title text-center">
               <section class="recent-job-area bg-color-gray">
                 <div class="container" data-aos="fade-down">
@@ -778,11 +822,8 @@
               </section>
               
             </div>
-            <div class="cont">
-              <button class="btn-apply-job">Apply for a Job</button>
-            </div>
             
-          </div>
+            </div>
       </section>
   
       <section id="shortcut">
@@ -793,6 +834,9 @@
             </div>
           <div class="post-details-content-list">
               <ul class="list-style">
+                <li>
+                  <a href="blog-details.html"><i class="icofont-double-right"></i>Apply for a new job</a>
+                </li>
                 <li>
                   <a href="blog-details.html"><i class="icofont-double-right"></i>Go to Messages</a>
                 </li>

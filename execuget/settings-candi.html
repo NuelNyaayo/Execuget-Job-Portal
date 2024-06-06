@@ -117,6 +117,7 @@ body {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
+            color: #333;
         }
 
         .settings-options .form-group input,
@@ -129,7 +130,7 @@ body {
 
         .settings-options .btn-save {
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #193768;
             color: white;
             border: none;
             border-radius: 5px;
@@ -139,10 +140,28 @@ body {
         .settings-options .btn-save:hover {
             background-color: #0056b3;
         }
+        .position-relative {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #656565;
+}
+
+.password-toggle:hover {
+  color: #193768;
+}
     </style>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
     <!--== Google Fonts ==-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -225,7 +244,12 @@ body {
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h2 class="title">Candidate</h2>
+              <h1 class="title">Candidate</h1>
+              <nav class="breadcrumb-area">
+                <ul class="breadcrumb justify-content-center">
+                  <li>Settings</li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -234,23 +258,36 @@ body {
     <!--== End Page Header Area Wrapper ==-->
     
     <section id="settings">
-        <h2>Settings</h2>
+        <div class="section-title text-center">
+          <h2 class="title">Settings</h2>
+        </div>
         <div class="settings-options">
             <section class="account-settings">
                 <h3>Account Settings</h3>
                 <div class="form-group">
-                    <label for="full-name">Full Name</label>
-                    <input type="text" id="full-name" name="full-name">
-                </div>
-                <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" placeholder="yourmail@gmail.com">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                  <label for="password">Password</label>
+                  <div class="form-group position-relative">
                     <input type="password" id="password" name="password">
-                </div>
+                    <span class="password-toggle" onclick="togglePassword('password')">
+                       <i class="fas fa-eye"></i>
+                    </span>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="confirmpassword">Confirm Password</label>
+                  <div class="form-group position-relative">
+                    <input type="password" id="confirmpassword" name="confirmpassword" >
+                    <span class="password-toggle" onclick="togglePassword('confirmpassword')">
+                       <i class="fas fa-eye"></i>
+                    </span>
+                  </div>
+              </div>
                 <button class="btn-save">Save Changes</button>
+                <button class="btn-save">Discard Changes</button>
             </section>
             <section class="notification-settings">
                 <h3>Notification Settings</h3>
@@ -476,7 +513,22 @@ body {
 </div>
 
 <!--=======================Javascript============================-->
-
+<script>
+  function togglePassword(fieldId) {
+  var passwordField = document.getElementById(fieldId);
+  var icon = passwordField.nextElementSibling.firstElementChild;
+  
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  } else {
+    passwordField.type = "password";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
+}
+</script>
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
 <!--=== jQuery Min Js ===-->

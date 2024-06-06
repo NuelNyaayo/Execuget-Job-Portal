@@ -76,33 +76,6 @@ body {
             background-color: #f4f4f4;
             color: #333;
         }
-        .application-list {
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            margin: 20px auto;
-            width: 80%;
-        }
-        .application-list h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .application-list table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            border-radius: 20px;
-            
-        }
-        .application-list th, .application-list td {
-            border: 1px solid #ddd;
-            padding: 15px;
-            
-        }
-        .application-list th {
-            background-color: #f4f4f4;
-        }
-
         .main-content {
             flex: 1;
             background-color: white;
@@ -114,93 +87,18 @@ body {
             padding-bottom: 5px;
             margin-bottom: 15px;
         }
-        .messages {
-            display: flex;
-            height: 80vh;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .conversation-list {
-            width: 30%;
-            border-right: 1px solid #ddd;
-            overflow-y: auto;
-        }
-        .conversation-list ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .conversation-list li {
-            padding: 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #ddd;
-            transition: background-color 0.3s;
-            display: flex;
-            align-items: center;
-        }
-        .conversation-list li:hover,
-        .conversation-list li.active {
-            background-color: #f4f4f4;
-        }
-        .conversation-list .profile-pic {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-        .conversation {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .conversation-header {
-            padding: 4px;
-            border-bottom: 1px solid #ddd;
-            background-color: #f4f4f4;
-        }
-        .conversation-body {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-        }
-        .message {
-            margin-bottom: 10px;
-        }
-        .message .sender {
-            font-weight: bold;
-        }
-        .message .timestamp {
-            font-size: 0.85em;
-            color: #888;
-        }
-        .message .text {
-            margin-top: 5px;
-        }
-        .conversation-footer {
-            padding: 10px;
-            border-top: 1px solid #ddd;
-            background-color: #f4f4f4;
-        }
-        .conversation-footer textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            resize: none;
-        }
         .conversation-footer button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .conversation-footer button:hover {
-            background-color: #218838;
-        }
+    
+    padding: 10px 20px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.conversation-footer button:hover {
+    background-color: #193768;
+}
 
     </style>
 
@@ -288,7 +186,12 @@ body {
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h2 class="title">Candidate</h2>
+              <h1 class="title">Candidate</h1>
+              <nav class="breadcrumb-area">
+                <ul class="breadcrumb justify-content-center">
+                  <li>Notifications</li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -297,33 +200,49 @@ body {
     <!--== End Page Header Area Wrapper ==-->
     
     <div class="notification-header">
-        <h2>Notifications</h2>
-        <button type="button" class="btn btn-primary">Mark all as read</button>
+        <div class="section-title text-center">
+          <h2 class="title">Recent Notifications</h2>
+        </div>
+        <div ></div>
+        <div class="conversation-footer">
+          <button type="button">Mark all as read</button>
+      </div>
+        
+        
     </div>
       
       <section class="notification-list">
-          <h3>Recent Notifications</h3>
-          <ul>
-              <li>
-                  <div class="notification-text">
-                      <p>Your job posting "Senior Developer" has received a new application.</p>
-                      <span class="notification-time">10 minutes ago</span>
-                  </div>
-              </li>
-              <li>
-                  <div class="notification-text">
-                      <p>John Doe sent you a message regarding the job "Junior Developer".</p>
-                      <span class="notification-time">1 hour ago</span>
-                  </div>
-              </li>
-              <li>
-                  <div class="notification-text">
-                      <p>Your profile has been viewed 5 times today.</p>
-                      <span class="notification-time">3 hours ago</span>
-                  </div>
-              </li>
-              <!-- Add more notifications here -->
+        <div class="post-details-content-list">
+          <ul class="list-style">
+            <li>
+              <a href="blog-details.html"><i class="icofont-double-right"></i>New application for "Software Developer" - John Doe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">3 minutes ago</span></a>
+            </li>
+            <li>
+              <a href="blog-details.html"><i class="icofont-double-right"></i>Enable two-factor autntication to make your account more secure today.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">7 minutes ago</span></a>
+            </li>
+            <li>
+              <a href="blog-details.html"><i class="icofont-double-right"></i>You Trial to change your password was unsuccessful.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">10 minutes ago</span></a>
+            </li>
+            <li>
+              <a href="blog-details.html"><i class="icofont-double-right"></i>Update a new profile picture and up to date resum to get new applications sent to you.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">10 minutes ago</span></a>
+            </li>
+            <li>
+              <a href="blog-details.html"><i class="icofont-double-right"></i>New employer Phil Makusi posted a new job labelled senior developer.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">17 minutes ago</span></a>
+            </li>
+            <li>
+              <a href="blog-details.html"><i class="icofont-double-right"></i>John Doe sent you a message regarding the job "Junior Developer".&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">33 minutes ago</span></a>
+            </li>
+            <li>
+              <a href="blog-details.html"><i class="icofont-double-right"></i>Get new jobs recommendation by actively applying for similar jobs in the job postings page.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">51 minutes ago</span></a>
+            </li>
+            <li>
+              <a href="blog-details.html"><i class="icofont-double-right"></i>Your profile has been viewed 5 times today.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">1 hours ago</span></a>
+            </li>
+            <li>
+              <a href="blog-details.html"><i class="icofont-double-right"></i>Your have succesfully updated your profile.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">3 hours ago</span></a>
+            </li>
           </ul>
+      </div>
       </section>
     
 
