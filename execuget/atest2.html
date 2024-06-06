@@ -1,103 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employer Dashboard - Settings</title>
-    <style>
-        /* Add your CSS styles here */
+<html lang="zxx">
 
-        body {
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Execuget - Job Portal Website"/>
+    <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
+    <meta name="author" content="hastech"/>
+
+    <title>Employer-Dashboard :: Execuget - Job Portal Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      /* User profile and notifications styling */
+      .user-profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.user-profile .dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-profile .dropdown a {
+    color: #333;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.notifications {
+    position: relative;
+    margin-right: 20px;
+}
+
+.notifications .bell-icon {
+    background: url('assets/img/bell-icon.png') no-repeat center center;
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.notifications .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Additional CSS for header alignment */
+.header-align {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
-        .employer-dashboard {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        .navigation-menu ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-        }
-        .navigation-menu ul li {
-            margin: 0 10px;
-        }
-        .navigation-menu ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            transition: background-color 0.3s;
-        }
-        .navigation-menu ul li a:hover {
-            background-color: #555;
-        }
-        .user-profile, .notifications {
-            display: flex;
-            align-items: center;
-        }
-        .user-profile img {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-        .dropdown a {
-            color: white;
-            text-decoration: none;
-            margin-left: 10px;
-        }
-        .notifications .bell-icon {
-            background: url('bell-icon.png') no-repeat center center;
-            width: 24px;
-            height: 24px;
-        }
-        .content {
-            display: flex;
+
+
+.main-content {
             flex: 1;
-        }
-        .sidebar {
-            background-color: #444;
-            color: white;
-            width: 200px;
-            padding: 20px;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            margin-bottom: 10px;
-        }
-        .sidebar ul li a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        .sidebar ul li a:hover {
-            background-color: #555;
-        }
-        .main-content {
-            flex: 1;
-            padding: 20px;
             background-color: white;
         }
         .main-content section {
@@ -106,33 +88,9 @@
         .main-content h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
-        .metrics {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-        .metric {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            text-align: center;
-            flex: 1;
-            margin: 0 10px;
-        }
-        .recent-activity ul {
-            list-style: none;
-            padding: 0;
-        }
-        .recent-activity ul li {
-            background-color: #f9f9f9;
-            margin-bottom: 5px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
+        
         .tabs button {
             background-color: #333;
             color: white;
@@ -145,192 +103,582 @@
         .tabs button:hover {
             background-color: #555;
         }
-        .btn-post-job {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+        .cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* Full viewport height */
+}
+
+.btn-apply-job {
+    background-color: #193768;
+    color: #fff;
+    border: none;
+    padding: 25px 120px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
         .btn-post-job:hover {
-            background-color: #218838;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
+            background-color: #f4f7f7;
         }
 
-        .settings-options {
-            display: flex;
-            flex-direction: column;
+        .main-content {
+            flex: 1;
+            background-color: white;
         }
-
-        .settings-options section {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 5px;
+        .main-content section {
             margin-bottom: 20px;
         }
-
-        .settings-options h3 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .settings-options .form-group {
+        .main-content h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
             margin-bottom: 15px;
         }
+        
+        .custom-select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="0,0 10,0 5,5" fill="%23999"/></svg>') no-repeat;
+      background-position: right 20px center;
+      background-size: 10px 10px;
+      color: #656565;
+    }
+    .custom-select option[disabled][selected] {
+      display: none;
+    }
+    .settings-options {
+    display: flex;
+    flex-direction: column;
+}
 
-        .settings-options .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+.settings-options section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
 
-        .settings-options .form-group input,
-        .settings-options .form-group select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+.settings-options h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
 
-        .settings-options .btn-save {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.settings-options .form-group {
+    margin-bottom: 15px;
+}
 
-        .settings-options .btn-save:hover {
-            background-color: #0056b3;
-        }
+.settings-options .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.settings-options .form-group input,
+.settings-options .form-group select,
+.settings-options .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.settings-options .form-group button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #193768;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settings-options .form-group button:hover {
+    background-color: #0056b3;
+}
+
+.settings-options .btn-save {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settings-options .btn-save:hover {
+    background-color: #0056b3;
+}
+
+
     </style>
+
+    <!--== Favicon ==-->
+    <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
+
+    <!--== Google Fonts ==-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+
+    <!--== Bootstrap CSS ==-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--== Icofont Icon CSS ==-->
+    <link href="assets/css/icofont.css" rel="stylesheet" />
+    <!--== Swiper CSS ==-->
+    <link href="assets/css/swiper.min.css" rel="stylesheet" />
+    <!--== Fancybox Min CSS ==-->
+    <link href="assets/css/fancybox.min.css" rel="stylesheet" />
+    <!--== Aos Min CSS ==-->
+    <link href="assets/css/aos.min.css" rel="stylesheet" />
+
+    <!--== Bootstrap Icons CSS ==-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+
+    <!--== Main Style CSS ==-->
+    <link href="assets/css/style.css" rel="stylesheet" />
 </head>
+
 <body>
-<div class="employer-dashboard">
-    <header>
-        <div class="logo">JobPortal</div>
-        <nav class="navigation-menu">
-            <ul>
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#job-postings">Job Postings</a></li>
-                <li><a href="#applications">Applications</a></li>
-                <li><a href="#messages">Messages</a></li>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#settings">Settings</a></li>
-            </ul>
-        </nav>
-        <div class="user-profile">
-            <img src="profile-pic.jpg" alt="Profile Picture">
-            <div class="dropdown">
-                <a href="#account-settings">Account Settings</a>
-                <a href="#logout">Logout</a>
+
+<!--wrapper start-->
+<div class="wrapper">
+  
+  <!--== Start Header Wrapper ==-->
+  <header class="header-area transparent">
+    <div class="container">
+        <div class="row no-gutter align-items-center position-relative">
+            <div class="col-12">
+                <div class="header-align">
+                    <div class="header-align-start">
+                        <div class="header-logo-area">
+                            <a href="index.html">
+                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="150" height="150"/>
+                                <!--<img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />-->
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-align-center">
+                      <div class="header-navigation-area position-relative">
+                          <ul class="main-menu nav">
+                            <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
+                            <li><a href="postjob.html"><span>Post Job</span></a></li>
+                            <li><a href="candidates.html"><span>Candidates</span></a></li>
+                            <li><a href="applications-emp.html"><span>Applications</span></a></li>
+                            <li><a href="messages-emp.html"><span>Messages</span></a></li>
+                            <li><a href="performance.html"><span>Performance</span></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="header-align-end">
+                    <div class="header-action-area">
+                      <div class="user-profile">
+                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                        <a href="setings-emp.html" class="account-settings">Profile & Settings</a>
+                      </div>
+                    </div>
+                  </div>
+                    
+                </div>
             </div>
         </div>
-        <div class="notifications">
-            <span class="bell-icon"></span>
+    </div>
+  </header>
+
+
+  <!--== End Header Wrapper ==-->
+  
+  <main class="main-content">
+    <!--== Start Page Header Area Wrapper ==-->
+    <div class="page-header-area sec-overlay sec-overlay-black" data-bg-img="assets/img/images/table-book.jpg">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-12">
+            <div class="page-header-content">
+              <h1 class="title">Employer</h1>
+              <nav class="breadcrumb-area">
+                <ul class="breadcrumb justify-content-center">
+                  <li>Post Job</li>
+                </ul>
+              </nav>
+            </div>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+    <!--== End Page Header Area Wrapper ==-->
+<div class="main-content">
+ <div class="comment-form-wrap">
+  <section class="job-details">
+            <div class="settings-options">
+              <section class="job-details">
+                <div class="section-title text-center">
+                  <h2 class="main-title">Job Details</h2>
+                </div>
+                  
+                  <div class="form-group">
+                      <label for="jobname">Job Name/Position</label>
+                      <input type="text" id="jobname" name="jobname" placeholder="e.g., Software Engineer">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="jobdescription">Job Description</label>
+                      <textarea id="jobdescription" name="jobdescription" rows="4" placeholder="Describe the job..."></textarea>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="jobbenefits">Job Benefits</label>
+                      <div id="benefits-container">
+                          <input type="text" id="jobbenefits" name="jobbenefits" placeholder="e.g., Health insurance">
+                      </div>
+                      <button type="button" onclick="addBenefit()">Add Benefit</button>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="candidatesneeded">Number of Candidates Needed</label>
+                      <input type="number" id="candidatesneeded" name="candidatesneeded" placeholder="e.g., 3">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="applyby">Apply By Date</label>
+                      <input type="date" id="applyby" name="applyby">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="companytype">Company Type</label>
+                      <select id="companytype" name="companytype">
+                          <option value="it">IT</option>
+                          <option value="finance">Finance</option>
+                          <option value="healthcare">Healthcare</option>
+                          <option value="education">Education</option>
+                          <option value="manufacturing">Manufacturing</option>
+                          <option value="other">Other</option>
+                      </select>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="renumeration">Remuneration (optional)</label>
+                      <input type="number" id="renumeration" name="renumeration" placeholder="e.g., 50000">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="workinghours">Working Hours (optional)</label>
+                      <input type="number" id="workinghours" name="workinghours" placeholder="e.g., 40">
+                  </div>
+                  
+                  <button class="btn-save">Save Changes</button>
+                  <button class="btn-save">Discard Changes</button>
+              </section>
+          
+          </div>
 
-    <div class="content">
-        <aside class="sidebar">
-            <ul>
-                <li><a href="#post-job">Post a Job</a></li>
-                <li><a href="#active-jobs">Active Jobs</a></li>
-                <li><a href="#expired-jobs">Expired Jobs</a></li>
-                <li><a href="#draft-jobs">Draft Jobs</a></li>
-            </ul>
-        </aside>
-
-        <main class="main-content">
-            <section id="settings">
-                <h2>Settings</h2>
-                <div class="settings-options">
-                    <section class="account-settings">
-                        <h3>Account Settings</h3>
-                        <div class="form-group">
-                            <label for="company-name">Company Name</label>
-                            <input type="text" id="company-name" name="company-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password">
-                        </div>
-                        <button class="btn-save">Save Changes</button>
-                    </section>
-                    <section class="billing-subscriptions">
-                        <h3>Billing & Subscriptions</h3>
-                        <div class="form-group">
-                            <label for="current-plan">Current Plan</label>
-                            <select id="current-plan" name="current-plan">
-                                <option value="free">Free</option>
-                                <option value="basic">Basic</option>
-                                <option value="premium">Premium</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="payment-method">Payment Method</label>
-                            <input type="text" id="payment-method" name="payment-method">
-                        </div>
-                        <button class="btn-save">Update Billing</button>
-                    </section>
-                    <section class="user-management">
-                        <h3>User Management</h3>
-                        <div class="form-group">
-                            <label for="add-user">Add New User</label>
-                            <input type="text" id="add-user" name="add-user" placeholder="User Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="user-role">User Role</label>
-                            <select id="user-role" name="user-role">
-                                <option value="admin">Admin</option>
-                                <option value="recruiter">Recruiter</option>
-                                <option value="viewer">Viewer</option>
-                            </select>
-                        </div>
-                        <button class="btn-save">Add User</button>
-                        <h4>Existing Users</h4>
-                        <div class="existing-users">
-                            <ul>
-                                <li>user1@example.com - Admin <button>Remove</button></li>
-                                <li>user2@example.com - Recruiter <button>Remove</button></li>
-                            </ul>
-                        </div>
-                    </section>
+  </section>
+  <section id="requirements">
+    <div class="settings-options">
+        <section class="requirements-details">
+            <div class="section-title text-center">
+                <h2 class="main-title">Requirements</h2>
+            </div>
+            <div class="form-group">
+                <label for="responsibilities">Responsibilities</label>
+                <div id="responsibilities-container">
+                    <input type="text" id="responsibilities" name="responsibilities" placeholder="e.g., Manage team projects">
+                </div>
+                <button type="button" onclick="addResponsibility()">Add Responsibility</button>
+                <label for="educationlevel">Education Level</label>
+                <select id="educationlevel" name="educationlevel">
+                    <option value="olevel">O-Level</option>
+                    <option value="alevel">A-Level</option>
+                    <option value="certificate">Certificate</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="higherdiploma">Higher Diploma</option>
+                    <option value="degree">Degree</option>
+                    <option value="masters">Masters</option>
+                </select>
+            </div>
+                  <button class="btn-save">Save Changes</button>
+                  <button class="btn-save">Discard Changes</button>
+        </section>
+    </div>
+  </section>
+  <section id="skills">
+        <div class="settings-options">
+            <section class="skills-details">
+                <div class="section-title text-center">
+                    <h2 class="main-title">Skills</h2>
+                  </div>
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <div id="skills-container" class="skills-container">
+                        <input type="text" id="skills" name="skills" placeholder="e.g., JavaScript">
+                    </div>
+                    <button type="button" onclick="addSkill()">Add Skill</button>
                 </div>
             </section>
-        </main>
+        </div>
+    </section>
+  <div class="col-md-12">
+    <div class="form-group text-center mb--0">
+      <button class="btn btn-theme" type="submit">Post Now <i class="icofont-long-arrow-right"></i></button>
     </div>
-
-    <footer>
-        <div class="help-support">
-            <a href="#help-center">Help Center</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact-support">Contact Support</a>
-        </div>
-        <div class="legal-info">
-            <a href="#terms">Terms of Service</a>
-            <a href="#privacy">Privacy Policy</a>
-        </div>
-    </footer>
+  </div>
+ </div>
 </div>
+    
+
+  </main>
+
+  <!--== Start Footer Area Wrapper ==-->
+  <footer class="footer-area">
+    <!--== Start Footer Top ==-->
+    <div class="footer-top">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="footer-newsletter-content">
+              <h4 class="title">Subscribe to our everyday job newsletter.</h4>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="footer-newsletter-form">
+              <form action="#">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit" class="btn-newsletter">Subscribe Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Footer Top ==-->
+
+    <!--== Start Footer Main ==-->
+    <div class="footer-main">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="widget-item widget-about">
+              <div class="widget-logo-area">
+                <a href="index.html">
+                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="225" height="225"/>
+                </a>
+              </div>
+              <p class="desc">The Job Seeker Platform that streamlines the job search and recruitment process for both employers and job seekers.</p>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="icofont-linkedin"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener"><i class="icofont-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row">
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item1">
+                  <h4 class="widget-title">Company</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">Company</h4>
+                  <div id="widgetId-1" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="about-us.html">About Us</a></li>
+                          <li><a href="find-jobs.html"> Find Jobs</a></li>
+                          <li><a href="find-candidates.html">Cadidates</a></li>
+                          <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item2">
+                  <h4 class="widget-title">Resources</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">Resources</h4>
+                  <div id="widgetId-2" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="login.html">Quick Login</a></li>
+                          <li><a href="registration.html">Apply For a Job</a></li>
+                          <li><a href="registration.html">Post New Job</a></li>
+                          <li><a href="find-jobs.html">Jobs Listing</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item3">
+                  <h4 class="widget-title">Legal</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-3">Legal</h4>
+                  <div id="widgetId-3" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="index.html">Partners</a></li>
+                          <li><a href="blog.html">Blog & BlogPost</a></li>
+                          <li><a href="help-support.html">Help & Support</a></li>
+                          <li><a href="index.html">Popular-Careers</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item4">
+                  <h4 class="widget-title">Products</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-4">Products</h4>
+                  <div id="widgetId-4" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="registration.html">Get Started</a></li>
+                          <li><a href="index.html">How It Works</a></li>
+                          <li><a href="help-support.html">Privacy Terms</a></li>
+                          <li><a href="help-support.html">Policies</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Footer Main ==-->
+
+    <!--== Start Footer Bottom ==-->
+    <div class="footer-bottom">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-bottom-content">
+              <p class="copyright">© 2024 Execuget.All Rights Reserved.<br> Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://vesencomputing.com/">Vesen.</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Footer Bottom ==-->
+  </footer>
+  <!--== End Footer Area Wrapper ==-->
+
+  <!--== Scroll Top Button ==-->
+  <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
+
+  <!--== Start Aside Menu ==-->
+  <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
+      <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="icofont-simple-left"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Mobile Menu Start -->
+      <div class="mobile-menu-items">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Find Jobs</a>
+            <ul class="sub-menu">
+              <li><a href="job.html">Jobs</a></li>
+              <li><a href="job-details.html">Job Details</a></li>
+            </ul>
+          </li>
+          <li><a href="employers-details.html">Employers Details</a></li>
+          <li><a href="#">Candidates</a>
+            <ul class="sub-menu">
+              <li><a href="candidate.html">Candidates</a></li>
+              <li><a href="candidate-details.html">Candidate Details</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Blog</a>
+            <ul class="sub-menu">
+              <li><a href="blog-grid.html">Blog Grid</a></li>
+              <li><a href="blog.html">Blog Left Sidebar</a></li>
+              <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+              <li><a href="blog-details.html">Blog Details</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Pages</a>
+            <ul class="sub-menu">
+              <li><a href="about-us.html">About us</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="registration.html">Registration</a></li>
+              <li><a href="page-not-found.html">Page Not Found</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Mobile Menu End -->
+    </div>
+  </aside>
+  <!--== End Aside Menu ==-->
+</div>
+
+<!--=======================Javascript============================-->
+
+<script>
+  function addBenefit() {
+      const benefitsContainer = document.getElementById('benefits-container');
+      const newBenefitInput = document.createElement('input');
+      newBenefitInput.type = 'text';
+      newBenefitInput.name = 'jobbenefits';
+      newBenefitInput.placeholder = 'e.g., Health insurance';
+      benefitsContainer.appendChild(newBenefitInput);
+  }
+  function addResponsibility() {
+    const responsibilitiesContainer = document.getElementById('responsibilities-container');
+    const newResponsibilityInput = document.createElement('input');
+    newResponsibilityInput.type = 'text';
+    newResponsibilityInput.name = 'responsibilities';
+    newResponsibilityInput.placeholder = 'e.g., Manage team projects';
+    responsibilitiesContainer.appendChild(newResponsibilityInput);
+}
+function addSkill() {
+        const skillsContainer = document.getElementById('skills-container');
+        const newSkillInput = document.createElement('input');
+        newSkillInput.type = 'text';
+        newSkillInput.name = 'skills';
+        newSkillInput.placeholder = 'e.g., JavaScript';
+        skillsContainer.appendChild(newSkillInput);
+    }
+</script>
+
+<!--=== jQuery Modernizr Min Js ===-->
+<script src="assets/js/modernizr.js"></script>
+<!--=== jQuery Min Js ===-->
+<script src="assets/js/jquery-main.js"></script>
+<!--=== jQuery Migration Min Js ===-->
+<script src="assets/js/jquery-migrate.js"></script>
+<!--=== jQuery Popper Min Js ===-->
+<script src="assets/js/popper.min.js"></script>
+<!--=== jQuery Bootstrap Min Js ===-->
+<script src="assets/js/bootstrap.min.js"></script>
+<!--=== jQuery Swiper Min Js ===-->
+<script src="assets/js/swiper.min.js"></script>
+<!--=== jQuery Fancybox Min Js ===-->
+<script src="assets/js/fancybox.min.js"></script>
+<!--=== jQuery Aos Min Js ===-->
+<script src="assets/js/aos.min.js"></script>
+<!--=== jQuery Counterup Min Js ===-->
+<script src="assets/js/counterup.js"></script>
+<!--=== jQuery Waypoint Js ===-->
+<script src="assets/js/waypoint.js"></script>
+
+<!--=== jQuery Custom Js ===-->
+<script src="assets/js/custom.js"></script>
+
 </body>
+
 </html>

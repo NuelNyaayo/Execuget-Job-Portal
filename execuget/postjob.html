@@ -148,6 +148,71 @@ body {
     .custom-select option[disabled][selected] {
       display: none;
     }
+    .settings-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-options section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.settings-options h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.settings-options .form-group {
+    margin-bottom: 15px;
+}
+
+.settings-options .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.settings-options .form-group input,
+.settings-options .form-group select,
+.settings-options .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.settings-options .form-group button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #193768;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settings-options .form-group button:hover {
+    background-color: #0056b3;
+}
+
+.settings-options .btn-save {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settings-options .btn-save:hover {
+    background-color: #0056b3;
+}
+
 
     </style>
 
@@ -247,58 +312,123 @@ body {
       </div>
     </div>
     <!--== End Page Header Area Wrapper ==-->
-    <div class="main-content">
-        <section id="post-job">
-                <div class="comment-form-wrap">
-                  <div class="section-title text-center">
-                    <h2 class="main-title">Post a Job</h2>
-                  </div>
-                    <form class="comment-form" action="#">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Job Title">
-                          </div>
-                        </div>
-
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <textarea class="form-control" placeholder="Job Description"></textarea>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <input class="form-control" type="email" placeholder="Job Location">
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <select class="form-control custom-select" id="job-type">
-                              <option value="">Job Type</option>
-                              <option value="full-time">Full Time</option>
-                              <option value="part-time">Part Time</option>
-                              <option value="contract">Contract</option>
-                            </select>
-                          </div>
-                        </div>
-                  
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <input class="form-control" type="email" placeholder="Salary($)" id="salary">
-                          </div>
-                        </div>
-                        
-                        <div class="col-md-12">
-                          <div class="form-group text-center mb--0">
-                            <button class="btn btn-theme" type="submit">Post Now <i class="icofont-long-arrow-right"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
+<div class="main-content">
+ <div class="comment-form-wrap">
+  <section class="job-details">
+            <div class="settings-options">
+              <section class="job-details">
+                <div class="section-title text-center">
+                  <h2 class="main-title">Job Details</h2>
                 </div>
-    
+                  
+                  <div class="form-group">
+                      <label for="jobname">Job Name/Position</label>
+                      <input type="text" id="jobname" name="jobname" placeholder="e.g., Software Engineer">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="jobdescription">Job Description</label>
+                      <textarea id="jobdescription" name="jobdescription" rows="4" placeholder="Describe the job..."></textarea>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="jobbenefits">Job Benefits</label>
+                      <div id="benefits-container">
+                          <input type="text" id="jobbenefits" name="jobbenefits" placeholder="e.g., Health insurance">
+                      </div>
+                      <button type="button" onclick="addBenefit()">Add Benefit</button>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="candidatesneeded">Number of Candidates Needed</label>
+                      <input type="number" id="candidatesneeded" name="candidatesneeded" placeholder="e.g., 3">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="applyby">Apply By Date</label>
+                      <input type="date" id="applyby" name="applyby">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="companytype">Company Type</label>
+                      <select id="companytype" name="companytype">
+                          <option value="it">IT</option>
+                          <option value="finance">Finance</option>
+                          <option value="healthcare">Healthcare</option>
+                          <option value="education">Education</option>
+                          <option value="manufacturing">Manufacturing</option>
+                          <option value="other">Other</option>
+                      </select>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="renumeration">Remuneration (optional)</label>
+                      <input type="number" id="renumeration" name="renumeration" placeholder="e.g., 50000">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="workinghours">Working Hours (optional)</label>
+                      <input type="number" id="workinghours" name="workinghours" placeholder="e.g., 40">
+                  </div>
+                  
+                  <button class="btn-save">Save Changes</button>
+                  <button class="btn-save">Discard Changes</button>
+              </section>
+          
+          </div>
+
+  </section>
+  <section id="requirements">
+    <div class="settings-options">
+        <section class="requirements-details">
+            <div class="section-title text-center">
+                <h2 class="main-title">Requirements</h2>
+            </div>
+            <div class="form-group">
+                <label for="responsibilities">Responsibilities</label>
+                <div id="responsibilities-container">
+                    <input type="text" id="responsibilities" name="responsibilities" placeholder="e.g., Manage team projects">
+                </div>
+                <button type="button" onclick="addResponsibility()">Add Responsibility</button>
+                <label for="educationlevel">Education Level</label>
+                <select id="educationlevel" name="educationlevel">
+                    <option value="olevel">O-Level</option>
+                    <option value="alevel">A-Level</option>
+                    <option value="certificate">Certificate</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="higherdiploma">Higher Diploma</option>
+                    <option value="degree">Degree</option>
+                    <option value="masters">Masters</option>
+                </select>
+            </div>
+                  <button class="btn-save">Save Changes</button>
+                  <button class="btn-save">Discard Changes</button>
         </section>
     </div>
+  </section>
+  <section id="skills">
+        <div class="settings-options">
+            <section class="skills-details">
+                <div class="section-title text-center">
+                    <h2 class="main-title">Skills</h2>
+                  </div>
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <div id="skills-container" class="skills-container">
+                        <input type="text" id="skills" name="skills" placeholder="e.g., JavaScript">
+                    </div>
+                    <button type="button" onclick="addSkill()">Add Skill</button>
+                </div>
+            </section>
+        </div>
+    </section>
+  <div class="col-md-12">
+    <div class="form-group text-center mb--0">
+      <button class="btn btn-theme" type="submit">Post Now <i class="icofont-long-arrow-right"></i></button>
+    </div>
+  </div>
+ </div>
+</div>
     
 
   </main>
@@ -498,6 +628,32 @@ body {
 
 <!--=======================Javascript============================-->
 
+<script>
+  function addBenefit() {
+      const benefitsContainer = document.getElementById('benefits-container');
+      const newBenefitInput = document.createElement('input');
+      newBenefitInput.type = 'text';
+      newBenefitInput.name = 'jobbenefits';
+      newBenefitInput.placeholder = 'e.g., Health insurance';
+      benefitsContainer.appendChild(newBenefitInput);
+  }
+  function addResponsibility() {
+    const responsibilitiesContainer = document.getElementById('responsibilities-container');
+    const newResponsibilityInput = document.createElement('input');
+    newResponsibilityInput.type = 'text';
+    newResponsibilityInput.name = 'responsibilities';
+    newResponsibilityInput.placeholder = 'e.g., Manage team projects';
+    responsibilitiesContainer.appendChild(newResponsibilityInput);
+}
+function addSkill() {
+        const skillsContainer = document.getElementById('skills-container');
+        const newSkillInput = document.createElement('input');
+        newSkillInput.type = 'text';
+        newSkillInput.name = 'skills';
+        newSkillInput.placeholder = 'e.g., JavaScript';
+        skillsContainer.appendChild(newSkillInput);
+    }
+</script>
 
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
