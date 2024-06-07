@@ -95,6 +95,11 @@
         text-align: center;
         margin: 10px 0 30px 0; /* Reduced top margin */
       }
+      h2 {
+        padding: 0;
+        text-align: center;
+        margin: 10px 0 30px 0; /* Reduced top margin */
+      }
       
       .section {
           margin-bottom: 20px;
@@ -103,6 +108,7 @@
       label {
           display: block;
           margin-bottom: 5px;
+          color: #000;
       }
       
       input, select, textarea {
@@ -111,7 +117,7 @@
           margin-bottom: 10px;
           border: 1px solid #ccc;
           border-radius: 5px;
-          background-color: #f4f7f7;
+          background-color: white;
 
       }
       
@@ -122,9 +128,10 @@
           background-color: #193768;
           color: white;
           margin-top: 10px;
-         /* border: none;*/
+         border: none;
           border-radius: 10px;
           cursor: pointer;
+          
       }
       
       button:hover {
@@ -138,51 +145,147 @@
     .submit-button {
         margin-top: 70px;
     }
-
+    .profile-info {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .profile-info .profile-pic {
+            margin-right: 20px;
+            margin-left: 380px;
+        }
+        .profile-info img {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+        }
+        .profile-info .details {
+            flex: 1;
+        }
+        .profile-info .details h3 {
+            margin-top: 0;
+        }
+        .profile-info .details p {
+            margin: 5px 0;
+        }
       
-    .skills-container {
+    .profileinfo-container {
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #ccc;
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
-            max-height: 500px;
+            max-height: 2000px;
+        }
+    .skills-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 1000px;
         }
 
     .education-container {
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #ccc;
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
-            max-height: 500px;
+            max-height: 1000px;
         }
     .experience-container {
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #ccc;
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
-            max-height: 500px;
+            max-height: 1000px;
+        }
+    .documents-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 1000px;
+        }
+    .license-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 1000px;
+        }
+    .links-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 1000px;
         }
 
       .content-container {
             margin: 20px auto;
             padding: 0;
-            background-color: #fff;
+            background-color: #f4f4f4;
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
             max-height: 5000px;
         }
-      
+        .btn-edit {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #193768;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-edit:hover {
+            background-color: #193768;
+        }
+        .upload-section {
+    margin: 10px 0;
+}
+
+.upload-icon {
+    display: inline-block;
+    padding: 10px;
+    background-color: #193768;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 500px;
+}
+
+.upload-icon i {
+    margin-right: 5px;
+}
+
+.upload-icon:hover {
+    background-color: #0056b3;
+}
+
     </style>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
     <!--== Google Fonts ==-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -223,7 +326,7 @@
                     <div class="header-align-start">
                         <div class="header-logo-area">
                             <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="150" height="150"/>
+                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="120" height="40"/>
                                 <!--<img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />-->
                             </a>
                         </div>
@@ -231,12 +334,12 @@
                     <div class="header-align-center">
                         <div class="header-navigation-area position-relative">
                             <ul class="main-menu nav">
-                                <li><a href="index.html"><span>Overview</span></a></li>
-                                <li><a href="employers-details.html"><span>Job Postings</span></a></li>
-                                <li><a href="employers-details.html"><span>Applications</span></a></li>
-                                <li><a href="employers-details.html"><span>Messages</span></a></li>
-                                <li><a href="employers-details.html"><span>Profile</span></a></li>
-                                <li><a href="contact.html"><span>Notifications</span></a></li>
+                                <li><a href="job-seeker-dashboard.html"><span>Overview</span></a></li>
+                                <li><a href="job.html"><span>Job Postings</span></a></li>
+                                <li><a href="applications-candi.html"><span>Applications</span></a></li>
+                                <li><a href="messages-candi.html"><span>Messages</span></a></li>
+                                <li><a href="candidate-profile.html"><span>Profile</span></a></li>
+                                <li><a href="notifications-candi.html"><span>Notifications</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -244,7 +347,7 @@
                       <div class="header-action-area">
                         <div class="user-profile">
                           <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                          <a href="path-to-account-settings-page.html" class="account-settings">Account Settings</a>
+                          <a href="settings-candi.html" class="account-settings">Settings</a>
                         </div>
                       </div>
                     </div>
@@ -265,7 +368,12 @@
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h2 class="title">Candidate</h2>
+              <h1 class="title">Candidate</h1>
+              <nav class="breadcrumb-area">
+                <ul class="breadcrumb justify-content-center">
+                  <li>Complete-Profile</li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
@@ -274,10 +382,52 @@
     <!--== End Page Header Area Wrapper ==-->
     
     <div class="content-container">
-      <div class="container">
         <h1>Complete Your Profile</h1>
         <form id="profileForm">
-            <!-- Skills Section -->
+            <!-- Profile-info Section -->
+            <div class="section">
+                <h2>Profile Info.</h2>
+                <div class="profileinfo-container">
+                  <div class="profile-info">
+                    <label for="firstname">Add a Profile Picture:</label>
+                    <div class="profile-pic">
+                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                    </div>
+
+                    
+                </div>
+                <label for="firstname">Official Names:</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="John Doe" required>
+                    <label for="prim-email">Primary Email:</label>
+                    <input type="email" id="prim-email" name="prim-email" required placeholder="primarymail@gmail.com">
+                    <label for="sec-email">Secondary Email:  (If any)</label>
+                    <input type="email" id="sec-email" name="sec-email" placeholder="secondarymail@gmail.com">
+                    <label for="prim-phone">Primary Phone:</label>
+                    <input type="tel" id="prim-phone" name="prim-phone" required placeholder="(123) 456-7890">
+                    <label for="sec-phone">Additional Phone:  (If any)</label>
+                    <input type="tel" id="sec-phone" name="sec-phone" placeholder="(123) 456-7890">
+                    <label for="address-one">Address1:</label>
+                    <input type="text" id="address-one" name="address-one" placeholder="43844-00100" required>
+                    <label for="address-two">Address2:  (If any)</label>
+                    <input type="text" id="address-two" name="address-two" placeholder="43844-00100">
+                    <label for="city">Current City</label>
+                    <select id="city" name="city">
+                        <option value="Nairobi">Nairobi</option>
+                        <option value="Mombasa">Mombasa</option>
+                        <option value="Kisumu">Kisumu</option>
+                        <option value="Nakuru">Nakuru</option>
+                    </select>
+                    <label for="zip-code">Zip/Postal Code:</label>
+                    <input type="text" id="zip-code" name="zip-code" placeholder="00100">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="Kenya">Kenya</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Tanzania">Tanzania</option>
+                    </select>
+                    <button class="btn-edit">Save Profile Information</button>
+                </div>
+            </div>
             <div class="section">
                 <h2>Skills</h2>
                 <div class="skills-container">
@@ -290,6 +440,8 @@
                     <option value="PHP">PHP</option>
                     <!-- Add more skills as needed -->
                 </select>
+                    <button class="btn-edit">Save</button>
+                    <button class="btn-edit">Cancel</button>
                 </div>
             </div>
   
@@ -301,14 +453,25 @@
                     <label for="institution">Institution:</label>
                     <input type="text" id="institution" name="institution" required>
                     
-                    <label for="course">Course:</label>
-                    <input type="text" id="course" name="course" required>
                     
+                    <label for="level-of-education">Level of Education:</label>
+                    <select id="level-of-education" name="level-of-education">
+                        <option value="Nairobi">degree</option>
+                        <option value="Mombasa">high school</option>
+                        <option value="Kisumu">post graduate</option>
+                        <option value="Nakuru">tertiary</option>
+                    </select>
+                    <label for="course">Course/Major:</label>
+                    <input type="text" id="course" name="course" required>
                     <label for="dateFromEdu">Date From:</label>
                     <input type="date" id="dateFromEdu" name="dateFromEdu" required>
                     
                     <label for="dateToEdu" >Date To:</label>
                     <input type="date" class="date-to" id="dateToEdu" name="dateToEdu" required>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                    <button class="btn-edit">Save</button>
+                    <button class="btn-edit">Cancel</button>
                 </div>
                 </div>
                 <button type="button" id="addEducation">Add Another Education</button>
@@ -324,6 +487,14 @@
                     
                     <label for="role">Role:</label>
                     <input type="text" id="role" name="role" required>
+
+                    <label for="location">Location</label>
+                    <select id="location" name="location">
+                      <option value="Nairobi">Nairobi</option>
+                      <option value="Mombasa">Mombasa</option>
+                      <option value="Kisumu">Kisumu</option>
+                      <option value="Nakuru">Nakuru</option>
+                  </select>
                     
                     <label for="tasks">Tasks:</label>
                     <textarea id="tasks" name="tasks" required></textarea>
@@ -333,42 +504,73 @@
                     
                     <label for="dateToExp" class="date-to">Date To:</label>
                     <input type="date" class="date-to" id="dateToExp" name="dateToExp" required>
+                    <button class="btn-edit">Save</button>
+                    <button class="btn-edit">Cancel</button>
                 </div>
                 </div>
                 <button type="button" id="addExperience">Add Another Experience</button>
             </div>
+            <div class="section">
+              <h2>Documents</h2>
+              <div class="documents-container">
+                  <div class="upload-section">
+                      <label for="upload-resume" class="upload-icon">
+                          <i class="fas fa-upload"></i> Upload Resume
+                      </label>
+                      <input type="file" id="upload-resume" style="display: none;">
+                  </div>
+                  <div class="upload-section">
+                      <label for="upload-other-documents" class="upload-icon">
+                          <i class="fas fa-upload"></i> Upload Other Documents
+                      </label>
+                      <input type="file" id="upload-other-documents" style="display: none;">
+                  </div>
+                    <button class="btn-edit">Save</button>
+                    <button class="btn-edit">Cancel</button>
+              </div>
+          </div>
+          
+          <div class="section">
+            <h2>Licenses & Certification</h2>
+            <div class="license-container">
+              <div class="license-entry">
+                <label for="license-name">License/Certification Name:  (If any)</label>
+                <input type="text" id="license-name" name="license-name" >
+                <label for="license-no">License No:</label>
+                <input type="text" id="license-no" name="license-no" >
+                <label for="datelicenseAchieved">Date Achieved:</label>
+                <input type="date" id="datelicenseAchieved" name="datelicenseAchieved">
+                    
+                <label for="datelicenseRenewed" >Renewal Date:</label>
+                <input type="date" class="date-to" id="datelicenseRenewed" name="datelicenseRenewed">
+                <button class="btn-edit">Save</button>
+                <button class="btn-edit">Cancel</button>
+            </div>
+            </div>
+          </div>
+          <button type="button" id="addExperience">Add Another Certification</button>
+
+          <div class="section">
+            <h2>Links</h2>
+            <div class="links-container">
+              <div class="links-entry">
+                <label for="link-title">Link Title:</label>
+                <input type="text" id="link-title" name="link-title" >
+                <label for="link-url">URL:</label>
+                <input type="link" id="link-url" name="link-url" >
+                <button class="btn-edit">Save</button>
+                <button class="btn-edit">Cancel</button>
+            </div>
+            </div>
+          </div>
+          <button type="button" id="addExperience">Add Another Link</button>
 
             <button type="submit" class="submit-button">Complete Your Profile</button>
         </form>
-    </div>
+   
     </div>
 
   </main>
-
-  <!--== Start Footer Area Wrapper ==-->
-  <footer class="footer-area">
-    <!--== Start Footer Top ==-->
-    <div class="footer-top">
-      <div class="container pt--0 pb--0">
-        <div class="row">
-          <div class="col-lg-5">
-            <div class="footer-newsletter-content">
-              <h4 class="title">Subscribe for everyday job newsletter.</h4>
-            </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="footer-newsletter-form">
-              <form action="#">
-                <input type="email" placeholder="Enter your email">
-                <button type="submit" class="btn-newsletter">Subscribe Now</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--== End Footer Top ==-->
-
     <!--== Start Footer Main ==-->
     <footer class="footer-area">
       <!--== Start Footer Top ==-->
@@ -608,6 +810,14 @@
           alert('Profile completed successfully!');
       });
   });
+
+  document.querySelectorAll('.upload-icon').forEach(icon => {
+    icon.addEventListener('click', function () {
+        const inputId = this.getAttribute('for');
+        document.getElementById(inputId).click();
+    });
+});
+
 </script>
 
 <!--=== jQuery Modernizr Min Js ===-->
