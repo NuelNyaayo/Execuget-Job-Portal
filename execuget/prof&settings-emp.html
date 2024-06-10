@@ -202,6 +202,15 @@ body {
             max-width: 1345px;
             max-height: 1000px;
         }
+        .email-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
         .socialmedia-container {
             margin: 20px auto;
             padding: 50px;
@@ -339,8 +348,7 @@ body {
                     <div class="header-align-start">
                         <div class="header-logo-area">
                             <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="150" height="150"/>
-                                <!--<img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />-->
+                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
                             </a>
                         </div>
                     </div>
@@ -360,7 +368,7 @@ body {
                     <div class="header-action-area">
                       <div class="user-profile">
                         <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                        <a href="setings-emp.html" class="account-settings">Profile & Settings</a>
+                        <a href="prof&settings-emp.html" class="account-settings">Profile & Settings</a>
                       </div>
                     </div>
                   </div>
@@ -417,21 +425,33 @@ body {
                 
           </div>
       </div>
-          <div class="industry-container">
-            <h4><strong>Industry</strong></h4> 
-            <div id="company-industry">Engineer/Architects</div>
-            <button class="edit-btn" onclick="editField('company-industry')">Edit</button>
-          </div>
           <div class="aboutus-container">
             <h4><strong>About Us</strong></h4> 
             <p id="company-description">MOOI Coop is a leading company specializing in data science and data analytics, dedicated to transforming raw data into meaningful insights. With a focus on innovation and excellence, MOOI Coop harnesses advanced analytics, machine learning, and artificial intelligence to help businesses unlock the full potential of their data. Our expert team of data scientists and analysts are proficient in handling complex datasets, providing tailored solutions that drive decision-making and strategy development.</p>
             <button class="edit-btn" onclick="editField('company-description')">Edit</button>
           </div>
+          <div class="industry-container">
+            <h4><strong>Physical Address</strong></h4> 
+            <div><address id="company-address">Sifa Towers, 8D. Lenana Rd, Kilimani. 00100, Nairobi.</address></div>
+            <button class="edit-btn" onclick="editField('company-address')">Edit</button>
+          </div>
+          <div class="industry-container">
+            <h4><strong>Industry</strong></h4> 
+            <div id="company-industry">Engineer/Architects</div>
+            <button class="edit-btn" onclick="editField('company-industry')">Edit</button>
+          </div>
+          
           <div class="phone-container">
             <h4><strong>Phone</strong></h4> 
             <div id="company-phone">123-456-7890</div>
             <button class="edit-btn" onclick="editField('company-phone')">Add</button>
             <button class="edit-btn" onclick="editField('company-phone')">Edit</button>
+          </div>
+          <div class="email-container">
+            <h4><strong>Email</strong></h4> 
+            <div id="company-mail">companymail@gmail.com</div>
+            <button class="edit-btn" onclick="editField('company-mail')">Add</button>
+            <button class="edit-btn" onclick="editField('company-mail')">Edit</button>
           </div>
           <div class="socialmedia-container">
             <h4><strong>Social Media</strong></h4> 
@@ -477,6 +497,19 @@ body {
                 <button class="btn-save">Save Changes</button>
                 <button class="btn-save">Discard Changes</button>
             </section>
+
+            <section class="notification-settings">
+              <h3>Notification Settings</h3>
+              <div class="form-group">
+                  <label for="email-notifications">Email Notifications</label>
+                  <select id="email-notifications" name="email-notifications">
+                      <option value="all">All Notifications</option>
+                      <option value="important">Only Important Notifications</option>
+                      <option value="none">No Notifications</option>
+                  </select>
+              </div>
+              <button class="btn-save">Update Notifications</button>
+          </section>
             
         </div>
     </section>

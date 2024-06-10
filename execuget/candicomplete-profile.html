@@ -243,7 +243,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
-            max-height: 5000px;
+            max-height: 10000px;
         }
         .btn-edit {
             padding: 10px 20px;
@@ -320,41 +320,40 @@
   <!--== Start Header Wrapper ==-->
   <header class="header-area transparent">
     <div class="container">
-        <div class="row no-gutter align-items-center position-relative">
-            <div class="col-12">
-                <div class="header-align">
-                    <div class="header-align-start">
-                        <div class="header-logo-area">
-                            <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="120" height="40"/>
-                                <!--<img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />-->
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header-align-center">
-                        <div class="header-navigation-area position-relative">
-                            <ul class="main-menu nav">
-                                <li><a href="job-seeker-dashboard.html"><span>Overview</span></a></li>
-                                <li><a href="job.html"><span>Job Postings</span></a></li>
-                                <li><a href="applications-candi.html"><span>Applications</span></a></li>
-                                <li><a href="messages-candi.html"><span>Messages</span></a></li>
-                                <li><a href="candidate-profile.html"><span>Profile</span></a></li>
-                                <li><a href="notifications-candi.html"><span>Notifications</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="header-align-end">
-                      <div class="header-action-area">
-                        <div class="user-profile">
-                          <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                          <a href="settings-candi.html" class="account-settings">Settings</a>
-                        </div>
-                      </div>
-                    </div>
-                    
-                </div>
+      <div class="row no-gutter align-items-center position-relative">
+        <div class="col-12">
+          <div class="header-align">
+            <div class="header-align-start">
+              <div class="header-logo-area">
+                <a href="index.html">
+                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
+                  <img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />
+                </a>
+              </div>
             </div>
+            <div class="header-align-center">
+              <div class="header-navigation-area position-relative">
+                <ul class="main-menu nav">
+                  <li><a href="index.html"><span>Home</span></a></li>
+                  <li><a href="find-jobs.html"><span>Find Jobs</span></a></li>
+                  <li><a href="find-candidates.html"><span>Find Candidates</span></a></li>
+                  <li><a href="about-us.html"><span>About us</span></a></li>
+                  <li><a href="login.html"><span>Login</span></a></li>
+                  <li><a href="contact.html"><span>Contact</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="header-align-end">
+              <div class="header-action-area">
+                <a class="btn-registration" href="registration.html"><span>+</span> Registration</a>
+                <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
+                  <i class="icofont-navigation-menu"></i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   </header>
 
@@ -379,6 +378,7 @@
         </div>
       </div>
     </div>
+    
     <!--== End Page Header Area Wrapper ==-->
     
     <div class="content-container">
@@ -393,11 +393,12 @@
                     <div class="profile-pic">
                         <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
                     </div>
-
                     
                 </div>
-                <label for="firstname">Official Names:</label>
+                    <label for="firstname">Official Names:</label>
                     <input type="text" id="firstname" name="firstname" placeholder="John Doe" required>
+                    <label for="bio">Bio:</label>
+                    <textarea id="description" name="description" required placeholder="Tell us more about yourself..."></textarea>
                     <label for="prim-email">Primary Email:</label>
                     <input type="email" id="prim-email" name="prim-email" required placeholder="primarymail@gmail.com">
                     <label for="sec-email">Secondary Email:  (If any)</label>
@@ -451,7 +452,7 @@
                 <div class="education-container">
                   <div class="education-entry">
                     <label for="institution">Institution:</label>
-                    <input type="text" id="institution" name="institution" required>
+                    <input type="text" id="institution" name="institution" required placeholder="eg. Strathmore University">
                     
                     
                     <label for="level-of-education">Level of Education:</label>
@@ -462,14 +463,14 @@
                         <option value="Nakuru">tertiary</option>
                     </select>
                     <label for="course">Course/Major:</label>
-                    <input type="text" id="course" name="course" required>
+                    <input type="text" id="course" name="course" required placeholder="eg. Bsc Computer Science">
                     <label for="dateFromEdu">Date From:</label>
                     <input type="date" id="dateFromEdu" name="dateFromEdu" required>
                     
                     <label for="dateToEdu" >Date To:</label>
                     <input type="date" class="date-to" id="dateToEdu" name="dateToEdu" required>
                     <label for="description">Description:</label>
-                    <textarea id="description" name="description" required></textarea>
+                    <textarea id="description" name="description" required placeholder="More description about the course..."></textarea>
                     <button class="btn-edit">Save</button>
                     <button class="btn-edit">Cancel</button>
                 </div>
@@ -483,10 +484,10 @@
                 <div class="experience-container">
                   <div class="experience-entry">
                     <label for="organisation">Organisation:</label>
-                    <input type="text" id="organisation" name="organisation" required>
+                    <input type="text" id="organisation" name="organisation" required placeholder="eg. Vesen Computing Solution">
                     
                     <label for="role">Role:</label>
-                    <input type="text" id="role" name="role" required>
+                    <input type="text" id="role" name="role" required placeholder="eg. Senior Developer">
 
                     <label for="location">Location</label>
                     <select id="location" name="location">
@@ -497,7 +498,7 @@
                   </select>
                     
                     <label for="tasks">Tasks:</label>
-                    <textarea id="tasks" name="tasks" required></textarea>
+                    <textarea id="tasks" name="tasks" required placeholder="More description about the job..."></textarea>
                     
                     <label for="dateFromExp">Date From:</label>
                     <input type="date" id="dateFromExp" name="dateFromExp" required>
@@ -535,9 +536,9 @@
             <div class="license-container">
               <div class="license-entry">
                 <label for="license-name">License/Certification Name:  (If any)</label>
-                <input type="text" id="license-name" name="license-name" >
+                <input type="text" id="license-name" name="license-name" placeholder="Certified Public Accountant (CPA)" >
                 <label for="license-no">License No:</label>
-                <input type="text" id="license-no" name="license-no" >
+                <input type="text" id="license-no" name="license-no" placeholder="CPA123456" >
                 <label for="datelicenseAchieved">Date Achieved:</label>
                 <input type="date" id="datelicenseAchieved" name="datelicenseAchieved">
                     
@@ -555,9 +556,9 @@
             <div class="links-container">
               <div class="links-entry">
                 <label for="link-title">Link Title:</label>
-                <input type="text" id="link-title" name="link-title" >
+                <input type="text" id="link-title" name="link-title" placeholder="Github" >
                 <label for="link-url">URL:</label>
-                <input type="link" id="link-url" name="link-url" >
+                <input type="link" id="link-url" name="link-url" placeholder="https://www.github.com/username" >
                 <button class="btn-edit">Save</button>
                 <button class="btn-edit">Cancel</button>
             </div>
@@ -565,7 +566,7 @@
           </div>
           <button type="button" id="addExperience">Add Another Link</button>
 
-            <button type="submit" class="submit-button">Complete Your Profile</button>
+            <button id="candicompleteProfile" type="submit" class="submit-button">Complete Your Profile</button>
         </form>
    
     </div>
@@ -783,6 +784,15 @@
 <!--=======================Javascript============================-->
 
 <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+      // Event listener for candidate complete-profile button
+      document.getElementById('candicompleteProfile').addEventListener('click', function() {
+          window.location.href = 'candidate-dashboard.html'; 
+      });
+  });
+
+
   document.addEventListener('DOMContentLoaded', () => {
       const addEducationButton = document.getElementById('addEducation');
       const addExperienceButton = document.getElementById('addExperience');

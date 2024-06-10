@@ -80,65 +80,241 @@ body {
         .main-content {
             flex: 1;
             background-color: white;
-        }
-        .main-content section {
-            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
         }
         .main-content h2 {
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
             margin-bottom: 15px;
         }
-        .profile-info {
-            display: flex;
-            flex-wrap: wrap;
+
+        .personal-profile {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.profile-header {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    margin-bottom: 20px;
+}
+
+.profile-pic-container {
+    position: relative; /* Make the container relative for tooltip positioning */
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    width: 120px; /* Increased width */
+    height: 120px; /* Increased height */
+    border-radius: 50%;
+    cursor: pointer; /* Change cursor to pointer */
+    transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.profile-info h3 {
+    margin: 0;
+}
+
+.location-info {
+    margin-top: 10px;
+}
+
+.add-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
+.edit-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Tooltip styling */
+.company-logo-container:hover::after {
+    content: "Edit Profile";
+    position: absolute;
+    top: -30px; /* Position above the logo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #193768;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+.bio-container {
+            margin: 20px auto;
+            padding: 50px;
             background-color: #f4f4f4;
-            padding: 20px;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
         }
-        .profile-info .profile-pic {
-            margin-right: 20px;
-        }
-        .profile-info img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-        }
-        .profile-info .details {
-            flex: 1;
-        }
-        .profile-info .details h3 {
-            margin-top: 0;
-        }
-        .profile-info .details p {
-            margin: 5px 0;
-        }
-        .resume-section, .skills-section, .experience-section, .education-section {
+        .industry-container {
+            margin: 20px auto;
+            padding: 50px;
             background-color: #f4f4f4;
-            padding: 20px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            margin-bottom: 20px;
+            max-width: 1345px;
+            max-height: 1000px;
         }
-        .resume-section h3, .skills-section h3, .experience-section h3, .education-section h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
+        .aboutus-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
         }
-        .btn-edit {
+        .phone-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .email-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .address-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .skills-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .education-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .experience-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .resume-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .documents-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .license-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .links-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+
+         .btn-save {
             padding: 10px 20px;
+            margin-bottom: 10px;
             background-color: #193768;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
-        .btn-edit:hover {
-            background-color: #193768;
-        }
 
+        .btn-save:hover {
+            background-color: #0056b3;
+        }
     </style>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!--== Google Fonts ==-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -179,15 +355,14 @@ body {
                     <div class="header-align-start">
                         <div class="header-logo-area">
                             <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="150" height="150"/>
-                                <!--<img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />-->
+                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
                             </a>
                         </div>
                     </div>
                     <div class="header-align-center">
                         <div class="header-navigation-area position-relative">
                             <ul class="main-menu nav">
-                                <li><a href="job-seeker-dashboard.html"><span>Overview</span></a></li>
+                                <li><a href="candidate-dashboard.html"><span>Overview</span></a></li>
                                 <li><a href="job.html"><span>Job Postings</span></a></li>
                                 <li><a href="applications-candi.html"><span>Applications</span></a></li>
                                 <li><a href="messages-candi.html"><span>Messages</span></a></li>
@@ -217,77 +392,155 @@ body {
   <main class="main-content">
     <!--== Start Page Header Area Wrapper ==-->
     <div class="page-header-area sec-overlay sec-overlay-black" data-bg-img="assets/img/images/table-book.jpg">
-      <div class="container pt--0 pb--0">
-        <div class="row">
-          <div class="col-12">
-            <div class="page-header-content">
-              <h1 class="title">Candidate</h1>
-              <nav class="breadcrumb-area">
-                <ul class="breadcrumb justify-content-center">
-                  <li>Profile</li>
-                </ul>
-              </nav>
+        <div class="container pt--0 pb--0">
+          <div class="row">
+            <div class="col-12">
+              <div class="page-header-content">
+                <h1 class="title">Candidate</h1>
+                <nav class="breadcrumb-area">
+                  <ul class="breadcrumb justify-content-center">
+                    <li>Profile</li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     <!--== End Page Header Area Wrapper ==-->
     
-    <section id="profile">
-        <div class="section-title text-center">
-          <h2 class="title">Profile</h2>
-        </div>
-        <div class="profile-info">
-            <div class="profile-pic">
-                <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+    <section id="personal-profile">
+      <div class="section-title text-center">
+        <h2 class="title">Your Profile</h2>
+      </div>
+      <div class="personal-profile">
+          <div class="profile-header">
+              <img src="assets/img/images/pic2.png" alt="Profile Pic" class="profile-pic">
+              <div class="profile-info">
+                  <h3 id="candidate-name">Lauran Benite</h3>
+                  <div class="location-info">
+                    <h4><strong>Location</strong></h4> 
+                    <div >
+                      <address id="candidate-location">Dar Es Salaam, Tanzania
+                      </address>
+                    </div>
+                  </div>
+                  <button class="edit-btn" onclick="editField('candidate-name')">Edit Name</button>
+                  <button class="edit-btn" onclick="editField('candidate-location')">Edit Location</button>
+              </div>
+              
+                
+          </div>
+      </div>
+          <div class="bio-container">
+            <h4><strong>Your Bio</strong></h4> 
+            <p id="personal-description">MOOI Coop is a leading company specializing in data science and data analytics, dedicated to transforming raw data into meaningful insights. With a focus on innovation and excellence, MOOI Coop harnesses advanced analytics, machine learning, and artificial intelligence to help businesses unlock the full potential of their data. Our expert team of data scientists and analysts are proficient in handling complex datasets, providing tailored solutions that drive decision-making and strategy development.</p>
+            <button class="edit-btn" onclick="editField('personal-description')">Edit Bio</button>
+          </div>
+          <div class="industry-container">
+            <h4><strong>Industry Type</strong></h4> 
+            <div id="candidate-industry">Engineer/Architects</div>
+            <button class="edit-btn" onclick="editField('candidate-industry')">Edit Industry</button>
+          </div>
+          
+          <div class="phone-container">
+            <h4><strong>Phone</strong></h4> 
+            <div id="candidate-phone">123-456-7890</div>
+            <button class="add-btn" onclick="editField('candidate-phone')">Add Phone</button>
+            <button class="edit-btn" onclick="editField('candidate-phone')">Edit Phone</button>
+          </div>
+          <div class="email-container">
+            <h4><strong>Email</strong></h4> 
+            <div id="candidate-mail">yourmail@gmail.com</div>
+            <button class="add-btn" onclick="editField('candidate-mail')">Add Email</button>
+            <button class="edit-btn" onclick="editField('candidate-mail')">Edit Email</button>
+          </div>
+          <div class="address-container">
+            <h4><strong>Address</strong></h4> 
+            <div id="candidate-address">43844-00100</div>
+            <button class="add-btn" onclick="editField('candidate-address')">Add Address</button>
+            <button class="edit-btn" onclick="editField('candidate-address')">Edit Address</button>
+          </div>
+          <div class="skills-container">
+            <h4><strong>Skills</strong></h4> 
+            <div id="candidate-skills">
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>HTML/CSS</li>
+                    <li>React</li>
+                </ul>
             </div>
-            <div class="details">
-                <h3>John Doe</h3>
-                <p>Email: john.doe@example.com</p>
-                <p>Location: San Francisco, CA</p>
-                <p>Phone: (123) 456-7890</p>
+            <button class="add-btn" onclick="editField('candidate-skills')">Add Skills</button>
+            <button class="edit-btn" onclick="editField('candidate-skills')">Edit Skills</button>
+          </div>
+          <div class="education-container">
+            <h4><strong>Education</strong></h4> 
+            <div id="candidate-education">
+                <h5>Bachelor of Science in Computer Science</h5>
+                <p>University of California, Berkeley <br> Degree <br> Enrolled:May 2014 <br>Graduated: May 2018</p>
+                
             </div>
-        </div>
-        <div class="resume-section">
-            <h3>Resume</h3>
-            <p><a href="resume.pdf" download>Download Resume</a></p>
-            <button class="btn-edit">Edit Resume</button>
-        </div>
-        <div class="skills-section">
-            <h3>Skills</h3>
-            <ul>
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>HTML/CSS</li>
-                <li>React</li>
-            </ul>
-            <button class="btn-edit">Edit Skills</button>
-        </div>
-        <div class="experience-section">
-            <h3>Experience</h3>
+            <button class="add-btn" onclick="editField('candidate-education')">Add Education</button>
+            <button class="edit-btn" onclick="editField('candidate-education')">Edit Education</button>
+          </div>
+          <div class="experience-container">
+            <h4><strong>Experience</strong></h4> 
+            <div class="candidate-experience">
+              <div class="experience-item">
+                <h5>Software Engineer at TechCorp</h5>
+                <p>Jan 2020 - Present <br> Developed web applications using JavaScript and React.</p>
+            </div>
             <div class="experience-item">
-                <h4>Software Engineer at TechCorp</h4>
-                <p>Jan 2020 - Present</p>
-                <p>Developed web applications using JavaScript and React.</p>
+                <h5>Junior Developer at WebWorks</h5>
+                <p>Jun 2018 - Dec 2019 <br>Worked on front-end development projects using HTML, CSS, and JavaScript.</p>
             </div>
-            <div class="experience-item">
-                <h4>Junior Developer at WebWorks</h4>
-                <p>Jun 2018 - Dec 2019</p>
-                <p>Worked on front-end development projects using HTML, CSS, and JavaScript.</p>
             </div>
-            <button class="btn-edit">Edit Experience</button>
+            
+            <button class="add-btn" onclick="editField('candidate-experience')">Add Experience</button>
+            <button class="edit-btn" onclick="editField('candidate-experience')">Edit Experience</button>
+          </div>
+          
+        <div class="resume-container">
+            <h4><strong>Resume</strong></h4> 
+            <div class="candidate-resume">
+                <p><a href="resume.pdf" download>Download Resume</a></p>
+            </div>
+            <button class="edit-btn" onclick="editField(['candidate-resume'])">Edit Resume</button>
         </div>
-        <div class="education-section">
-            <h3>Education</h3>
-            <div class="education-item">
-                <h4>Bachelor of Science in Computer Science</h4>
-                <p>University of California, Berkeley</p>
-                <p>Graduated: May 2018</p>
+        <div class="documents-container">
+            <h4><strong>Documents</strong></h4> 
+            <div class="candidate-documents">
+              <div class="document-item">
+                <p><a href="resume.pdf" download>Download Document</a></p>
+              </div>
             </div>
-            <button class="btn-edit">Edit Education</button>
+            
+            <button class="edit-btn" onclick="editField(['candidate-documents'])">Add Document</button>
+            <button class="edit-btn" onclick="editField(['candidate-documents'])">Edit Documents</button>
         </div>
+        <div class="license-container">
+            <h4><strong>Licenses & Certifications</strong></h4> 
+            <div id="candidate-licenses">
+                <h5>Certified Public Accountant(CPA)</h5>
+                <p>License Number:CPA123456 <br> Acquired:May 2024 <br>Renewed: August 2024</p>
+                
+            </div>
+            <button class="add-btn" onclick="editField('candidate-licenses')">Add License</button>
+            <button class="edit-btn" onclick="editField('candidate-licenses')">Edit License</button>
+        </div>
+        <div class="links-container">
+            <h4><strong>Links</strong></h4> 
+            <div id="link-title">Facebook</div>
+            <div id="url">www.facebook.com</div>
+            <button class="add-btn" onclick="editField(['url'])">Add Link</button>
+            <button class="edit-btn" onclick="editField(['link-title', 'url'])">Edit Link</button>
+        </div>
+        
+        <button class="btn-save">Save Changes</button>
+        <button class="btn-save">Discard Changes</button>
     </section>
+
     
 
   </main>
@@ -486,6 +739,72 @@ body {
 </div>
 
 <!--=======================Javascript============================-->
+
+<script>
+  document.getElementById('company-logo').addEventListener('click', function() {
+    document.getElementById('logo-upload').click();
+});
+
+function updateLogo(event) {
+    const logo = document.getElementById('company-logo');
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+        logo.src = e.target.result;
+    };
+    
+    reader.readAsDataURL(file);
+}
+
+function editField(fieldIds) {
+    fieldIds.forEach(function(fieldId) {
+        const field = document.getElementById(fieldId);
+        const currentValue = field.innerText || field.textContent;
+        
+        // Create an input element
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = currentValue;
+        
+        // Replace the field with the input element
+        field.parentNode.replaceChild(input, field);
+        
+        // Focus the input field
+        input.focus();
+        
+        // Add an event listener to save changes on blur
+        input.addEventListener('blur', function() {
+            field.innerText = input.value;
+            input.parentNode.replaceChild(field, input);
+        });
+        
+        // Add an event listener to save changes on enter key press
+        input.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                field.innerText = input.value;
+                input.parentNode.replaceChild(field, input);
+            }
+        });
+    });
+}
+
+
+function togglePassword(fieldId) {
+  var passwordField = document.getElementById(fieldId);
+  var icon = passwordField.nextElementSibling.firstElementChild;
+  
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  } else {
+    passwordField.type = "password";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
+}
+</script>
 
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
