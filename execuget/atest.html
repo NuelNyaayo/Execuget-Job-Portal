@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5"/>
+    <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
+    <meta name="author" content="hastech"/>
+
+    <title>Candidate-Dashboard :: Execuget - Job Portal Website</title>
+    <style>
+      /* User profile and notifications styling */
+      /* User profile and notifications styling */
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.user-profile .dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-profile .dropdown a {
+    color: #333;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.notifications {
+    position: relative;
+    margin-right: 20px;
+}
+
+.notifications .bell-icon {
+    background: url('assets/img/bell-icon.png') no-repeat center center;
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.notifications .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Additional CSS for header alignment */
+.header-align {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .company-profile {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.company-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.company-logo-container {
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center the logo and buttons */
+}
+
+.company-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.company-logo:hover {
+    transform: scale(1.05);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+.company-info h3 {
+    margin: 0;
+}
+
+.location-info {
+    margin-top: 10px;
+}
+
+.default-initial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+    background-color: #193768;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.logo-btn {
+    padding: 5px 10px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin:  20px; /* Add space between buttons */
+}
+
+.logo-btn:hover {
+    background-color: #0056b3;
+}
+
+.edit-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.company-logo-container:hover::after {
+    content: "Edit Profile";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #193768;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+
+.description-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .industry-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .aboutus-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .phone-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .email-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+        .socialmedia-container {
+            margin: 20px auto;
+            padding: 50px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 1000px;
+        }
+
+        .job-postings {
+            display: flex;
+            flex-direction: column;
+        }
+        .job-posting {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+        }
+        .job-posting:hover {
+            background-color: #f4f4f4;
+        }
+        .job-posting h4 {
+            margin: 0;
+        }
+        
+        .settings-options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .settings-options section {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .settings-options h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .settings-options .form-group {
+            margin-bottom: 15px;
+        }
+
+        .settings-options .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .settings-options .form-group input,
+        .settings-options .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+         .btn-save {
+            padding: 10px 20px;
+            background-color: #193768;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .settings-options .btn-save:hover {
+            background-color: #0056b3;
+        }
+        .position-relative {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #656565;
+}
+
+.password-toggle:hover {
+  color: #193768;
+}
+    </style>
+
+    <!--== Favicon ==-->
+    <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!--== Google Fonts ==-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+
+    <!--== Bootstrap CSS ==-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--== Icofont Icon CSS ==-->
+    <link href="assets/css/icofont.css" rel="stylesheet" />
+    <!--== Swiper CSS ==-->
+    <link href="assets/css/swiper.min.css" rel="stylesheet" />
+    <!--== Fancybox Min CSS ==-->
+    <link href="assets/css/fancybox.min.css" rel="stylesheet" />
+    <!--== Aos Min CSS ==-->
+    <link href="assets/css/aos.min.css" rel="stylesheet" />
+
+    <!--== Bootstrap Icons CSS ==-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+
+    <!--== Main Style CSS ==-->
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<!--wrapper start-->
+<div class="wrapper">
+  
+  <!--== Start Header Wrapper ==-->
+  <header class="header-area transparent">
+    <div class="container">
+        <div class="row no-gutter align-items-center position-relative">
+            <div class="col-12">
+                <div class="header-align">
+                    <div class="header-align-start">
+                        <div class="header-logo-area">
+                            <a href="index.html">
+                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-align-center">
+                      <div class="header-navigation-area position-relative">
+                          <ul class="main-menu nav">
+                            <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
+                            <li><a href="postjob.html"><span>Post Job</span></a></li>
+                            <li><a href="candidates.html"><span>Candidates</span></a></li>
+                            <li><a href="applications-emp.html"><span>Applications</span></a></li>
+                            <li><a href="messages-emp.html"><span>Messages</span></a></li>
+                            <li><a href="performance.html"><span>Performance</span></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="header-align-end">
+                    <div class="header-action-area">
+                      <div class="user-profile">
+                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                        <a href="prof&settings-emp.html" class="account-settings">Profile & Settings</a>
+                      </div>
+                    </div>
+                  </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+
+
+  <!--== End Header Wrapper ==-->
+  
+  <main class="main-content">
+    <!--== Start Page Header Area Wrapper ==-->
+    <div class="page-header-area sec-overlay sec-overlay-black" data-bg-img="assets/img/images/table-book.jpg">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-12">
+            <div class="page-header-content">
+              <h1 class="title">Employer</h1>
+              <nav class="breadcrumb-area">
+                <ul class="breadcrumb justify-content-center">
+                  <li>Profile & Settings</li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Page Header Area Wrapper ==-->
+    
+    <section id="company-profile">
+      <div class="section-title text-center">
+        <h2 class="title">Company Profile</h2>
+    </div>
+    <div class="company-profile">
+        <div class="company-header">
+            <div class="company-logo-container" id="company-logo-container">
+                <img src="assets/img/images/mooilogo.jpg" alt="Company Logo" id="company-logo" class="company-logo">
+                <div id="default-initial" class="company-logo default-initial hidden">M</div> <!-- Default Initial -->
+                <input type="file" id="logo-upload" accept="image/*" style="display: none;" onchange="updateLogo(event)">
+                <div class="buttons-container">
+                    <button class="logo-btn" id="update-logo-btn">Update Logo</button>
+                    <button class="logo-btn" id="remove-logo-btn">Remove Logo</button>
+                </div>
+            </div>
+            <div class="company-info">
+                <h3 id="company-name">MOOI Coop</h3>
+                <div class="location-info">
+                    <h4><strong>Location</strong></h4> 
+                    <address id="company-location">Dar Es Salaam, Tanzania</address>
+                </div>
+                <button class="edit-btn" onclick="editField('company-name')">Edit Name</button>
+                <button class="edit-btn" onclick="editField('company-location')">Edit Location</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+          <div class="aboutus-container">
+            <h4><strong>About Us</strong></h4> 
+            <p id="company-description">MOOI Coop is a leading company specializing in data science and data analytics, dedicated to transforming raw data into meaningful insights. With a focus on innovation and excellence, MOOI Coop harnesses advanced analytics, machine learning, and artificial intelligence to help businesses unlock the full potential of their data. Our expert team of data scientists and analysts are proficient in handling complex datasets, providing tailored solutions that drive decision-making and strategy development.</p>
+            <button class="edit-btn" onclick="editField('company-description')">Edit Description</button>
+          </div>
+          <div class="industry-container">
+            <h4><strong>Physical Address</strong></h4> 
+            <div><address id="company-address">Sifa Towers, 8D. Lenana Rd, Kilimani. 00100, Nairobi.</address></div>
+            <button class="edit-btn" onclick="editField('company-address')">Edit Address</button>
+          </div>
+          <div class="industry-container">
+            <h4><strong>Industry</strong></h4> 
+            <div id="company-industry">Engineer/Architects</div>
+            <button class="edit-btn" onclick="editField('company-industry')">Edit Industry</button>
+          </div>
+          
+          <div class="phone-container">
+            <h4><strong>Phone</strong></h4> 
+            <div id="company-phone">123-456-7890</div>
+            <button class="edit-btn" onclick="addField('company-phone')">Add Phone</button>
+            <button class="edit-btn" onclick="editField('company-phone')">Edit Phone</button>
+          </div>
+          <div class="email-container">
+            <h4><strong>Email</strong></h4> 
+            <div id="company-mail">companymail@gmail.com</div>
+            <button class="edit-btn" onclick="addField('company-mail')">Add Email</button>
+            <button class="edit-btn" onclick="editField('company-mail')">Edit Email</button>
+          </div>
+          <div class="socialmedia-container">
+            <h4><strong>Social Media</strong></h4> 
+            <div id="company-social">www.facebook.com</div>
+            <button class="edit-btn" onclick="addField('company-social')">Add Link</button>
+            <button class="edit-btn" onclick="editField('company-social')">Edit Link</button>
+          </div>
+          <button class="btn-save">Save Changes</button>
+          <button class="btn-save">Discard Changes</button>
+      </div>
+    </section>
+
+    <section id="settings">
+        <div class="section-title text-center">
+          <h2 class="title">Settings</h2>
+        </div>
+        <div class="settings-options">
+            <section class="account-settings">
+                <h3>Account Settings</h3>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="yourmail@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="form-group position-relative">
+                      <input type="password" id="password" name="password">
+                      <span class="password-toggle" onclick="togglePassword('password')">
+                         <i class="fas fa-eye"></i>
+                      </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmpassword">Confirm Password</label>
+                    <div class="form-group position-relative">
+                      <input type="password" id="confirmpassword" name="confirmpassword" >
+                      <span class="password-toggle" onclick="togglePassword('confirmpassword')">
+                         <i class="fas fa-eye"></i>
+                      </span>
+                    </div>
+                </div>
+                <button class="btn-save">Save Changes</button>
+                <button class="btn-save">Discard Changes</button>
+            </section>
+
+            <section class="notification-settings">
+              <h3>Notification Settings</h3>
+              <div class="form-group">
+                  <label for="email-notifications">Email Notifications</label>
+                  <select id="email-notifications" name="email-notifications">
+                      <option value="all">All Notifications</option>
+                      <option value="important">Only Important Notifications</option>
+                      <option value="none">No Notifications</option>
+                  </select>
+              </div>
+              <button class="btn-save">Update Notifications</button>
+          </section>
+            
+        </div>
+    </section>
+    
+
+  </main>
+
+  <!--== Start Footer Area Wrapper ==-->
+  <footer class="footer-area">
+    <!--== Start Footer Top ==-->
+    <div class="footer-top">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="footer-newsletter-content">
+              <h4 class="title">Subscribe to our everyday job newsletter.</h4>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="footer-newsletter-form">
+              <form action="#">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit" class="btn-newsletter">Subscribe Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Footer Top ==-->
+
+    <!--== Start Footer Main ==-->
+    <div class="footer-main">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="widget-item widget-about">
+              <div class="widget-logo-area">
+                <a href="index.html">
+                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="225" height="225"/>
+                </a>
+              </div>
+              <p class="desc">The Job Seeker Platform that streamlines the job search and recruitment process for both employers and job seekers.</p>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="icofont-linkedin"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener"><i class="icofont-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row">
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item1">
+                  <h4 class="widget-title">Company</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">Company</h4>
+                  <div id="widgetId-1" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="about-us.html">About Us</a></li>
+                          <li><a href="find-jobs.html"> Find Jobs</a></li>
+                          <li><a href="find-candidates.html">Cadidates</a></li>
+                          <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item2">
+                  <h4 class="widget-title">Resources</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">Resources</h4>
+                  <div id="widgetId-2" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="login.html">Quick Login</a></li>
+                          <li><a href="registration.html">Apply For a Job</a></li>
+                          <li><a href="registration.html">Post New Job</a></li>
+                          <li><a href="find-jobs.html">Jobs Listing</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item3">
+                  <h4 class="widget-title">Legal</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-3">Legal</h4>
+                  <div id="widgetId-3" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="index.html">Partners</a></li>
+                          <li><a href="blog.html">Blog & BlogPost</a></li>
+                          <li><a href="help-support.html">Help & Support</a></li>
+                          <li><a href="index.html">Popular-Careers</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item4">
+                  <h4 class="widget-title">Products</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-4">Products</h4>
+                  <div id="widgetId-4" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="registration.html">Get Started</a></li>
+                          <li><a href="index.html">How It Works</a></li>
+                          <li><a href="help-support.html">Privacy Terms</a></li>
+                          <li><a href="help-support.html">Policies</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Footer Main ==-->
+
+    <!--== Start Footer Bottom ==-->
+    <div class="footer-bottom">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-bottom-content">
+              <p class="copyright">© 2024 Execuget.All Rights Reserved.<br> Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://vesencomputing.com/">Vesen.</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Footer Bottom ==-->
+  </footer>
+  <!--== End Footer Area Wrapper ==-->
+
+  <!--== Scroll Top Button ==-->
+  <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
+
+  <!--== Start Aside Menu ==-->
+  <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
+      <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="icofont-simple-left"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Mobile Menu Start -->
+      <div class="mobile-menu-items">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Find Jobs</a>
+            <ul class="sub-menu">
+              <li><a href="job.html">Jobs</a></li>
+              <li><a href="job-details.html">Job Details</a></li>
+            </ul>
+          </li>
+          <li><a href="employers-details.html">Employers Details</a></li>
+          <li><a href="#">Candidates</a>
+            <ul class="sub-menu">
+              <li><a href="candidate.html">Candidates</a></li>
+              <li><a href="candidate-details.html">Candidate Details</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Blog</a>
+            <ul class="sub-menu">
+              <li><a href="blog-grid.html">Blog Grid</a></li>
+              <li><a href="blog.html">Blog Left Sidebar</a></li>
+              <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+              <li><a href="blog-details.html">Blog Details</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Pages</a>
+            <ul class="sub-menu">
+              <li><a href="about-us.html">About us</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="registration.html">Registration</a></li>
+              <li><a href="page-not-found.html">Page Not Found</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Mobile Menu End -->
+    </div>
+  </aside>
+  <!--== End Aside Menu ==-->
+</div>
+
+<!--=======================Javascript============================-->
+
+<script>
+document.getElementById('company-logo').addEventListener('click', function() {
+    document.getElementById('logo-upload').click();
+});
+
+document.getElementById('remove-logo-btn').addEventListener('click', function() {
+    removeLogo();
+});
+
+document.getElementById('update-logo-btn').addEventListener('click', function() {
+    document.getElementById('logo-upload').click();
+});
+
+function updateLogo(event) {
+    const logo = document.getElementById('company-logo');
+    const defaultInitial = document.getElementById('default-initial');
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        logo.src = e.target.result;
+        logo.classList.remove('hidden');
+        defaultInitial.classList.add('hidden');
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+
+    // Reset the file input value to allow the same file to be selected again
+    document.getElementById('logo-upload').value = '';
+}
+
+function removeLogo() {
+    const logo = document.getElementById('company-logo');
+    const defaultInitial = document.getElementById('default-initial');
+    logo.src = '';  // Clear the logo image
+    logo.classList.add('hidden'); // Hide the image element
+    defaultInitial.classList.remove('hidden'); // Show the initial letter
+}
+
+function initializeDefaultLogo(companyName) {
+    const logo = document.getElementById('company-logo');
+    const defaultInitial = document.getElementById('default-initial');
+    if (!logo.src || logo.src === window.location.href) {
+        defaultInitial.textContent = companyName.charAt(0).toUpperCase();
+        defaultInitial.classList.remove('hidden');
+    } else {
+        defaultInitial.classList.add('hidden');
+    }
+}
+
+// Call this function with your company name
+initializeDefaultLogo('MOOI Coop'); // Replace 'MOOI Coop' with your company name
+
+function editField(fieldId) {
+    const field = document.getElementById(fieldId);
+    const currentValue = field.innerText || field.textContent;
+    
+    if (fieldId === 'company-description'|| fieldId === 'company-location' || fieldId === 'company-address') {
+        // Create a textarea element
+        const textarea = document.createElement('textarea');
+        textarea.value = currentValue;
+        textarea.style.width = '100%'; // Optional: Make the textarea take the full width
+        textarea.style.height = '100px'; // Optional: Set the height of the textarea
+
+        // Replace the field with the textarea element
+        field.parentNode.replaceChild(textarea, field);
+        
+        // Focus the textarea
+        textarea.focus();
+        
+        // Add an event listener to save changes on blur
+        textarea.addEventListener('blur', function() {
+            field.innerText = textarea.value;
+            textarea.parentNode.replaceChild(field, textarea);
+        });
+        
+        // Add an event listener to save changes on enter key press
+        textarea.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                field.innerText = textarea.value;
+                textarea.parentNode.replaceChild(field, textarea);
+            }
+        });
+    } else if (fieldId === 'company-industry') {
+        // Define industry categories
+        const industryCategories = [
+            'Engineer/Architects',
+            'Technology',
+            'Healthcare',
+            'Finance',
+            'Education',
+            'Retail',
+            'Manufacturing',
+            'Real Estate',
+            'Transportation',
+            'Energy'
+        ];
+
+        // Create a select element
+        const select = document.createElement('select');
+        select.style.width = '100%'; // Optional: Make the select take the full width
+        
+        // Create options for the select element
+        industryCategories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.text = category;
+            if (category === currentValue) {
+                option.selected = true;
+            }
+            select.appendChild(option);
+        });
+
+        // Replace the field with the select element
+        field.parentNode.replaceChild(select, field);
+        
+        // Focus the select element
+        select.focus();
+        
+        // Add an event listener to save changes on blur
+        select.addEventListener('blur', function() {
+            field.innerText = select.value;
+            select.parentNode.replaceChild(field, select);
+        });
+
+        // Add an event listener to save changes on enter key press
+        select.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                field.innerText = select.value;
+                select.parentNode.replaceChild(field, select);
+            }
+        });
+    } else if (fieldId === 'company-name' || fieldId === 'company-phone' || fieldId === 'company-mail' || fieldId === 'company-social') {
+            // Create an input element
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = currentValue;
+    
+    // Replace the field with the input element
+    field.parentNode.replaceChild(input, field);
+    
+    // Focus the input field
+    input.focus();
+    
+    // Add an event listener to save changes on blur
+    input.addEventListener('blur', function() {
+        field.innerText = input.value;
+        input.parentNode.replaceChild(field, input);
+    });
+    
+    // Add an event listener to save changes on enter key press
+    input.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            field.innerText = input.value;
+            input.parentNode.replaceChild(field, input);
+        }
+    });
+
+    
+    }
+}
+
+function addField(fieldId) {
+    const field = document.getElementById(fieldId);
+
+    // If fieldId is 'company-phone', handle adding a new input field for adding a phone number
+    if (fieldId === 'company-phone') {
+    // Create a new input element
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Enter new phone no.';
+
+    // Create a button to save the new phone number
+    const saveButton = document.createElement('button');
+    saveButton.innerText = 'Add';
+    saveButton.onclick = function () {
+        const newPhoneNumber = input.value.trim();
+        if (newPhoneNumber !== '') {
+            const newPhoneDiv = document.createElement('div');
+            newPhoneDiv.innerText = newPhoneNumber;
+            field.parentNode.insertBefore(newPhoneDiv, saveButton);
+            input.value = ''; // Clear the input field after saving
+            // Make the input and save button invisible
+            input.style.display = 'none';
+            saveButton.style.display = 'none';
+        }
+    };
+
+    // Append the input field and save button below the existing phone number
+    field.parentNode.insertBefore(input, field.nextSibling);
+    field.parentNode.insertBefore(saveButton, field.nextSibling);
+    // Focus the input field
+    input.focus();
+
+    // Add an event listener to save changes on blur
+    input.addEventListener('blur', function () {
+        if (input.value.trim() !== '') {
+            field.innerText = input.value;
+        }
+        input.parentNode.replaceChild(field, input);
+    });
+
+    // Add an event listener to save changes on enter key press
+    input.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            if (input.value.trim() !== '') {
+                field.innerText = input.value;
+            }
+            input.parentNode.replaceChild(field, input);
+        }
+    });
+}
+
+    else if(fieldId === 'company-mail'){
+        // Create a new input element
+        const input = document.createElement('input');
+        input.type = 'email';
+        input.placeholder = 'Enter new email.';
+
+        // Create a button to save the new phone number
+        const saveButton = document.createElement('button');
+        saveButton.innerText = 'Add';
+        saveButton.onclick = function () {
+            const newPhoneNumber = input.value.trim();
+            if (newPhoneNumber !== '') {
+                const newPhoneDiv = document.createElement('div');
+                newPhoneDiv.innerText = newPhoneNumber;
+                field.parentNode.insertBefore(newPhoneDiv, saveButton);
+                input.value = ''; // Clear the input field after saving
+                // Make the input and save button invisible
+                input.style.display = 'none';
+                saveButton.style.display = 'none';
+            }
+        };
+
+        // Append the input field and save button below the existing phone number
+        field.parentNode.insertBefore(input, field.nextSibling);
+        field.parentNode.insertBefore(saveButton, field.nextSibling);
+    }
+    else if(fieldId === 'company-social'){
+        // Create a new input element
+        const input = document.createElement('input');
+        input.type = 'link';
+        input.placeholder = 'Enter new link.';
+
+        // Create a button to save the new phone number
+        const saveButton = document.createElement('button');
+        saveButton.innerText = 'Add';
+        saveButton.onclick = function () {
+            const newPhoneNumber = input.value.trim();
+            if (newPhoneNumber !== '') {
+                const newPhoneDiv = document.createElement('div');
+                newPhoneDiv.innerText = newPhoneNumber;
+                field.parentNode.insertBefore(newPhoneDiv, saveButton);
+                input.value = ''; // Clear the input field after saving
+                // Make the input and save button invisible
+                input.style.display = 'none';
+                saveButton.style.display = 'none';
+            }
+        };
+
+        // Append the input field and save button below the existing phone number
+        field.parentNode.insertBefore(input, field.nextSibling);
+        field.parentNode.insertBefore(saveButton, field.nextSibling);
+    }
+
+    // Add event listeners to save changes on blur
+    field.addEventListener('blur', function () {
+        const currentValue = field.innerText.trim();
+        if (currentValue !== '') {
+            const newField = document.createElement('div');
+            newField.innerText = currentValue;
+            field.parentNode.insertBefore(newField, field.nextSibling);
+        }
+        field.innerText = ''; // Clear the input field after saving
+        
+    });
+
+    // Add event listener to save changes on enter key press
+    field.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            const currentValue = field.innerText.trim();
+            if (currentValue !== '') {
+                const newField = document.createElement('div');
+                newField.innerText = currentValue;
+                field.parentNode.insertBefore(newField, field.nextSibling);
+            }
+            field.innerText = ''; // Clear the input field after saving
+        }
+    });
+}
+
+
+
+
+function togglePassword(fieldId) {
+  var passwordField = document.getElementById(fieldId);
+  var icon = passwordField.nextElementSibling.firstElementChild;
+  
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  } else {
+    passwordField.type = "password";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
+}
+</script>
+
+<!--=== jQuery Modernizr Min Js ===-->
+<script src="assets/js/modernizr.js"></script>
+<!--=== jQuery Min Js ===-->
+<script src="assets/js/jquery-main.js"></script>
+<!--=== jQuery Migration Min Js ===-->
+<script src="assets/js/jquery-migrate.js"></script>
+<!--=== jQuery Popper Min Js ===-->
+<script src="assets/js/popper.min.js"></script>
+<!--=== jQuery Bootstrap Min Js ===-->
+<script src="assets/js/bootstrap.min.js"></script>
+<!--=== jQuery Swiper Min Js ===-->
+<script src="assets/js/swiper.min.js"></script>
+<!--=== jQuery Fancybox Min Js ===-->
+<script src="assets/js/fancybox.min.js"></script>
+<!--=== jQuery Aos Min Js ===-->
+<script src="assets/js/aos.min.js"></script>
+<!--=== jQuery Counterup Min Js ===-->
+<script src="assets/js/counterup.js"></script>
+<!--=== jQuery Waypoint Js ===-->
+<script src="assets/js/waypoint.js"></script>
+
+<!--=== jQuery Custom Js ===-->
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/applications-emp.js"></script>
+</body>
+
+</html>
