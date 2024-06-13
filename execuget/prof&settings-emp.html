@@ -101,31 +101,41 @@ body {
 
 .company-header {
     display: flex;
-    align-items: flex-start; /* Align items to the start */
+    align-items: flex-start;
     margin-bottom: 20px;
 }
 
 .company-logo-container {
-    position: relative; /* Make the container relative for tooltip positioning */
+    position: relative;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center the logo and buttons */
 }
 
 .company-logo {
-    width: 120px; /* Increased width */
-    height: 120px; /* Increased height */
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    cursor: pointer; /* Change cursor to pointer */
+    cursor: pointer;
     transition: transform 0.3s;
 }
 
 .company-logo:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.05);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 40px;
 }
 
 .company-info {
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 200px;
 }
 
 .company-info h3 {
@@ -134,6 +144,34 @@ body {
 
 .location-info {
     margin-top: 10px;
+}
+
+.default-initial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+    background-color: #193768;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.logo-btn {
+    padding: 5px 10px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin:  20px; /* Add space between buttons */
+}
+
+.logo-btn:hover {
+    background-color: #0056b3;
 }
 
 .edit-btn {
@@ -150,11 +188,10 @@ body {
     background-color: #0056b3;
 }
 
-/* Tooltip styling */
 .company-logo-container:hover::after {
     content: "Edit Profile";
     position: absolute;
-    top: -30px; /* Position above the logo */
+    top: -30px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #193768;
@@ -164,6 +201,7 @@ body {
     font-size: 12px;
     white-space: nowrap;
 }
+
 
 
 .description-container {
@@ -406,58 +444,64 @@ body {
       <div class="section-title text-center">
         <h2 class="title">Company Profile</h2>
     </div>
-      <div class="company-profile">
-          <div class="company-header">
-              <img src="assets/img/images/mooilogo.jpg" alt="Company Logo" class="company-logo">
-              <div class="company-info">
-                  <h3 id="company-name">MOOI Coop</h3>
-                  <div class="location-info">
+    <div class="company-profile">
+        <div class="company-header">
+            <div class="company-logo-container" id="company-logo-container">
+                <img src="assets/img/images/mooilogo.jpg" alt="Company Logo" id="company-logo" class="company-logo">
+                <div id="default-initial" class="company-logo default-initial hidden">M</div> <!-- Default Initial -->
+                <input type="file" id="logo-upload" accept="image/*" style="display: none;" onchange="updateLogo(event)">
+                <div class="buttons-container">
+                    <button class="logo-btn" id="update-logo-btn">Update Logo</button>
+                    <button class="logo-btn" id="remove-logo-btn">Remove Logo</button>
+                </div>
+            </div>
+            <div class="company-info">
+                <h3 id="company-name">MOOI Coop</h3>
+                <div class="location-info">
                     <h4><strong>Location</strong></h4> 
-                    <div >
-                      <address id="company-location">Dar Es Salaam, Tanzania
-                      </address>
-                    </div>
-                  </div>
-                  <button class="edit-btn" onclick="editField('company-name')">Edit Name</button>
-                  <button class="edit-btn" onclick="editField('company-location')">Edit Location</button>
-              </div>
-              
-                
-          </div>
-      </div>
+                    <address id="company-location">Dar Es Salaam, Tanzania</address>
+                </div>
+                <button class="edit-btn" onclick="editField('company-name')">Edit Name</button>
+                <button class="edit-btn" onclick="editField('company-location')">Edit Location</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    
           <div class="aboutus-container">
             <h4><strong>About Us</strong></h4> 
             <p id="company-description">MOOI Coop is a leading company specializing in data science and data analytics, dedicated to transforming raw data into meaningful insights. With a focus on innovation and excellence, MOOI Coop harnesses advanced analytics, machine learning, and artificial intelligence to help businesses unlock the full potential of their data. Our expert team of data scientists and analysts are proficient in handling complex datasets, providing tailored solutions that drive decision-making and strategy development.</p>
-            <button class="edit-btn" onclick="editField('company-description')">Edit</button>
+            <button class="edit-btn" onclick="editField('company-description')">Edit Description</button>
           </div>
           <div class="industry-container">
             <h4><strong>Physical Address</strong></h4> 
             <div><address id="company-address">Sifa Towers, 8D. Lenana Rd, Kilimani. 00100, Nairobi.</address></div>
-            <button class="edit-btn" onclick="editField('company-address')">Edit</button>
+            <button class="edit-btn" onclick="editField('company-address')">Edit Address</button>
           </div>
           <div class="industry-container">
             <h4><strong>Industry</strong></h4> 
             <div id="company-industry">Engineer/Architects</div>
-            <button class="edit-btn" onclick="editField('company-industry')">Edit</button>
+            <button class="edit-btn" onclick="editField('company-industry')">Edit Industry</button>
           </div>
           
           <div class="phone-container">
             <h4><strong>Phone</strong></h4> 
             <div id="company-phone">123-456-7890</div>
-            <button class="edit-btn" onclick="editField('company-phone')">Add</button>
-            <button class="edit-btn" onclick="editField('company-phone')">Edit</button>
+            <button class="edit-btn" onclick="addField('company-phone')">Add Phone</button>
+            <button class="edit-btn" onclick="editField('company-phone')">Edit Phone</button>
           </div>
           <div class="email-container">
             <h4><strong>Email</strong></h4> 
             <div id="company-mail">companymail@gmail.com</div>
-            <button class="edit-btn" onclick="editField('company-mail')">Add</button>
-            <button class="edit-btn" onclick="editField('company-mail')">Edit</button>
+            <button class="edit-btn" onclick="addField('company-mail')">Add Email</button>
+            <button class="edit-btn" onclick="editField('company-mail')">Edit Email</button>
           </div>
           <div class="socialmedia-container">
             <h4><strong>Social Media</strong></h4> 
             <div id="company-social">www.facebook.com</div>
-            <button class="edit-btn" onclick="editField('company-social')">Add</button>
-            <button class="edit-btn" onclick="editField('company-social')">Edit</button>
+            <button class="edit-btn" onclick="addField('company-social')">Add Link</button>
+            <button class="edit-btn" onclick="editField('company-social')">Edit Link</button>
           </div>
           <button class="btn-save">Save Changes</button>
           <button class="btn-save">Discard Changes</button>
@@ -713,27 +757,141 @@ body {
 <!--=======================Javascript============================-->
 
 <script>
-  document.getElementById('company-logo').addEventListener('click', function() {
+document.getElementById('company-logo').addEventListener('click', function() {
+    document.getElementById('logo-upload').click();
+});
+
+document.getElementById('remove-logo-btn').addEventListener('click', function() {
+    removeLogo();
+});
+
+document.getElementById('update-logo-btn').addEventListener('click', function() {
     document.getElementById('logo-upload').click();
 });
 
 function updateLogo(event) {
     const logo = document.getElementById('company-logo');
+    const defaultInitial = document.getElementById('default-initial');
     const file = event.target.files[0];
     const reader = new FileReader();
-    
+
     reader.onload = function(e) {
         logo.src = e.target.result;
+        logo.classList.remove('hidden');
+        defaultInitial.classList.add('hidden');
     };
-    
-    reader.readAsDataURL(file);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+
+    // Reset the file input value to allow the same file to be selected again
+    document.getElementById('logo-upload').value = '';
 }
+
+function removeLogo() {
+    const logo = document.getElementById('company-logo');
+    const defaultInitial = document.getElementById('default-initial');
+    logo.src = '';  // Clear the logo image
+    logo.classList.add('hidden'); // Hide the image element
+    defaultInitial.classList.remove('hidden'); // Show the initial letter
+}
+
+function initializeDefaultLogo(companyName) {
+    const logo = document.getElementById('company-logo');
+    const defaultInitial = document.getElementById('default-initial');
+    if (!logo.src || logo.src === window.location.href) {
+        defaultInitial.textContent = companyName.charAt(0).toUpperCase();
+        defaultInitial.classList.remove('hidden');
+    } else {
+        defaultInitial.classList.add('hidden');
+    }
+}
+
+// Call this function with your company name
+initializeDefaultLogo('MOOI Coop'); // Replace 'MOOI Coop' with your company name
 
 function editField(fieldId) {
     const field = document.getElementById(fieldId);
     const currentValue = field.innerText || field.textContent;
     
-    // Create an input element
+    if (fieldId === 'company-description'|| fieldId === 'company-location' || fieldId === 'company-address') {
+        // Create a textarea element
+        const textarea = document.createElement('textarea');
+        textarea.value = currentValue;
+        textarea.style.width = '100%'; // Optional: Make the textarea take the full width
+        textarea.style.height = '100px'; // Optional: Set the height of the textarea
+
+        // Replace the field with the textarea element
+        field.parentNode.replaceChild(textarea, field);
+        
+        // Focus the textarea
+        textarea.focus();
+        
+        // Add an event listener to save changes on blur
+        textarea.addEventListener('blur', function() {
+            field.innerText = textarea.value;
+            textarea.parentNode.replaceChild(field, textarea);
+        });
+        
+        // Add an event listener to save changes on enter key press
+        textarea.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                field.innerText = textarea.value;
+                textarea.parentNode.replaceChild(field, textarea);
+            }
+        });
+    } else if (fieldId === 'company-industry') {
+        // Define industry categories
+        const industryCategories = [
+            'Engineer/Architects',
+            'Technology',
+            'Healthcare',
+            'Finance',
+            'Education',
+            'Retail',
+            'Manufacturing',
+            'Real Estate',
+            'Transportation',
+            'Energy'
+        ];
+
+        // Create a select element
+        const select = document.createElement('select');
+        select.style.width = '100%'; // Optional: Make the select take the full width
+        
+        // Create options for the select element
+        industryCategories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.text = category;
+            if (category === currentValue) {
+                option.selected = true;
+            }
+            select.appendChild(option);
+        });
+
+        // Replace the field with the select element
+        field.parentNode.replaceChild(select, field);
+        
+        // Focus the select element
+        select.focus();
+        
+        // Add an event listener to save changes on blur
+        select.addEventListener('blur', function() {
+            field.innerText = select.value;
+            select.parentNode.replaceChild(field, select);
+        });
+
+        // Add an event listener to save changes on enter key press
+        select.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                field.innerText = select.value;
+                select.parentNode.replaceChild(field, select);
+            }
+        });
+    } else if (fieldId === 'company-name' || fieldId === 'company-phone' || fieldId === 'company-mail' || fieldId === 'company-social') {
+            // Create an input element
     const input = document.createElement('input');
     input.type = 'text';
     input.value = currentValue;
@@ -757,7 +915,158 @@ function editField(fieldId) {
             input.parentNode.replaceChild(field, input);
         }
     });
+    }
 }
+
+function addField(fieldId) {
+    const field = document.getElementById(fieldId);
+
+    // If fieldId is 'company-phone', handle adding a new input field for adding a phone number
+    if (fieldId === 'company-phone') {
+    // Create a new input element
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Enter new phone no.';
+
+    // Create a button to save the new phone number
+    const saveButton = document.createElement('button');
+    saveButton.innerText = 'Add';
+    saveButton.onclick = function () {
+        const newPhoneNumber = input.value.trim();
+        if (newPhoneNumber !== '') {
+            const newPhoneDiv = document.createElement('div');
+            newPhoneDiv.innerText = newPhoneNumber;
+
+            // Insert the new phone number div before the input and save button
+            input.parentNode.insertBefore(newPhoneDiv, input);
+
+            // Clear the input field after saving
+            input.value = '';
+
+            // Make the input and save button invisible
+            input.style.display = 'none';
+            saveButton.style.display = 'none';
+        }
+    };
+
+    // Find the reference node for positioning the new input and button
+    let referenceNode = field.nextSibling;
+    while (referenceNode && referenceNode.nodeType === Node.ELEMENT_NODE && referenceNode.tagName !== 'BUTTON') {
+        referenceNode = referenceNode.nextSibling;
+    }
+
+    // Insert the input field and save button before the reference node
+    const container = field.parentNode;
+    container.insertBefore(input, referenceNode);
+    container.insertBefore(saveButton, referenceNode);
+}
+
+
+    else if(fieldId === 'company-mail'){
+        // Create a new input element
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Enter new email.';
+
+    // Create a button to save the new phone number
+    const saveButton = document.createElement('button');
+    saveButton.innerText = 'Add';
+    saveButton.onclick = function () {
+        const newPhoneNumber = input.value.trim();
+        if (newPhoneNumber !== '') {
+            const newPhoneDiv = document.createElement('div');
+            newPhoneDiv.innerText = newPhoneNumber;
+
+            // Insert the new phone number div before the input and save button
+            input.parentNode.insertBefore(newPhoneDiv, input);
+
+            // Clear the input field after saving
+            input.value = '';
+
+            // Make the input and save button invisible
+            input.style.display = 'none';
+            saveButton.style.display = 'none';
+        }
+    };
+
+    // Find the reference node for positioning the new input and button
+    let referenceNode = field.nextSibling;
+    while (referenceNode && referenceNode.nodeType === Node.ELEMENT_NODE && referenceNode.tagName !== 'BUTTON') {
+        referenceNode = referenceNode.nextSibling;
+    }
+
+    // Insert the input field and save button before the reference node
+    const container = field.parentNode;
+    container.insertBefore(input, referenceNode);
+    container.insertBefore(saveButton, referenceNode);
+    }
+    else if(fieldId === 'company-social'){
+        // Create a new input element
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Enter new link.';
+
+    // Create a button to save the new phone number
+    const saveButton = document.createElement('button');
+    saveButton.innerText = 'Add';
+    saveButton.onclick = function () {
+        const newPhoneNumber = input.value.trim();
+        if (newPhoneNumber !== '') {
+            const newPhoneDiv = document.createElement('div');
+            newPhoneDiv.innerText = newPhoneNumber;
+
+            // Insert the new phone number div before the input and save button
+            input.parentNode.insertBefore(newPhoneDiv, input);
+
+            // Clear the input field after saving
+            input.value = '';
+
+            // Make the input and save button invisible
+            input.style.display = 'none';
+            saveButton.style.display = 'none';
+        }
+    };
+
+    // Find the reference node for positioning the new input and button
+    let referenceNode = field.nextSibling;
+    while (referenceNode && referenceNode.nodeType === Node.ELEMENT_NODE && referenceNode.tagName !== 'BUTTON') {
+        referenceNode = referenceNode.nextSibling;
+    }
+
+    // Insert the input field and save button before the reference node
+    const container = field.parentNode;
+    container.insertBefore(input, referenceNode);
+    container.insertBefore(saveButton, referenceNode);
+    }
+
+    // Add event listeners to save changes on blur
+    field.addEventListener('blur', function () {
+        const currentValue = field.innerText.trim();
+        if (currentValue !== '') {
+            const newField = document.createElement('div');
+            newField.innerText = currentValue;
+            field.parentNode.insertBefore(newField, field.nextSibling);
+        }
+        field.innerText = ''; // Clear the input field after saving
+        
+    });
+
+    // Add event listener to save changes on enter key press
+    field.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            const currentValue = field.innerText.trim();
+            if (currentValue !== '') {
+                const newField = document.createElement('div');
+                newField.innerText = currentValue;
+                field.parentNode.insertBefore(newField, field.nextSibling);
+            }
+            field.innerText = ''; // Clear the input field after saving
+        }
+    });
+}
+
+
+
 
 function togglePassword(fieldId) {
   var passwordField = document.getElementById(fieldId);

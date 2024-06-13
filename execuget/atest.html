@@ -915,8 +915,6 @@ function editField(fieldId) {
             input.parentNode.replaceChild(field, input);
         }
     });
-
-    
     }
 }
 
@@ -938,90 +936,107 @@ function addField(fieldId) {
         if (newPhoneNumber !== '') {
             const newPhoneDiv = document.createElement('div');
             newPhoneDiv.innerText = newPhoneNumber;
-            field.parentNode.insertBefore(newPhoneDiv, saveButton);
-            input.value = ''; // Clear the input field after saving
+
+            // Insert the new phone number div before the input and save button
+            input.parentNode.insertBefore(newPhoneDiv, input);
+
+            // Clear the input field after saving
+            input.value = '';
+
             // Make the input and save button invisible
             input.style.display = 'none';
             saveButton.style.display = 'none';
         }
     };
 
-    // Append the input field and save button below the existing phone number
-    field.parentNode.insertBefore(input, field.nextSibling);
-    field.parentNode.insertBefore(saveButton, field.nextSibling);
-    // Focus the input field
-    input.focus();
+    // Find the reference node for positioning the new input and button
+    let referenceNode = field.nextSibling;
+    while (referenceNode && referenceNode.nodeType === Node.ELEMENT_NODE && referenceNode.tagName !== 'BUTTON') {
+        referenceNode = referenceNode.nextSibling;
+    }
 
-    // Add an event listener to save changes on blur
-    input.addEventListener('blur', function () {
-        if (input.value.trim() !== '') {
-            field.innerText = input.value;
-        }
-        input.parentNode.replaceChild(field, input);
-    });
-
-    // Add an event listener to save changes on enter key press
-    input.addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-            if (input.value.trim() !== '') {
-                field.innerText = input.value;
-            }
-            input.parentNode.replaceChild(field, input);
-        }
-    });
+    // Insert the input field and save button before the reference node
+    const container = field.parentNode;
+    container.insertBefore(input, referenceNode);
+    container.insertBefore(saveButton, referenceNode);
 }
+
 
     else if(fieldId === 'company-mail'){
         // Create a new input element
-        const input = document.createElement('input');
-        input.type = 'email';
-        input.placeholder = 'Enter new email.';
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Enter new email.';
 
-        // Create a button to save the new phone number
-        const saveButton = document.createElement('button');
-        saveButton.innerText = 'Add';
-        saveButton.onclick = function () {
-            const newPhoneNumber = input.value.trim();
-            if (newPhoneNumber !== '') {
-                const newPhoneDiv = document.createElement('div');
-                newPhoneDiv.innerText = newPhoneNumber;
-                field.parentNode.insertBefore(newPhoneDiv, saveButton);
-                input.value = ''; // Clear the input field after saving
-                // Make the input and save button invisible
-                input.style.display = 'none';
-                saveButton.style.display = 'none';
-            }
-        };
+    // Create a button to save the new phone number
+    const saveButton = document.createElement('button');
+    saveButton.innerText = 'Add';
+    saveButton.onclick = function () {
+        const newPhoneNumber = input.value.trim();
+        if (newPhoneNumber !== '') {
+            const newPhoneDiv = document.createElement('div');
+            newPhoneDiv.innerText = newPhoneNumber;
 
-        // Append the input field and save button below the existing phone number
-        field.parentNode.insertBefore(input, field.nextSibling);
-        field.parentNode.insertBefore(saveButton, field.nextSibling);
+            // Insert the new phone number div before the input and save button
+            input.parentNode.insertBefore(newPhoneDiv, input);
+
+            // Clear the input field after saving
+            input.value = '';
+
+            // Make the input and save button invisible
+            input.style.display = 'none';
+            saveButton.style.display = 'none';
+        }
+    };
+
+    // Find the reference node for positioning the new input and button
+    let referenceNode = field.nextSibling;
+    while (referenceNode && referenceNode.nodeType === Node.ELEMENT_NODE && referenceNode.tagName !== 'BUTTON') {
+        referenceNode = referenceNode.nextSibling;
+    }
+
+    // Insert the input field and save button before the reference node
+    const container = field.parentNode;
+    container.insertBefore(input, referenceNode);
+    container.insertBefore(saveButton, referenceNode);
     }
     else if(fieldId === 'company-social'){
         // Create a new input element
-        const input = document.createElement('input');
-        input.type = 'link';
-        input.placeholder = 'Enter new link.';
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'Enter new link.';
 
-        // Create a button to save the new phone number
-        const saveButton = document.createElement('button');
-        saveButton.innerText = 'Add';
-        saveButton.onclick = function () {
-            const newPhoneNumber = input.value.trim();
-            if (newPhoneNumber !== '') {
-                const newPhoneDiv = document.createElement('div');
-                newPhoneDiv.innerText = newPhoneNumber;
-                field.parentNode.insertBefore(newPhoneDiv, saveButton);
-                input.value = ''; // Clear the input field after saving
-                // Make the input and save button invisible
-                input.style.display = 'none';
-                saveButton.style.display = 'none';
-            }
-        };
+    // Create a button to save the new phone number
+    const saveButton = document.createElement('button');
+    saveButton.innerText = 'Add';
+    saveButton.onclick = function () {
+        const newPhoneNumber = input.value.trim();
+        if (newPhoneNumber !== '') {
+            const newPhoneDiv = document.createElement('div');
+            newPhoneDiv.innerText = newPhoneNumber;
 
-        // Append the input field and save button below the existing phone number
-        field.parentNode.insertBefore(input, field.nextSibling);
-        field.parentNode.insertBefore(saveButton, field.nextSibling);
+            // Insert the new phone number div before the input and save button
+            input.parentNode.insertBefore(newPhoneDiv, input);
+
+            // Clear the input field after saving
+            input.value = '';
+
+            // Make the input and save button invisible
+            input.style.display = 'none';
+            saveButton.style.display = 'none';
+        }
+    };
+
+    // Find the reference node for positioning the new input and button
+    let referenceNode = field.nextSibling;
+    while (referenceNode && referenceNode.nodeType === Node.ELEMENT_NODE && referenceNode.tagName !== 'BUTTON') {
+        referenceNode = referenceNode.nextSibling;
+    }
+
+    // Insert the input field and save button before the reference node
+    const container = field.parentNode;
+    container.insertBefore(input, referenceNode);
+    container.insertBefore(saveButton, referenceNode);
     }
 
     // Add event listeners to save changes on blur

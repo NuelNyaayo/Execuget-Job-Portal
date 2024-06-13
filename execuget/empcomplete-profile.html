@@ -121,9 +121,7 @@
           margin-bottom: 100px;
 
       }
-      .select {
-   
-      }
+      
       
       button {
           display: block;
@@ -174,7 +172,68 @@
         .profile-info .details p {
             margin: 5px 0;
         }
-      
+
+        .company-logo-container {
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Center the logo and buttons */
+    margin-left: 350px;
+    width: 120px;
+    height: 120px;
+}
+
+.company-logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.company-logo:hover {
+    transform: scale(1.05);
+}
+
+.default-initial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+    background-color: #193768;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.company-logo-container:hover::after {
+    content: "Edit Profile";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #193768;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
     .profileinfo-container {
             margin: 20px auto;
             padding: 20px;
@@ -249,18 +308,116 @@
             max-width: 1200px;
             max-height: 5000px;
         }
+
+      .button1-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Adjust the width as needed */
+}
+.button2-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Adjust the width as needed */
+}
+
+.btn-save {
+  margin-top: 10px;
+  width: 350px; /* Specify the desired width */
+  height: 50px; /* Specify the desired height */
+  border-radius: 5px; 
+}
+
+.btn-cancel {
+  margin-top: 10px;
+  width: 350px; /* Specify the desired width */
+  height: 50px; /* Specify the desired height */
+  border-radius: 5px; 
+}
+
         .btn-edit {
-            padding: 10px 20px;
-            margin-top: 10px;
-            background-color: #193768;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+         
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-edit:active {
+    transform: scale(0.95);
+}
+
+.btn-edit.success { /*error alt*/
+    background-color: #193768;
+    color: #fff;
+    border: 2px solid #193768;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-edit.success::before { /*error alt*/
+    content: '\2713'; /* Unicode character for check mark */
+    /*content: '\2716';  Unicode character for heavy multiplication x */
+    font-size: 24px;
+    margin-right: 8px;
+}
+
         .btn-edit:hover {
             background-color: #193768;
         }
+        .submit-button {
+         
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-button:active {
+    transform: scale(0.95);
+}
+
+.submit-button.success { /*error alt*/
+    background-color: #193768;
+    color: #fff;
+    border: 2px solid #193768;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-button.success::before { /*error alt*/
+    content: '\2713'; /* Unicode character for check mark */
+    /*content: '\2716';  Unicode character for heavy multiplication x */
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+        .submit-button:hover {
+            background-color: #193768;
+        }
+        .select-country {
+    margin-top: 20px; /* Adjust the value as needed */
+}
+        .link-title {
+    margin-top: 30px; 
+}
+        .link-button {
+    margin-top: 30px; 
+}
+
         .upload-section {
     margin: 10px 0;
 }
@@ -392,9 +549,12 @@
                 <div class="profileinfo-container">
                   <div class="profile-info">
                     <label for="company-logo">Add your Company Logo:</label>
-                    <div class="profile-pic">
-                        <img src="assets/img/images/mooilogo.jpg" alt="Profile Picture">
-                    </div>
+                    <div class="company-logo-container" id="company-logo-container">
+                      <img src="" alt="Company Logo" id="company-logo" class="company-logo">
+                      <div id="default-initial" class="company-logo default-initial hidden">M</div> <!-- Default Initial -->
+                      <input type="file" id="logo-upload" accept="image/*" style="display: none;" onchange="updateLogo(event)">
+                  </div>
+                  
                     
                 </div>
                     <label for="company-name">Company Name:</label>
@@ -404,8 +564,8 @@
                     <label for="industry">Select your Industry Category:</label>
                     <select id="industry" name="industry">
                         <option value="IT">IT</option>
-                        <option value="Accounting/Finance">Mombasa</option>
-                        <option value="Production/Operation">Engineer/Architect</option>
+                        <option value="Accounting/Finance">Accounting/Finance</option>
+                        <option value="Production/Operation">Production/Operation</option>
                         <option value="Engineer/Architect">Engineer/Architect</option>
                     </select>
                     <label for="main-mail">Main Email:</label>
@@ -426,41 +586,54 @@
                 <h2>Location</h2>
                 <div class="skills-container">
                     <label for="city">Select your Company Location:</label>
-                    <select id="city" name="city">
+                    <div class="select-city">
+                      <select id="city" name="city">
                         <option value="" selected disabled hidden>Select a city</option>
                         <option value="Nairobi">Nairobi</option>
                         <option value="Mombasa">Mombasa</option>
                         <option value="Kisumu">Kisumu</option>
                         <option value="Nakuru">Nakuru</option>
                     </select>
-                    <select id="country" name="country">
+                    </div>
+                    
+                    <div class="select-country">
+                      <select id="country" name="country">
                         <option value="" selected disabled hidden>Select a country</option>
                         <option value="Kenya">Kenya</option>
                         <option value="Uganda">Uganda</option>
                         <option value="Tanzania">Tanzania</option>
                     </select>
+                    </div>
+                    
                     <label for="Address">Address:</label>
                     <textarea id="Address" name="Address" required placeholder=" eg (Sifa Towers, 8D. Lenana Rd, Kilimani. 00100, Nairobi.)"></textarea>
                     
-                    <button class="btn-edit">Save</button>
-                    <button class="btn-edit">Cancel</button>
+                    <div class="button1-container">
+                      <button class="btn-save">Save</button>
+                      <button class="btn-cancel">Cancel</button>
+                  </div>
+                  
                 </div>
             </div>
   
           <div class="section">
             <h2>Links</h2>
-            <div class="links-container">
-              <div class="links-entry">
-                <label for="link-title">Link Title:</label>
-                <input type="text" id="link-title" name="link-title" placeholder="Github" >
-                <label for="link-url">URL:</label>
-                <input type="link" id="link-url" name="link-url" placeholder="https://www.github.com/username" >
-                <button class="btn-edit">Save</button>
-                <button class="btn-edit">Cancel</button>
-            </div>
-            </div>
+              <div class="links-container">
+                <div class="links-entry">
+                  <label for="link-title" class="link-title">Link Title:</label>
+                  <input type="text" id="link-title" name="link-title" placeholder="Github" >
+                  <label for="link-url">URL:</label>
+                  <input type="link" id="link-url" name="link-url" placeholder="https://www.github.com/username" >
+                <div class="button2-container">
+                  <button class="btn-save">Save</button>
+                  <button class="btn-cancel">Cancel</button>
+                </div>
+                </div>
+                <button class="link-button" type="button" id="addLink">Add Another Link</button>
+              </div>
+              
           </div>
-          <button type="button" id="addExperience">Add Another Link</button>
+            
 
             <button id="empcompleteProfile" type="submit" class="submit-button">Complete Your Profile</button>
         </form>
@@ -680,12 +853,104 @@
 <!--=======================Javascript============================-->
 
 <script>
+function initializeDefaultLogo(companyName) {
+    const logo = document.getElementById('company-logo');
+    const defaultInitial = document.getElementById('default-initial');
+    if (!logo.src || logo.src === window.location.href) {
+        defaultInitial.textContent = companyName.charAt(0).toUpperCase();
+        defaultInitial.classList.remove('hidden');
+    } else {
+        defaultInitial.classList.add('hidden');
+    }
+}
+
+document.getElementById('default-initial').addEventListener('click', function() {
+    document.getElementById('logo-upload').click();
+});
+
+document.getElementById('company-logo').addEventListener('click', function() {
+    document.getElementById('logo-upload').click();
+});
+
+function updateLogo(event) {
+    const logo = document.getElementById('company-logo');
+    const defaultInitial = document.getElementById('default-initial');
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        logo.src = e.target.result;
+        logo.classList.remove('hidden');
+        defaultInitial.classList.add('hidden');
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+
+    // Reset the file input value to allow the same file to be selected again
+    document.getElementById('logo-upload').value = '';
+}
+
+// Call this function with your company name
+initializeDefaultLogo('MOOI Coop'); // Replace 'MOOI Coop' with your company name
+
+function showDefaultInitial(companyName) {
+    const logo = document.getElementById('company-logo');
+    const defaultInitial = document.getElementById('default-initial');
+    if (!logo.src || logo.src === window.location.href) {
+        defaultInitial.textContent = companyName.charAt(0).toUpperCase();
+        defaultInitial.classList.remove('hidden');
+    } else {
+        defaultInitial.classList.add('hidden');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    initializeDefaultLogo('MOOI Coop'); // Ensure this matches your company name
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const saveButton = document.querySelector('.btn-edit');
+    const submitButton = document.querySelector('.submit-button');
+    
+    saveButton.addEventListener('click', function() {
+        saveButton.classList.add('success'); /*error alt*/
+        saveButton.textContent = 'Saved';
+       
+    });
+    submitButton.addEventListener('click', function() {
+        submitButton.classList.add('success'); /*error alt*/
+        submitButton.innerHTML = ' Complete'; // Use innerHTML to insert the check mark icon and text
+    });
+});
+
+
+              //clone section
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const addLinkButton = document.getElementById('addLink');
+    const empprofileForm = document.getElementById('empcompleteProfile');
+
+    addLinkButton.addEventListener('click', () => {
+        const linkSection = document.querySelector('.links-entry');
+        const newLinksEntry = linkSection.cloneNode(true);
+        newLinksEntry.querySelectorAll('input').forEach(input => input.value = '');
+        linkSection.parentNode.insertBefore(newLinksEntry, addLinkButton);
+    });
+
+    empprofileForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add logic to handle form submission, e.g., sending data to the server
+        alert('Profile completed successfully!');
+    });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
       // Event listener for candidate complete-profile button
       document.getElementById('empcompleteProfile').addEventListener('click', function() {
           window.location.href = 'employer-dashboard.html'; 
-      });
+     });
   });
 
 
