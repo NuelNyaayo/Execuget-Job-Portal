@@ -757,59 +757,68 @@ body {
 <!--=======================Javascript============================-->
 
 <script>
-document.getElementById('company-logo').addEventListener('click', function() {
-    document.getElementById('logo-upload').click();
-});
-
-document.getElementById('remove-logo-btn').addEventListener('click', function() {
-    removeLogo();
-});
-
-document.getElementById('update-logo-btn').addEventListener('click', function() {
-    document.getElementById('logo-upload').click();
-});
-
-function updateLogo(event) {
-    const logo = document.getElementById('company-logo');
+document.addEventListener('DOMContentLoaded', () => {
+    const logoUploadInput = document.getElementById('logo-upload');
+    const companyLogo = document.getElementById('company-logo');
     const defaultInitial = document.getElementById('default-initial');
-    const file = event.target.files[0];
-    const reader = new FileReader();
 
-    reader.onload = function(e) {
-        logo.src = e.target.result;
-        logo.classList.remove('hidden');
-        defaultInitial.classList.add('hidden');
-    };
+    document.getElementById('company-logo').addEventListener('click', function() {
+        logoUploadInput.click();
+    });
 
-    if (file) {
-        reader.readAsDataURL(file);
+    document.getElementById('default-initial').addEventListener('click', function() {
+        logoUploadInput.click();
+    });
+
+    document.getElementById('remove-logo-btn').addEventListener('click', function() {
+        removeLogo();
+    });
+
+    document.getElementById('update-logo-btn').addEventListener('click', function() {
+        logoUploadInput.click();
+    });
+
+    logoUploadInput.addEventListener('change', function(event) {
+        updateLogo(event);
+    });
+
+    function updateLogo(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            companyLogo.src = e.target.result;
+            companyLogo.classList.remove('hidden');
+            defaultInitial.classList.add('hidden');
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+
+        // Reset the file input value to allow the same file to be selected again
+        logoUploadInput.value = '';
     }
 
-    // Reset the file input value to allow the same file to be selected again
-    document.getElementById('logo-upload').value = '';
-}
-
-function removeLogo() {
-    const logo = document.getElementById('company-logo');
-    const defaultInitial = document.getElementById('default-initial');
-    logo.src = '';  // Clear the logo image
-    logo.classList.add('hidden'); // Hide the image element
-    defaultInitial.classList.remove('hidden'); // Show the initial letter
-}
-
-function initializeDefaultLogo(companyName) {
-    const logo = document.getElementById('company-logo');
-    const defaultInitial = document.getElementById('default-initial');
-    if (!logo.src || logo.src === window.location.href) {
-        defaultInitial.textContent = companyName.charAt(0).toUpperCase();
-        defaultInitial.classList.remove('hidden');
-    } else {
-        defaultInitial.classList.add('hidden');
+    function removeLogo() {
+        companyLogo.src = '';  // Clear the logo image
+        companyLogo.classList.add('hidden'); // Hide the image element
+        defaultInitial.classList.remove('hidden'); // Show the initial letter
     }
-}
 
-// Call this function with your company name
-initializeDefaultLogo('MOOI Coop'); // Replace 'MOOI Coop' with your company name
+    function initializeDefaultLogo(companyName) {
+        if (!companyLogo.src || companyLogo.src === window.location.href) {
+            defaultInitial.textContent = companyName.charAt(0).toUpperCase();
+            defaultInitial.classList.remove('hidden');
+        } else {
+            defaultInitial.classList.add('hidden');
+        }
+    }
+
+    // Call this function with your company name
+    initializeDefaultLogo('MOOI Coop'); // Replace 'MOOI Coop' with your company name
+});
+
 
 function editField(fieldId) {
     const field = document.getElementById(fieldId);
@@ -928,38 +937,48 @@ function addField(fieldId) {
     input.type = 'text';
     input.placeholder = 'Enter new phone no.';
 
-    // Create a button to save the new phone number
-    const saveButton = document.createElement('button');
-    saveButton.innerText = 'Add';
-    saveButton.onclick = function () {
+    // Function to save the new phone number
+    function savePhoneNumber() {
         const newPhoneNumber = input.value.trim();
         if (newPhoneNumber !== '') {
             const newPhoneDiv = document.createElement('div');
             newPhoneDiv.innerText = newPhoneNumber;
 
-            // Insert the new phone number div before the input and save button
+            // Insert the new phone number div before the input
             input.parentNode.insertBefore(newPhoneDiv, input);
-
-            // Clear the input field after saving
-            input.value = '';
-
-            // Make the input and save button invisible
-            input.style.display = 'none';
-            saveButton.style.display = 'none';
         }
-    };
 
-    // Find the reference node for positioning the new input and button
+        // Clear the input field after saving
+        input.value = '';
+
+        // Make the input invisible
+        input.style.display = 'none';
+    }
+
+    // Add event listener for the blur event
+    input.addEventListener('blur', savePhoneNumber);
+
+    // Add event listener for the Enter key
+    input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            savePhoneNumber();
+        }
+    });
+
+    // Find the reference node for positioning the new input
     let referenceNode = field.nextSibling;
     while (referenceNode && referenceNode.nodeType === Node.ELEMENT_NODE && referenceNode.tagName !== 'BUTTON') {
         referenceNode = referenceNode.nextSibling;
     }
 
-    // Insert the input field and save button before the reference node
+    // Insert the input field before the reference node
     const container = field.parentNode;
     container.insertBefore(input, referenceNode);
-    container.insertBefore(saveButton, referenceNode);
+
+    // Automatically focus on the input field when it's created
+    input.focus();
 }
+
 
 
     else if(fieldId === 'company-mail'){
@@ -968,75 +987,93 @@ function addField(fieldId) {
     input.type = 'text';
     input.placeholder = 'Enter new email.';
 
-    // Create a button to save the new phone number
-    const saveButton = document.createElement('button');
-    saveButton.innerText = 'Add';
-    saveButton.onclick = function () {
+    // Function to save the new phone number
+    function savePhoneNumber() {
         const newPhoneNumber = input.value.trim();
         if (newPhoneNumber !== '') {
             const newPhoneDiv = document.createElement('div');
             newPhoneDiv.innerText = newPhoneNumber;
 
-            // Insert the new phone number div before the input and save button
+            // Insert the new phone number div before the input
             input.parentNode.insertBefore(newPhoneDiv, input);
-
-            // Clear the input field after saving
-            input.value = '';
-
-            // Make the input and save button invisible
-            input.style.display = 'none';
-            saveButton.style.display = 'none';
         }
-    };
 
-    // Find the reference node for positioning the new input and button
+        // Clear the input field after saving
+        input.value = '';
+
+        // Make the input invisible
+        input.style.display = 'none';
+    }
+
+    // Add event listener for the blur event
+    input.addEventListener('blur', savePhoneNumber);
+
+    // Add event listener for the Enter key
+    input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            savePhoneNumber();
+        }
+    });
+
+    // Find the reference node for positioning the new input
     let referenceNode = field.nextSibling;
     while (referenceNode && referenceNode.nodeType === Node.ELEMENT_NODE && referenceNode.tagName !== 'BUTTON') {
         referenceNode = referenceNode.nextSibling;
     }
 
-    // Insert the input field and save button before the reference node
+    // Insert the input field before the reference node
     const container = field.parentNode;
     container.insertBefore(input, referenceNode);
-    container.insertBefore(saveButton, referenceNode);
+
+    // Automatically focus on the input field when it's created
+    input.focus();
     }
     else if(fieldId === 'company-social'){
         // Create a new input element
     const input = document.createElement('input');
     input.type = 'text';
-    input.placeholder = 'Enter new link.';
+    input.placeholder = 'Enter new phone no.';
 
-    // Create a button to save the new phone number
-    const saveButton = document.createElement('button');
-    saveButton.innerText = 'Add';
-    saveButton.onclick = function () {
+    // Function to save the new phone number
+    function savePhoneNumber() {
         const newPhoneNumber = input.value.trim();
         if (newPhoneNumber !== '') {
             const newPhoneDiv = document.createElement('div');
             newPhoneDiv.innerText = newPhoneNumber;
 
-            // Insert the new phone number div before the input and save button
+            // Insert the new phone number div before the input
             input.parentNode.insertBefore(newPhoneDiv, input);
-
-            // Clear the input field after saving
-            input.value = '';
-
-            // Make the input and save button invisible
-            input.style.display = 'none';
-            saveButton.style.display = 'none';
         }
-    };
 
-    // Find the reference node for positioning the new input and button
+        // Clear the input field after saving
+        input.value = '';
+
+        // Make the input invisible
+        input.style.display = 'none';
+    }
+
+    // Add event listener for the blur event
+    input.addEventListener('blur', savePhoneNumber);
+
+    // Add event listener for the Enter key
+    input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            savePhoneNumber();
+        }
+    });
+
+    // Find the reference node for positioning the new input
     let referenceNode = field.nextSibling;
     while (referenceNode && referenceNode.nodeType === Node.ELEMENT_NODE && referenceNode.tagName !== 'BUTTON') {
         referenceNode = referenceNode.nextSibling;
     }
 
-    // Insert the input field and save button before the reference node
+    // Insert the input field before the reference node
     const container = field.parentNode;
     container.insertBefore(input, referenceNode);
-    container.insertBefore(saveButton, referenceNode);
+
+    // Automatically focus on the input field when it's created
+    input.focus();
     }
 
     // Add event listeners to save changes on blur

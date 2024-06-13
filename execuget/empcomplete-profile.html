@@ -241,7 +241,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
-            max-height: 2000px;
+            max-height: 5000px;
         }
     .skills-container {
             margin: 20px auto;
@@ -250,7 +250,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
-            max-height: 1000px;
+            max-height: 5000px;
         }
 
     .education-container {
@@ -260,7 +260,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
-            max-height: 1000px;
+            max-height: 5000px;
         }
     .experience-container {
             margin: 20px auto;
@@ -278,7 +278,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
-            max-height: 1000px;
+            max-height: 5000px;
         }
     .license-container {
             margin: 20px auto;
@@ -287,7 +287,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
-            max-height: 1000px;
+            max-height: 5000px;
         }
     .links-container {
             margin: 20px auto;
@@ -296,7 +296,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             max-width: 1200px;
-            max-height: 1000px;
+            max-height: 5000px;
         }
 
       .content-container {
@@ -417,6 +417,32 @@
         .link-button {
     margin-top: 30px; 
 }
+
+.links-entry {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.remove-link {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    color: #193768;
+    display: none; /* Hide by default */
+}
+
+.links-entry.cloned .remove-link {
+    display: block; /* Show only for cloned entries */
+}
+
+.remove-link i {
+    font-size: 1.4em;
+}
+
+
 
         .upload-section {
     margin: 10px 0;
@@ -620,16 +646,18 @@
             <h2>Links</h2>
               <div class="links-container">
                 <div class="links-entry">
+                  <span class="remove-link"><i class="fas fa-times"></i></span>
                   <label for="link-title" class="link-title">Link Title:</label>
-                  <input type="text" id="link-title" name="link-title" placeholder="Github" >
+                  <input type="text" id="link-title" name="link-title" placeholder="Github">
                   <label for="link-url">URL:</label>
-                  <input type="link" id="link-url" name="link-url" placeholder="https://www.github.com/username" >
-                <div class="button2-container">
-                  <button class="btn-save">Save</button>
-                  <button class="btn-cancel">Cancel</button>
-                </div>
-                </div>
-                <button class="link-button" type="button" id="addLink">Add Another Link</button>
+                  <input type="link" id="link-url" name="link-url" placeholder="https://www.github.com/username">
+                  <div class="button2-container">
+                      <button class="btn-save">Save</button>
+                      <button class="btn-cancel">Cancel</button>
+                  </div>
+              </div>
+              <button class="link-button" type="button" id="addLink">Add Another Link</button>
+              
               </div>
               
           </div>
@@ -928,23 +956,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
               //clone section
 
-  document.addEventListener('DOMContentLoaded', () => {
+              document.addEventListener('DOMContentLoaded', () => {
     const addLinkButton = document.getElementById('addLink');
     const empprofileForm = document.getElementById('empcompleteProfile');
 
+    // Function to add a new link entry
     addLinkButton.addEventListener('click', () => {
         const linkSection = document.querySelector('.links-entry');
         const newLinksEntry = linkSection.cloneNode(true);
         newLinksEntry.querySelectorAll('input').forEach(input => input.value = '');
+
+        // Add a class to identify cloned entries
+        newLinksEntry.classList.add('cloned');
+
+        // Add event listener to the remove icon
+        newLinksEntry.querySelector('.remove-link').addEventListener('click', () => {
+            newLinksEntry.remove();
+        });
+
         linkSection.parentNode.insertBefore(newLinksEntry, addLinkButton);
     });
 
+    // Form submission handler
     empprofileForm.addEventListener('submit', (e) => {
         e.preventDefault();
         // Add logic to handle form submission, e.g., sending data to the server
         alert('Profile completed successfully!');
     });
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
       // Event listener for candidate complete-profile button
