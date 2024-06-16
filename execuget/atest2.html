@@ -5,219 +5,287 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Execuget - Job Portal Website"/>
+    <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5"/>
     <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
     <meta name="author" content="hastech"/>
 
-    <title>Employer-Dashboard :: Execuget - Job Portal Website</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Candidate-Dashboard :: Execuget - Job Portal Website</title>
     <style>
-      /* User profile and notifications styling */
       .user-profile {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
+          display: flex;
+          align-items: center;
+          margin-right: 20px;
+      }
+      
+      .user-profile img {
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+      }
+      
+      .user-profile .dropdown {
+          display: flex;
+          flex-direction: column;
+      }
+      
+      .user-profile .dropdown a {
+          color: #333;
+          text-decoration: none;
+          margin-top: 5px;
+      }
+      
+      .user-profile .dropdown a:hover {
+          color: #193768;
+      }
+      
+      .notifications {
+          position: relative;
+          margin-right: 20px;
+      }
+      
+      .notifications .bell-icon {
+          background: url('assets/img/bell-icon.png') no-repeat center center;
+          width: 24px;
+          height: 24px;
+          display: block;
+      }
+      
+      .notifications .badge {
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          background-color: red;
+          color: white;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      
+      .header-align {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+      }
+      
+      .account-settings {
+          color: #333;
+          text-decoration: none;
+      }
+      
+      .account-settings:hover {
+          color: #193768;
+      }
+      
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          color: #333;
+          margin: 0;
+          padding: 0;
+      }
+      
+      
+      h1 {
+        padding: 0;
+        text-align: center;
+        margin: 10px 0 30px 0; /* Reduced top margin */
+      }
+      h2 {
+        padding: 0;
+        text-align: center;
+        margin: 10px 0 30px 0; /* Reduced top margin */
+      }
+      
+      .section {
+          margin-bottom: 20px;
+      }
+      
+      label {
+          display: block;
+          margin-bottom: 5px;
+          color: #000;
+      }
+      
+      input, select, textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: white;
 
-.user-profile img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
+      }
+      
+      button {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          background-color: #193768;
+          color: white;
+          margin-top: 10px;
+         border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          
+      }
+      
+      button:hover {
+          background-color: #193768;
+      }
 
-.user-profile .dropdown {
-    display: flex;
-    flex-direction: column;
-}
+      .date-to {
+        margin-bottom: 20px;
+    }
 
-.user-profile .dropdown a {
-    color: #333;
-    text-decoration: none;
-    margin-top: 5px;
-}
-
-.notifications {
-    position: relative;
-    margin-right: 20px;
-}
-
-.notifications .bell-icon {
-    background: url('assets/img/bell-icon.png') no-repeat center center;
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-.notifications .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Additional CSS for header alignment */
-.header-align {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-body {
-            font-family: Arial, sans-serif;
+    .submit-button {
+        margin-top: 70px;
+    }
+    .profile-info {
+            display: flex;
+            flex-wrap: wrap;
             background-color: #f4f4f4;
-            color: #333;
+            padding: 20px;
+            border-radius: 5px;
         }
-
-
-.main-content {
+        .profile-info .profile-pic {
+            margin-right: 20px;
+            margin-left: 380px;
+        }
+        .profile-info img {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+        }
+        .profile-info .details {
             flex: 1;
-            background-color: white;
         }
-        .main-content section {
-            margin-bottom: 20px;
+        .profile-info .details h3 {
+            margin-top: 0;
         }
-        .main-content h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
+        .profile-info .details p {
+            margin: 5px 0;
         }
-        
-        .tabs button {
-            background-color: #333;
+      
+    .profileinfo-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 2000px;
+        }
+    .skills-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 1000px;
+        }
+
+    .education-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 1000px;
+        }
+    .experience-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 1000px;
+        }
+    .documents-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 1000px;
+        }
+    .license-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 1000px;
+        }
+    .links-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 1000px;
+        }
+
+      .content-container {
+            margin: 20px auto;
+            padding: 0;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 10000px;
+        }
+        .btn-edit {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #193768;
             color: white;
             border: none;
-            padding: 10px 20px;
-            margin-right: 5px;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
         }
-        .tabs button:hover {
-            background-color: #555;
+        .btn-edit:hover {
+            background-color: #193768;
         }
-        .cont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh; /* Full viewport height */
+        .upload-section {
+    margin: 10px 0;
 }
 
-.btn-apply-job {
+.upload-icon {
+    display: inline-block;
+    padding: 10px;
     background-color: #193768;
     color: #fff;
-    border: none;
-    padding: 25px 120px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-        .btn-post-job:hover {
-            background-color: #f4f7f7;
-        }
-
-        .main-content {
-            flex: 1;
-            background-color: white;
-        }
-        .main-content section {
-            margin-bottom: 20px;
-        }
-        .main-content h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-        
-        .custom-select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="0,0 10,0 5,5" fill="%23999"/></svg>') no-repeat;
-      background-position: right 20px center;
-      background-size: 10px 10px;
-      color: #656565;
-    }
-    .custom-select option[disabled][selected] {
-      display: none;
-    }
-    .settings-options {
-    display: flex;
-    flex-direction: column;
-}
-
-.settings-options section {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.settings-options h3 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-.settings-options .form-group {
-    margin-bottom: 15px;
-}
-
-.settings-options .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-.settings-options .form-group input,
-.settings-options .form-group select,
-.settings-options .form-group textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.settings-options .form-group button {
-    margin-top: 10px;
-    padding: 8px 12px;
-    border: none;
-    background-color: #193768;
-    color: white;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    margin-left: 500px;
 }
 
-.settings-options .form-group button:hover {
+.upload-icon i {
+    margin-right: 5px;
+}
+
+.upload-icon:hover {
     background-color: #0056b3;
 }
-
-.settings-options .btn-save {
-    margin-top: 20px;
-    padding: 10px 15px;
-    background-color: #193768;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.settings-options .btn-save:hover {
-    background-color: #0056b3;
-}
-
 
     </style>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
     <!--== Google Fonts ==-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -252,41 +320,40 @@ body {
   <!--== Start Header Wrapper ==-->
   <header class="header-area transparent">
     <div class="container">
-        <div class="row no-gutter align-items-center position-relative">
-            <div class="col-12">
-                <div class="header-align">
-                    <div class="header-align-start">
-                        <div class="header-logo-area">
-                            <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo.png" alt="Logo" width="150" height="150"/>
-                                <!--<img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />-->
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header-align-center">
-                      <div class="header-navigation-area position-relative">
-                          <ul class="main-menu nav">
-                            <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
-                            <li><a href="postjob.html"><span>Post Job</span></a></li>
-                            <li><a href="candidates.html"><span>Candidates</span></a></li>
-                            <li><a href="applications-emp.html"><span>Applications</span></a></li>
-                            <li><a href="messages-emp.html"><span>Messages</span></a></li>
-                            <li><a href="performance.html"><span>Performance</span></a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  <div class="header-align-end">
-                    <div class="header-action-area">
-                      <div class="user-profile">
-                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                        <a href="setings-emp.html" class="account-settings">Profile & Settings</a>
-                      </div>
-                    </div>
-                  </div>
-                    
-                </div>
+      <div class="row no-gutter align-items-center position-relative">
+        <div class="col-12">
+          <div class="header-align">
+            <div class="header-align-start">
+              <div class="header-logo-area">
+                <a href="index.html">
+                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
+                  <img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />
+                </a>
+              </div>
             </div>
+            <div class="header-align-center">
+              <div class="header-navigation-area position-relative">
+                <ul class="main-menu nav">
+                  <li><a href="index.html"><span>Home</span></a></li>
+                  <li><a href="find-jobs.html"><span>Find Jobs</span></a></li>
+                  <li><a href="find-candidates.html"><span>Find Candidates</span></a></li>
+                  <li><a href="about-us.html"><span>About us</span></a></li>
+                  <li><a href="login.html"><span>Login</span></a></li>
+                  <li><a href="contact.html"><span>Contact</span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="header-align-end">
+              <div class="header-action-area">
+                <a class="btn-registration" href="registration.html"><span>+</span> Registration</a>
+                <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
+                  <i class="icofont-navigation-menu"></i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   </header>
 
@@ -300,10 +367,10 @@ body {
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h1 class="title">Employer</h1>
+              <h1 class="title">Candidate</h1>
               <nav class="breadcrumb-area">
                 <ul class="breadcrumb justify-content-center">
-                  <li>Post Job</li>
+                  <li>Complete-Profile</li>
                 </ul>
               </nav>
             </div>
@@ -311,241 +378,314 @@ body {
         </div>
       </div>
     </div>
-    <!--== End Page Header Area Wrapper ==-->
-<div class="main-content">
- <div class="comment-form-wrap">
-  <section class="job-details">
-            <div class="settings-options">
-              <section class="job-details">
-                <div class="section-title text-center">
-                  <h2 class="main-title">Job Details</h2>
-                </div>
-                  
-                  <div class="form-group">
-                      <label for="jobname">Job Name/Position</label>
-                      <input type="text" id="jobname" name="jobname" placeholder="e.g., Software Engineer">
-                  </div>
-                  
-                  <div class="form-group">
-                      <label for="jobdescription">Job Description</label>
-                      <textarea id="jobdescription" name="jobdescription" rows="4" placeholder="Describe the job..."></textarea>
-                  </div>
-                  
-                  <div class="form-group">
-                      <label for="jobbenefits">Job Benefits</label>
-                      <div id="benefits-container">
-                          <input type="text" id="jobbenefits" name="jobbenefits" placeholder="e.g., Health insurance">
-                      </div>
-                      <button type="button" onclick="addBenefit()">Add Benefit</button>
-                  </div>
-                  
-                  <div class="form-group">
-                      <label for="candidatesneeded">Number of Candidates Needed</label>
-                      <input type="number" id="candidatesneeded" name="candidatesneeded" placeholder="e.g., 3">
-                  </div>
-                  
-                  <div class="form-group">
-                      <label for="applyby">Apply By Date</label>
-                      <input type="date" id="applyby" name="applyby">
-                  </div>
-                  
-                  <div class="form-group">
-                      <label for="companytype">Company Type</label>
-                      <select id="companytype" name="companytype">
-                          <option value="it">IT</option>
-                          <option value="finance">Finance</option>
-                          <option value="healthcare">Healthcare</option>
-                          <option value="education">Education</option>
-                          <option value="manufacturing">Manufacturing</option>
-                          <option value="other">Other</option>
-                      </select>
-                  </div>
-                  
-                  <div class="form-group">
-                      <label for="renumeration">Remuneration (optional)</label>
-                      <input type="number" id="renumeration" name="renumeration" placeholder="e.g., 50000">
-                  </div>
-                  
-                  <div class="form-group">
-                      <label for="workinghours">Working Hours (optional)</label>
-                      <input type="number" id="workinghours" name="workinghours" placeholder="e.g., 40">
-                  </div>
-                  
-                  <button class="btn-save">Save Changes</button>
-                  <button class="btn-save">Discard Changes</button>
-              </section>
-          
-          </div>
-
-  </section>
-  <section id="requirements">
-    <div class="settings-options">
-        <section class="requirements-details">
-            <div class="section-title text-center">
-                <h2 class="main-title">Requirements</h2>
-            </div>
-            <div class="form-group">
-                <label for="responsibilities">Responsibilities</label>
-                <div id="responsibilities-container">
-                    <input type="text" id="responsibilities" name="responsibilities" placeholder="e.g., Manage team projects">
-                </div>
-                <button type="button" onclick="addResponsibility()">Add Responsibility</button>
-                <label for="educationlevel">Education Level</label>
-                <select id="educationlevel" name="educationlevel">
-                    <option value="olevel">O-Level</option>
-                    <option value="alevel">A-Level</option>
-                    <option value="certificate">Certificate</option>
-                    <option value="diploma">Diploma</option>
-                    <option value="higherdiploma">Higher Diploma</option>
-                    <option value="degree">Degree</option>
-                    <option value="masters">Masters</option>
-                </select>
-            </div>
-                  <button class="btn-save">Save Changes</button>
-                  <button class="btn-save">Discard Changes</button>
-        </section>
-    </div>
-  </section>
-  <section id="skills">
-        <div class="settings-options">
-            <section class="skills-details">
-                <div class="section-title text-center">
-                    <h2 class="main-title">Skills</h2>
-                  </div>
-                <div class="form-group">
-                    <label for="skills">Skills</label>
-                    <div id="skills-container" class="skills-container">
-                        <input type="text" id="skills" name="skills" placeholder="e.g., JavaScript">
-                    </div>
-                    <button type="button" onclick="addSkill()">Add Skill</button>
-                </div>
-            </section>
-        </div>
-    </section>
-  <div class="col-md-12">
-    <div class="form-group text-center mb--0">
-      <button class="btn btn-theme" type="submit">Post Now <i class="icofont-long-arrow-right"></i></button>
-    </div>
-  </div>
- </div>
-</div>
     
+    <!--== End Page Header Area Wrapper ==-->
+    
+    <div class="content-container">
+        <h1>Complete Your Profile</h1>
+        <form id="profileForm">
+            <!-- Profile-info Section -->
+            <div class="section">
+                <h2>Profile Info.</h2>
+                <div class="profileinfo-container">
+                  <div class="profile-info">
+                    <label for="firstname">Add a Profile Picture:</label>
+                    <div class="profile-pic">
+                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                    </div>
+                    
+                </div>
+                    <label for="firstname">Official Names:</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="John Doe" required>
+                    <label for="bio">Bio:</label>
+                    <textarea id="description" name="description" required placeholder="Tell us more about yourself..."></textarea>
+                    <label for="prim-email">Primary Email:</label>
+                    <input type="email" id="prim-email" name="prim-email" required placeholder="primarymail@gmail.com">
+                    <label for="sec-email">Secondary Email:  (If any)</label>
+                    <input type="email" id="sec-email" name="sec-email" placeholder="secondarymail@gmail.com">
+                    <label for="prim-phone">Primary Phone:</label>
+                    <input type="tel" id="prim-phone" name="prim-phone" required placeholder="(123) 456-7890">
+                    <label for="sec-phone">Additional Phone:  (If any)</label>
+                    <input type="tel" id="sec-phone" name="sec-phone" placeholder="(123) 456-7890">
+                    <label for="address-one">Address1:</label>
+                    <input type="text" id="address-one" name="address-one" placeholder="43844-00100" required>
+                    <label for="address-two">Address2:  (If any)</label>
+                    <input type="text" id="address-two" name="address-two" placeholder="43844-00100">
+                    <label for="city">Current City</label>
+                    <select id="city" name="city">
+                        <option value="Nairobi">Nairobi</option>
+                        <option value="Mombasa">Mombasa</option>
+                        <option value="Kisumu">Kisumu</option>
+                        <option value="Nakuru">Nakuru</option>
+                    </select>
+                    <label for="zip-code">Zip/Postal Code:</label>
+                    <input type="text" id="zip-code" name="zip-code" placeholder="00100">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="Kenya">Kenya</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Tanzania">Tanzania</option>
+                    </select>
+                    <button class="btn-edit">Save Profile Information</button>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                  <label for="skills">Select your skills:</label>
+                  <select id="skills" name="skills" multiple>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="C++">C++</option>
+                    <option value="PHP">PHP</option>
+                    <!-- Add more skills as needed -->
+                </select>
+                    <button class="btn-edit">Save</button>
+                    <button class="btn-edit">Cancel</button>
+                </div>
+            </div>
+  
+            <!-- Education Section -->
+            <div class="section">
+                <h2>Education</h2>
+                <div class="education-container">
+                  <div class="education-entry">
+                    <label for="institution">Institution:</label>
+                    <input type="text" id="institution" name="institution" required placeholder="eg. Strathmore University">
+                    
+                    
+                    <label for="level-of-education">Level of Education:</label>
+                    <select id="level-of-education" name="level-of-education">
+                        <option value="Nairobi">degree</option>
+                        <option value="Mombasa">high school</option>
+                        <option value="Kisumu">post graduate</option>
+                        <option value="Nakuru">tertiary</option>
+                    </select>
+                    <label for="course">Course/Major:</label>
+                    <input type="text" id="course" name="course" required placeholder="eg. Bsc Computer Science">
+                    <label for="dateFromEdu">Date From:</label>
+                    <input type="date" id="dateFromEdu" name="dateFromEdu" required>
+                    
+                    <label for="dateToEdu" >Date To:</label>
+                    <input type="date" class="date-to" id="dateToEdu" name="dateToEdu" required>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required placeholder="More description about the course..."></textarea>
+                    <button class="btn-edit">Save</button>
+                    <button class="btn-edit">Cancel</button>
+                </div>
+                </div>
+                <button type="button" id="addEducation">Add Another Education</button>
+            </div>
+
+            <!-- Work & Experience Section -->
+            <div class="section">
+                <h2>Work & Experience</h2>
+                <div class="experience-container">
+                  <div class="experience-entry">
+                    <label for="organisation">Organisation:</label>
+                    <input type="text" id="organisation" name="organisation" required placeholder="eg. Vesen Computing Solution">
+                    
+                    <label for="role">Role:</label>
+                    <input type="text" id="role" name="role" required placeholder="eg. Senior Developer">
+
+                    <label for="location">Location</label>
+                    <select id="location" name="location">
+                      <option value="Nairobi">Nairobi</option>
+                      <option value="Mombasa">Mombasa</option>
+                      <option value="Kisumu">Kisumu</option>
+                      <option value="Nakuru">Nakuru</option>
+                  </select>
+                    
+                    <label for="tasks">Tasks:</label>
+                    <textarea id="tasks" name="tasks" required placeholder="More description about the job..."></textarea>
+                    
+                    <label for="dateFromExp">Date From:</label>
+                    <input type="date" id="dateFromExp" name="dateFromExp" required>
+                    
+                    <label for="dateToExp" class="date-to">Date To:</label>
+                    <input type="date" class="date-to" id="dateToExp" name="dateToExp" required>
+                    <button class="btn-edit">Save</button>
+                    <button class="btn-edit">Cancel</button>
+                </div>
+                </div>
+                <button type="button" id="addExperience">Add Another Experience</button>
+            </div>
+            <div class="section">
+              <h2>Documents</h2>
+              <div class="documents-container">
+                  <div class="upload-section">
+                      <label for="upload-resume" class="upload-icon">
+                          <i class="fas fa-upload"></i> Upload Resume
+                      </label>
+                      <input type="file" id="upload-resume" style="display: none;">
+                  </div>
+                  <div class="upload-section">
+                      <label for="upload-other-documents" class="upload-icon">
+                          <i class="fas fa-upload"></i> Upload Other Documents
+                      </label>
+                      <input type="file" id="upload-other-documents" style="display: none;">
+                  </div>
+                    <button class="btn-edit">Save</button>
+                    <button class="btn-edit">Cancel</button>
+              </div>
+          </div>
+          
+          <div class="section">
+            <h2>Licenses & Certification</h2>
+            <div class="license-container">
+              <div class="license-entry">
+                <label for="license-name">License/Certification Name:  (If any)</label>
+                <input type="text" id="license-name" name="license-name" placeholder="Certified Public Accountant (CPA)" >
+                <label for="license-no">License No:</label>
+                <input type="text" id="license-no" name="license-no" placeholder="CPA123456" >
+                <label for="datelicenseAchieved">Date Achieved:</label>
+                <input type="date" id="datelicenseAchieved" name="datelicenseAchieved">
+                    
+                <label for="datelicenseRenewed" >Renewal Date:</label>
+                <input type="date" class="date-to" id="datelicenseRenewed" name="datelicenseRenewed">
+                <button class="btn-edit">Save</button>
+                <button class="btn-edit">Cancel</button>
+            </div>
+            </div>
+          </div>
+          <button type="button" id="addExperience">Add Another Certification</button>
+
+          <div class="section">
+            <h2>Links</h2>
+            <div class="links-container">
+              <div class="links-entry">
+                <label for="link-title">Link Title:</label>
+                <input type="text" id="link-title" name="link-title" placeholder="Github" >
+                <label for="link-url">URL:</label>
+                <input type="link" id="link-url" name="link-url" placeholder="https://www.github.com/username" >
+                <button class="btn-edit">Save</button>
+                <button class="btn-edit">Cancel</button>
+            </div>
+            </div>
+          </div>
+          <button type="button" id="addExperience">Add Another Link</button>
+
+            <button id="candicompleteProfile" type="submit" class="submit-button">Complete Your Profile</button>
+        </form>
+   
+    </div>
 
   </main>
-
-  <!--== Start Footer Area Wrapper ==-->
-  <footer class="footer-area">
-    <!--== Start Footer Top ==-->
-    <div class="footer-top">
-      <div class="container pt--0 pb--0">
-        <div class="row">
-          <div class="col-lg-5">
-            <div class="footer-newsletter-content">
-              <h4 class="title">Subscribe to our everyday job newsletter.</h4>
-            </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="footer-newsletter-form">
-              <form action="#">
-                <input type="email" placeholder="Enter your email">
-                <button type="submit" class="btn-newsletter">Subscribe Now</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--== End Footer Top ==-->
-
     <!--== Start Footer Main ==-->
-    <div class="footer-main">
-      <div class="container pt--0 pb--0">
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <div class="widget-item widget-about">
-              <div class="widget-logo-area">
-                <a href="index.html">
-                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="225" height="225"/>
-                </a>
+    <footer class="footer-area">
+      <!--== Start Footer Top ==-->
+      <div class="footer-top">
+        <div class="container pt--0 pb--0">
+          <div class="row">
+            <div class="col-lg-5">
+              <div class="footer-newsletter-content">
+                <h4 class="title">Subscribe to our everyday job newsletter.</h4>
               </div>
-              <p class="desc">The Job Seeker Platform that streamlines the job search and recruitment process for both employers and job seekers.</p>
-              <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="icofont-linkedin"></i></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener"><i class="icofont-instagram"></i></a>
+            </div>
+            <div class="col-lg-7">
+              <div class="footer-newsletter-form">
+                <form action="#">
+                  <input type="email" placeholder="Enter your email">
+                  <button type="submit" class="btn-newsletter">Subscribe Now</button>
+                </form>
               </div>
             </div>
           </div>
-          <div class="col-lg-9">
-            <div class="row">
-              <div class="col-md-3 col-lg-3">
-                <div class="widget-item nav-menu-item1">
-                  <h4 class="widget-title">Company</h4>
-                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">Company</h4>
-                  <div id="widgetId-1" class="collapse widget-collapse-body">
-                    <div class="collapse-body">
-                      <div class="widget-menu-wrap">
-                        <ul class="nav-menu">
-                          <li><a href="about-us.html">About Us</a></li>
-                          <li><a href="find-jobs.html"> Find Jobs</a></li>
-                          <li><a href="find-candidates.html">Cadidates</a></li>
-                          <li><a href="contact.html">Contact Us</a></li>
-                        </ul>
+        </div>
+      </div>
+      <!--== End Footer Top ==-->
+  
+      <!--== Start Footer Main ==-->
+      <div class="footer-main">
+        <div class="container pt--0 pb--0">
+          <div class="row">
+            <div class="col-md-6 col-lg-3">
+              <div class="widget-item widget-about">
+                <div class="widget-logo-area">
+                  <a href="index.html">
+                    <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="225" height="225"/>
+                  </a>
+                </div>
+                <p class="desc">The Job Seeker Platform that streamlines the job search and recruitment process for both employers and job seekers.</p>
+                <div class="social-icons">
+                  <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="icofont-linkedin"></i></a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener"><i class="icofont-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-9">
+              <div class="row">
+                <div class="col-md-3 col-lg-3">
+                  <div class="widget-item nav-menu-item1">
+                    <h4 class="widget-title">Company</h4>
+                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">Company</h4>
+                    <div id="widgetId-1" class="collapse widget-collapse-body">
+                      <div class="collapse-body">
+                        <div class="widget-menu-wrap">
+                          <ul class="nav-menu">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="find-jobs.html"> Find Jobs</a></li>
+                            <li><a href="find-candidates.html">Cadidates</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-3 col-lg-3">
-                <div class="widget-item nav-menu-item2">
-                  <h4 class="widget-title">Resources</h4>
-                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">Resources</h4>
-                  <div id="widgetId-2" class="collapse widget-collapse-body">
-                    <div class="collapse-body">
-                      <div class="widget-menu-wrap">
-                        <ul class="nav-menu">
-                          <li><a href="login.html">Quick Login</a></li>
-                          <li><a href="registration.html">Apply For a Job</a></li>
-                          <li><a href="registration.html">Post New Job</a></li>
-                          <li><a href="find-jobs.html">Jobs Listing</a></li>
-                        </ul>
+                <div class="col-md-3 col-lg-3">
+                  <div class="widget-item nav-menu-item2">
+                    <h4 class="widget-title">Resources</h4>
+                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">Resources</h4>
+                    <div id="widgetId-2" class="collapse widget-collapse-body">
+                      <div class="collapse-body">
+                        <div class="widget-menu-wrap">
+                          <ul class="nav-menu">
+                            <li><a href="login.html">Quick Login</a></li>
+                            <li><a href="registration.html">Apply For a Job</a></li>
+                            <li><a href="registration.html">Post New Job</a></li>
+                            <li><a href="find-jobs.html">Jobs Listing</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-3 col-lg-3">
-                <div class="widget-item nav-menu-item3">
-                  <h4 class="widget-title">Legal</h4>
-                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-3">Legal</h4>
-                  <div id="widgetId-3" class="collapse widget-collapse-body">
-                    <div class="collapse-body">
-                      <div class="widget-menu-wrap">
-                        <ul class="nav-menu">
-                          <li><a href="index.html">Partners</a></li>
-                          <li><a href="blog.html">Blog & BlogPost</a></li>
-                          <li><a href="help-support.html">Help & Support</a></li>
-                          <li><a href="index.html">Popular-Careers</a></li>
-                        </ul>
+                <div class="col-md-3 col-lg-3">
+                  <div class="widget-item nav-menu-item3">
+                    <h4 class="widget-title">Legal</h4>
+                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-3">Legal</h4>
+                    <div id="widgetId-3" class="collapse widget-collapse-body">
+                      <div class="collapse-body">
+                        <div class="widget-menu-wrap">
+                          <ul class="nav-menu">
+                            <li><a href="index.html">Partners</a></li>
+                            <li><a href="blog.html">Blog & BlogPost</a></li>
+                            <li><a href="help-support.html">Help & Support</a></li>
+                            <li><a href="index.html">Popular-Careers</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-3 col-lg-3">
-                <div class="widget-item nav-menu-item4">
-                  <h4 class="widget-title">Products</h4>
-                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-4">Products</h4>
-                  <div id="widgetId-4" class="collapse widget-collapse-body">
-                    <div class="collapse-body">
-                      <div class="widget-menu-wrap">
-                        <ul class="nav-menu">
-                          <li><a href="registration.html">Get Started</a></li>
-                          <li><a href="index.html">How It Works</a></li>
-                          <li><a href="help-support.html">Privacy Terms</a></li>
-                          <li><a href="help-support.html">Policies</a></li>
-                        </ul>
+                <div class="col-md-3 col-lg-3">
+                  <div class="widget-item nav-menu-item4">
+                    <h4 class="widget-title">Products</h4>
+                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-4">Products</h4>
+                    <div id="widgetId-4" class="collapse widget-collapse-body">
+                      <div class="collapse-body">
+                        <div class="widget-menu-wrap">
+                          <ul class="nav-menu">
+                            <li><a href="registration.html">Get Started</a></li>
+                            <li><a href="index.html">How It Works</a></li>
+                            <li><a href="help-support.html">Privacy Terms</a></li>
+                            <li><a href="help-support.html">Policies</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -555,7 +695,22 @@ body {
           </div>
         </div>
       </div>
-    </div>
+      <!--== End Footer Main ==-->
+  
+      <!--== Start Footer Bottom ==-->
+      <div class="footer-bottom">
+        <div class="container pt--0 pb--0">
+          <div class="row">
+            <div class="col-12">
+              <div class="footer-bottom-content">
+                <p class="copyright">© 2024 Execuget.All Rights Reserved.<br> Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://vesencomputing.com/">Vesen.</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--== End Footer Bottom ==-->
+    </footer>
     <!--== End Footer Main ==-->
 
     <!--== Start Footer Bottom ==-->
@@ -564,7 +719,7 @@ body {
         <div class="row">
           <div class="col-12">
             <div class="footer-bottom-content">
-              <p class="copyright">© 2024 Execuget.All Rights Reserved.<br> Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://vesencomputing.com/">Vesen.</a></p>
+              <p class="copyright">© 2024 Execuget. Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival">Vesen.</a></p>
             </div>
           </div>
         </div>
@@ -629,30 +784,50 @@ body {
 <!--=======================Javascript============================-->
 
 <script>
-  function addBenefit() {
-      const benefitsContainer = document.getElementById('benefits-container');
-      const newBenefitInput = document.createElement('input');
-      newBenefitInput.type = 'text';
-      newBenefitInput.name = 'jobbenefits';
-      newBenefitInput.placeholder = 'e.g., Health insurance';
-      benefitsContainer.appendChild(newBenefitInput);
-  }
-  function addResponsibility() {
-    const responsibilitiesContainer = document.getElementById('responsibilities-container');
-    const newResponsibilityInput = document.createElement('input');
-    newResponsibilityInput.type = 'text';
-    newResponsibilityInput.name = 'responsibilities';
-    newResponsibilityInput.placeholder = 'e.g., Manage team projects';
-    responsibilitiesContainer.appendChild(newResponsibilityInput);
-}
-function addSkill() {
-        const skillsContainer = document.getElementById('skills-container');
-        const newSkillInput = document.createElement('input');
-        newSkillInput.type = 'text';
-        newSkillInput.name = 'skills';
-        newSkillInput.placeholder = 'e.g., JavaScript';
-        skillsContainer.appendChild(newSkillInput);
-    }
+
+document.addEventListener('DOMContentLoaded', function() {
+      // Event listener for candidate complete-profile button
+      document.getElementById('candicompleteProfile').addEventListener('click', function() {
+          window.location.href = 'candidate-dashboard.html'; 
+      });
+  });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+      const addEducationButton = document.getElementById('addEducation');
+      const addExperienceButton = document.getElementById('addExperience');
+      const profileForm = document.getElementById('profileForm');
+  
+      addEducationButton.addEventListener('click', () => {
+          const educationContainer = document.querySelector('.education-container');
+          const educationEntry = educationContainer.querySelector('.education-entry');
+          const newEducationEntry = educationEntry.cloneNode(true);
+          newEducationEntry.querySelectorAll('input').forEach(input => input.value = '');
+          educationContainer.insertBefore(newEducationEntry, addEducationButton);
+      });
+  
+      addExperienceButton.addEventListener('click', () => {
+          const experienceContainer = document.querySelector('.experience-container');
+          const experienceEntry = experienceContainer.querySelector('.experience-entry');
+          const newExperienceEntry = experienceEntry.cloneNode(true);
+          newExperienceEntry.querySelectorAll('input, textarea').forEach(input => input.value = '');
+          experienceContainer.insertBefore(newExperienceEntry, addExperienceButton);
+      });
+  
+      profileForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          // Add logic to handle form submission, e.g., sending data to the server
+          alert('Profile completed successfully!');
+      });
+  });
+
+  document.querySelectorAll('.upload-icon').forEach(icon => {
+    icon.addEventListener('click', function () {
+        const inputId = this.getAttribute('for');
+        document.getElementById(inputId).click();
+    });
+});
+
 </script>
 
 <!--=== jQuery Modernizr Min Js ===-->
@@ -678,7 +853,7 @@ function addSkill() {
 
 <!--=== jQuery Custom Js ===-->
 <script src="assets/js/custom.js"></script>
-
+<script src="assets/js/applications.js"></script>
 </body>
 
 </html>
