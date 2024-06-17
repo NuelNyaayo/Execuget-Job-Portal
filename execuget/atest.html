@@ -1226,6 +1226,17 @@ function addfileField() {
         const file = event.target.files[0];
         if (file) {
             const candidateDocDiv = document.getElementById('candidate-document');
+            const existingFiles = candidateDocDiv.getElementsByClassName('uploaded-file');
+
+            // Check if a file with the same name already exists
+            for (let i = 0; i < existingFiles.length; i++) {
+                const existingFileName = existingFiles[i].querySelector('span').innerText;
+                if (existingFileName === file.name) {
+                    alert('This file has already been uploaded.');
+                    fileInput.remove();
+                    return;
+                }
+            }
 
             // Create a container for the uploaded file
             const fileContainer = document.createElement('div');
@@ -1273,6 +1284,7 @@ function addfileField() {
     document.body.appendChild(fileInput);
     fileInput.click();
 }
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
