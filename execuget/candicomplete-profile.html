@@ -271,6 +271,15 @@
             max-width: 1200px;
             max-height: 5000px;
         }
+    .resume-container {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 5000px;
+        }
     .documents-container {
             margin: 20px auto;
             padding: 20px;
@@ -436,6 +445,12 @@
     border: 1px solid #ccc;
     margin-bottom: 10px;
 }
+.resume-entry {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
 .documents-entry {
     position: relative;
     padding: 10px;
@@ -518,6 +533,7 @@
 
         .upload-section {
     margin: 10px 0;
+    margin-top: 10px;
 }
 
 .upload-icon {
@@ -528,7 +544,9 @@
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    margin-left: 500px;
+    margin-left: 450px;
+    width: 250px;
+    height: 70px;
 }
 
 .upload-icon i {
@@ -538,6 +556,34 @@
 .upload-icon:hover {
     background-color: #0056b3;
 }
+.uploaded-file {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .uploaded-file span {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .uploaded-file .icon {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .uploaded-file .icon.download {
+            color: #193768;
+        }
+
+        .uploaded-file .icon.remove {
+            color: #193768;
+        }
 
     </style>
 
@@ -657,39 +703,39 @@
                   
                     
                 </div>
-                    <label for="company-name">Official Names:</label>
-                    <input type="text" id="company-name" name="company-name" placeholder="John Doe" required>
-                    <label for="aboutUs">Bio:</label>
-                    <textarea id="aboutUs" name="aboutUs" required placeholder="Tell us more about yourself..."></textarea>
-                    <label for="main-mail">Primary Email:</label>
-                    <input type="email" id="main-mail" name="main-mail" required placeholder="primarymail@gmail.com">
-                    <label for="other-mail">Secondary Email:  (If any)</label>
-                    <input type="email" id="other-mail" name="other-mail" placeholder="secondarymail@gmail.com">
-                    <label for="main-phone">Primary Phone:</label>
-                    <input type="tel" id="main-phone" name="main-phone" required placeholder="(123) 456-7890">
-                    <label for="additional-phone">Additional Phone:  (If any)</label>
-                    <input type="tel" id="additional-phone" name="additional-phone" placeholder="(123) 456-7890">
-                    <label for="company-address">Address1:</label>
-                    <input type="text" id="company-address" name="company-address" placeholder="43844-00100" required>
-                    <label for="company-address">Address2:  (If any)</label>
-                    <input type="text" id="company-address" name="company-address" placeholder="43844-00100" required>
-                    <label for="industry">Current City</label>
-                    <select id="industry" name="industry">
+                    <label for="candidate-name">Official Names:</label>
+                    <input type="text" id="candidate-name" name="candidate-name" placeholder="John Doe" required>
+                    <label for="candidate-description">Bio:</label>
+                    <textarea id="candidate-description" name="candidate-description" required placeholder="Tell us more about yourself..."></textarea>
+                    <label for="candidate-main-mail">Primary Email:</label>
+                    <input type="email" id="candidate-main-mail" name="candidate-main-mail" required placeholder="primarymail@gmail.com">
+                    <label for="candidate-other-mail">Secondary Email:  (If any)</label>
+                    <input type="email" id="candidate-other-mail" name="candidate-other-mail" placeholder="secondarymail@gmail.com">
+                    <label for="candidate-main-phone">Primary Phone:</label>
+                    <input type="tel" id="candidate-main-phone" name="candidate-main-phone" required placeholder="(123) 456-7890">
+                    <label for="candidate-additional-phone">Additional Phone:  (If any)</label>
+                    <input type="tel" id="candidate-additional-phone" name="candidate-additional-phone" placeholder="(123) 456-7890">
+                    <label for="candidate-main-address">Address1:</label>
+                    <input type="text" id="candidate-main-address" name="candidate-main-address" placeholder="43844-00100" required>
+                    <label for="candidate-other-address">Address2:  (If any)</label>
+                    <input type="text" id="candidate-other-address" name="candidate-other-address" placeholder="43844-00100" required>
+                    <label for="candidate-city">Current City</label>
+                    <select id="candidate-city" name="candidate-city">
                         <option value="Nairobi">Nairobi</option>
                         <option value="Mombasa">Mombasa</option>
                         <option value="Kisumu">Kisumu</option>
                         <option value="Nakuru">Nakuru</option>
                     </select>
-                    <label for="company-address">Zip/Postal Code:</label>
-                    <input type="text" id="company-address" name="company-address" placeholder="00100" required>
-                    <label for="industry">Country</label>
-                    <select id="industry" name="industry">
+                    <label for="candidate-zip-code">Zip/Postal Code:</label>
+                    <input type="text" id="candidate-zip-code" name="candidate-zip-code" placeholder="00100" required>
+                    <label for="candidate-country">Country</label>
+                    <select id="candidate-country" name="candidate-country">
                         <option value="Kenya">Kenya</option>
                         <option value="Uganda">Uganda</option>
                         <option value="Tanzania">Tanzania</option>
                     </select>
-                    <label for="industry">Select your Industry Category:</label>
-                    <select id="industry" name="industry">
+                    <label for="candidate-industry">Select your Industry Category:</label>
+                    <select id="candidate-industry" name="candidate-industry">
                         <option value="Accounting/Finance">Accounting/Finance</option>
                         <option value="Production/Operation">Production/Operation</option>
                         <option value="Engineer/Architect">Engineer/Architect</option>
@@ -703,8 +749,8 @@
               <div class="skills-container">
                 <div class="skills-entry">
                  <!-- <span class="remove-link"><i class="fas fa-times"></i></span>-->
-                  <label for="link-title" class="link-title">Select your skills:</label>
-                  <select id="industry" name="industry"multiple>
+                  <label for="candidate-skills" class="candidate-skills">Select your skills:</label>
+                  <select id="candidate-skills" name="candidate-skills"multiple>
                     <option value="JavaScript">JavaScript</option>
                     <option value="Python">Python</option>
                     <option value="Java">Java</option>
@@ -726,25 +772,23 @@
               <div class="education-container">
                 <div class="education-entry">
                   <span class="remove-education"><i class="fas fa-times"></i></span>
-                  <label for="link-title" class="link-title">Institution:</label>
-                  <input type="text" id="link-title" name="link-title" placeholder="eg. Strathmore University">
-                  <label for="link-url">Level of Education:</label>
-                  <select id="industry" name="industry">
+                  <label for="candidate-institution" class="candidate-institution">Institution:</label>
+                  <input type="text" id="candidate-institution" name="candidate-institution" placeholder="eg. Strathmore University">
+                  <label for="candidate-level-of-education" class="candidate-level-of-education">Level of Education:</label>
+                  <select id="candidate-level-of-education" name="candidate-level-of-education">
                     <option value="degree">degree</option>
                     <option value="high school">high school</option>
                     <option value="post graduate">post graduate</option>
                     <option value="tertiary">tertiary</option>
                   </select>
-                  <label for="link-title" class="link-title">Course/Major:</label>
-                  <input type="text" id="link-title" name="link-title" placeholder="eg. Bsc Computer Science">
-                  <label for="link-title" class="link-title">Date From:</label>
-                  <input type="date" id="link-url" name="link-url" >
-                  <label for="link-title" class="link-title">Date To:</label>
-                  <input type="date" id="link-url" name="link-url" >
-                  <label for="link-title" class="link-title">Description:</label>
-                  <textarea id="aboutUs" name="aboutUs" required placeholder="More description about the course..."></textarea>
-
-
+                  <label for="candidate-course" class="candidate-course">Course/Major:</label>
+                  <input type="text" id="candidate-course" name="candidate-course" placeholder="eg. Bsc Computer Science">
+                  <label for="candidate-dateFromEdu" class="candidate-dateFromEdu">Date From:</label>
+                  <input type="date" id="candidate-dateFromEdu" name="candidate-dateFromEdu" required >
+                  <label for="candidate-dateToEdu" class="candidate-dateToEdu">Date To:</label>
+                  <input type="date" class="candidate-date-to" id="candidate-dateToEdu" name="candidate-dateToEdu" required >
+                  <label for="candidate-course-description" class="candidate-course-description">Description:</label>
+                  <textarea id="candidate-course-description" name="candidate-course-description" required placeholder="More description about the course..."></textarea>
                   <div class="button2-container">
                       <button class="btn-save">Save</button>
                       <button class="btn-cancel">Cancel</button>
@@ -760,24 +804,24 @@
               <div class="experience-container">
                 <div class="experience-entry">
                   <span class="remove-experience"><i class="fas fa-times"></i></span>
-                  <label for="link-title" class="link-title">Organisation:</label>
-                  <input type="text" id="link-title" name="link-title" placeholder="eg. Vesen Computing Solution">
-                  <label for="link-title" class="link-title">Role:</label>
-                  <input type="link" id="link-url" name="link-url" placeholder="eg. Senior Developer">
-                  <label for="link-title" class="link-title">Location</label>
-                  <select id="industry" name="industry">
+                  <label for="candidate-organisation" class="candidate-organisation">Organisation:</label>
+                  <input type="text" id="candidate-organisation" name="candidate-organisation" placeholder="eg. Vesen Computing Solution">
+                  <label for="candidate-role" class="candidate-role">Role:</label>
+                  <input type="text" id="candidate-role" name="candidate-role" placeholder="eg. Senior Developer">
+                  <label for="candidate-work-location" class="candidate-work-location">Location</label>
+                  <select id="candidate-work-location" name="candidate-work-location">
                     <option value="" selected disabled hidden>Select a city</option>
                     <option value="Nairobi">Nairobi</option>
                     <option value="Mombasa">Mombasa</option>
                     <option value="Kisumu">Kisumu</option>
                     <option value="Nakuru">Nakuru</option>
                   </select>
-                  <label for="link-title" class="link-title">Tasks:</label>
-                  <textarea id="aboutUs" name="aboutUs" required placeholder="More description about the job..."></textarea>
-                  <label for="link-title" class="link-title">Date From:</label>
-                  <input type="date" id="link-url" name="link-url" >
-                  <label for="link-title" class="link-title">Date To:</label>
-                  <input type="date" id="link-url" name="link-url" >
+                  <label for="candidate-tasks" class="candidate-tasks">Tasks:</label>
+                  <textarea id="candidate-tasks" name="candidate-tasks" required placeholder="More description about the job..."></textarea>
+                  <label for="candidate-dateFromExp" class="candidate-dateFromExp">Date From:</label>
+                  <input type="date" id="candidate-dateFromExp" name="candidate-dateFromExp" required >
+                  <label for="candidate-dateToExp" class="candidate-dateToExp">Date To:</label>
+                  <input type="date" id="candidate-dateToExp" name="candidate-dateToExp" required>
                   <div class="button2-container">
                       <button class="btn-save">Save</button>
                       <button class="btn-cancel">Cancel</button>
@@ -788,44 +832,60 @@
               </div>   
           </div>
           <div class="section">
+            <h2>Resume</h2>
+            <div class="resume-container">
+                <div class="resume-entry">
+                    <div class="upload-section">
+                        <label for="upload-resume" class="upload-icon" id="uploadResumeLabel">
+                            <i class="fas fa-upload"></i> Upload Resume
+                        </label>
+                    </div>
+                    <div class="resume-container" id="candidate-resume">
+                        <!-- Uploaded resume will be appended here -->
+                    </div>
+                    <div class="button2-container">
+                        <button class="btn-save">Save</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                </div>
+                <!-- <button class="link-button" type="button" id="addLink">Add Another Link</button> -->
+            </div>
+        </div>
+        
+          <div class="section">
             <h2>Documents</h2>
-              <div class="documents-container">
+            <div class="documents-container">
                 <div class="documents-entry">
-                  <div class="upload-section">
-                    <label for="upload-resume" class="upload-icon">
-                        <i class="fas fa-upload"></i> Upload Resume
-                    </label>
-                    <input type="file" id="upload-resume" style="display: none;">
-                  </div>
-                  <div class="upload-section">
-                    <label for="upload-other-documents" class="upload-icon">
-                        <i class="fas fa-upload"></i> Upload Other Documents
-                    </label>
-                    <input type="file" id="upload-other-documents" style="display: none;">
-                  </div>
-                  <div class="button2-container">
-                      <button class="btn-save">Save</button>
-                      <button class="btn-cancel">Cancel</button>
-                  </div>
-              </div>
-              <!--<button class="link-button" type="button" id="addLink">Add Another Link</button>-->
-              
-              </div>
-              
-          </div>
+                    <div class="upload-section">
+                        <label for="upload-other-documents" class="upload-icon" id="uploadLabel">
+                            <i class="fas fa-upload"></i> Upload Other Documents
+                        </label>
+                    </div>
+                    <div class="documents-container" id="candidate-document">
+                        <!-- Uploaded files will be appended here -->
+                    </div>
+                    <div class="button2-container">
+                        <button class="btn-save">Save</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
           <div class="section">
             <h2>Licenses & Certification</h2>
               <div class="license-container">
                 <div class="license-entry">
                   <span class="remove-license"><i class="fas fa-times"></i></span>
-                  <label for="link-title" class="link-title">License/Certification Name:  (If any)</label>
-                  <input type="text" id="link-title" name="link-title" placeholder="Certified Public Accountant (CPA)">
-                  <label for="link-title" class="link-title">License No:</label>
-                  <input type="link" id="link-url" name="link-url" placeholder="CPA123456">
-                  <label for="link-title" class="link-title">Date Achieved:</label>
-                  <input type="date" id="link-url" name="link-url" >
-                  <label for="link-title" class="link-title">Renewal Date:</label>
-                  <input type="date" id="link-url" name="link-url" >
+                  <label for="candidate-license-name" class="candidate-license-name">License/Certification Name:  (If any)</label>
+                  <input type="text" id="candidate-license-name" name="candidate-license-name" placeholder="Certified Public Accountant (CPA)">
+                  <label for="candidate-license-no" class="candidate-license-no">License No:</label>
+                  <input type="text" id="candidate-license-no" name="candidate-license-no" placeholder="CPA123456">
+                  <label for="candidate-datelicenseAchieved" class="candidate-datelicenseAchieved">Date Achieved:</label>
+                  <input type="date" id="candidate-datelicenseAchieved" name="candidate-datelicenseAchieved" >
+                  <label for="candidate-datelicenseRenewed" class="candidate-datelicenseRenewed">Renewal Date:</label>
+                  <input type="date" class="candidate-date-to" id="candidate-datelicenseRenewed" name="candidate-datelicenseRenewed" >
                   <div class="button2-container">
                       <button class="btn-save">Save</button>
                       <button class="btn-cancel">Cancel</button>
@@ -1148,6 +1208,132 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+//uploads section
+document.addEventListener('DOMContentLoaded', () => {
+    const uploadLabel = document.getElementById('uploadLabel');
+
+    uploadLabel.addEventListener('click', addfileField);
+});
+
+function addfileField() {
+    // Create a file input element
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = '.pdf,.doc,.docx,.txt';
+    fileInput.style.display = 'none';
+
+    fileInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const candidateDocDiv = document.getElementById('candidate-document');
+
+            // Create a container for the uploaded file
+            const fileContainer = document.createElement('div');
+            fileContainer.className = 'uploaded-file';
+
+            // Create a span to show the file name
+            const fileNameSpan = document.createElement('span');
+            fileNameSpan.innerText = file.name;
+
+            // Create a download icon
+            const downloadIcon = document.createElement('span');
+            downloadIcon.className = 'icon download';
+            downloadIcon.innerHTML = '<i class="fas fa-download"></i>';
+            downloadIcon.onclick = function() {
+                const url = URL.createObjectURL(file);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = file.name;
+                a.click();
+                URL.revokeObjectURL(url);
+            };
+
+            // Create a remove icon
+            const removeIcon = document.createElement('span');
+            removeIcon.className = 'icon remove';
+            removeIcon.innerHTML = '<i class="fas fa-times"></i>';
+            removeIcon.onclick = function() {
+                fileContainer.remove();
+            };
+
+            // Append elements to the file container
+            fileContainer.appendChild(fileNameSpan);
+            fileContainer.appendChild(downloadIcon);
+            fileContainer.appendChild(removeIcon);
+
+            // Append the file container to the documents container
+            candidateDocDiv.appendChild(fileContainer);
+        }
+
+        // Remove the file input element after handling the file
+        fileInput.remove();
+    });
+
+    // Append the file input to the body, trigger the click event, then remove the input element
+    document.body.appendChild(fileInput);
+    fileInput.click();
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const uploadResumeLabel = document.getElementById('uploadResumeLabel');
+    uploadResumeLabel.addEventListener('click', () => editfileField('candidate-resume'));
+});
+
+function editfileField(fieldId) {
+    const field = document.getElementById(fieldId);
+    const uploadInput = document.createElement('input');
+    uploadInput.type = 'file';
+    uploadInput.accept = '.pdf,.doc,.docx,.txt';
+    uploadInput.style.display = 'none';
+
+    uploadInput.onchange = function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            
+            const uploadedResumesDiv = document.getElementById(fieldId);
+            uploadedResumesDiv.innerHTML = ''; // Clear the existing content
+
+            const fileContainer = document.createElement('div');
+            fileContainer.className = 'uploaded-file';
+
+            const fileNameSpan = document.createElement('span');
+            fileNameSpan.innerText = file.name;
+
+            const downloadIcon = document.createElement('span');
+            downloadIcon.className = 'icon download';
+            downloadIcon.innerHTML = '<i class="fas fa-download"></i>';
+            downloadIcon.onclick = function() {
+                const url = URL.createObjectURL(file);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = file.name;
+                a.click();
+                URL.revokeObjectURL(url);
+            };
+
+            const removeIcon = document.createElement('span');
+            removeIcon.className = 'icon remove';
+            removeIcon.innerHTML = '<i class="fas fa-times"></i>';
+            removeIcon.onclick = function() {
+                fileContainer.remove();
+            };
+
+            fileContainer.appendChild(fileNameSpan);
+            fileContainer.appendChild(downloadIcon);
+            fileContainer.appendChild(removeIcon);
+
+            uploadedResumesDiv.appendChild(fileContainer);
+        }
+    };
+
+    document.body.appendChild(uploadInput);
+    uploadInput.click();
+    document.body.removeChild(uploadInput);
+}
+
+
+
               //clone section
               document.addEventListener('DOMContentLoaded', () => {
     const addEducationButton = document.getElementById('addEducation');
@@ -1249,12 +1435,7 @@ document.addEventListener('DOMContentLoaded', function() {
      });
   });
 
-  document.querySelectorAll('.upload-icon').forEach(icon => {
-    icon.addEventListener('click', function () {
-        const inputId = this.getAttribute('for');
-        document.getElementById(inputId).click();
-    });
-});
+ 
 
 </script>
 
