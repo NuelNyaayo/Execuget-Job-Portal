@@ -82,6 +82,25 @@
             border-bottom: 2px solid #333;
             margin-bottom: 15px;
         }
+        .search-container {
+            margin-top: 40px;
+            margin-left: 85px;
+            margin-right: 85px;
+            margin-bottom: 0;
+            padding: 80px;
+            background-color: #f4f7f7;
+            border: 1px solid #f4f7f7;
+            border-radius: 5px;
+            max-width: 1335px;
+            max-height: 1000px;
+        }
+        
+        .search-title {
+            color:#272a33;
+        }
+        .desc {
+            color:#656565;
+        }
         .metrics {
             display: flex;
             justify-content: space-around;
@@ -216,7 +235,7 @@
                     <div class="header-align-start">
                         <div class="header-logo-area">
                             <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
+                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="200" height="200"/>
                             </a>
                         </div>
                     </div>
@@ -227,7 +246,7 @@
                               <li><a href="job.html"><span>Job Postings</span></a></li>
                               <li><a href="applications-candi.html"><span>Applications</span></a></li>
                               <li><a href="messages-candi.html"><span>Messages</span></a></li>
-                              <li><a href="candidate-profile.html"><span>Profile</span></a></li>
+                              <li><a href="settings-candi.html"><span>Settings</span></a></li>
                               <li><a href="notifications-candi.html"><span>Notifications</span></a></li>
                           </ul>
                       </div>
@@ -236,7 +255,7 @@
                     <div class="header-action-area">
                       <div class="user-profile">
                         <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                        <a href="settings-candi.html" class="account-settings">Settings</a>
+                        <a href="candidate-profile.html" class="account-settings">Profile</a>
                       </div>
                     </div>
                   </div>
@@ -269,6 +288,60 @@
       </div>
     </div>
     <!--== End Page Header Area Wrapper ==-->
+
+    
+      <section class="search-container">
+        <div class="search-area" >
+          <div class="row">
+            <div class="col-12">
+              <div class="section-title text-center">
+                <h3 class="search-title">Search Jobs</h3>
+                <div class="desc">
+                  <p>Search for a particular job of your interest here.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="job-search-wrap">
+                <div class="job-search-form">
+                  <form action="#">
+                    <div class="row row-gutter-10">
+                      <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Job title or keywords">
+                        </div>
+                      </div>
+                      
+                      <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
+                        <div class="form-group">
+                          <select class="form-control">
+                            <option value="1" selected>Category</option>
+                            <option value="2">Web Designer</option>
+                            <option value="3">Web Developer</option>
+                            <option value="4">Graphic Designer</option>
+                            <option value="5">App Developer</option>
+                            <option value="6">UI &amp; UX Expert</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
+                        <div class="form-group">
+                          <button type="button" class="btn-form-search"><i class="icofont-search-1"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </section>
+      
+    
+
     <section class="recent-job-area recent-job-inner-area">
       <div class="container">
         <div class="row">
@@ -277,15 +350,17 @@
             <div class="recent-job-item recent-job-style2-item">
               <div class="company-info">
                 <div class="logo">
-                  <img src="assets/img/images/kfc-logo.png" width="75" height="75" alt="Image-HasTech">
+                  <a href="employer-details.html">
+                    <img src="assets/img/images/kfc-logo.png" width="75" height="75" alt="Image-HasTech">
+                  </a>
                 </div>
                 <div class="content">
-                  <h4 class="name">KFC-Westlands</h4>
+                  <h4 class="name"><a href="employer-details.html">KFC-Westlands</a></h4>
                   <p class="address">Nairobi, Kenya</p>
                 </div>
               </div>
               <div class="main-content">
-                <h3 class="title">Head Chef</a></h3>
+                <h3 class="title"><a href="job-details.html">Head Chef</a></h3>
                 <h5 class="work-type" data-text-color="#0054ff">Full-time</h5>
                 <p class="desc">Hospitality, Recipe, Baking, Chicken-Dressing, Management</p>
               </div>
@@ -572,16 +647,16 @@
               <nav>
                 <ul class="page-numbers d-inline-flex">
                   <li>
-                    <a class="page-number active" href="find-jobs.html">1</a>
+                    <a class="page-number active" href="job.html">1</a>
                   </li>
                   <li>
-                    <a class="page-number" href="find-jobs.html">2</a>
+                    <a class="page-number" href="job.html">2</a>
                   </li>
                   <li>
-                    <a class="page-number" href="find-jobs.html">3</a>
+                    <a class="page-number" href="job.html">3</a>
                   </li>
                   <li>
-                    <a class="page-number next" href="find-jobs.html">
+                    <a class="page-number next" href="job.html">
                       <i class="icofont-long-arrow-right"></i>
                     </a>
                   </li>
@@ -628,10 +703,10 @@
             <div class="widget-item widget-about">
               <div class="widget-logo-area">
                 <a href="index.html">
-                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="225" height="225"/>
+                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="200" height="200"/>
                 </a>
               </div>
-              <p class="desc">The Job Seeker Platform that streamlines the job search and recruitment process for both employers and job seekers.</p>
+              <p class="desc">Your number one job seeker platform streamlining the job search and recruitment process.</p>
               <div class="social-icons">
                 <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
                 <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
@@ -652,7 +727,7 @@
                         <ul class="nav-menu">
                           <li><a href="about-us.html">About Us</a></li>
                           <li><a href="find-jobs.html"> Find Jobs</a></li>
-                          <li><a href="find-candidates.html">Cadidates</a></li>
+                          <li><a href="find-candidates.html">Candidates</a></li>
                           <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                       </div>
@@ -686,9 +761,9 @@
                     <div class="collapse-body">
                       <div class="widget-menu-wrap">
                         <ul class="nav-menu">
-                          <li><a href="index.html">Partners</a></li>
+                          <li><a href="page-not-found.html">Partners</a></li>
                           <li><a href="blog.html">Blog & BlogPost</a></li>
-                          <li><a href="help-support.html">Help & Support</a></li>
+                          <li><a href="page-not-found.html">Help & Support</a></li>
                           <li><a href="index.html">Popular-Careers</a></li>
                         </ul>
                       </div>
@@ -706,8 +781,8 @@
                         <ul class="nav-menu">
                           <li><a href="registration.html">Get Started</a></li>
                           <li><a href="index.html">How It Works</a></li>
-                          <li><a href="help-support.html">Privacy Terms</a></li>
-                          <li><a href="help-support.html">Policies</a></li>
+                          <li><a href="page-not-found.html">Privacy Terms</a></li>
+                          <li><a href="page-not-found.html">Policies</a></li>
                         </ul>
                       </div>
                     </div>
@@ -736,57 +811,9 @@
     <!--== End Footer Bottom ==-->
   </footer>
   <!--== End Footer Area Wrapper ==-->
-
+  
   <!--== Scroll Top Button ==-->
   <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
-
-  <!--== Start Aside Menu ==-->
-  <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
-      <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="icofont-simple-left"></i></button>
-    </div>
-    <div class="offcanvas-body">
-      <!-- Mobile Menu Start -->
-      <div class="mobile-menu-items">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Find Jobs</a>
-            <ul class="sub-menu">
-              <li><a href="job.html">Jobs</a></li>
-              <li><a href="job-details.html">Job Details</a></li>
-            </ul>
-          </li>
-          <li><a href="employers-details.html">Employers Details</a></li>
-          <li><a href="#">Candidates</a>
-            <ul class="sub-menu">
-              <li><a href="candidate.html">Candidates</a></li>
-              <li><a href="candidate-details.html">Candidate Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Blog</a>
-            <ul class="sub-menu">
-              <li><a href="blog-grid.html">Blog Grid</a></li>
-              <li><a href="blog.html">Blog Left Sidebar</a></li>
-              <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-              <li><a href="blog-details.html">Blog Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Pages</a>
-            <ul class="sub-menu">
-              <li><a href="about-us.html">About us</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="registration.html">Registration</a></li>
-              <li><a href="page-not-found.html">Page Not Found</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <!-- Mobile Menu End -->
-    </div>
-  </aside>
-  <!--== End Aside Menu ==-->
 </div>
 
 <!--=======================Javascript============================-->

@@ -147,94 +147,17 @@
     .submit-button {
         margin-top: 70px;
     }
-    .profile-info {
-            display: flex;
-            flex-wrap: wrap;
-            background-color: #f4f4f4;
+
+    .jobdetails-container {
+            margin: 20px auto;
             padding: 20px;
+            background-color: #ccc;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            max-width: 1200px;
+            max-height: 5000px;
         }
-        .profile-info .profile-pic {
-            margin-right: 20px;
-            margin-left: 380px;
-        }
-        .profile-info img {
-            border-radius: 50%;
-            width: 130px;
-            height: 130px;
-        }
-        .profile-info .details {
-            flex: 1;
-        }
-        .profile-info .details h3 {
-            margin-top: 0;
-        }
-        .profile-info .details p {
-            margin: 5px 0;
-        }
-
-        .company-logo-container {
-    position: relative;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center; /* Center the logo and buttons */
-    margin-left: 350px;
-    width: 120px;
-    height: 120px;
-}
-
-.company-logo {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.company-logo:hover {
-    transform: scale(1.05);
-}
-
-.default-initial {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 48px;
-    font-weight: bold;
-    background-color: #193768;
-    color: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-
-.hidden {
-    display: none;
-}
-
-
-.company-logo-container:hover::after {
-    content: "Edit Profile";
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #193768;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    white-space: nowrap;
-}
-    .profileinfo-container {
+    .requirements-container {
             margin: 20px auto;
             padding: 20px;
             background-color: #ccc;
@@ -252,62 +175,6 @@
             max-width: 1200px;
             max-height: 5000px;
         }
-
-    .education-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-    .experience-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-    .resume-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-    .documents-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-    .license-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-    .links-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-
       .content-container {
             margin: 20px auto;
             padding: 0;
@@ -317,6 +184,105 @@
             max-width: 1200px;
             max-height: 50000px;
         }
+
+        .jobdetails-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-center {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.add-buttons {
+    width: 150px;
+    height: 50px;
+    background-color: #193768;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-buttons:hover {
+    background-color: #0056b3;
+}
+
+.benefit-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.benefit-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.benefit-input {
+    width: 100%;
+    padding: 8px;
+    padding-right: 30px; /* Add padding to the right to accommodate the remove icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.remove-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #193768;
+    font-size: 1.2em;
+}
+
+.responsibility-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.responsibility-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.responsibility-input {
+    width: 100%;
+    padding: 8px;
+    padding-right: 30px; /* Add padding to the right to accommodate the remove icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.skill-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.skill-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.skill-input {
+    width: 100%;
+    padding: 8px;
+    padding-right: 30px; /* Add padding to the right to accommodate the remove icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
 
       .button1-container {
     margin-top: 10px;
@@ -338,6 +304,7 @@
   border-radius: 5px; 
 }
 
+
 .btn-cancel {
   margin-top: 10px;
   width: 350px; /* Specify the desired width */
@@ -345,53 +312,6 @@
   border-radius: 5px; 
 }
 
-        .btn-edit {
-         
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #193768;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.btn-edit:active {
-    transform: scale(0.95);
-}
-
-.btn-edit.success { /*error alt*/
-    background-color: #193768;
-    color: #fff;
-    border: 2px solid #193768;
-    padding: 5px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-edit.success::before { /*error alt*/
-    content: '\2713'; /* Unicode character for check mark */
-    /*content: '\2716';  Unicode character for heavy multiplication x */
-    font-size: 24px;
-    margin-right: 8px;
-}
-
-        .btn-edit:hover {
-            background-color: #193768;
-        }
-        .submit-button {
-         
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #193768;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
 
 .submit-button:active {
     transform: scale(0.95);
@@ -417,174 +337,7 @@
         .submit-button:hover {
             background-color: #193768;
         }
-        .select-country {
-    margin-top: 20px; /* Adjust the value as needed */
-}
-        .link-title {
-    margin-top: 30px; 
-}
-        .link-button {
-    margin-top: 30px; 
-}
-
-.skills-entry {
-    position: relative;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-.education-entry {
-    position: relative;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-.experience-entry {
-    position: relative;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-.resume-entry {
-    position: relative;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-.documents-entry {
-    position: relative;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-.license-entry {
-    position: relative;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-.links-entry {
-    position: relative;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-
-.remove-education {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-    color: #193768;
-    display: none; /* Hide by default */
-}
-.remove-experience {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-    color: #193768;
-    display: none; /* Hide by default */
-}
-.remove-license {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-    color: #193768;
-    display: none; /* Hide by default */
-}
-.remove-link {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-    color: #193768;
-    display: none; /* Hide by default */
-}
-
-.education-entry.cloned .remove-education {
-    display: block; /* Show only for cloned entries */
-}
-.experience-entry.cloned .remove-experience {
-    display: block; /* Show only for cloned entries */
-}
-.license-entry.cloned .remove-license {
-    display: block; /* Show only for cloned entries */
-}
-.links-entry.cloned .remove-link {
-    display: block; /* Show only for cloned entries */
-}
-
-.remove-education i {
-    font-size: 1.4em;
-}
-.remove-experience i {
-    font-size: 1.4em;
-}
-.remove-license i {
-    font-size: 1.4em;
-}
-.remove-link i {
-    font-size: 1.4em;
-}
-
-
-
-        .upload-section {
-    margin: 10px 0;
-    margin-top: 10px;
-}
-
-.upload-icon {
-    display: inline-block;
-    padding: 10px;
-    background-color: #193768;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    margin-left: 450px;
-    width: 250px;
-    height: 70px;
-}
-
-.upload-icon i {
-    margin-right: 5px;
-}
-
-.upload-icon:hover {
-    background-color: #0056b3;
-}
-.uploaded-file {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: white;
-        }
-
-        .uploaded-file span {
-            flex: 1;
-            margin-left: 10px;
-        }
-
-        .uploaded-file .icon {
-            margin-left: 10px;
-            cursor: pointer;
-        }
-
-        .uploaded-file .icon.download {
-            color: #193768;
-        }
-
-        .uploaded-file .icon.remove {
-            color: #193768;
-        }
-
+        
     </style>
 
     <!--== Favicon ==-->
@@ -625,40 +378,40 @@
   <!--== Start Header Wrapper ==-->
   <header class="header-area transparent">
     <div class="container">
-      <div class="row no-gutter align-items-center position-relative">
-        <div class="col-12">
-          <div class="header-align">
-            <div class="header-align-start">
-              <div class="header-logo-area">
-                <a href="index.html">
-                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
-                  <img class="logo-light" src="assets/img/execuget-logo.png" alt="Logo" />
-                </a>
-              </div>
+        <div class="row no-gutter align-items-center position-relative">
+            <div class="col-12">
+                <div class="header-align">
+                    <div class="header-align-start">
+                        <div class="header-logo-area">
+                            <a href="index.html">
+                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-align-center">
+                      <div class="header-navigation-area position-relative">
+                          <ul class="main-menu nav">
+                            <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
+                            <li><a href="postjob.html"><span>Post Job</span></a></li>
+                            <li><a href="candidates.html"><span>Candidates</span></a></li>
+                            <li><a href="applications-emp.html"><span>Applications</span></a></li>
+                            <li><a href="messages-emp.html"><span>Messages</span></a></li>
+                            <li><a href="performance.html"><span>Performance</span></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="header-align-end">
+                    <div class="header-action-area">
+                      <div class="user-profile">
+                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                        <a href="prof&settings-emp.html" class="account-settings">Profile & Settings</a>
+                      </div>
+                    </div>
+                  </div>
+                    
+                </div>
             </div>
-            <div class="header-align-center">
-              <div class="header-navigation-area position-relative">
-                <ul class="main-menu nav">
-                  <li><a href="index.html"><span>Home</span></a></li>
-                  <li><a href="find-jobs.html"><span>Find Jobs</span></a></li>
-                  <li><a href="find-candidates.html"><span>Find Candidates</span></a></li>
-                  <li><a href="about-us.html"><span>About us</span></a></li>
-                  <li><a href="login.html"><span>Login</span></a></li>
-                  <li><a href="contact.html"><span>Contact</span></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="header-align-end">
-              <div class="header-action-area">
-                <a class="btn-registration" href="registration.html"><span>+</span> Registration</a>
-                <button class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#AsideOffcanvasMenu" aria-controls="AsideOffcanvasMenu">
-                  <i class="icofont-navigation-menu"></i>
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
   </header>
 
@@ -672,10 +425,10 @@
         <div class="row">
           <div class="col-12">
             <div class="page-header-content">
-              <h1 class="title">Candidate</h1>
+              <h1 class="title">Employer</h1>
               <nav class="breadcrumb-area">
                 <ul class="breadcrumb justify-content-center">
-                  <li>Complete-Profile</li>
+                  <li>Post Job</li>
                 </ul>
               </nav>
             </div>
@@ -687,237 +440,88 @@
     <!--== End Page Header Area Wrapper ==-->
     
     <div class="content-container">
-      <h1>Complete Your Profile</h1>
-        <form id="profileForm">
-            <!-- Profile-info Section -->
-            <div class="section">
-              <h2>Profile Info.</h2>
-                <div class="profileinfo-container">
-                  <div class="profile-info">
-                    <label for="company-logo">Add a Profile Picture:</label>
-                    <div class="company-logo-container" id="company-logo-container">
-                      <img src="" alt="Company Logo" id="company-logo" class="company-logo">
-                      <div id="default-initial" class="company-logo default-initial hidden">L</div> <!-- Default Initial -->
-                      <input type="file" id="logo-upload" accept="image/*" style="display: none;" onchange="updateLogo(event)">
-                  </div>
-                  
-                    
+        <form id="postJob">
+          <div class="section">
+            <h2>Job Details</h2>
+            <div class="jobdetails-container">
+                <label for="jobname">Job Name/Position:</label>
+                <input type="text" id="jobname" name="jobname" placeholder="e.g., Software Engineer" required>
+                <label for="jobdescription">Job Description:</label>
+                <textarea id="jobdescription" name="jobdescription" rows="5" required placeholder="Describe the job..."></textarea>
+                <label for="jobbenefits">Job Benefits:</label>
+                <input type="text" id="jobbenefits" name="jobbenefits" required placeholder="e.g., Health insurance">
+                <div id="additional-benefits"></div> <!-- Container for additional benefits -->
+                <div class="button-center">
+                    <button type="button" class="add-buttons" onclick="addBenefit()">Add Benefit</button>
                 </div>
-                    <label for="candidate-name">Official Names:</label>
-                    <input type="text" id="candidate-name" name="candidate-name" placeholder="John Doe" required>
-                    <label for="candidate-description">Bio:</label>
-                    <textarea id="candidate-description" name="candidate-description" required placeholder="Tell us more about yourself..."></textarea>
-                    <label for="candidate-main-mail">Primary Email:</label>
-                    <input type="email" id="candidate-main-mail" name="candidate-main-mail" required placeholder="primarymail@gmail.com">
-                    <label for="candidate-other-mail">Secondary Email:  (If any)</label>
-                    <input type="email" id="candidate-other-mail" name="candidate-other-mail" placeholder="secondarymail@gmail.com">
-                    <label for="candidate-main-phone">Primary Phone:</label>
-                    <input type="tel" id="candidate-main-phone" name="candidate-main-phone" required placeholder="(123) 456-7890">
-                    <label for="candidate-additional-phone">Additional Phone:  (If any)</label>
-                    <input type="tel" id="candidate-additional-phone" name="candidate-additional-phone" placeholder="(123) 456-7890">
-                    <label for="candidate-main-address">Address1:</label>
-                    <input type="text" id="candidate-main-address" name="candidate-main-address" placeholder="43844-00100" required>
-                    <label for="candidate-other-address">Address2:  (If any)</label>
-                    <input type="text" id="candidate-other-address" name="candidate-other-address" placeholder="43844-00100" required>
-                    <label for="candidate-city">Current City</label>
-                    <select id="candidate-city" name="candidate-city">
-                        <option value="Nairobi">Nairobi</option>
-                        <option value="Mombasa">Mombasa</option>
-                        <option value="Kisumu">Kisumu</option>
-                        <option value="Nakuru">Nakuru</option>
-                    </select>
-                    <label for="candidate-zip-code">Zip/Postal Code:</label>
-                    <input type="text" id="candidate-zip-code" name="candidate-zip-code" placeholder="00100" required>
-                    <label for="candidate-country">Country</label>
-                    <select id="candidate-country" name="candidate-country">
-                        <option value="Kenya">Kenya</option>
-                        <option value="Uganda">Uganda</option>
-                        <option value="Tanzania">Tanzania</option>
-                    </select>
-                    <label for="candidate-industry">Select your Industry Category:</label>
-                    <select id="candidate-industry" name="candidate-industry">
-                        <option value="Accounting/Finance">Accounting/Finance</option>
-                        <option value="Production/Operation">Production/Operation</option>
-                        <option value="Engineer/Architect">Engineer/Architect</option>
-                    </select>
-                    <button class="btn-edit">Save Profile Information</button>
+                <label for="candidates-needed">Number of Candidates Needed:</label>
+                <input type="number" id="candidates-needed" name="candidates-needed" placeholder="e.g., 3">
+                <label for="applyby">Apply By Date:</label>
+                <input type="date" id="applyby" name="applyby" required>
+                <label for="industrycategory">Industry Category:</label>
+                <select id="industrycategory" name="industrycategory">
+                    <option value="IT">IT</option>
+                    <option value="Accounting/Finance">Accounting/Finance</option>
+                    <option value="Production/Operation">Production/Operation</option>
+                    <option value="Engineer/Architect">Engineer/Architect</option>
+                </select>
+                <label for="renumeration">Remuneration (in $):</label>
+                <input type="number" id="renumeration" name="renumeration" placeholder="e.g., 50000">
+                <label for="workinghours">Working Hours (in hrs):</label>
+                <input type="number" id="workinghours" name="workinghours" placeholder="e.g., 40">
+                <div class="button2-container">
+                    <button class="btn-save">Save</button>
+                    <button class="btn-cancel">Discard</button>
                 </div>
             </div>
+        </div>
+        
+        
   
           <div class="section">
-            <h2>Skills</h2>
-              <div class="skills-container">
-                <div class="skills-entry">
-                 <!-- <span class="remove-link"><i class="fas fa-times"></i></span>-->
-                  <label for="candidate-skills" class="candidate-skills">Select your skills:</label>
-                  <select id="candidate-skills" name="candidate-skills"multiple>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="Python">Python</option>
-                    <option value="Java">Java</option>
-                    <option value="C++">C++</option>
-                    <option value="PHP">PHP</option>
-                  </select>
-                  <div class="button2-container">
-                      <button class="btn-save">Save</button>
-                      <button class="btn-cancel">Cancel</button>
-                  </div>
-              </div>
-              <!--<button class="link-button" type="button" id="addLink">Add Another Link</button>-->
-              
-              </div>
-              
-          </div>
-          <div class="section">
-            <h2>Education</h2>
-              <div class="education-container">
-                <div class="education-entry">
-                  <span class="remove-education"><i class="fas fa-times"></i></span>
-                  <label for="candidate-institution" class="candidate-institution">Institution:</label>
-                  <input type="text" id="candidate-institution" name="candidate-institution" placeholder="eg. Strathmore University">
-                  <label for="candidate-level-of-education" class="candidate-level-of-education">Level of Education:</label>
-                  <select id="candidate-level-of-education" name="candidate-level-of-education">
-                    <option value="degree">degree</option>
-                    <option value="high school">high school</option>
-                    <option value="post graduate">post graduate</option>
-                    <option value="tertiary">tertiary</option>
-                  </select>
-                  <label for="candidate-course" class="candidate-course">Course/Major:</label>
-                  <input type="text" id="candidate-course" name="candidate-course" placeholder="eg. Bsc Computer Science">
-                  <label for="candidate-dateFromEdu" class="candidate-dateFromEdu">Date From:</label>
-                  <input type="date" id="candidate-dateFromEdu" name="candidate-dateFromEdu" required >
-                  <label for="candidate-dateToEdu" class="candidate-dateToEdu">Date To:</label>
-                  <input type="date" class="candidate-date-to" id="candidate-dateToEdu" name="candidate-dateToEdu" required >
-                  <label for="candidate-course-description" class="candidate-course-description">Description:</label>
-                  <textarea id="candidate-course-description" name="candidate-course-description" required placeholder="More description about the course..."></textarea>
-                  <div class="button2-container">
-                      <button class="btn-save">Save</button>
-                      <button class="btn-cancel">Cancel</button>
-                  </div>
-              </div>
-              <button class="link-button" type="button" id="addEducation">Add Another Education</button>
-              
-              </div>
-              
-          </div>
-          <div class="section">
-            <h2>Work & Experience</h2>
-              <div class="experience-container">
-                <div class="experience-entry">
-                  <span class="remove-experience"><i class="fas fa-times"></i></span>
-                  <label for="candidate-organisation" class="candidate-organisation">Organisation:</label>
-                  <input type="text" id="candidate-organisation" name="candidate-organisation" placeholder="eg. Vesen Computing Solution">
-                  <label for="candidate-role" class="candidate-role">Role:</label>
-                  <input type="text" id="candidate-role" name="candidate-role" placeholder="eg. Senior Developer">
-                  <label for="candidate-work-location" class="candidate-work-location">Location</label>
-                  <select id="candidate-work-location" name="candidate-work-location">
-                    <option value="" selected disabled hidden>Select a city</option>
-                    <option value="Nairobi">Nairobi</option>
-                    <option value="Mombasa">Mombasa</option>
-                    <option value="Kisumu">Kisumu</option>
-                    <option value="Nakuru">Nakuru</option>
-                  </select>
-                  <label for="candidate-tasks" class="candidate-tasks">Tasks:</label>
-                  <textarea id="candidate-tasks" name="candidate-tasks" required placeholder="More description about the job..."></textarea>
-                  <label for="candidate-dateFromExp" class="candidate-dateFromExp">Date From:</label>
-                  <input type="date" id="candidate-dateFromExp" name="candidate-dateFromExp" required >
-                  <label for="candidate-dateToExp" class="candidate-dateToExp">Date To:</label>
-                  <input type="date" id="candidate-dateToExp" name="candidate-dateToExp" required>
-                  <div class="button2-container">
-                      <button class="btn-save">Save</button>
-                      <button class="btn-cancel">Cancel</button>
-                  </div>
-              </div>
-              <button class="link-button" type="button" id="addExperience">Add Another Experience</button>
-              
-              </div>   
-          </div>
-          <div class="section">
-            <h2>Resume</h2>
-            <div class="resume-container">
-                <div class="resume-entry">
-                    <div class="upload-section">
-                        <label for="upload-resume" class="upload-icon" id="uploadResumeLabel">
-                            <i class="fas fa-upload"></i> Upload Resume
-                        </label>
-                    </div>
-                    <div class="resume-container" id="candidate-resume">
-                        <!-- Uploaded resume will be appended here -->
-                    </div>
-                    <div class="button2-container">
-                        <button class="btn-save">Save</button>
-                        <button class="btn-cancel">Cancel</button>
-                    </div>
+            <h2>Requirements</h2>
+            <div class="requirements-container">
+                <label for="responsibilities">Responsibilities:</label>
+                <input type="text" id="responsibilities" name="responsibilities" required placeholder="e.g., Manage team projects">
+                <div id="additional-responsibilities"></div> <!-- Container for additional responsibilities -->
+                <div class="button-center">
+                    <button type="button" class="add-buttons" onclick="addResponsibility()">Add Responsibility</button>
                 </div>
-                <!-- <button class="link-button" type="button" id="addLink">Add Another Link</button> -->
-            </div>
-        </div>
-        
-          <div class="section">
-            <h2>Documents</h2>
-            <div class="documents-container">
-                <div class="documents-entry">
-                    <div class="upload-section">
-                        <label for="upload-other-documents" class="upload-icon" id="uploadLabel">
-                            <i class="fas fa-upload"></i> Upload Other Documents
-                        </label>
-                    </div>
-                    <div class="documents-container" id="candidate-document">
-                        <!-- Uploaded files will be appended here -->
-                    </div>
-                    <div class="button2-container">
-                        <button class="btn-save">Save</button>
-                        <button class="btn-cancel">Cancel</button>
-                    </div>
+                <label for="educationlevel">Education Level:</label>
+                <select id="educationlevel" name="educationlevel">
+                    <option value="olevel">O-Level</option>
+                    <option value="alevel">A-Level</option>
+                    <option value="certificate">Certificate</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="higherdiploma">Higher Diploma</option>
+                    <option value="degree">Degree</option>
+                    <option value="masters">Masters</option>
+                </select>
+                <div class="button2-container">
+                    <button class="btn-save">Save</button>
+                    <button class="btn-cancel">Cancel</button>
                 </div>
             </div>
         </div>
         
-        
-          <div class="section">
-            <h2>Licenses & Certification</h2>
-              <div class="license-container">
-                <div class="license-entry">
-                  <span class="remove-license"><i class="fas fa-times"></i></span>
-                  <label for="candidate-license-name" class="candidate-license-name">License/Certification Name:  (If any)</label>
-                  <input type="text" id="candidate-license-name" name="candidate-license-name" placeholder="Certified Public Accountant (CPA)">
-                  <label for="candidate-license-no" class="candidate-license-no">License No:</label>
-                  <input type="text" id="candidate-license-no" name="candidate-license-no" placeholder="CPA123456">
-                  <label for="candidate-datelicenseAchieved" class="candidate-datelicenseAchieved">Date Achieved:</label>
-                  <input type="date" id="candidate-datelicenseAchieved" name="candidate-datelicenseAchieved" >
-                  <label for="candidate-datelicenseRenewed" class="candidate-datelicenseRenewed">Renewal Date:</label>
-                  <input type="date" class="candidate-date-to" id="candidate-datelicenseRenewed" name="candidate-datelicenseRenewed" >
-                  <div class="button2-container">
-                      <button class="btn-save">Save</button>
-                      <button class="btn-cancel">Cancel</button>
-                  </div>
-              </div>
-              <button class="link-button" type="button" id="addLicense">Add Another Certification</button>
               
+        <div class="section">
+          <h2>Skills</h2>
+          <div class="skills-container">
+              <label for="skills">Skills:</label>
+              <input type="text" id="skills" name="skills" placeholder="e.g., JavaScript">
+              <div id="additional-skills"></div> <!-- Container for additional skills -->
+              <div class="button-center">
+                  <button type="button" class="add-buttons" onclick="addSkill()">Add Skill</button>
               </div>
-              
+              <div class="button2-container">
+                  <button class="btn-save">Save</button>
+                  <button class="btn-cancel">Cancel</button>
+              </div>
           </div>
-          <div class="section">
-            <h2>Links</h2>
-              <div class="links-container">
-                <div class="links-entry">
-                  <span class="remove-link"><i class="fas fa-times"></i></span>
-                  <label for="link-title" class="link-title">Link Title:</label>
-                  <input type="text" id="link-title" name="link-title" placeholder="Github">
-                  <label for="link-url">URL:</label>
-                  <input type="link" id="link-url" name="link-url" placeholder="https://www.github.com/username">
-                  <div class="button2-container">
-                      <button class="btn-save">Save</button>
-                      <button class="btn-cancel">Cancel</button>
-                  </div>
-              </div>
-              <button class="link-button" type="button" id="addLink">Add Another Link</button>
-              
-              </div>
-              
-          </div>
-            
-
-            <button id="candicompleteProfile" type="submit" class="submit-button">Complete Your Profile</button>
+      </div>
+       
+            <button id="postjob-btn" type="submit" class="submit-button">Post Now <i class="icofont-long-arrow-right"></i></button>
         </form>
    
     </div>
@@ -1064,386 +668,170 @@
     </footer>
     <!--== End Footer Main ==-->
 
-    <!--== Start Footer Bottom ==-->
-    <div class="footer-bottom">
-      <div class="container pt--0 pb--0">
-        <div class="row">
-          <div class="col-12">
-            <div class="footer-bottom-content">
-              <p class="copyright">© 2024 Execuget. Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival">Vesen.</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--== End Footer Bottom ==-->
   </footer>
   <!--== End Footer Area Wrapper ==-->
 
   <!--== Scroll Top Button ==-->
   <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
 
-  <!--== Start Aside Menu ==-->
-  <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
-      <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="icofont-simple-left"></i></button>
-    </div>
-    <div class="offcanvas-body">
-      <!-- Mobile Menu Start -->
-      <div class="mobile-menu-items">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Find Jobs</a>
-            <ul class="sub-menu">
-              <li><a href="job.html">Jobs</a></li>
-              <li><a href="job-details.html">Job Details</a></li>
-            </ul>
-          </li>
-          <li><a href="employers-details.html">Employers Details</a></li>
-          <li><a href="#">Candidates</a>
-            <ul class="sub-menu">
-              <li><a href="candidate.html">Candidates</a></li>
-              <li><a href="candidate-details.html">Candidate Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Blog</a>
-            <ul class="sub-menu">
-              <li><a href="blog-grid.html">Blog Grid</a></li>
-              <li><a href="blog.html">Blog Left Sidebar</a></li>
-              <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-              <li><a href="blog-details.html">Blog Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Pages</a>
-            <ul class="sub-menu">
-              <li><a href="about-us.html">About us</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="registration.html">Registration</a></li>
-              <li><a href="page-not-found.html">Page Not Found</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <!-- Mobile Menu End -->
-    </div>
-  </aside>
-  <!--== End Aside Menu ==-->
 </div>
 
 <!--=======================Javascript============================-->
 
 <script>
-function initializeDefaultLogo(companyName) {
-    const logo = document.getElementById('company-logo');
-    const defaultInitial = document.getElementById('default-initial');
-    if (!logo.src || logo.src === window.location.href) {
-        defaultInitial.textContent = companyName.charAt(0).toUpperCase();
-        defaultInitial.classList.remove('hidden');
-    } else {
-        defaultInitial.classList.add('hidden');
-    }
-}
-
-document.getElementById('default-initial').addEventListener('click', function() {
-    document.getElementById('logo-upload').click();
-});
-
-document.getElementById('company-logo').addEventListener('click', function() {
-    document.getElementById('logo-upload').click();
-});
-
-function updateLogo(event) {
-    const logo = document.getElementById('company-logo');
-    const defaultInitial = document.getElementById('default-initial');
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function(e) {
-        logo.src = e.target.result;
-        logo.classList.remove('hidden');
-        defaultInitial.classList.add('hidden');
-    };
-
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-
-    // Reset the file input value to allow the same file to be selected again
-    document.getElementById('logo-upload').value = '';
-}
-
-// Call this function with your company name
-initializeDefaultLogo('Lauran Benite'); // Replace 'MOOI Coop' with your company name
-
-function showDefaultInitial(companyName) {
-    const logo = document.getElementById('company-logo');
-    const defaultInitial = document.getElementById('default-initial');
-    if (!logo.src || logo.src === window.location.href) {
-        defaultInitial.textContent = companyName.charAt(0).toUpperCase();
-        defaultInitial.classList.remove('hidden');
-    } else {
-        defaultInitial.classList.add('hidden');
-    }
-}
 
 document.addEventListener('DOMContentLoaded', function() {
-    initializeDefaultLogo('Lauran Benite'); // Ensure this matches your company name
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const saveButton = document.querySelector('.btn-edit');
+    
     const submitButton = document.querySelector('.submit-button');
     
-    saveButton.addEventListener('click', function() {
-        saveButton.classList.add('success'); /*error alt*/
-        saveButton.textContent = 'Saved';
-       
-    });
     submitButton.addEventListener('click', function() {
         submitButton.classList.add('success'); /*error alt*/
-        submitButton.innerHTML = ' Complete'; // Use innerHTML to insert the check mark icon and text
+        submitButton.innerHTML = ' Posted'; // Use innerHTML to insert the check mark icon and text
     });
 });
 
 
-//uploads section
+//add section
 document.addEventListener('DOMContentLoaded', () => {
-    const uploadLabel = document.getElementById('uploadLabel');
-
-    uploadLabel.addEventListener('click', addfileField);
+    const addBenefitButton = document.querySelector('.add-buttons');
+    addBenefitButton.removeEventListener('click', addBenefit); // Remove any existing event listeners
+    addBenefitButton.addEventListener('click', addBenefit);
 });
 
-function addfileField() {
-    // Create a file input element
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.accept = '.pdf,.doc,.docx,.txt';
-    fileInput.style.display = 'none';
+function addBenefit() {
+    // Create a new div container for the benefit input and the remove icon
+    const benefitContainer = document.createElement('div');
+    benefitContainer.className = 'benefit-container';
 
-    fileInput.addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        if (file) {
-            const candidateDocDiv = document.getElementById('candidate-document');
-            const existingFiles = candidateDocDiv.getElementsByClassName('uploaded-file');
+    // Create another div to wrap the input and the remove icon
+    const benefitWrapper = document.createElement('div');
+    benefitWrapper.className = 'benefit-wrapper';
 
-            // Check if a file with the same name already exists
-            for (let i = 0; i < existingFiles.length; i++) {
-                const existingFileName = existingFiles[i].querySelector('span').innerText;
-                if (existingFileName === file.name) {
-                    alert('This file has already been uploaded.');
-                    fileInput.remove();
-                    return;
-                }
-            }
+    // Create the new text input for the benefit
+    const newBenefitInput = document.createElement('input');
+    newBenefitInput.type = 'text';
+    newBenefitInput.name = 'jobbenefits';
+    newBenefitInput.placeholder = 'e.g., Health insurance';
+    newBenefitInput.className = 'benefit-input';
+    newBenefitInput.required = true;
 
-            // Create a container for the uploaded file
-            const fileContainer = document.createElement('div');
-            fileContainer.className = 'uploaded-file';
-
-            // Create a span to show the file name
-            const fileNameSpan = document.createElement('span');
-            fileNameSpan.innerText = file.name;
-
-            // Create a download icon
-            const downloadIcon = document.createElement('span');
-            downloadIcon.className = 'icon download';
-            downloadIcon.innerHTML = '<i class="fas fa-download"></i>';
-            downloadIcon.onclick = function() {
-                const url = URL.createObjectURL(file);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = file.name;
-                a.click();
-                URL.revokeObjectURL(url);
-            };
-
-            // Create a remove icon
-            const removeIcon = document.createElement('span');
-            removeIcon.className = 'icon remove';
-            removeIcon.innerHTML = '<i class="fas fa-times"></i>';
-            removeIcon.onclick = function() {
-                fileContainer.remove();
-            };
-
-            // Append elements to the file container
-            fileContainer.appendChild(fileNameSpan);
-            fileContainer.appendChild(downloadIcon);
-            fileContainer.appendChild(removeIcon);
-
-            // Append the file container to the documents container
-            candidateDocDiv.appendChild(fileContainer);
-        }
-
-        // Remove the file input element after handling the file
-        fileInput.remove();
-    });
-
-    // Append the file input to the body, trigger the click event, then remove the input element
-    document.body.appendChild(fileInput);
-    fileInput.click();
-}
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const uploadResumeLabel = document.getElementById('uploadResumeLabel');
-    uploadResumeLabel.addEventListener('click', () => editfileField('candidate-resume'));
-});
-
-function editfileField(fieldId) {
-    const field = document.getElementById(fieldId);
-    const uploadInput = document.createElement('input');
-    uploadInput.type = 'file';
-    uploadInput.accept = '.pdf,.doc,.docx,.txt';
-    uploadInput.style.display = 'none';
-
-    uploadInput.onchange = function(event) {
-        const file = event.target.files[0];
-        if (file) {
-            
-            const uploadedResumesDiv = document.getElementById(fieldId);
-            uploadedResumesDiv.innerHTML = ''; // Clear the existing content
-
-            const fileContainer = document.createElement('div');
-            fileContainer.className = 'uploaded-file';
-
-            const fileNameSpan = document.createElement('span');
-            fileNameSpan.innerText = file.name;
-
-            const downloadIcon = document.createElement('span');
-            downloadIcon.className = 'icon download';
-            downloadIcon.innerHTML = '<i class="fas fa-download"></i>';
-            downloadIcon.onclick = function() {
-                const url = URL.createObjectURL(file);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = file.name;
-                a.click();
-                URL.revokeObjectURL(url);
-            };
-
-            const removeIcon = document.createElement('span');
-            removeIcon.className = 'icon remove';
-            removeIcon.innerHTML = '<i class="fas fa-times"></i>';
-            removeIcon.onclick = function() {
-                fileContainer.remove();
-            };
-
-            fileContainer.appendChild(fileNameSpan);
-            fileContainer.appendChild(downloadIcon);
-            fileContainer.appendChild(removeIcon);
-
-            uploadedResumesDiv.appendChild(fileContainer);
-        }
+    // Create the remove icon
+    const removeIcon = document.createElement('i');
+    removeIcon.className = 'fas fa-times remove-icon';
+    removeIcon.onclick = function() {
+        benefitContainer.remove();
     };
 
-    document.body.appendChild(uploadInput);
-    uploadInput.click();
-    document.body.removeChild(uploadInput);
+    // Append the input and remove icon to the benefit wrapper
+    benefitWrapper.appendChild(newBenefitInput);
+    benefitWrapper.appendChild(removeIcon);
+
+    // Append the benefit wrapper to the benefit container
+    benefitContainer.appendChild(benefitWrapper);
+
+    // Append the benefit container to the additional benefits div
+    document.getElementById('additional-benefits').appendChild(benefitContainer);
 }
 
 
-
-              //clone section
-              document.addEventListener('DOMContentLoaded', () => {
-    const addEducationButton = document.getElementById('addEducation');
-
-    // Function to add a new education entry
-    addEducationButton.addEventListener('click', () => {
-        const educationSection = document.querySelector('.education-entry');
-        const newEducationEntry = educationSection.cloneNode(true);
-        newEducationEntry.querySelectorAll('input, select, textarea').forEach(input => input.value = '');
-
-        // Add a class to identify cloned entries
-        newEducationEntry.classList.add('cloned');
-
-        // Add event listener to the remove icon
-        newEducationEntry.querySelector('.remove-education').addEventListener('click', () => {
-            newEducationEntry.remove();
-        });
-
-        educationSection.parentNode.insertBefore(newEducationEntry, addEducationButton);
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    const addResponsibilityButton = document.querySelector('.add-buttons');
+    addResponsibilityButton.addEventListener('click', addResponsibility);
 });
 
-              document.addEventListener('DOMContentLoaded', () => {
-    const addExperienceButton = document.getElementById('addExperience');
+function addResponsibility() {
+    // Create a new div container for the responsibility input and the remove icon
+    const responsibilityContainer = document.createElement('div');
+    responsibilityContainer.className = 'responsibility-container';
 
-    // Function to add a new experience entry
-    addExperienceButton.addEventListener('click', () => {
-        const experienceSection = document.querySelector('.experience-entry');
-        const newExperienceEntry = experienceSection.cloneNode(true);
-        newExperienceEntry.querySelectorAll('input, select, textarea').forEach(input => input.value = '');
+    // Create another div to wrap the input and the remove icon
+    const responsibilityWrapper = document.createElement('div');
+    responsibilityWrapper.className = 'responsibility-wrapper';
 
-        // Add a class to identify cloned entries
-        newExperienceEntry.classList.add('cloned');
+    // Create the new text input for the responsibility
+    const newResponsibilityInput = document.createElement('input');
+    newResponsibilityInput.type = 'text';
+    newResponsibilityInput.name = 'responsibilities';
+    newResponsibilityInput.placeholder = 'e.g., Manage team projects';
+    newResponsibilityInput.className = 'responsibility-input';
+    newResponsibilityInput.required = true;
 
-        // Add event listener to the remove icon
-        newExperienceEntry.querySelector('.remove-experience').addEventListener('click', () => {
-            newExperienceEntry.remove();
-        });
+    // Create the remove icon
+    const removeIcon = document.createElement('i');
+    removeIcon.className = 'fas fa-times remove-icon';
+    removeIcon.onclick = function() {
+        responsibilityContainer.remove();
+    };
 
-        experienceSection.parentNode.insertBefore(newExperienceEntry, addExperienceButton);
-    });
+    // Append the input and remove icon to the responsibility wrapper
+    responsibilityWrapper.appendChild(newResponsibilityInput);
+    responsibilityWrapper.appendChild(removeIcon);
+
+    // Append the responsibility wrapper to the responsibility container
+    responsibilityContainer.appendChild(responsibilityWrapper);
+
+    // Append the responsibility container to the additional responsibilities div
+    document.getElementById('additional-responsibilities').appendChild(responsibilityContainer);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const addSkillButton = document.querySelector('.add-buttons');
+    addSkillButton.addEventListener('click', addSkill);
 });
-              document.addEventListener('DOMContentLoaded', () => {
-    const addLicenseButton = document.getElementById('addLicense');
 
-    // Function to add a new license entry
-    addLicenseButton.addEventListener('click', () => {
-        const licenseSection = document.querySelector('.license-entry');
-        const newLicenseEntry = licenseSection.cloneNode(true);
-        newLicenseEntry.querySelectorAll('input, select, textarea').forEach(input => input.value = '');
+function addSkill() {
+    // Create a new div container for the skill input and the remove icon
+    const skillContainer = document.createElement('div');
+    skillContainer.className = 'skill-container';
 
-        // Add a class to identify cloned entries
-        newLicenseEntry.classList.add('cloned');
+    // Create another div to wrap the input and the remove icon
+    const skillWrapper = document.createElement('div');
+    skillWrapper.className = 'skill-wrapper';
 
-        // Add event listener to the remove icon
-        newLicenseEntry.querySelector('.remove-license').addEventListener('click', () => {
-            newLicenseEntry.remove();
-        });
+    // Create the new text input for the skill
+    const newSkillInput = document.createElement('input');
+    newSkillInput.type = 'text';
+    newSkillInput.name = 'skills';
+    newSkillInput.placeholder = 'e.g., JavaScript';
+    newSkillInput.className = 'skill-input';
+    newSkillInput.required = true;
 
-        licenseSection.parentNode.insertBefore(newLicenseEntry, addLicenseButton);
-    });
-});
+    // Create the remove icon
+    const removeIcon = document.createElement('i');
+    removeIcon.className = 'fas fa-times remove-icon';
+    removeIcon.onclick = function() {
+        skillContainer.remove();
+    };
 
+    // Append the input and remove icon to the skill wrapper
+    skillWrapper.appendChild(newSkillInput);
+    skillWrapper.appendChild(removeIcon);
+
+    // Append the skill wrapper to the skill container
+    skillContainer.appendChild(skillWrapper);
+
+    // Append the skill container to the additional skills div
+    document.getElementById('additional-skills').appendChild(skillContainer);
+}
+
+             
             document.addEventListener('DOMContentLoaded', () => {
-    const addLinkButton = document.getElementById('addLink');
-    const candiprofileForm = document.getElementById('candicompleteProfile');
-
-    // Function to add a new link entry
-    addLinkButton.addEventListener('click', () => {
-        const linkSection = document.querySelector('.links-entry');
-        const newLinksEntry = linkSection.cloneNode(true);
-        newLinksEntry.querySelectorAll('input').forEach(input => input.value = '');
-
-        // Add a class to identify cloned entries
-        newLinksEntry.classList.add('cloned');
-
-        // Add event listener to the remove icon
-        newLinksEntry.querySelector('.remove-link').addEventListener('click', () => {
-            newLinksEntry.remove();
-        });
-
-        linkSection.parentNode.insertBefore(newLinksEntry, addLinkButton);
-    });
+    const postjobBtn = document.getElementById('postjob-btn');
 
     // Form submission handler
-    candiprofileForm.addEventListener('submit', (e) => {
+    postjobBtn.addEventListener('submit', (e) => {
         e.preventDefault();
         // Add logic to handle form submission, e.g., sending data to the server
-        alert('Profile completed successfully!');
+        alert('Posted job successfully!');
     });
 });
 
 
 
 document.addEventListener('DOMContentLoaded', function() {
-      // Event listener for candidate complete-profile button
-      document.getElementById('candicompleteProfile').addEventListener('click', function() {
-          window.location.href = 'candidate-dashboard.html'; 
+      // Event listener for post job button
+      document.getElementById('postjob-btn').addEventListener('click', function() {
+          window.location.href = 'employer-dashboard.html'; 
      });
   });
 
