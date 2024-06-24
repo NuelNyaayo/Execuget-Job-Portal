@@ -90,8 +90,9 @@ body {
 }
 .messages {
     display: flex;
-    height: 80vh;
-    border: 1px solid #ddd;
+    height: 120vh;
+    border: 1px solid white;
+    margin-left: 0px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -158,6 +159,7 @@ body {
     height: 40px; /* Adjust the size as needed */
     border-radius: 50%;
     margin-right: 40px; /* Space between image and name */
+    border: 1px solid #ccc;
 }
 .message .sender {
     font-weight: bold;
@@ -210,6 +212,16 @@ body {
     background-color: #193768;
 }
 
+.messaging-container {
+            padding: 20px;
+            margin-bottom: 80px;
+            margin-top: 30px;
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            max-width: 1345px;
+            max-height: 30000px;
+        }
     </style>
 
     <!--== Favicon ==-->
@@ -254,7 +266,7 @@ body {
                     <div class="header-align-start">
                         <div class="header-logo-area">
                             <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
+                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="200" height="200"/>
                             </a>
                         </div>
                     </div>
@@ -265,7 +277,7 @@ body {
                                 <li><a href="job.html"><span>Job Postings</span></a></li>
                                 <li><a href="applications-candi.html"><span>Applications</span></a></li>
                                 <li><a href="messages-candi.html"><span>Messages</span></a></li>
-                                <li><a href="candidate-profile.html"><span>Profile</span></a></li>
+                                <li><a href="settings-candi.html"><span>Settings</span></a></li>
                                 <li><a href="notifications-candi.html"><span>Notifications</span></a></li>
                             </ul>
                         </div>
@@ -274,7 +286,7 @@ body {
                       <div class="header-action-area">
                         <div class="user-profile">
                           <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                          <a href="settings-candi.html" class="account-settings">Settings</a>
+                          <a href="candidate-profile.html" class="account-settings">Profile</a>
                         </div>
                       </div>
                     </div>
@@ -307,7 +319,7 @@ body {
       </div>
     </div>
     <!--== End Page Header Area Wrapper ==-->
-    
+  <div class="messaging-container">
     <section id="messages">
       <div class="messages">
           <div class="conversation-list">
@@ -315,13 +327,25 @@ body {
                   <strong>CHATS</strong>
               </div>
               <ul>
-                  <li class="active">
-                      <img src="assets/img/images/pic2.jpg" alt="Lauran Benite" class="profile-pic">
-                      Lauran Benite
+                  <li >
+                      <img src="assets/img/images/kplc-logo (1).png" alt="KPLC" class="profile-pic">
+                      Kenya Power
                   </li>
                   <li>
-                      <img src="assets/img/images/mooilogo.jpg" alt="Jane Smith" class="profile-pic">
-                      Jane Smith
+                      <img src="assets/img/images/saf-logo (1).png" alt="Safaricom-PLC" class="profile-pic">
+                      Safaricom-PLC
+                  </li>
+                  <li>
+                      <img src="assets/img/images/jp-logo (1).png" alt="Jambo Pay" class="profile-pic">
+                      Jambo Pay
+                  </li>
+                  <li class="active">
+                      <img src="assets/img/images/ntsa-logo (1).png" alt="NTSA" class="profile-pic">
+                      NTSA
+                  </li>
+                  <li>
+                      <img src="assets/img/images/ncba-logo (1).png" alt="NCBA" class="profile-pic">
+                      NCBA
                   </li>
                   <li>
                       <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
@@ -332,18 +356,6 @@ body {
                       John Doe
                   </li>
                   <li>
-                      <img src="assets/img/images/pic4.jpg" alt="Jane Smith" class="profile-pic">
-                      Jane Smith
-                  </li>
-                  <li>
-                      <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
-                      Bob Johnson
-                  </li>
-                  <li class="active">
-                      <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
-                      John Doe
-                  </li>
-                  <li>
                       <img src="assets/img/images/mooilogo.jpg" alt="Jane Smith" class="profile-pic">
                       Jane Smith
                   </li>
@@ -351,7 +363,7 @@ body {
                       <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
                       Bob Johnson
                   </li>
-                  <li class="active">
+                  <li >
                       <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
                       John Doe
                   </li>
@@ -419,7 +431,9 @@ body {
               </div>
           </div>
       </div>
-  </section>
+    </section>
+  </div>
+    
     
 
   </main>
