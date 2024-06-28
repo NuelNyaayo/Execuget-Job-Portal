@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Message Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .emoji-picker-label, .file-upload-label, .voice-message-label, .contact-label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: #193768;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .emoji-picker-label:hover, .file-upload-label:hover, .voice-message-label:hover, .contact-label:hover {
+            background-color: #1d427a;
+        }
+
+        .emoji-picker-label i, .file-upload-label i, .voice-message-label i, .contact-label i {
+            pointer-events: none;
+        }
+
+        .conversation-footer {
+            position: relative;
+            padding: 5px;
+            border-top: 1px solid #ddd;
+            background-color: white;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .conversation-footer textarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            height: 175px;
+            box-sizing: border-box;
+        }
+
+        .conversation-footer .send-button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-left: 10px;
+            z-index: 1;
+        }
+
+        .conversation-footer button {
+            padding: 10px;
+            background-color: #193768;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .conversation-footer button:hover {
+            background-color: #1d427a;
+        }
+
+        .conversation-footer .icon-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="conversation-footer">
+        <textarea id="message-input" placeholder="Type your message here..."></textarea>
+        <div class="send-button-container">
+            <button type="button"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <div class="icon-group">
+            <div id="emoji-picker-label" class="emoji-picker-label">
+                <i class="fas fa-smile"></i>
+            </div>
+            <label for="file-upload" class="file-upload-label">
+                <i class="fas fa-paperclip"></i>
+                <input id="file-upload" type="file" style="display: none;">
+            </label>
+            <div id="voice-message-label" class="voice-message-label">
+                <i class="fas fa-microphone"></i>
+            </div>
+            <div id="contact-label" class="contact-label">
+                <i class="fas fa-address-book"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="emoji-picker-container" style="display: none; position: absolute;"></div>
+
+    <!-- Include React, ReactDOM, and EmojiMart -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emoji-mart/react/dist/index.umd.js" crossorigin></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const emojiPickerLabel = document.getElementById("emoji-picker-label");
+            const emojiPickerContainer = document.getElementById("emoji-picker-container");
+            const messageInput = document.getElementById("message-input");
+
+            emojiPickerLabel.addEventListener("click", function(event) {
+                // Toggle the display of the emoji picker
+                emojiPickerContainer.style.display = emojiPickerContainer.style.display === "none" ? "block" : "none";
+                emojiPickerContainer.style.top = `${event.clientY + window.scrollY}px`;
+                emojiPickerContainer.style.left = `${event.clientX}px`;
+            });
+
+            // Initialize the emoji picker
+            ReactDOM.render(
+                React.createElement(EmojiMart.Picker, {
+                    data: EmojiMart.data,
+                    onEmojiSelect: function(emoji) {
+                        // Add the selected emoji to the textarea
+                        messageInput.value += emoji.native;
+                    }
+                }),
+                emojiPickerContainer
+            );
+
+            // Voice message recording
+            const voiceMessageLabel = document.getElementById("voice-message-label");
+            let mediaRecorder;
+            let audioChunks = [];
+
+            voiceMessageLabel.addEventListener("click", function() {
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                    .then(stream => {
+                        mediaRecorder = new MediaRecorder(stream);
+                        mediaRecorder.start();
+
+                        mediaRecorder.addEventListener("dataavailable", event => {
+                            audioChunks.push(event.data);
+                        });
+
+                        mediaRecorder.addEventListener("stop", () => {
+                            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                            const audioUrl = URL.createObjectURL(audioBlob);
+                            const audio = new Audio(audioUrl);
+                            audio.play();
+
+                            // Send the audioBlob to the server or append it to the chat
+                            console.log("Voice message recorded:", audioBlob);
+                        });
+
+                        setTimeout(() => {
+                            mediaRecorder.stop();
+                        }, 5000); // Record for 5 seconds
+                    })
+                    .catch(error => {
+                        console.error("Error accessing microphone:", error);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

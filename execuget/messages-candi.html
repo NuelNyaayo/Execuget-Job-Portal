@@ -188,29 +188,89 @@ body {
     margin-left: auto; /* Ensure self messages move towards the right */
 }
 .conversation-footer {
+    position: relative;
     padding: 5px;
     border-top: 1px solid #ddd;
-    background-color: #f4f7f7;
+    background-color: white;
+    display: flex;
+    align-items: flex-start; /* Align items at the start vertically */
 }
+
 .conversation-footer textarea {
-    width: 100%;
+    flex: 1; /* Take up the remaining space */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     resize: none;
+    height: 175px;
+    box-sizing: border-box;
 }
+
+.conversation-footer .send-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 1px;
+    z-index: 1; /* Ensure the container is above other elements */
+    border: 1px solid #ccc;
+    height: 175px;
+}
+
 .conversation-footer button {
-    
-    padding: 10px 20px;
+    padding: 10px;
     background-color: #193768;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: relative; /* Ensure the button stays within the container */
+    z-index: 2; /* Place the button above other elements */
 }
+
 .conversation-footer button:hover {
-    background-color: #193768;
+    background-color: #1d427a;
 }
+
+.conversation-footer .icon-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between icons */
+    margin-left: 10px; /* Adjust margin if necessary */
+}
+
+.emoji-picker-label,
+.file-upload-label,
+.voice-message-label,
+.contact-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #193768;
+    color: white;
+    border-radius: 5px;
+}
+
+.emoji-picker-label:hover,
+.file-upload-label:hover,
+.voice-message-label:hover,
+.contact-label:hover {
+    background-color: #1d427a;
+}
+
+.emoji-picker-label i,
+.file-upload-label i,
+.voice-message-label i,
+.contact-label i {
+    pointer-events: none;
+}
+
+
+
+
 
 .messaging-container {
             padding: 20px;
@@ -233,6 +293,8 @@ body {
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
+    <!--== Emojimart Library ==-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@emoji-mart/css@latest/dist/emoji-mart.css">
 
     <!--== Bootstrap CSS ==-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -247,6 +309,7 @@ body {
 
     <!--== Bootstrap Icons CSS ==-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!--== Main Style CSS ==-->
     <link href="assets/css/style.css" rel="stylesheet" />
@@ -348,33 +411,30 @@ body {
                       NCBA
                   </li>
                   <li>
-                      <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
-                      Bob Johnson
-                  </li>
-                  <li class="active">
-                      <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
-                      John Doe
-                  </li>
-                  <li>
-                      <img src="assets/img/images/mooilogo.jpg" alt="Jane Smith" class="profile-pic">
-                      Jane Smith
-                  </li>
-                  <li>
-                      <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
-                      Bob Johnson
+                      <img src="assets/img/images/ariya-logo.png" alt="Ariya Finergy" class="profile-pic">
+                      Ariya Finergy
                   </li>
                   <li >
-                      <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
-                      John Doe
+                      <img src="assets/img/images/vesen-logo.png" alt="Vesen Ltd." class="profile-pic">
+                      Vesen Ltd.
                   </li>
                   <li>
-                      <img src="assets/img/images/mooilogo.jpg" alt="Jane Smith" class="profile-pic">
-                      Jane Smith
+                      <img src="assets/img/images/bidco-logo.png" alt="Bidco Africa" class="profile-pic">
+                      Bidco Africa
                   </li>
                   <li>
-                      <img src="assets/img/images/mooilogo.jpg" alt="Bob Johnson" class="profile-pic">
-                      Bob Johnson
+                      <img src="assets/img/images/telecom-logo.png" alt="Telecom Co." class="profile-pic">
+                      Telecom Co.
                   </li>
+                  <li >
+                      <img src="assets/img/images/slacklogo.jpg" alt="Slack" class="profile-pic">
+                      Slack
+                  </li>
+                  <li>
+                      <img src="assets/img/images/goedlogo.jpg" alt="Goed Ltd." class="profile-pic">
+                      Goed Ltd.
+                  </li>
+                  
                   <!-- Add more conversations here -->
               </ul>
           </div>
@@ -383,52 +443,86 @@ body {
                   <strong> CONVERSATION</strong>
               </div>
               <div class="conversation-body">
+                <div class="message self">
+                  <div class="user-profile">
+                    <img src="assets/img/images/pic2.jpg" alt="Profile Pic." class="profile-pic">
+                    <div class="sender">You</div>
+                  </div>
+                    
+                    <div class="text">Hi NTSA Agent, I'm interested in the job you posted. Can we discuss more?</div>
+                    <div class="timestamp">May 24, 2024, 2:15 PM</div>
+                </div>
                 <div class="message other">
                   <div class="user-profile">
-                      <img src="assets/img/images/mooilogo.jpg" alt="John Doe" class="profile-pic">
-                      <div class="sender">John Doe</div>
+                      <img src="assets/img/images/ntsa-logo (1).png" alt="NTSA Logo" class="profile-pic">
+                      <div class="sender">NTSA</div>
                   </div>
-                  <div class="text">Hi, I'm interested in the job you posted. Can we discuss more?</div>
-                  <div class="timestamp">May 24, 2024, 2:15 PM</div>
+                  <div class="text">Sure, I'd be happy to discuss. What questions do you have?</div>
+                  <div class="timestamp">May 24, 2024, 2:17 PM</div>
                 </div>
-              
-                  <div class="message self">
-                    <div class="user-profile">
-                      <img src="assets/img/images/mooilogo.jpg" alt="Mooi Cop." class="profile-pic">
-                      <div class="sender">You</div>
-                    </div>
-                      
-                      <div class="text">Sure, I'd be happy to discuss. What questions do you have?</div>
-                      <div class="timestamp">May 24, 2024, 2:17 PM</div>
+                <div class="message self">
+                  <div class="user-profile">
+                    <img src="assets/img/images/pic2.jpg" alt="Profile Pic." class="profile-pic">
+                    <div class="sender">You</div>
                   </div>
-                  <div class="message other">
-                    <div class="user-profile">
-                        <img src="assets/img/images/pic2.jpg" alt="Lauran Benite" class="profile-pic">
-                        <div class="sender">Lauran Benite</div>
-                    </div>
+                    
                     <div class="text">When is the deadline for the application?</div>
                     <div class="timestamp">2:18 PM</div>
-                  </div>
-                  <div class="message other">
-                    <div class="text">And How can get started with the job in case I get it?</div>
-                    <div class="timestamp">May 24, 2024, 2:19 PM</div>
-                  </div>
-                  <div class="message self">
+                </div>
+
+                <div class="message self">
+                      <div class="text">And How can get started with the job in case I get it?</div>
+                      <div class="timestamp">May 24, 2024, 2:19 PM</div>
+                </div>
+                <div class="message other">
                     <div class="user-profile">
-                      <img src="assets/img/images/mooilogo.jpg" alt="Mooi Cop." class="profile-pic">
+                        <img src="assets/img/images/ntsa-logo (1).png" alt="NTSA Logo" class="profile-pic">
+                        <div class="sender">NTSA</div>
+                    </div>
+                    <div class="text">No worries, The deadline is on 30th of this Month. And in the case you get the job you will be emailed further on what you do.</div>
+                    <div class="timestamp">May 24, 2024, 2:22 PM</div>
+                </div>
+                <div class="message self">
+                    <div class="user-profile">
+                      <img src="assets/img/images/pic2.jpg" alt="OProfile Pic" class="profile-pic">
                       <div class="sender">You</div>
                     </div>
                       
-                      <div class="text">No worries, The deadline is on 30th of this Month. And in the case you get the job you will be emailed further on what you do.</div>
-                      <div class="timestamp">May 24, 2024, 2:22 PM</div>
-                  </div>
+                      <div class="text">Thank you 🙏 very Much.Am grateful</div>
+                      <div class="timestamp">May 24, 2024, 2:223 PM</div>
+                </div>
 
                   <!-- Add more messages here -->
               </div>
               <div class="conversation-footer">
-                  <textarea placeholder="Type your message here..."></textarea>
-                  <button type="button">Send</button>
-              </div>
+                <textarea id="message-input" placeholder="Type your message here..."></textarea>
+                <div class="send-button-container">
+                    <button type="button"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <div class="icon-group">
+                    <div id="emoji-picker-label" class="emoji-picker-label">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <label for="file-upload" class="file-upload-label">
+                        <i class="fas fa-paperclip"></i>
+                        <input id="file-upload" type="file" style="display: none;">
+                    </label>
+                    <div id="voice-message-label" class="voice-message-label">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div id="contact-label" class="contact-label">
+                        <i class="fas fa-address-book"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="emoji-picker-container" style="display: none; position: absolute;"></div>
+            
+            
+            
+            
+            
+            
           </div>
       </div>
     </section>
@@ -438,8 +532,8 @@ body {
 
   </main>
 
-  <!--== Start Footer Area Wrapper ==-->
-  <footer class="footer-area">
+   <!--== Start Footer Area Wrapper ==-->
+   <footer class="footer-area">
     <!--== Start Footer Top ==-->
     <div class="footer-top">
       <div class="container pt--0 pb--0">
@@ -470,10 +564,10 @@ body {
             <div class="widget-item widget-about">
               <div class="widget-logo-area">
                 <a href="index.html">
-                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="225" height="225"/>
+                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="200" height="200"/>
                 </a>
               </div>
-              <p class="desc">The Job Seeker Platform that streamlines the job search and recruitment process for both employers and job seekers.</p>
+              <p class="desc">Your number one job seeker platform streamlining the job search and recruitment process.</p>
               <div class="social-icons">
                 <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
                 <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
@@ -494,7 +588,7 @@ body {
                         <ul class="nav-menu">
                           <li><a href="about-us.html">About Us</a></li>
                           <li><a href="find-jobs.html"> Find Jobs</a></li>
-                          <li><a href="find-candidates.html">Cadidates</a></li>
+                          <li><a href="find-candidates.html">Candidates</a></li>
                           <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                       </div>
@@ -528,9 +622,9 @@ body {
                     <div class="collapse-body">
                       <div class="widget-menu-wrap">
                         <ul class="nav-menu">
-                          <li><a href="index.html">Partners</a></li>
+                          <li><a href="page-not-found.html">Partners</a></li>
                           <li><a href="blog.html">Blog & BlogPost</a></li>
-                          <li><a href="help-support.html">Help & Support</a></li>
+                          <li><a href="page-not-found.html">Help & Support</a></li>
                           <li><a href="index.html">Popular-Careers</a></li>
                         </ul>
                       </div>
@@ -548,8 +642,8 @@ body {
                         <ul class="nav-menu">
                           <li><a href="registration.html">Get Started</a></li>
                           <li><a href="index.html">How It Works</a></li>
-                          <li><a href="help-support.html">Privacy Terms</a></li>
-                          <li><a href="help-support.html">Policies</a></li>
+                          <li><a href="page-not-found.html">Privacy Terms</a></li>
+                          <li><a href="page-not-found.html">Policies</a></li>
                         </ul>
                       </div>
                     </div>
@@ -578,60 +672,110 @@ body {
     <!--== End Footer Bottom ==-->
   </footer>
   <!--== End Footer Area Wrapper ==-->
-
+  
   <!--== Scroll Top Button ==-->
   <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
-
-  <!--== Start Aside Menu ==-->
-  <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
-      <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="icofont-simple-left"></i></button>
-    </div>
-    <div class="offcanvas-body">
-      <!-- Mobile Menu Start -->
-      <div class="mobile-menu-items">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Find Jobs</a>
-            <ul class="sub-menu">
-              <li><a href="job.html">Jobs</a></li>
-              <li><a href="job-details.html">Job Details</a></li>
-            </ul>
-          </li>
-          <li><a href="employers-details.html">Employers Details</a></li>
-          <li><a href="#">Candidates</a>
-            <ul class="sub-menu">
-              <li><a href="candidate.html">Candidates</a></li>
-              <li><a href="candidate-details.html">Candidate Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Blog</a>
-            <ul class="sub-menu">
-              <li><a href="blog-grid.html">Blog Grid</a></li>
-              <li><a href="blog.html">Blog Left Sidebar</a></li>
-              <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-              <li><a href="blog-details.html">Blog Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Pages</a>
-            <ul class="sub-menu">
-              <li><a href="about-us.html">About us</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="registration.html">Registration</a></li>
-              <li><a href="page-not-found.html">Page Not Found</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <!-- Mobile Menu End -->
-    </div>
-  </aside>
-  <!--== End Aside Menu ==-->
 </div>
 
 <!--=======================Javascript============================-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const conversationListItems = document.querySelectorAll('.conversation-list ul li');
+    const conversationBody = document.querySelector('.conversation-body');
+    const conversationFooter = document.querySelector('.conversation-footer');
+    const textarea = conversationFooter.querySelector('textarea');
+    const sendButton = conversationFooter.querySelector('button');
+
+    // Object to store messages for each conversation
+    const conversations = {};
+
+    // Function to save the current conversation's messages
+    function saveCurrentConversation() {
+        const activeItem = document.querySelector('.conversation-list ul li.active');
+        if (activeItem) {
+            const id = activeItem.textContent.trim();
+            conversations[id] = conversationBody.innerHTML;
+        }
+    }
+
+    // Function to load messages for a given conversation
+    function loadConversation(id) {
+        conversationBody.innerHTML = conversations[id] || '';
+    }
+
+    conversationListItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Save the current conversation's messages
+            saveCurrentConversation();
+
+            // Remove 'active' class from all list items
+            conversationListItems.forEach(li => li.classList.remove('active'));
+
+            // Add 'active' class to the clicked list item
+            this.classList.add('active');
+
+            // Load the messages for the clicked conversation
+            const id = this.textContent.trim();
+            loadConversation(id);
+
+            // Optionally, add a placeholder message if no messages exist
+            if (!conversationBody.innerHTML) {
+                const placeholderMessage = document.createElement('div');
+                placeholderMessage.classList.add('message', 'other');
+                placeholderMessage.innerHTML = `
+                    <div class="user-profile">
+                        <img src="${this.querySelector('img').src}" alt="${this.textContent.trim()}" class="profile-pic">
+                        <div class="sender">${this.textContent.trim()}</div>
+                    </div>
+                    <div class="text">Start a new conversation...</div>
+                    <div class="timestamp">${new Date().toLocaleString()}</div>
+                `;
+                conversationBody.appendChild(placeholderMessage);
+            }
+        });
+    });
+
+    // Event listener to send messages
+    sendButton.addEventListener('click', function() {
+        const activeItem = document.querySelector('.conversation-list ul li.active');
+        if (activeItem) {
+            const message = textarea.value.trim();
+            if (message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'self');
+                messageDiv.innerHTML = `
+                    <div class="user-profile">
+                        <img src="assets/img/images/pic2.jpg" alt="Profile Pic." class="profile-pic">
+                        <div class="sender">You</div>
+                    </div>
+                    <div class="text">${message}</div>
+                    <div class="timestamp">${new Date().toLocaleString()}</div>
+                `;
+                conversationBody.appendChild(messageDiv);
+                textarea.value = '';
+                saveCurrentConversation(); // Save the updated conversation
+            }
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+            const emojiButton = new EmojiButton();
+            const trigger = document.querySelector('#emoji-picker-label');
+            const textarea = document.querySelector('#message-input');
+
+            emojiButton.on('emoji', emoji => {
+                textarea.value += emoji;
+            });
+
+            trigger.addEventListener('click', () => {
+                emojiButton.togglePicker(trigger);
+            });
+        });
+</script>
+<!--=== Emojimart Library ===-->
+<script src="https://cdn.jsdelivr.net/npm/@emoji-mart/data@latest/emoji-mart.js"></script>
+
 
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
