@@ -25,7 +25,9 @@
     height: 40px;
     margin-right: 10px;
 }
-
+.user-profile img:hover {
+  transform: scale(1.05);
+}
 .user-profile .dropdown {
     display: flex;
     flex-direction: column;
@@ -37,6 +39,23 @@
     margin-top: 5px;
 }
 
+.user-profile .account-settings {
+    color: inherit; /* Default color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.user-profile .account-settings:hover {
+    color: #110292; /* Hover color */
+}
+.user-profile .account-settings {
+    color: white; /* Default color */
+    text-decoration: none;
+}
+
+.user-profile .account-settings.active {
+    color: #193768; /* Active color */
+}
 .notifications {
     position: relative;
     margin-right: 20px;
@@ -165,6 +184,14 @@ body {
 .notifications-content-list .list-style li + li {
   margin-top: 10px;
 }
+.notifications-content-list .list-style li a.clicked {
+    background-color: white; /* Background color for clicked notifications */
+}
+.notifications-content-list .list-style li a.clicked:hover {
+    background-color: #193768; /* Hover background color for clicked notifications */
+    color: white; /* Hover text color for clicked notifications */
+    border-color: #f4f7f7;
+}
     </style>
 
     <!--== Favicon ==-->
@@ -227,10 +254,12 @@ body {
                   </div>
                   <div class="header-align-end">
                     <div class="header-action-area">
-                      <div class="user-profile">
-                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                        <a href="candidate-profile.html" class="account-settings">Profile</a>
-                      </div>
+                        <div class="user-profile">
+                            <a href="candidate-profile.html">
+                                <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                            </a>
+                            <a href="candidate-profile.html" class="account-settings">Profile</a>
+                        </div>
                     </div>
                   </div>
                     
@@ -279,36 +308,35 @@ body {
         <div class="notifications-container">
           <div class="notifications-content-list">
             <ul class="list-style">
-              <li >
-                <a href="blog-details.html"><i class="icofont-double-right"></i>New application for "Software Developer" - John Doe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">3 minutes ago</span></a>
-              </li>
-              <li>
-                <a href="blog-details.html"><i class="icofont-double-right"></i>Enable two-factor authentication to make your account more secure today.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">7 minutes ago</span></a>
-              </li>
-              <li>
-                <a href="blog-details.html"><i class="icofont-double-right"></i>You Trial to change your password was unsuccessful.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">10 minutes ago</span></a>
-              </li>
-              <li>
-                <a href="blog-details.html"><i class="icofont-double-right"></i>Update a new profile picture and up to date resume to get new applications sent to you.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">10 minutes ago</span></a>
-              </li>
-              <li>
-                <a href="blog-details.html"><i class="icofont-double-right"></i>New employer Phil Makusi posted a new job labelled senior developer.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">17 minutes ago</span></a>
-              </li>
-              <li>
-                <a href="blog-details.html"><i class="icofont-double-right"></i>John Doe sent you a message regarding the job "Junior Developer".&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">33 minutes ago</span></a>
-              </li>
-              <li>
-                <a href="blog-details.html"><i class="icofont-double-right"></i>Get new jobs recommendation by actively applying for similar jobs in the job postings page.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">51 minutes ago</span></a>
-              </li>
-              <li>
-                <a href="blog-details.html"><i class="icofont-double-right"></i>Your profile has been viewed 5 times today.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">1 hours ago</span></a>
-              </li>
-              <li>
-                <a href="blog-details.html"><i class="icofont-double-right"></i>Your have succesfully updated your profile.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="notification-time">3 hours ago</span></a>
-              </li>
+                <li>
+                    <a href="job.html" data-id="1"><i class="icofont-double-right"></i>New post for "Software Developer" - John Doe <span class="notification-time">3 minutes ago</span></a>
+                </li>
+                <li>
+                    <a href="candidate-profile.html" data-id="2"><i class="icofont-double-right"></i>Enable two-factor authentication to make your account more secure today. <span class="notification-time">7 minutes ago</span></a>
+                </li>
+                <li>
+                    <a href="candidate-profile.html" data-id="3"><i class="icofont-double-right"></i>You Trial to change your password was unsuccessful. <span class="notification-time">10 minutes ago</span></a>
+                </li>
+                <li>
+                    <a href="candidate-profile.html" data-id="4"><i class="icofont-double-right"></i>Update a new profile picture and up to date resume to get new applications sent to you. <span class="notification-time">10 minutes ago</span></a>
+                </li>
+                <li>
+                    <a href="job.html" data-id="5"><i class="icofont-double-right"></i>New employer Phil Makusi posted a new job labelled senior developer. <span class="notification-time">17 minutes ago</span></a>
+                </li>
+                <li>
+                    <a href="messages-candi.html" data-id="6"><i class="icofont-double-right"></i>NCBA sent you a message regarding the job "Junior Developer". <span class="notification-time">33 minutes ago</span></a>
+                </li>
+                <li>
+                    <a href="job.html" data-id="7"><i class="icofont-double-right"></i>Get new job recommendations by actively applying for similar jobs in the job postings page. <span class="notification-time">51 minutes ago</span></a>
+                </li>
+                <li>
+                    <a href="candidate-profile.html" data-id="8"><i class="icofont-double-right"></i>Your profile has been viewed 5 times today. <span class="notification-time">1 hours ago</span></a>
+                </li>
+                <li>
+                    <a href="candidate-profile.html" data-id="9"><i class="icofont-double-right"></i>Your have succesfully updated your profile. <span class="notification-time">3 hours ago</span></a>
+                </li>
             </ul>
           </div>
-
         </div>
         
       </section>
@@ -463,6 +491,18 @@ body {
 
 <!--=======================Javascript============================-->
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var currentUrl = window.location.href;
+    var profileLink = document.querySelector('.user-profile .account-settings');
+
+    // Check if the current URL matches the profile link href
+    if (profileLink && profileLink.href === currentUrl) {
+        profileLink.classList.add('active');
+    }
+});
+
+
+
  document.getElementById('mark-all-read').addEventListener('click', function() {
     // Select all list items within the notifications-content-list
     var notifications = document.querySelectorAll('.notifications-content-list .list-style li a');
@@ -486,6 +526,42 @@ body {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var notifications = document.querySelectorAll('.notifications-content-list .list-style li a');
+
+    // Check if the page was reloaded
+    if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+        // Clear the clicked state in localStorage
+        notifications.forEach(function(notification) {
+            var notificationId = notification.getAttribute('data-id');
+            localStorage.removeItem('notification-' + notificationId);
+        });
+    }
+
+    // Check localStorage for previously clicked notifications and set their background color
+    notifications.forEach(function(notification) {
+        var notificationId = notification.getAttribute('data-id');
+        if (localStorage.getItem('notification-' + notificationId) === 'clicked') {
+            notification.classList.add('clicked');
+        }
+
+        notification.addEventListener('click', function(event) {
+            // Prevent the default action to allow background color change
+            event.preventDefault();
+
+            // Change the background color of the clicked notification
+            notification.classList.add('clicked');
+
+            // Store the clicked state in localStorage
+            localStorage.setItem('notification-' + notificationId, 'clicked');
+
+            // Open the associated link
+            window.location.href = notification.href;
+        });
+    });
+});
+
 
 </script>
 <!--=== jQuery Modernizr Min Js ===-->

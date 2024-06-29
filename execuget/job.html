@@ -25,7 +25,9 @@
     height: 40px;
     margin-right: 10px;
 }
-
+.user-profile img:hover {
+  transform: scale(1.05);
+}
 .user-profile .dropdown {
     display: flex;
     flex-direction: column;
@@ -37,6 +39,23 @@
     margin-top: 5px;
 }
 
+.user-profile .account-settings {
+    color: inherit; /* Default color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.user-profile .account-settings:hover {
+    color: #110292; /* Hover color */
+}
+.user-profile .account-settings {
+    color: white; /* Default color */
+    text-decoration: none;
+}
+
+.user-profile .account-settings.active {
+    color: #193768; /* Active color */
+}
 .notifications {
     position: relative;
     margin-right: 20px;
@@ -253,10 +272,12 @@
                   </div>
                   <div class="header-align-end">
                     <div class="header-action-area">
-                      <div class="user-profile">
-                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                        <a href="candidate-profile.html" class="account-settings">Profile</a>
-                      </div>
+                        <div class="user-profile">
+                            <a href="candidate-profile.html">
+                                <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                            </a>
+                            <a href="candidate-profile.html" class="account-settings">Profile</a>
+                        </div>
                     </div>
                   </div>
                     
@@ -839,8 +860,17 @@
 </div>
 
 <!--=======================Javascript============================-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var currentUrl = window.location.href;
+    var profileLink = document.querySelector('.user-profile .account-settings');
 
-
+    // Check if the current URL matches the profile link href
+    if (profileLink && profileLink.href === currentUrl) {
+        profileLink.classList.add('active');
+    }
+});
+</script>
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
 <!--=== jQuery Min Js ===-->

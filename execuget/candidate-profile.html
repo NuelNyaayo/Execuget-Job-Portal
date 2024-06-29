@@ -25,6 +25,9 @@
     height: 40px;
     margin-right: 10px;
 }
+.user-profile img:hover {
+  transform: scale(1.05);
+}
 
 .user-profile .dropdown {
     display: flex;
@@ -36,6 +39,24 @@
     text-decoration: none;
     margin-top: 5px;
 }
+.user-profile .account-settings {
+    color: inherit; /* Default color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.user-profile .account-settings:hover {
+    color: #110292; /* Hover color */
+}
+.user-profile .account-settings {
+    color: white; /* Default color */
+    text-decoration: none;
+}
+
+.user-profile .account-settings.active {
+    color: #193768; /* Active color */
+}
+
 
 .notifications {
     position: relative;
@@ -323,30 +344,44 @@ body {
             max-height: 1000px;
         }
 
-        
+        .btn-save {
+  
+  margin-bottom: 10px;
+  width: 350px; /* Specify the desired width */
+  height: 50px; /* Specify the desired height */
+  border-radius: 5px;
+  background-color: #193768;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  padding: 10px 20px;
+}
 
-         .btn-save {
-            padding: 10px 20px;
-            margin-bottom: 10px;
-            margin-right: 10px;
-            background-color: #193768;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-         .btn-discard {
-            padding: 10px 20px;
-            margin-bottom: 10px;
-            margin-right: 10px;
-            background-color: #193768;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
 
-        
+        .btn-discard {
+  
+  margin-bottom: 10px;
+  width: 350px; /* Specify the desired width */
+  height: 50px; /* Specify the desired height */
+  border-radius: 5px; 
+  background-color: #193768;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  padding: 10px 20px;
+}
+        .button2-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Adjust the width as needed */
+}
+
+.btn-save:hover,.btn-discard:hover {
+            background-color: #0056b3;
+        }        
         
 
         .upload-btn {
@@ -388,7 +423,16 @@ body {
             color: #193768;
         }
 
-    
+        .content-container {
+            margin: 20px auto;
+            margin-bottom: 100px;
+            padding: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 1200px;
+            max-height: 50000px;
+        } 
     </style>
 
     <!--== Favicon ==-->
@@ -434,7 +478,7 @@ body {
                     <div class="header-align-start">
                         <div class="header-logo-area">
                             <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
+                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="200" height="200"/>
                             </a>
                         </div>
                     </div>
@@ -445,19 +489,23 @@ body {
                                 <li><a href="job.html"><span>Job Postings</span></a></li>
                                 <li><a href="applications-candi.html"><span>Applications</span></a></li>
                                 <li><a href="messages-candi.html"><span>Messages</span></a></li>
-                                <li><a href="candidate-profile.html"><span>Profile</span></a></li>
+                                <li><a href="settings-candi.html"><span>Settings</span></a></li>
                                 <li><a href="notifications-candi.html"><span>Notifications</span></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="header-align-end">
                       <div class="header-action-area">
-                        <div class="user-profile">
-                          <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                          <a href="settings-candi.html" class="account-settings">Settings</a>
-                        </div>
+                          <div class="user-profile">
+                              <a href="candidate-profile.html">
+                                  <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
+                              </a>
+                              <a href="candidate-profile.html" class="account-settings">Profile</a>
+                          </div>
                       </div>
                     </div>
+                  
+                  
                     
                 </div>
             </div>
@@ -489,10 +537,11 @@ body {
     <!--== End Page Header Area Wrapper ==-->
     
     <section id="personal-profile">
-      <div class="section-title text-center">
+      <div class="content-container">
+          <div class="section-title text-center">
         <h2 class="title">Your Profile</h2>
-    </div>
-    <div class="personal-profile">
+          </div>
+          <div class="personal-profile">
         <div class="profile-header">
             <div class="profile-pic-container" id="profile-pic-container">
                 <img src="assets/img/images/pic2.png" alt="Profie Pic" id="profile-pic" class="profile-pic">
@@ -513,7 +562,7 @@ body {
                 <button class="edit-btn" onclick="editField('candidate-location')">Edit Location</button>
             </div>
         </div>
-    </div>
+          </div>
     
     
           <div class="bio-container">
@@ -559,7 +608,7 @@ body {
             </div>
             <button class="edit-btn" type="button" onclick="addField('candidate-education')">Add Education</button>
             <button class="edit-btn" onclick="editField('candidate-education')">Edit Education</button>
-        </div>
+          </div>
           <div class="experience-container">
             <h4><strong>Experience</strong></h4>
            
@@ -570,8 +619,8 @@ body {
             </div>
             <button class="edit-btn" type="button" onclick="addField('candidate-experience')">Add Experience</button>
             <button class="edit-btn" onclick="editField('candidate-experience')">Edit Experience</button>
-        </div>
-        <div class="resume-container">
+          </div>
+          <div class="resume-container">
             <h4><strong>Resume</strong></h4> 
             <div id="candidate-resume">
                 <!--<div class="uploaded-file">
@@ -581,8 +630,8 @@ body {
                 </div>-->
             </div>
             <button class="edit-btn" onclick="editfileField('candidate-resume')">Update Resume</button>
-        </div>
-        <div class="documents-container">
+          </div>
+          <div class="documents-container">
             <h4><strong>Documents</strong></h4> 
             <div id="candidate-document">
                 <!--<div class="uploaded-file">
@@ -594,8 +643,8 @@ body {
             
             <button class="edit-btn" onclick="addfileField('candidate-document')">Add Document</button>
            
-        </div>
-        <div class="license-container">
+          </div>
+          <div class="license-container">
             <h4><strong>Licenses & Certifications</strong></h4>
            
             <div class="license-info">
@@ -605,8 +654,8 @@ body {
             
             <button class="edit-btn" type="button" onclick="addField('candidate-license')">Add License</button>
             <button class="edit-btn" onclick="editField('candidate-license')">Edit License</button>
-        </div>
-        <div class="links-container">
+          </div>
+          <div class="links-container">
             <h4><strong>Links</strong></h4> 
             <div id="candidate-link">www.facebook.com/nuel </div>
             
@@ -614,17 +663,18 @@ body {
             <button class="edit-btn" onclick="editField('candidate-link')">Edit Link</button>
           </div>
         
-          <button class="btn-save">Save Changes</button>
-          <button class="btn-discard">Discard Changes</button>
+          <div class="button2-container">
+            <button class="btn-save">Save Changes</button>
+            <button class="btn-discard">Discard Changes</button>
+          </div>
+          
       </div>
     </section>
 
-    
-
   </main>
 
-  <!--== Start Footer Area Wrapper ==-->
-  <footer class="footer-area">
+   <!--== Start Footer Area Wrapper ==-->
+   <footer class="footer-area">
     <!--== Start Footer Top ==-->
     <div class="footer-top">
       <div class="container pt--0 pb--0">
@@ -655,10 +705,10 @@ body {
             <div class="widget-item widget-about">
               <div class="widget-logo-area">
                 <a href="index.html">
-                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="225" height="225"/>
+                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="200" height="200"/>
                 </a>
               </div>
-              <p class="desc">The Job Seeker Platform that streamlines the job search and recruitment process for both employers and job seekers.</p>
+              <p class="desc">Your number one job seeker platform streamlining the job search and recruitment process.</p>
               <div class="social-icons">
                 <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
                 <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
@@ -679,7 +729,7 @@ body {
                         <ul class="nav-menu">
                           <li><a href="about-us.html">About Us</a></li>
                           <li><a href="find-jobs.html"> Find Jobs</a></li>
-                          <li><a href="find-candidates.html">Cadidates</a></li>
+                          <li><a href="find-candidates.html">Candidates</a></li>
                           <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                       </div>
@@ -713,9 +763,9 @@ body {
                     <div class="collapse-body">
                       <div class="widget-menu-wrap">
                         <ul class="nav-menu">
-                          <li><a href="index.html">Partners</a></li>
+                          <li><a href="page-not-found.html">Partners</a></li>
                           <li><a href="blog.html">Blog & BlogPost</a></li>
-                          <li><a href="help-support.html">Help & Support</a></li>
+                          <li><a href="page-not-found.html">Help & Support</a></li>
                           <li><a href="index.html">Popular-Careers</a></li>
                         </ul>
                       </div>
@@ -733,8 +783,8 @@ body {
                         <ul class="nav-menu">
                           <li><a href="registration.html">Get Started</a></li>
                           <li><a href="index.html">How It Works</a></li>
-                          <li><a href="help-support.html">Privacy Terms</a></li>
-                          <li><a href="help-support.html">Policies</a></li>
+                          <li><a href="page-not-found.html">Privacy Terms</a></li>
+                          <li><a href="page-not-found.html">Policies</a></li>
                         </ul>
                       </div>
                     </div>
@@ -763,62 +813,26 @@ body {
     <!--== End Footer Bottom ==-->
   </footer>
   <!--== End Footer Area Wrapper ==-->
-
+  
   <!--== Scroll Top Button ==-->
   <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
-
-  <!--== Start Aside Menu ==-->
-  <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
-      <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="icofont-simple-left"></i></button>
-    </div>
-    <div class="offcanvas-body">
-      <!-- Mobile Menu Start -->
-      <div class="mobile-menu-items">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Find Jobs</a>
-            <ul class="sub-menu">
-              <li><a href="job.html">Jobs</a></li>
-              <li><a href="job-details.html">Job Details</a></li>
-            </ul>
-          </li>
-          <li><a href="employers-details.html">Employers Details</a></li>
-          <li><a href="#">Candidates</a>
-            <ul class="sub-menu">
-              <li><a href="candidate.html">Candidates</a></li>
-              <li><a href="candidate-details.html">Candidate Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Blog</a>
-            <ul class="sub-menu">
-              <li><a href="blog-grid.html">Blog Grid</a></li>
-              <li><a href="blog.html">Blog Left Sidebar</a></li>
-              <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-              <li><a href="blog-details.html">Blog Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Pages</a>
-            <ul class="sub-menu">
-              <li><a href="about-us.html">About us</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="registration.html">Registration</a></li>
-              <li><a href="page-not-found.html">Page Not Found</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <!-- Mobile Menu End -->
-    </div>
-  </aside>
-  <!--== End Aside Menu ==-->
 </div>
 
 <!--=======================Javascript============================-->
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var currentUrl = window.location.href;
+    var profileLink = document.querySelector('.user-profile .account-settings');
+
+    // Check if the current URL matches the profile link href
+    if (profileLink && profileLink.href === currentUrl) {
+        profileLink.classList.add('active');
+    }
+});
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const profilepicUploadInput = document.getElementById('profilepic-upload');
     const profilepic = document.getElementById('profile-pic');
@@ -1047,11 +1061,11 @@ function addField(fieldId) {
     } else if (fieldId === 'candidate-skill') {
         createAndSetupElement('input', 'Enter new skill.');
     } else if (fieldId === 'candidate-education') {
-        createAndSetupElement('textarea', 'Describe your Education here...', '1200px', '100px');
+        createAndSetupElement('textarea', 'Describe your Education here...', '1100px', '100px');
     } else if (fieldId === 'candidate-experience') {
-        createAndSetupElement('textarea', 'Describe your work experience here...', '1200px', '100px');
+        createAndSetupElement('textarea', 'Describe your work experience here...', '1100px', '100px');
     } else if (fieldId === 'candidate-license') {
-        createAndSetupElement('textarea', 'Update your License here...', '1200px', '100px');
+        createAndSetupElement('textarea', 'Update your License here...', '1100px', '100px');
     }
 
     function saveValue() {
