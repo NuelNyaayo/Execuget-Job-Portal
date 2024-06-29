@@ -1,0 +1,31 @@
+/*JOB BODY*/
+.main-content {
+    flex: 1;
+    background-color: white;
+}
+.main-content section {
+    margin-bottom: 20px;
+}
+.main-content h2 {
+    border-bottom: 2px solid #333;
+    margin-bottom: 15px;
+}
+.search-container {
+    margin-top: 40px;
+    margin-left: 85px;
+    margin-right: 85px;
+    margin-bottom: 0;
+    padding: 80px;
+    background-color: #f4f7f7;
+    border: 1px solid #f4f7f7;
+    border-radius: 5px;
+    max-width: 1335px;
+    max-height: 1000px;
+}
+
+.search-title {
+    color:#272a33;
+}
+.desc {
+    color:#656565;
+}

@@ -1,0 +1,79 @@
+/*CNADIDATE-DASHBOARD BODY*/
+.main-content {
+    flex: 1;
+    background-color: white;
+}
+.main-content section {
+    margin-bottom: 20px;
+}
+.main-content h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.recent-activity ul {
+    list-style: none;
+    padding: 0;
+}
+.recent-activity ul li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    color: #272a33;
+    font-size: 16px;
+    font-weight: 400;
+}
+.overview-container {
+    margin: 20px auto;
+    padding: 80px;
+    background-color: #f4f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 300px;
+}
+
+.activejobs-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #193768;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.expiredjobs-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #193768;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.draftjobs-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #193768;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.review-container {
+    margin: 20px auto;
+    padding: 80px;
+    background-color: #f4f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 300px;
+}

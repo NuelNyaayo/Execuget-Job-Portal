@@ -1,99 +1,61 @@
+/* Header Section*/
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        /* Header styles */
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-        }
-        .navigation-menu ul {
-            list-style: none;
-            display: flex;
-        }
-        .navigation-menu ul li {
-            margin-right: 20px;
-        }
-        .navigation-menu ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        .user-profile img {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            margin-left: 20px;
-        }
-        .notifications {
-            position: relative;
-            margin-right: 20px;
-        }
-        .notifications .bell-icon {
-            background: url('bell-icon.png') no-repeat center center;
-            width: 24px;
-            height: 24px;
-            display: block;
-        }
-        .badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: red;
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        /* Sidebar styles */
-        .sidebar {
-            background-color: #555;
-            color: white;
-            padding: 20px;
-            width: 250px;
-            min-height: 100vh;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            margin-bottom: 10px;
-        }
-        .sidebar ul li a {
-            color: white;
-            text-decoration: none;
-            display: block;
-        }
-        /* Main content styles */
-        .main-content {
-            padding: 20px;
-            margin-left: 250px; /* Adjusted to accommodate sidebar width */
-        }
-        /* Footer styles */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    
+.user-profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.user-profile img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Default Styles */
+.header-action-area .user-profile .account-settings {
+    color: white; /* Default color */
+    text-decoration: none;
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover Styles with Increased Specificity */
+.header-action-area .user-profile .account-settings:hover {
+    color: #110292; /* Hover color */
+}
+
+/* Active State Styles */
+.header-action-area .user-profile .account-settings.active {
+    color: #193768; /* Active color */
+}
+
+/* Ensure Hover Overrides Active State */
+.header-action-area .user-profile .account-settings.active:hover {
+    color: #110292; /* Hover color when active */
+}
+
+
+/* Additional CSS for header alignment */
+.header-align {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

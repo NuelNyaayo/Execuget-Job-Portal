@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.main-content {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.main-content h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.notifications-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1200px;
+    max-height: 500000px;
+    margin-bottom: 150px;
+}
+.mark-as-read button {
+
+padding: 10px 20px;
+background-color: #193768;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-left:1130px;
+}
+.mark-as-read button:hover {
+background-color: #0056b3;
+
+}
+
+
+.notifications-content-list {
+margin-top: 32px;
+margin-bottom: 44px;
+}
+.notifications-content-list .title {
+font-size: 26px;
+margin-bottom: 40px;
+}
+@media only screen and (max-width: 991px) {
+.notifications-content-list .title {
+font-size: 24px;
+margin-bottom: 25px;
+}
+}
+@media only screen and (max-width: 767px) {
+.notifications-content-list .title {
+font-size: 20px;
+}
+}
+.notifications-content-list .list-style li a {
+border: 1px solid #ededed;
+border-radius: 5px;
+color: #193768;
+background-color: #f4f7f7;
+display: block;
+font-size: 16px;
+text-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1);
+padding: 15px 27px 14px;
+transition: all 0.2s ease-out;
+-webkit-transition: all 0.2s ease-out;
+-moz-transition: all 0.2s ease-out;
+-ms-transition: all 0.2s ease-out;
+-o-transition: all 0.2s ease-out;
+}
+@media only screen and (max-width: 767px) {
+.notifications-content-list .list-style li a {
+display: -ms-inline-grid;
+display: inline-grid;
+}
+}
+.notifications-content-list .list-style li a:hover {
+background-color: #193768;
+border-color: #f4f7f7;
+color:white;
+}
+.notifications-content-list .list-style li a i {
+margin-right: 17px;
+}
+.notifications-content-list .list-style li + li {
+margin-top: 10px;
+}
+.notifications-content-list .list-style li a.clicked {
+background-color: white; /* Background color for clicked notifications */
+}
+.notifications-content-list .list-style li a.clicked:hover {
+background-color: #193768; /* Hover background color for clicked notifications */
+color: white; /* Hover text color for clicked notifications */
+border-color: #f4f7f7;
+}

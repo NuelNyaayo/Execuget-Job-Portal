@@ -10,189 +10,6 @@
     <meta name="author" content="hastech"/>
 
     <title>Candidate-Dashboard :: Execuget - Job Portal Website</title>
-    <style>
-      /* User profile and notifications styling */
-      /* User profile and notifications styling */
-.user-profile {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
-
-.user-profile img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-.user-profile img:hover {
-  transform: scale(1.05);
-}
-.user-profile .dropdown {
-    display: flex;
-    flex-direction: column;
-}
-
-.user-profile .dropdown a {
-    color: #333;
-    text-decoration: none;
-    margin-top: 5px;
-}
-
-.user-profile .account-settings {
-    color: inherit; /* Default color */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.user-profile .account-settings:hover {
-    color: #110292; /* Hover color */
-}
-.user-profile .account-settings {
-    color: white; /* Default color */
-    text-decoration: none;
-}
-
-.user-profile .account-settings.active {
-    color: #193768; /* Active color */
-}
-.notifications {
-    position: relative;
-    margin-right: 20px;
-}
-
-.notifications .bell-icon {
-    background: url('assets/img/bell-icon.png') no-repeat center center;
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-.notifications .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Additional CSS for header alignment */
-.header-align {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .main-content {
-            flex: 1;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-        }
-        .main-content h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-        .notifications-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 500000px;
-            margin-bottom: 150px;
-        }
-        .conversation-footer button {
-    
-    padding: 10px 20px;
-    background-color: #193768;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left:1130px;
-}
-.conversation-footer button:hover {
-    background-color: #193768;
-    
-}
-
-
-.notifications-content-list {
-  margin-top: 32px;
-  margin-bottom: 44px;
-}
-.notifications-content-list .title {
-  font-size: 26px;
-  margin-bottom: 40px;
-}
-@media only screen and (max-width: 991px) {
-  .notifications-content-list .title {
-    font-size: 24px;
-    margin-bottom: 25px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .notifications-content-list .title {
-    font-size: 20px;
-  }
-}
-.notifications-content-list .list-style li a {
-  border: 1px solid #ededed;
-  border-radius: 5px;
-  color: #193768;
-  background-color: #f4f7f7;
-  display: block;
-  font-size: 16px;
-  text-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1);
-  padding: 15px 27px 14px;
-  transition: all 0.2s ease-out;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-}
-@media only screen and (max-width: 767px) {
-  .notifications-content-list .list-style li a {
-    display: -ms-inline-grid;
-    display: inline-grid;
-  }
-}
-.notifications-content-list .list-style li a:hover {
-  background-color: #193768;
-  border-color: #f4f7f7;
-  color:white;
-}
-.notifications-content-list .list-style li a i {
-  margin-right: 17px;
-}
-.notifications-content-list .list-style li + li {
-  margin-top: 10px;
-}
-.notifications-content-list .list-style li a.clicked {
-    background-color: white; /* Background color for clicked notifications */
-}
-.notifications-content-list .list-style li a.clicked:hover {
-    background-color: #193768; /* Hover background color for clicked notifications */
-    color: white; /* Hover text color for clicked notifications */
-    border-color: #f4f7f7;
-}
-    </style>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
@@ -203,7 +20,10 @@ body {
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-
+    <!--== Candi-Dashboard CSS ==-->
+    <link href="assets/css/candi-dashboard.css" rel="stylesheet" />
+    <!--== Notifications-Candi CSS ==-->
+    <link href="assets/css/notifications-candi.css" rel="stylesheet" />
     <!--== Bootstrap CSS ==-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--== Icofont Icon CSS ==-->
@@ -297,9 +117,9 @@ body {
           <h2 class="title">Recent Notifications</h2>
         </div>
         <div ></div>
-        <div class="conversation-footer">
+        <div class="mark-as-read">
           <button type="button" id="mark-all-read">Mark all as read</button>
-      </div>
+        </div>
         
         
     </div>
@@ -490,80 +310,10 @@ body {
 </div>
 
 <!--=======================Javascript============================-->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var currentUrl = window.location.href;
-    var profileLink = document.querySelector('.user-profile .account-settings');
-
-    // Check if the current URL matches the profile link href
-    if (profileLink && profileLink.href === currentUrl) {
-        profileLink.classList.add('active');
-    }
-});
-
-
-
- document.getElementById('mark-all-read').addEventListener('click', function() {
-    // Select all list items within the notifications-content-list
-    var notifications = document.querySelectorAll('.notifications-content-list .list-style li a');
-    
-    // Iterate over each notification and change its background color
-    notifications.forEach(function(notification) {
-        notification.style.backgroundColor = 'white';
-        
-        // Add hover event listener to change styles on hover
-        notification.addEventListener('mouseover', function() {
-            notification.style.backgroundColor = '#193768';
-            notification.style.borderColor = '#f4f7f7';
-            notification.style.color = 'white';
-        });
-        
-        // Add hover event listener to revert styles when not hovered
-        notification.addEventListener('mouseout', function() {
-            notification.style.backgroundColor = 'white';
-            notification.style.borderColor = '';
-            notification.style.color = '';
-        });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    var notifications = document.querySelectorAll('.notifications-content-list .list-style li a');
-
-    // Check if the page was reloaded
-    if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-        // Clear the clicked state in localStorage
-        notifications.forEach(function(notification) {
-            var notificationId = notification.getAttribute('data-id');
-            localStorage.removeItem('notification-' + notificationId);
-        });
-    }
-
-    // Check localStorage for previously clicked notifications and set their background color
-    notifications.forEach(function(notification) {
-        var notificationId = notification.getAttribute('data-id');
-        if (localStorage.getItem('notification-' + notificationId) === 'clicked') {
-            notification.classList.add('clicked');
-        }
-
-        notification.addEventListener('click', function(event) {
-            // Prevent the default action to allow background color change
-            event.preventDefault();
-
-            // Change the background color of the clicked notification
-            notification.classList.add('clicked');
-
-            // Store the clicked state in localStorage
-            localStorage.setItem('notification-' + notificationId, 'clicked');
-
-            // Open the associated link
-            window.location.href = notification.href;
-        });
-    });
-});
-
-
-</script>
+<!--=== Candi-Dashboard Js ===-->
+<script src="assets/js/candi-dashboard.js"></script>
+<!--=== Notifications-Candi Js ===-->
+<script src="assets/js/notifications-candi.js"></script>
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
 <!--=== jQuery Min Js ===-->

@@ -1,0 +1,144 @@
+/*SETTINGS-CANDI BODY*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.main-content {
+    flex: 1;
+    background-color: white;
+}
+.main-content section {
+    margin-bottom: 20px;
+}
+.main-content h1 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding: 0;
+    text-align: center;
+    margin: 10px 0 30px 0; /* Reduced top margin */
+}
+.main-content h2 {
+
+padding: 0;
+text-align: center;
+margin: 10px 0 30px 0; /* Reduced top margin */
+}
+.settings-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-options section {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.settings-options h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.settings-options .form-group {
+    margin-bottom: 15px;
+}
+
+.settings-options .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+
+}
+
+.settings-options .form-group input,
+.settings-options .form-group select {
+    
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  
+}
+
+
+
+.settings-options .btn-save:hover {
+    background-color: #0056b3;
+}
+.settings-options .btn-cancel:hover {
+    background-color: #0056b3;
+}
+.button2-container {
+margin-top: 20px;
+display: flex;
+justify-content: space-between;
+width: 100%; /* Adjust the width as needed */
+}
+
+.btn-save {
+margin-top: 10px;
+width: 350px; /* Specify the desired width */
+height: 50px; /* Specify the desired height */
+border-radius: 5px;
+background-color: #193768;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer; 
+padding: 10px 20px;
+}
+
+.btn-cancel {
+margin-top: 10px;
+width: 350px; /* Specify the desired width */
+height: 50px; /* Specify the desired height */
+border-radius: 5px; 
+background-color: #193768;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer; 
+padding: 10px 20px;
+}
+.position-relative {
+position: relative;
+}
+
+.password-toggle {
+position: absolute;
+right: 15px;
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+color: #656565;
+}
+
+.password-toggle:hover {
+color: #193768;
+}
+.settings-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1200px;
+    max-height: 5000px;
+}
+
+.setcontent-container {
+    margin: 20px auto;
+    margin-bottom: 100px;
+    padding: 0;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1200px;
+    max-height: 50000px;
+} 

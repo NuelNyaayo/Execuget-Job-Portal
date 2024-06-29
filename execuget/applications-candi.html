@@ -10,133 +10,6 @@
     <meta name="author" content="hastech"/>
 
     <title>Candidate-Dashboard :: Execuget - Job Portal Website</title>
-    <style>
-      /* User profile and notifications styling */
-      /* User profile and notifications styling */
-.user-profile {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
-
-.user-profile img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-.user-profile img:hover {
-  transform: scale(1.05);
-}
-.user-profile .dropdown {
-    display: flex;
-    flex-direction: column;
-}
-
-.user-profile .dropdown a {
-    color: #333;
-    text-decoration: none;
-    margin-top: 5px;
-}
-
-.user-profile .account-settings {
-    color: inherit; /* Default color */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.user-profile .account-settings:hover {
-    color: #110292; /* Hover color */
-}
-.user-profile .account-settings {
-    color: white; /* Default color */
-    text-decoration: none;
-}
-
-.user-profile .account-settings.active {
-    color: #193768; /* Active color */
-}
-.notifications {
-    position: relative;
-    margin-right: 20px;
-}
-
-.notifications .bell-icon {
-    background: url('assets/img/bell-icon.png') no-repeat center center;
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-.notifications .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Additional CSS for header alignment */
-.header-align {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .application-list {
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            margin: 20px auto;
-            width: 80%;
-        }
-        .application-list h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .application-list table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            border-radius: 20px;
-            
-        }
-        .application-list th, .application-list td {
-            border: 1px solid #193768;
-            padding: 15px;
-            color:black;
-            background-color: #f4f4f4;
-            
-        }
-        .application-list th {
-            background-color: #193768;
-            color:white;
-            border: 1px solid #000;
-        }
-
-        .applications-container {
-            margin-bottom: 200px;
-            padding: 20px;
-            background-color: white;
-            border: 1px solid white;
-            border-radius: 5px;
-            max-width: 1345px;
-            max-height: 300000px;
-        }
-
-    </style>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
@@ -148,6 +21,10 @@ body {
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
 
+    <!--== Candi-Dashboard CSS ==-->
+    <link href="assets/css/candi-dashboard.css" rel="stylesheet" />
+    <!--== Applications-Candi CSS ==-->
+    <link href="assets/css/applications-candi.css" rel="stylesheet" />
     <!--== Bootstrap CSS ==-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--== Icofont Icon CSS ==-->
@@ -405,20 +282,10 @@ body {
 </div>
 
 <!--=======================Javascript============================-->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var currentUrl = window.location.href;
-    var profileLink = document.querySelector('.user-profile .account-settings');
-
-    // Check if the current URL matches the profile link href
-    if (profileLink && profileLink.href === currentUrl) {
-        profileLink.classList.add('active');
-    }
-});
-</script>
-
-<!--=== jQuery Modernizr Min Js ===-->
-<script src="assets/js/modernizr.js"></script>
+<!--=== Candi-Dashboard Js ===-->
+<script src="assets/js/candi-dashboard.js"></script>
+<!--=== Applications-Candi Js ===-->
+<script src="assets/js/applications-candi.js"></script>
 <!--=== jQuery Min Js ===-->
 <script src="assets/js/jquery-main.js"></script>
 <!--=== jQuery Migration Min Js ===-->
@@ -440,7 +307,7 @@ body {
 
 <!--=== jQuery Custom Js ===-->
 <script src="assets/js/custom.js"></script>
-<script src="assets/js/applications-candi.js"></script>
+
 </body>
 
 </html>

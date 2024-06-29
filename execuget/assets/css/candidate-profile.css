@@ -1,0 +1,342 @@
+/*CANDIDATE-PROFILE BODY*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.main-content {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.main-content h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.personal-profile {
+display: flex;
+flex-direction: column;
+border: 1px solid #ddd;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+padding: 20px;
+background-color: #f4f4f4;
+}
+
+.profile-header {
+display: flex;
+align-items: flex-start;
+margin-bottom: 20px;
+}
+
+.profile-pic-container {
+position: relative;
+margin-bottom: 10px;
+display: flex;
+flex-direction: row;
+align-items: center; /* Center the logo and buttons */
+}
+
+.profile-pic {
+width: 120px;
+height: 120px;
+border-radius: 50%;
+cursor: pointer;
+transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+transform: scale(1.05);
+}
+
+.buttons-container {
+display: flex;
+justify-content: center;
+margin-top: 10px;
+margin-left: 40px;
+}
+
+.profile-info {
+display: flex;
+flex-direction: column;
+margin-left: 200px;
+}
+
+.profile-info h3 {
+margin: 0;
+}
+
+.location-info {
+margin-top: 10px;
+}
+
+.default-initial {
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 48px;
+font-weight: bold;
+background-color: #193768;
+color: white;
+}
+
+.hidden {
+display: none;
+}
+
+.profilepic-btn {
+padding: 5px 10px;
+background-color: #193768;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin:  20px; /* Add space between buttons */
+}
+
+.profilepic-btn:hover {
+background-color: #0056b3;
+}
+
+.edit-btn {
+margin-top: 10px;
+padding: 5px 10px;
+background-color: #193768;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-right: 10px;
+}
+
+.edit-btn:hover {
+background-color: #0056b3;
+}
+
+.profile-pic-container:hover::after {
+content: "Edit Profile";
+position: absolute;
+top: -30px;
+left: 50%;
+transform: translateX(-50%);
+background-color: #193768;
+color: white;
+padding: 5px 10px;
+border-radius: 5px;
+font-size: 12px;
+white-space: nowrap;
+}
+
+
+
+.description-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.industry-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.bio-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.phone-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.email-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.address-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.skills-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.education-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.experience-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.resume-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.documents-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.license-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+.links-container {
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 1000px;
+}
+
+.btn-save {
+
+margin-bottom: 10px;
+width: 350px; /* Specify the desired width */
+height: 50px; /* Specify the desired height */
+border-radius: 5px;
+background-color: #193768;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer; 
+padding: 10px 20px;
+}
+
+
+.btn-discard {
+
+margin-bottom: 10px;
+width: 350px; /* Specify the desired width */
+height: 50px; /* Specify the desired height */
+border-radius: 5px; 
+background-color: #193768;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer; 
+padding: 10px 20px;
+}
+.button2-container {
+margin-top: 20px;
+display: flex;
+justify-content: space-between;
+width: 100%; /* Adjust the width as needed */
+}
+
+.btn-save:hover,.btn-discard:hover {
+    background-color: #0056b3;
+}        
+
+
+.upload-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.uploaded-file {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.uploaded-file span {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.uploaded-file .icon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.uploaded-file .icon.download {
+    color: #193768;
+}
+
+.uploaded-file .icon.remove {
+    color: #193768;
+}
+
+.content-container {
+    margin: 20px auto;
+    margin-bottom: 100px;
+    padding: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1200px;
+    max-height: 50000px;
+} 

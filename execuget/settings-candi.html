@@ -10,236 +10,7 @@
     <meta name="author" content="hastech"/>
 
     <title>Candidate-Dashboard :: Execuget - Job Portal Website</title>
-    <style>
-      /* User profile and notifications styling */
-      /* User profile and notifications styling */
-.user-profile {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
-
-.user-profile img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-.user-profile img:hover {
-  transform: scale(1.05);
-}
-
-.user-profile .dropdown {
-    display: flex;
-    flex-direction: column;
-}
-
-.user-profile .dropdown a {
-    color: #333;
-    text-decoration: none;
-    margin-top: 5px;
-}
-
-.user-profile .account-settings {
-    color: inherit; /* Default color */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.user-profile .account-settings:hover {
-    color: #110292; /* Hover color */
-}
-.user-profile .account-settings {
-    color: white; /* Default color */
-    text-decoration: none;
-}
-
-.user-profile .account-settings.active {
-    color: #193768; /* Active color */
-}
-.notifications {
-    position: relative;
-    margin-right: 20px;
-}
-.notifications:hover  {
-    position: relative;
-    margin-right: 20px;
-}
-
-.notifications .bell-icon {
-    background: url('assets/img/bell-icon.png') no-repeat center center;
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-.notifications .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Additional CSS for header alignment */
-.header-align {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .main-content {
-            flex: 1;
-            background-color: white;
-        }
-        .main-content section {
-            margin-bottom: 20px;
-        }
-        .main-content h1 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            padding: 0;
-            text-align: center;
-            margin: 10px 0 30px 0; /* Reduced top margin */
-        }
-        .main-content h2 {
-        
-        padding: 0;
-        text-align: center;
-        margin: 10px 0 30px 0; /* Reduced top margin */
-        }
-        .settings-options {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .settings-options section {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        .settings-options h3 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .settings-options .form-group {
-            margin-bottom: 15px;
-        }
-
-        .settings-options .form-group label {
-          display: block;
-          margin-bottom: 5px;
-          color: #000;
-      
-        }
-
-        .settings-options .form-group input,
-        .settings-options .form-group select {
-            
-          width: 100%;
-          padding: 10px;
-          margin-bottom: 10px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          background-color: white;
-          
-        }
-
-        
-
-        .settings-options .btn-save:hover {
-            background-color: #0056b3;
-        }
-        .settings-options .btn-cancel:hover {
-            background-color: #0056b3;
-        }
-        .button2-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%; /* Adjust the width as needed */
-}
-
-.btn-save {
-  margin-top: 10px;
-  width: 350px; /* Specify the desired width */
-  height: 50px; /* Specify the desired height */
-  border-radius: 5px;
-  background-color: #193768;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer; 
-  padding: 10px 20px;
-}
-
-.btn-cancel {
-  margin-top: 10px;
-  width: 350px; /* Specify the desired width */
-  height: 50px; /* Specify the desired height */
-  border-radius: 5px; 
-  background-color: #193768;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer; 
-  padding: 10px 20px;
-}
-        .position-relative {
-  position: relative;
-}
-
-.password-toggle {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #656565;
-}
-
-.password-toggle:hover {
-  color: #193768;
-}
-.settings-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-
-.content-container {
-            margin: 20px auto;
-            margin-bottom: 100px;
-            padding: 0;
-            background-color: #f4f4f4;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 50000px;
-        } 
-  </style>
-
+    
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -251,7 +22,10 @@ body {
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-
+    <!--== Candi-Dashboard CSS ==-->
+    <link href="assets/css/candi-dashboard.css" rel="stylesheet" />
+    <!--== Settings-Candi CSS ==-->
+    <link href="assets/css/settings-candi.css" rel="stylesheet" />
     <!--== Bootstrap CSS ==-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--== Icofont Icon CSS ==-->
@@ -339,7 +113,7 @@ body {
       </div>
     </div>
     <!--== End Page Header Area Wrapper ==-->
-    <div class="content-container">
+    <div class="setcontent-container">
       <section id="settings">
           <h1 class="title">Settings</h1>
         <div class="settings-options">
@@ -553,32 +327,10 @@ body {
 </div>
 
 <!--=======================Javascript============================-->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var currentUrl = window.location.href;
-    var profileLink = document.querySelector('.user-profile .account-settings');
-
-    // Check if the current URL matches the profile link href
-    if (profileLink && profileLink.href === currentUrl) {
-        profileLink.classList.add('active');
-    }
-});
-
-  function togglePassword(fieldId) {
-  var passwordField = document.getElementById(fieldId);
-  var icon = passwordField.nextElementSibling.firstElementChild;
-  
-  if (passwordField.type === "password") {
-    passwordField.type = "text";
-    icon.classList.remove("fa-eye");
-    icon.classList.add("fa-eye-slash");
-  } else {
-    passwordField.type = "password";
-    icon.classList.remove("fa-eye-slash");
-    icon.classList.add("fa-eye");
-  }
-}
-</script>
+<!--=== Candi-Dashboard Js ===-->
+<script src="assets/js/candi-dashboard.js"></script>
+<!--=== Settings-Candi Js ===-->
+<script src="assets/js/settings-candi.js"></script>
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
 <!--=== jQuery Min Js ===-->

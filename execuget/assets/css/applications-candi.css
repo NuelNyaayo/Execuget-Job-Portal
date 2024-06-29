@@ -1,0 +1,46 @@
+/*APPLICATIONS-CANDI BODY*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.application-list {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 80%;
+}
+.application-list h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.application-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 20px;
+    
+}
+.application-list th, .application-list td {
+    border: 1px solid #193768;
+    padding: 15px;
+    color:black;
+    background-color: #f4f4f4;
+    
+}
+.application-list th {
+    background-color: #193768;
+    color:white;
+    border: 1px solid #000;
+}
+
+.applications-container {
+    margin-bottom: 200px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 300000px;
+}
