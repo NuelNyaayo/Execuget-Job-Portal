@@ -9,76 +9,7 @@
     <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
     <meta name="author" content="hastech"/>
 
-    <title>Candidate :: Execuget - Job Portal Website</title>
-    
-    <style>
-      /* User profile and notifications styling */
-      /* User profile and notifications styling */
-.user-profile {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
-
-.user-profile img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
-.user-profile .dropdown {
-    display: flex;
-    flex-direction: column;
-}
-
-.user-profile .dropdown a {
-    color: #333;
-    text-decoration: none;
-    margin-top: 5px;
-}
-
-.notifications {
-    position: relative;
-    margin-right: 20px;
-}
-
-.notifications .bell-icon {
-    background: url('assets/img/bell-icon.png') no-repeat center center;
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-.notifications .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Additional CSS for header alignment */
-.header-align {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-    </style>
+    <title>Employer-Dashboard :: Execuget - Job Portal Website</title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
@@ -89,7 +20,10 @@ body {
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-
+    <!--== Emp-Dashboard CSS ==-->
+    <link href="assets/css/emp-dashboard.css" rel="stylesheet" />
+    <!--== Candidates CSS ==-->
+    <link href="assets/css/candidates.css" rel="stylesheet" />
     <!--== Bootstrap CSS ==-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--== Icofont Icon CSS ==-->
@@ -119,30 +53,32 @@ body {
                     <div class="header-align-start">
                         <div class="header-logo-area">
                             <a href="index.html">
-                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="150" height="150"/>
+                                <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="200" height="200"/>
                             </a>
                         </div>
                     </div>
                     <div class="header-align-center">
-                      <div class="header-navigation-area position-relative">
-                          <ul class="main-menu nav">
-                            <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
-                            <li><a href="postjob.html"><span>Post Job</span></a></li>
-                            <li><a href="candidates.html"><span>Candidates</span></a></li>
-                            <li><a href="applications-emp.html"><span>Applications</span></a></li>
-                            <li><a href="messages-emp.html"><span>Messages</span></a></li>
-                            <li><a href="performance.html"><span>Performance</span></a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  <div class="header-align-end">
-                    <div class="header-action-area">
-                      <div class="user-profile">
-                        <img src="assets/img/images/pic2.jpg" alt="Profile Picture">
-                        <a href="prof&settings-emp.html" class="account-settings">Profile & Settings</a>
+                        <div class="header-navigation-area position-relative">
+                            <ul class="main-menu nav">
+                              <li><a href="employer-dashboard.html"><span>Overview</span></a></li>
+                              <li><a href="postjob.html"><span>Post Job</span></a></li>
+                              <li><a href="candidates.html"><span>Candidates</span></a></li>
+                              <li><a href="applications-emp.html"><span>Applications</span></a></li>
+                              <li><a href="messages-emp.html"><span>Messages</span></a></li>
+                              <li><a href="performance.html"><span>Performance</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-align-end">
+                      <div class="header-action-area">
+                          <div class="company-profile">
+                              <a href="prof&settings-emp.html">
+                                  <img src="assets/img/images/mooilogo.jpg" alt="Profile Picture">
+                              </a>
+                              <a href="prof&settings-emp.html" class="account-settings">Profile</a>
+                          </div>
                       </div>
                     </div>
-                  </div>
                     
                 </div>
             </div>
@@ -170,6 +106,56 @@ body {
       </div>
     </div>
     <!--== End Page Header Area Wrapper ==-->
+
+    <section class="search-container">
+      <div class="search-area" >
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title text-center">
+              <h3 class="search-title">Search Jobs</h3>
+              <div class="desc">
+                <p>Search for a particular job of your interest here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="job-search-wrap">
+              <div class="job-search-form">
+                <form action="#">
+                  <div class="row row-gutter-10">
+                    <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Job title or keywords">
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
+                      <div class="form-group">
+                        <select class="form-control">
+                          <option value="1" selected>Category</option>
+                          <option value="2">Web Designer</option>
+                          <option value="3">Web Developer</option>
+                          <option value="4">Graphic Designer</option>
+                          <option value="5">App Developer</option>
+                          <option value="6">UI &amp; UX Expert</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-auto col-sm-6 col-12 flex-grow-1">
+                      <div class="form-group">
+                        <button type="button" class="btn-form-search"><i class="icofont-search-1"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </section>
 
     <!--== Start Team Area Wrapper ==-->
     <section class="team-area team-inner2-area">
@@ -519,10 +505,10 @@ body {
             <div class="widget-item widget-about">
               <div class="widget-logo-area">
                 <a href="index.html">
-                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="225" height="225"/>
+                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="200" height="200"/>
                 </a>
               </div>
-              <p class="desc">The Job Seeker Platform that streamlines the job search and recruitment process for both employers and job seekers.</p>
+              <p class="desc">Your number one job seeker platform streamlining the job search and recruitment process.</p>
               <div class="social-icons">
                 <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
                 <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
@@ -543,7 +529,7 @@ body {
                         <ul class="nav-menu">
                           <li><a href="about-us.html">About Us</a></li>
                           <li><a href="find-jobs.html"> Find Jobs</a></li>
-                          <li><a href="find-candidates.html">Cadidates</a></li>
+                          <li><a href="find-candidates.html">Candidates</a></li>
                           <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                       </div>
@@ -577,9 +563,9 @@ body {
                     <div class="collapse-body">
                       <div class="widget-menu-wrap">
                         <ul class="nav-menu">
-                          <li><a href="index.html">Partners</a></li>
+                          <li><a href="page-not-found.html">Partners</a></li>
                           <li><a href="blog.html">Blog & BlogPost</a></li>
-                          <li><a href="help-support.html">Help & Support</a></li>
+                          <li><a href="page-not-found.html">Help & Support</a></li>
                           <li><a href="index.html">Popular-Careers</a></li>
                         </ul>
                       </div>
@@ -597,8 +583,8 @@ body {
                         <ul class="nav-menu">
                           <li><a href="registration.html">Get Started</a></li>
                           <li><a href="index.html">How It Works</a></li>
-                          <li><a href="help-support.html">Privacy Terms</a></li>
-                          <li><a href="help-support.html">Policies</a></li>
+                          <li><a href="page-not-found.html">Privacy Terms</a></li>
+                          <li><a href="page-not-found.html">Policies</a></li>
                         </ul>
                       </div>
                     </div>
@@ -627,61 +613,14 @@ body {
     <!--== End Footer Bottom ==-->
   </footer>
   <!--== End Footer Area Wrapper ==-->
-
+  
   <!--== Scroll Top Button ==-->
   <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
-
-  <!--== Start Aside Menu ==-->
-  <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
-      <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="icofont-simple-left"></i></button>
-    </div>
-    <div class="offcanvas-body">
-      <!-- Mobile Menu Start -->
-      <div class="mobile-menu-items">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Find Jobs</a>
-            <ul class="sub-menu">
-              <li><a href="job.html">Jobs</a></li>
-              <li><a href="job-details.html">Job Details</a></li>
-            </ul>
-          </li>
-          <li><a href="employers-details.html">Employers Details</a></li>
-          <li><a href="#">Candidates</a>
-            <ul class="sub-menu">
-              <li><a href="candidate.html">Candidates</a></li>
-              <li><a href="candidate-details.html">Candidate Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Blog</a>
-            <ul class="sub-menu">
-              <li><a href="blog-grid.html">Blog Grid</a></li>
-              <li><a href="blog.html">Blog Left Sidebar</a></li>
-              <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-              <li><a href="blog-details.html">Blog Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Pages</a>
-            <ul class="sub-menu">
-              <li><a href="about-us.html">About us</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="registration.html">Registration</a></li>
-              <li><a href="page-not-found.html">Page Not Found</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <!-- Mobile Menu End -->
-    </div>
-  </aside>
-  <!--== End Aside Menu ==-->
 </div>
 
 <!--=======================Javascript============================-->
-
+<!--=== Emp-Dashboard Js ===-->
+<script src="assets/js/emp-dashboard.js"></script>
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
 <!--=== jQuery Min Js ===-->

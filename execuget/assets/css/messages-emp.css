@@ -1,0 +1,212 @@
+/*MESSAGES-EMP BODY*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.main-content {
+flex: 1;
+background-color: white;
+display: flex;
+flex-direction: column;
+}
+.main-content h2 {
+border-bottom: 2px solid #333;
+padding-bottom: 5px;
+margin-bottom: 15px;
+}
+.messages {
+display: flex;
+height: 120vh;
+border: 1px solid white;
+margin-left: 0px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.conversation-list {
+width: 30%;
+border-right: 1px solid #ddd;
+overflow-y: auto;
+}
+.conversation-list ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.conversation-list li {
+padding: 10px;
+cursor: pointer;
+border-bottom: 1px solid #ddd;
+transition: background-color 0.3s;
+display: flex;
+align-items: center;
+}
+.conversation-list li:hover,
+.conversation-list li.active {
+background-color: #f4f4f4;
+}
+.conversation-list .profile-pic {
+border-radius: 50%;
+width: 40px;
+height: 40px;
+margin-right: 10px;
+}
+.conversation {
+flex: 1;
+display: flex;
+flex-direction: column;
+
+}
+.conversation-header {
+padding: 4px;
+border-bottom: 1px solid #ddd;
+background-color: white;
+color: #193768;
+text-align: center;
+}
+.conversation-body {
+flex: 1;
+padding: 10px;
+overflow-y: auto;
+display: flex;
+flex-direction: column;
+align-items: center;  /*Center the messages horizontally */
+}
+
+.message {
+display: flex;
+flex-direction: column;
+margin-bottom: 10px;
+padding: 10px;
+border-radius: 10px;
+max-width: 40%;   
+}
+.profile-pic {
+width: 40px; /* Adjust the size as needed */
+height: 40px; /* Adjust the size as needed */
+border-radius: 50%;
+margin-right: 40px; /* Space between image and name */
+border: 1px solid #ccc;
+}
+.message .sender {
+font-weight: bold;
+margin-left: 20px;
+color:#000
+}
+.message .timestamp {
+font-size: 0.85em;
+color: #888;
+}
+.message .text {
+margin-top: 5px;
+color:#000
+}
+.message.other {
+background-color: #e1ffc7;
+align-self: flex-start; /* Align received messages to the left */
+text-align: left;
+margin-right: auto; /* Ensure other messages stay towards the left */
+
+}
+.message.self {
+background-color: #d1ecf1;
+align-self: flex-end; /* Align self messages to the right from the center */
+text-align: left;
+margin-left: auto; /* Ensure self messages move towards the right */
+}
+.conversation-footer {
+position: relative;
+padding: 5px;
+border-top: 1px solid #ddd;
+background-color: white;
+display: flex;
+align-items: flex-start; /* Align items at the start vertically */
+}
+
+.conversation-footer textarea {
+flex: 1; /* Take up the remaining space */
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+resize: none;
+height: 175px;
+box-sizing: border-box;
+}
+
+.conversation-footer .send-button-container {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+margin-left: 1px;
+z-index: 1; /* Ensure the container is above other elements */
+border: 1px solid #ccc;
+height: 175px;
+}
+
+.conversation-footer button {
+padding: 10px;
+background-color: #193768;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+width: 50px;
+height: 50px;
+position: relative; /* Ensure the button stays within the container */
+z-index: 2; /* Place the button above other elements */
+}
+
+.conversation-footer button:hover {
+background-color: #1d427a;
+}
+
+.conversation-footer .icon-group {
+display: flex;
+flex-direction: column;
+gap: 10px; /* Space between icons */
+margin-left: 10px; /* Adjust margin if necessary */
+}
+
+.emoji-picker-label,
+.file-upload-label,
+.voice-message-label,
+.contact-label {
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10px;
+background-color: #193768;
+color: white;
+border-radius: 5px;
+}
+
+.emoji-picker-label:hover,
+.file-upload-label:hover,
+.voice-message-label:hover,
+.contact-label:hover {
+background-color: #1d427a;
+}
+
+.emoji-picker-label i,
+.file-upload-label i,
+.voice-message-label i,
+.contact-label i {
+pointer-events: none;
+}
+
+
+
+
+
+.messaging-container {
+    padding: 20px;
+    margin-bottom: 80px;
+    margin-top: 30px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 30000px;
+}

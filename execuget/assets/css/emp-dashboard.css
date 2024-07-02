@@ -1,0 +1,61 @@
+/* Header Section*/
+.company-profile {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.company-profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.company-profile img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Default Styles */
+.header-action-area .company-profile .account-settings {
+    color: white; /* Default color */
+    text-decoration: none;
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover Styles with Increased Specificity */
+.header-action-area .company-profile .account-settings:hover {
+    color: #110292; /* Hover color */
+}
+
+/* Active State Styles */
+.header-action-area .company-profile .account-settings.active {
+    color: #193768; /* Active color */
+}
+
+/* Ensure Hover Overrides Active State */
+.header-action-area .company-profile .account-settings.active:hover {
+    color: #110292; /* Hover color when active */
+}
+
+
+/* Additional CSS for header alignment */
+.header-align {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

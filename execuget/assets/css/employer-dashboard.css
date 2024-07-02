@@ -1,4 +1,4 @@
-/*CANDIDATE-DASHBOARD BODY*/
+/*  EMPLOYER-DASHBOARD BODY*/
 .main-content {
     flex: 1;
     background-color: white;
@@ -12,7 +12,6 @@
     margin-top: 30px;
     margin-bottom: 15px;
 }
-
 .recent-activity ul {
     list-style: none;
     padding: 0;
@@ -31,6 +30,7 @@
     font-size: 16px;
     font-weight: 400;
 }
+
 .overview-container {
     margin: 20px auto;
     padding: 80px;
@@ -40,7 +40,6 @@
     max-width: 1345px;
     max-height: 300px;
 }
-
 .activejobs-container {
     margin: 20px auto;
     padding: 50px;

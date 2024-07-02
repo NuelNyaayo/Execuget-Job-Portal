@@ -1,0 +1,258 @@
+/*POSTJOB BODY*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+  padding: 0;
+  text-align: center;
+  margin: 10px 0 30px 0; /* Reduced top margin */
+}
+h2 {
+  padding: 0;
+  text-align: center;
+  margin: 10px 0 30px 0; /* Reduced top margin */
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 100px;
+
+}
+
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #193768;
+    color: white;
+    margin-top: 10px;
+   border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.date-to {
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  margin-top: 70px;
+}
+
+.jobdetails-container {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ccc;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-width: 1200px;
+      max-height: 5000px;
+  }
+.responsibilities-container {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ccc;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-width: 1200px;
+      max-height: 5000px;
+  }
+.skills-container {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ccc;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-width: 1200px;
+      max-height: 5000px;
+  }
+.content-container {
+      margin: 20px auto;
+      padding: 0;
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-width: 1200px;
+      max-height: 50000px;
+      margin-bottom: 100px;
+  }
+
+  .jobdetails-container {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.button-center {
+display: flex;
+justify-content: center;
+margin: 10px 0;
+}
+
+.add-buttons {
+width: 150px;
+height: 50px;
+background-color: #193768;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.add-buttons:hover {
+background-color: #0056b3;
+}
+
+.benefit-container {
+display: flex;
+align-items: center;
+margin-top: 10px;
+position: relative;
+}
+
+.benefit-wrapper {
+width: 100%;
+position: relative;
+}
+
+.benefit-input {
+width: 100%;
+padding: 8px;
+padding-right: 30px; /* Add padding to the right to accommodate the remove icon */
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+.remove-icon {
+position: absolute;
+right: 10px;
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+color: #193768;
+font-size: 1.2em;
+}
+
+.responsibility-container {
+display: flex;
+align-items: center;
+margin-top: 10px;
+position: relative;
+}
+
+.responsibility-wrapper {
+width: 100%;
+position: relative;
+}
+
+.responsibility-input {
+width: 100%;
+padding: 8px;
+padding-right: 30px; /* Add padding to the right to accommodate the remove icon */
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+.skill-container {
+display: flex;
+align-items: center;
+margin-top: 10px;
+position: relative;
+}
+
+.skill-wrapper {
+width: 100%;
+position: relative;
+}
+
+.skill-input {
+width: 100%;
+padding: 8px;
+padding-right: 30px; /* Add padding to the right to accommodate the remove icon */
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+
+
+.button1-container {
+margin-top: 10px;
+display: flex;
+justify-content: space-between;
+width: 100%; /* Adjust the width as needed */
+}
+.button2-container {
+margin-top: 20px;
+display: flex;
+justify-content: space-between;
+width: 100%; /* Adjust the width as needed */
+}
+
+.btn-save {
+margin-top: 10px;
+width: 350px; /* Specify the desired width */
+height: 50px; /* Specify the desired height */
+border-radius: 5px; 
+}
+
+
+.btn-cancel {
+margin-top: 10px;
+width: 350px; /* Specify the desired width */
+height: 50px; /* Specify the desired height */
+border-radius: 5px; 
+}
+
+
+.submit-button:active {
+transform: scale(0.95);
+}
+
+.submit-button.success { /*error alt*/
+background-color: #193768;
+color: #fff;
+border: 2px solid #193768;
+padding: 5px 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.submit-button.success::before { /*error alt*/
+content: '\2713'; /* Unicode character for check mark */
+/*content: '\2716';  Unicode character for heavy multiplication x */
+font-size: 24px;
+margin-right: 8px;
+}
+
+  .submit-button:hover {
+      background-color: #0056b3;
+  }
