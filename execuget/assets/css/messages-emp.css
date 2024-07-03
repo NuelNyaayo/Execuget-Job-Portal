@@ -1,4 +1,4 @@
-/*MESSAGES-EMP BODY*/
+/*MESSAGES-CANDI BODY*/
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -82,18 +82,24 @@ padding: 10px;
 border-radius: 10px;
 max-width: 40%;   
 }
+.user-profile {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
 .profile-pic {
-width: 40px; /* Adjust the size as needed */
-height: 40px; /* Adjust the size as needed */
-border-radius: 50%;
-margin-right: 40px; /* Space between image and name */
-border: 1px solid #ccc;
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    border-radius: 50%;
+    margin-right: 10px; /* Adjust space between image and name */
+    border: 1px solid #ccc;
 }
+
 .message .sender {
-font-weight: bold;
-margin-left: 20px;
-color:#000
+    font-weight: bold;
+    color: #000;
 }
+
 .message .timestamp {
 font-size: 0.85em;
 color: #888;

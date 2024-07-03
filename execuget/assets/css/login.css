@@ -1,0 +1,17 @@
+.position-relative {
+    position: relative;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #656565;
+  }
+  
+  .password-toggle:hover {
+    color: #193768;
+  }
+  

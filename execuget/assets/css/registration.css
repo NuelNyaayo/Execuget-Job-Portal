@@ -1,0 +1,39 @@
+.position-relative {
+    position: relative;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #656565;
+  }
+  
+  .password-toggle:hover {
+    color: #193768;
+  }
+  
+  /* Ensure the container is positioned relatively */
+  .position-relative {
+    position: relative;
+  }
+  
+  /* Style the dropdown icon */
+  .dropdown-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevent the icon from blocking clicks to the select element */
+    color: #656565; /* Set the color of the icon */
+  }
+  
+  /* Additional styling for the select element to accommodate the icon */
+  #country-code {
+    padding-right: 30px; /* Ensure there is space for the icon */
+    -webkit-appearance: none; /* Remove default dropdown arrow in some browsers */
+    -moz-appearance: none;
+    appearance: none;
+  }

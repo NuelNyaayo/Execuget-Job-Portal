@@ -34,3 +34,12 @@ body {
     color:white;
     border: 1px solid #000;
 }
+.applications-container {
+    margin-bottom: 200px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    max-width: 1345px;
+    max-height: 300000px;
+}

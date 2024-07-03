@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 messageDiv.classList.add('message', 'self');
                 messageDiv.innerHTML = `
                     <div class="user-profile">
-                        <img src="assets/img/images/pic2.jpg" alt="Profile Pic." class="profile-pic">
+                        <img src="assets/img/images/mooilogo.jpg" alt="Profile Pic." class="profile-pic">
                         <div class="sender">You</div>
                     </div>
                     <div class="text">${message}</div>

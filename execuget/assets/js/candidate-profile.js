@@ -301,7 +301,10 @@ function editfileField(fieldId) {
         uploadInput.click();
         document.body.removeChild(uploadInput);
     }
-    function addfileField() {
+
+let uploadedFiles = new Set(); // Store the names of uploaded files
+
+function addfileField() {
     // Create a file input element
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
@@ -310,6 +313,11 @@ function editfileField(fieldId) {
     fileInput.onchange = function(event) {
         const file = event.target.files[0];
         if (file) {
+            if (uploadedFiles.has(file.name)) {
+                alert('This document has already been uploaded.');
+                return;
+            }
+            
             const candidateDocDiv = document.getElementById('candidate-document');
             
             // Create a container for the uploaded file
@@ -339,6 +347,7 @@ function editfileField(fieldId) {
             removeIcon.innerHTML = '<i class="fas fa-times"></i>';
             removeIcon.onclick = function() {
                 fileContainer.remove();
+                uploadedFiles.delete(file.name);
             };
 
             // Append elements to the file container
@@ -348,6 +357,9 @@ function editfileField(fieldId) {
 
             // Append the file container to the company social div
             candidateDocDiv.appendChild(fileContainer);
+            
+            // Add the file name to the set of uploaded files
+            uploadedFiles.add(file.name);
         }
     };
 

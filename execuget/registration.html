@@ -5,54 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5"/>
+    <meta name="description" content="Execuget - Job Portal Website  Using Bootstrap 5"/>
     <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
-    <meta name="author" content="hastech"/>
+    <meta name="author" content="Nuel Nyaayo"/>
 
     <title>Registration :: Execuget - Job Portal Website</title>
 
-    <style>
-      .position-relative {
-  position: relative;
-}
-
-.password-toggle {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #656565;
-}
-
-.password-toggle:hover {
-  color: #193768;
-}
-
-/* Ensure the container is positioned relatively */
-.position-relative {
-  position: relative;
-}
-
-/* Style the dropdown icon */
-.dropdown-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none; /* Prevent the icon from blocking clicks to the select element */
-  color: #656565; /* Set the color of the icon */
-}
-
-/* Additional styling for the select element to accommodate the icon */
-#country-code {
-  padding-right: 30px; /* Ensure there is space for the icon */
-  -webkit-appearance: none; /* Remove default dropdown arrow in some browsers */
-  -moz-appearance: none;
-  appearance: none;
-}
-
-    </style>
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
 
@@ -64,7 +22,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-
+    <!--== Registration CSS ==-->
+    <link href="assets/css/registration.css" rel="stylesheet" />
     <!--== Bootstrap CSS ==-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--== Icofont Icon CSS ==-->
@@ -496,58 +455,8 @@
 
 <!--=======================Javascript============================-->
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-      // Event listener for candidate sign-in button
-      document.getElementById('candidateSignup').addEventListener('click', function() {
-          window.location.href = 'candicomplete-profile.html'; 
-      });
-  
-      // Event listener for employer sign-in button
-      document.getElementById('employerSignup').addEventListener('click', function() {
-          window.location.href = 'empcomplete-profile.html'; 
-      });
-  });
-
-  function togglePassword(fieldId) {
-  var passwordField = document.getElementById(fieldId);
-  var icon = passwordField.nextElementSibling.firstElementChild;
-  
-  if (passwordField.type === "password") {
-    passwordField.type = "text";
-    icon.classList.remove("fa-eye");
-    icon.classList.add("fa-eye-slash");
-  } else {
-    passwordField.type = "password";
-    icon.classList.remove("fa-eye-slash");
-    icon.classList.add("fa-eye");
-  }
-}
-
-
-  registerForm.addEventListener('candidateSignup', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(e.target);
-
-        try {
-            const response = await fetch('https://home/execugetco/test/create.php', {
-                method: 'POST',
-                body: formData
-            });
-
-            if (response.ok) {
-                alert('Registration successful.');
-            } else {
-                alert('Registration failed');
-            }
-        } catch (error) {
-            console.error('Error', error);
-        }
-    });
-
-</script>
-
+<!--=== Landing-Pages Js ===-->
+<script src="assets/js/landing-pages.js"></script>
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
 <!--=== jQuery Min Js ===-->

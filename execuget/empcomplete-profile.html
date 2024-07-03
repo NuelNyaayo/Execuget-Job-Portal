@@ -5,469 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Finate - Job Portal Website Template Using Bootstrap 5"/>
+    <meta name="description" content="Execuget - Job Portal Website  Using Bootstrap 5"/>
     <meta name="keywords" content="accessories, digital products, electronic html, modern, products, responsive"/>
-    <meta name="author" content="hastech"/>
+    <meta name="author" content="Nuel Nyaayo"/>
 
     <title>Candidate-Dashboard :: Execuget - Job Portal Website</title>
-    <style>
-      .user-profile {
-          display: flex;
-          align-items: center;
-          margin-right: 20px;
-      }
-      
-      .user-profile img {
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          margin-right: 10px;
-      }
-      
-      .user-profile .dropdown {
-          display: flex;
-          flex-direction: column;
-      }
-      
-      .user-profile .dropdown a {
-          color: #333;
-          text-decoration: none;
-          margin-top: 5px;
-      }
-      
-      .user-profile .dropdown a:hover {
-          color: #193768;
-      }
-      
-      .notifications {
-          position: relative;
-          margin-right: 20px;
-      }
-      
-      .notifications .bell-icon {
-          background: url('assets/img/bell-icon.png') no-repeat center center;
-          width: 24px;
-          height: 24px;
-          display: block;
-      }
-      
-      .notifications .badge {
-          position: absolute;
-          top: -5px;
-          right: -5px;
-          background-color: red;
-          color: white;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      }
-      
-      .header-align {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-      }
-      
-      .account-settings {
-          color: #333;
-          text-decoration: none;
-      }
-      
-      .account-settings:hover {
-          color: #193768;
-      }
-      
-      body {
-          font-family: Arial, sans-serif;
-          background-color: #f4f4f4;
-          color: #333;
-          margin: 0;
-          padding: 0;
-      }
-      
-      
-      h1 {
-        padding: 0;
-        text-align: center;
-        margin: 10px 0 30px 0; /* Reduced top margin */
-      }
-      h2 {
-        padding: 0;
-        text-align: center;
-        margin: 10px 0 30px 0; /* Reduced top margin */
-      }
-      
-      .section {
-          margin-bottom: 20px;
-      }
-      
-      label {
-          display: block;
-          margin-bottom: 5px;
-          color: #000;
-      }
-      
-      input, select, textarea {
-          width: 100%;
-          padding: 10px;
-          margin-bottom: 10px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          background-color: white;
-          margin-bottom: 100px;
-
-      }
-      
-      
-      button {
-          display: block;
-          width: 100%;
-          padding: 10px;
-          background-color: #193768;
-          color: white;
-          margin-top: 10px;
-         border: none;
-          border-radius: 10px;
-          cursor: pointer;
-          
-      }
-      
-      button:hover {
-          background-color: #193768;
-      }
-
-      .date-to {
-        margin-bottom: 20px;
-    }
-
-    .submit-button {
-        margin-top: 70px;
-    }
-    .profile-info {
-            display: flex;
-            flex-wrap: wrap;
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        .profile-info .profile-pic {
-            margin-right: 20px;
-            margin-left: 380px;
-        }
-        .profile-info img {
-            border-radius: 50%;
-            width: 130px;
-            height: 130px;
-        }
-        .profile-info .details {
-            flex: 1;
-        }
-        .profile-info .details h3 {
-            margin-top: 0;
-        }
-        .profile-info .details p {
-            margin: 5px 0;
-        }
-
-        .company-logo-container {
-    position: relative;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center; /* Center the logo and buttons */
-    margin-left: 350px;
-    width: 120px;
-    height: 120px;
-}
-
-.company-logo {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.company-logo:hover {
-    transform: scale(1.05);
-}
-
-.default-initial {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 48px;
-    font-weight: bold;
-    background-color: #193768;
-    color: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-
-.hidden {
-    display: none;
-}
-
-
-.company-logo-container:hover::after {
-    content: "Edit Profile";
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #193768;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    white-space: nowrap;
-}
-    .profileinfo-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-    .skills-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-
-    .education-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-    .experience-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 1000px;
-        }
-    .documents-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-    .license-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-    .links-container {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ccc;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-
-      .content-container {
-            margin: 20px auto;
-            padding: 0;
-            background-color: #f4f4f4;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 1200px;
-            max-height: 5000px;
-        }
-
-      .button1-container {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%; /* Adjust the width as needed */
-}
-.button2-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%; /* Adjust the width as needed */
-}
-
-.btn-save {
-  margin-top: 10px;
-  width: 350px; /* Specify the desired width */
-  height: 50px; /* Specify the desired height */
-  border-radius: 5px; 
-}
-
-.btn-cancel {
-  margin-top: 10px;
-  width: 350px; /* Specify the desired width */
-  height: 50px; /* Specify the desired height */
-  border-radius: 5px; 
-}
-
-        .btn-edit {
-         
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #193768;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.btn-edit:active {
-    transform: scale(0.95);
-}
-
-.btn-edit.success { /*error alt*/
-    background-color: #193768;
-    color: #fff;
-    border: 2px solid #193768;
-    padding: 5px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-edit.success::before { /*error alt*/
-    content: '\2713'; /* Unicode character for check mark */
-    /*content: '\2716';  Unicode character for heavy multiplication x */
-    font-size: 24px;
-    margin-right: 8px;
-}
-
-        .btn-edit:hover {
-            background-color: #193768;
-        }
-        .submit-button {
-         
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #193768;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.submit-button:active {
-    transform: scale(0.95);
-}
-
-.submit-button.success { /*error alt*/
-    background-color: #193768;
-    color: #fff;
-    border: 2px solid #193768;
-    padding: 5px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.submit-button.success::before { /*error alt*/
-    content: '\2713'; /* Unicode character for check mark */
-    /*content: '\2716';  Unicode character for heavy multiplication x */
-    font-size: 24px;
-    margin-right: 8px;
-}
-
-        .submit-button:hover {
-            background-color: #193768;
-        }
-        .select-country {
-    margin-top: 20px; /* Adjust the value as needed */
-}
-        .link-title {
-    margin-top: 30px; 
-}
-        .link-button {
-    margin-top: 30px; 
-}
-
-.links-entry {
-    position: relative;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-
-.remove-link {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-    color: #193768;
-    display: none; /* Hide by default */
-}
-
-.links-entry.cloned .remove-link {
-    display: block; /* Show only for cloned entries */
-}
-
-.remove-link i {
-    font-size: 1.4em;
-}
-
-
-
-        .upload-section {
-    margin: 10px 0;
-}
-
-.upload-icon {
-    display: inline-block;
-    padding: 10px;
-    background-color: #193768;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    margin-left: 500px;
-}
-
-.upload-icon i {
-    margin-right: 5px;
-}
-
-.upload-icon:hover {
-    background-color: #0056b3;
-}
-
-    </style>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="assets/img/execuget-logo.png" type="image/x-icon" />
@@ -480,7 +22,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-
+    <!--== Empcomplete-Profie CSS ==-->
+    <link href="assets/css/empcomplete-profile.css" rel="stylesheet" />
     <!--== Bootstrap CSS ==-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--== Icofont Icon CSS ==-->
@@ -669,120 +212,120 @@
     </div>
 
   </main>
+
+    <!--== Start Footer Area Wrapper ==-->
+  <footer class="footer-area">
+    <!--== Start Footer Top ==-->
+    <div class="footer-top">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="footer-newsletter-content">
+              <h4 class="title">Subscribe to our everyday job newsletter.</h4>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="footer-newsletter-form">
+              <form action="#">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit" class="btn-newsletter">Subscribe Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Footer Top ==-->
+
     <!--== Start Footer Main ==-->
-    <footer class="footer-area">
-      <!--== Start Footer Top ==-->
-      <div class="footer-top">
-        <div class="container pt--0 pb--0">
-          <div class="row">
-            <div class="col-lg-5">
-              <div class="footer-newsletter-content">
-                <h4 class="title">Subscribe to our everyday job newsletter.</h4>
+    <div class="footer-main">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="widget-item widget-about">
+              <div class="widget-logo-area">
+                <a href="index.html">
+                  <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="200" height="200"/>
+                </a>
               </div>
-            </div>
-            <div class="col-lg-7">
-              <div class="footer-newsletter-form">
-                <form action="#">
-                  <input type="email" placeholder="Enter your email">
-                  <button type="submit" class="btn-newsletter">Subscribe Now</button>
-                </form>
+              <p class="desc">Your number one job seeker platform streamlining the job search and recruitment process.</p>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="icofont-linkedin"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener"><i class="icofont-instagram"></i></a>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <!--== End Footer Top ==-->
-  
-      <!--== Start Footer Main ==-->
-      <div class="footer-main">
-        <div class="container pt--0 pb--0">
-          <div class="row">
-            <div class="col-md-6 col-lg-3">
-              <div class="widget-item widget-about">
-                <div class="widget-logo-area">
-                  <a href="index.html">
-                    <img class="logo-main" src="assets/img/execuget-logo2.png" alt="Logo" width="225" height="225"/>
-                  </a>
-                </div>
-                <p class="desc">The Job Seeker Platform that streamlines the job search and recruitment process for both employers and job seekers.</p>
-                <div class="social-icons">
-                  <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="icofont-linkedin"></i></a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener"><i class="icofont-instagram"></i></a>
+          <div class="col-lg-9">
+            <div class="row">
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item1">
+                  <h4 class="widget-title">Company</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">Company</h4>
+                  <div id="widgetId-1" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="about-us.html">About Us</a></li>
+                          <li><a href="find-jobs.html"> Find Jobs</a></li>
+                          <li><a href="find-candidates.html">Candidates</a></li>
+                          <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-9">
-              <div class="row">
-                <div class="col-md-3 col-lg-3">
-                  <div class="widget-item nav-menu-item1">
-                    <h4 class="widget-title">Company</h4>
-                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-1">Company</h4>
-                    <div id="widgetId-1" class="collapse widget-collapse-body">
-                      <div class="collapse-body">
-                        <div class="widget-menu-wrap">
-                          <ul class="nav-menu">
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="find-jobs.html"> Find Jobs</a></li>
-                            <li><a href="find-candidates.html">Cadidates</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                          </ul>
-                        </div>
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item2">
+                  <h4 class="widget-title">Resources</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">Resources</h4>
+                  <div id="widgetId-2" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="login.html">Quick Login</a></li>
+                          <li><a href="registration.html">Apply For a Job</a></li>
+                          <li><a href="registration.html">Post New Job</a></li>
+                          <li><a href="find-jobs.html">Jobs Listing</a></li>
+                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3 col-lg-3">
-                  <div class="widget-item nav-menu-item2">
-                    <h4 class="widget-title">Resources</h4>
-                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-2">Resources</h4>
-                    <div id="widgetId-2" class="collapse widget-collapse-body">
-                      <div class="collapse-body">
-                        <div class="widget-menu-wrap">
-                          <ul class="nav-menu">
-                            <li><a href="login.html">Quick Login</a></li>
-                            <li><a href="registration.html">Apply For a Job</a></li>
-                            <li><a href="registration.html">Post New Job</a></li>
-                            <li><a href="find-jobs.html">Jobs Listing</a></li>
-                          </ul>
-                        </div>
+              </div>
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item3">
+                  <h4 class="widget-title">Legal</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-3">Legal</h4>
+                  <div id="widgetId-3" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="page-not-found.html">Partners</a></li>
+                          <li><a href="blog.html">Blog & BlogPost</a></li>
+                          <li><a href="page-not-found.html">Help & Support</a></li>
+                          <li><a href="index.html">Popular-Careers</a></li>
+                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3 col-lg-3">
-                  <div class="widget-item nav-menu-item3">
-                    <h4 class="widget-title">Legal</h4>
-                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-3">Legal</h4>
-                    <div id="widgetId-3" class="collapse widget-collapse-body">
-                      <div class="collapse-body">
-                        <div class="widget-menu-wrap">
-                          <ul class="nav-menu">
-                            <li><a href="index.html">Partners</a></li>
-                            <li><a href="blog.html">Blog & BlogPost</a></li>
-                            <li><a href="help-support.html">Help & Support</a></li>
-                            <li><a href="index.html">Popular-Careers</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-lg-3">
-                  <div class="widget-item nav-menu-item4">
-                    <h4 class="widget-title">Products</h4>
-                    <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-4">Products</h4>
-                    <div id="widgetId-4" class="collapse widget-collapse-body">
-                      <div class="collapse-body">
-                        <div class="widget-menu-wrap">
-                          <ul class="nav-menu">
-                            <li><a href="registration.html">Get Started</a></li>
-                            <li><a href="index.html">How It Works</a></li>
-                            <li><a href="help-support.html">Privacy Terms</a></li>
-                            <li><a href="help-support.html">Policies</a></li>
-                          </ul>
-                        </div>
+              </div>
+              <div class="col-md-3 col-lg-3">
+                <div class="widget-item nav-menu-item4">
+                  <h4 class="widget-title">Products</h4>
+                  <h4 class="widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#widgetId-4">Products</h4>
+                  <div id="widgetId-4" class="collapse widget-collapse-body">
+                    <div class="collapse-body">
+                      <div class="widget-menu-wrap">
+                        <ul class="nav-menu">
+                          <li><a href="registration.html">Get Started</a></li>
+                          <li><a href="index.html">How It Works</a></li>
+                          <li><a href="page-not-found.html">Privacy Terms</a></li>
+                          <li><a href="page-not-found.html">Policies</a></li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -792,22 +335,7 @@
           </div>
         </div>
       </div>
-      <!--== End Footer Main ==-->
-  
-      <!--== Start Footer Bottom ==-->
-      <div class="footer-bottom">
-        <div class="container pt--0 pb--0">
-          <div class="row">
-            <div class="col-12">
-              <div class="footer-bottom-content">
-                <p class="copyright">© 2024 Execuget.All Rights Reserved.<br> Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://vesencomputing.com/">Vesen.</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--== End Footer Bottom ==-->
-    </footer>
+    </div>
     <!--== End Footer Main ==-->
 
     <!--== Start Footer Bottom ==-->
@@ -816,7 +344,7 @@
         <div class="row">
           <div class="col-12">
             <div class="footer-bottom-content">
-              <p class="copyright">© 2024 Execuget. Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://themeforest.net/user/codecarnival">Vesen.</a></p>
+              <p class="copyright">© 2024 Execuget.All Rights Reserved.<br> Made with <i class="icofont-heart"></i> by <a target="_blank" href="https://vesencomputing.com/">Vesen.</a></p>
             </div>
           </div>
         </div>
@@ -825,213 +353,17 @@
     <!--== End Footer Bottom ==-->
   </footer>
   <!--== End Footer Area Wrapper ==-->
-
+  
   <!--== Scroll Top Button ==-->
   <div id="scroll-to-top" class="scroll-to-top"><span class="icofont-rounded-up"></span></div>
-
-  <!--== Start Aside Menu ==-->
-  <aside class="off-canvas-wrapper offcanvas offcanvas-start" tabindex="-1" id="AsideOffcanvasMenu" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h1 class="d-none" id="offcanvasExampleLabel">Aside Menu</h1>
-      <button class="btn-menu-close" data-bs-dismiss="offcanvas" aria-label="Close">menu <i class="icofont-simple-left"></i></button>
-    </div>
-    <div class="offcanvas-body">
-      <!-- Mobile Menu Start -->
-      <div class="mobile-menu-items">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Find Jobs</a>
-            <ul class="sub-menu">
-              <li><a href="job.html">Jobs</a></li>
-              <li><a href="job-details.html">Job Details</a></li>
-            </ul>
-          </li>
-          <li><a href="employers-details.html">Employers Details</a></li>
-          <li><a href="#">Candidates</a>
-            <ul class="sub-menu">
-              <li><a href="candidate.html">Candidates</a></li>
-              <li><a href="candidate-details.html">Candidate Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Blog</a>
-            <ul class="sub-menu">
-              <li><a href="blog-grid.html">Blog Grid</a></li>
-              <li><a href="blog.html">Blog Left Sidebar</a></li>
-              <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-              <li><a href="blog-details.html">Blog Details</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Pages</a>
-            <ul class="sub-menu">
-              <li><a href="about-us.html">About us</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="registration.html">Registration</a></li>
-              <li><a href="page-not-found.html">Page Not Found</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <!-- Mobile Menu End -->
-    </div>
-  </aside>
-  <!--== End Aside Menu ==-->
 </div>
 
 <!--=======================Javascript============================-->
 
-<script>
-function initializeDefaultLogo(companyName) {
-    const logo = document.getElementById('company-logo');
-    const defaultInitial = document.getElementById('default-initial');
-    if (!logo.src || logo.src === window.location.href) {
-        defaultInitial.textContent = companyName.charAt(0).toUpperCase();
-        defaultInitial.classList.remove('hidden');
-    } else {
-        defaultInitial.classList.add('hidden');
-    }
-}
-
-document.getElementById('default-initial').addEventListener('click', function() {
-    document.getElementById('logo-upload').click();
-});
-
-document.getElementById('company-logo').addEventListener('click', function() {
-    document.getElementById('logo-upload').click();
-});
-
-function updateLogo(event) {
-    const logo = document.getElementById('company-logo');
-    const defaultInitial = document.getElementById('default-initial');
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function(e) {
-        logo.src = e.target.result;
-        logo.classList.remove('hidden');
-        defaultInitial.classList.add('hidden');
-    };
-
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-
-    // Reset the file input value to allow the same file to be selected again
-    document.getElementById('logo-upload').value = '';
-}
-
-// Call this function with your company name
-initializeDefaultLogo('MOOI Coop'); // Replace 'MOOI Coop' with your company name
-
-function showDefaultInitial(companyName) {
-    const logo = document.getElementById('company-logo');
-    const defaultInitial = document.getElementById('default-initial');
-    if (!logo.src || logo.src === window.location.href) {
-        defaultInitial.textContent = companyName.charAt(0).toUpperCase();
-        defaultInitial.classList.remove('hidden');
-    } else {
-        defaultInitial.classList.add('hidden');
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    initializeDefaultLogo('MOOI Coop'); // Ensure this matches your company name
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const saveButton = document.querySelector('.btn-edit');
-    const submitButton = document.querySelector('.submit-button');
-    
-    saveButton.addEventListener('click', function() {
-        saveButton.classList.add('success'); /*error alt*/
-        saveButton.textContent = 'Saved';
-       
-    });
-    submitButton.addEventListener('click', function() {
-        submitButton.classList.add('success'); /*error alt*/
-        submitButton.innerHTML = ' Complete'; // Use innerHTML to insert the check mark icon and text
-    });
-});
-
-
-              //clone section
-
-              document.addEventListener('DOMContentLoaded', () => {
-    const addLinkButton = document.getElementById('addLink');
-    const empprofileForm = document.getElementById('empcompleteProfile');
-
-    // Function to add a new link entry
-    addLinkButton.addEventListener('click', () => {
-        const linkSection = document.querySelector('.links-entry');
-        const newLinksEntry = linkSection.cloneNode(true);
-        newLinksEntry.querySelectorAll('input').forEach(input => input.value = '');
-
-        // Add a class to identify cloned entries
-        newLinksEntry.classList.add('cloned');
-
-        // Add event listener to the remove icon
-        newLinksEntry.querySelector('.remove-link').addEventListener('click', () => {
-            newLinksEntry.remove();
-        });
-
-        linkSection.parentNode.insertBefore(newLinksEntry, addLinkButton);
-    });
-
-    // Form submission handler
-    empprofileForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Add logic to handle form submission, e.g., sending data to the server
-        alert('Profile completed successfully!');
-    });
-});
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-      // Event listener for candidate complete-profile button
-      document.getElementById('empcompleteProfile').addEventListener('click', function() {
-          window.location.href = 'employer-dashboard.html'; 
-     });
-  });
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-      const addEducationButton = document.getElementById('addEducation');
-      const addExperienceButton = document.getElementById('addExperience');
-      const profileForm = document.getElementById('profileForm');
-  
-      addEducationButton.addEventListener('click', () => {
-          const educationContainer = document.querySelector('.education-container');
-          const educationEntry = educationContainer.querySelector('.education-entry');
-          const newEducationEntry = educationEntry.cloneNode(true);
-          newEducationEntry.querySelectorAll('input').forEach(input => input.value = '');
-          educationContainer.insertBefore(newEducationEntry, addEducationButton);
-      });
-  
-      addExperienceButton.addEventListener('click', () => {
-          const experienceContainer = document.querySelector('.experience-container');
-          const experienceEntry = experienceContainer.querySelector('.experience-entry');
-          const newExperienceEntry = experienceEntry.cloneNode(true);
-          newExperienceEntry.querySelectorAll('input, textarea').forEach(input => input.value = '');
-          experienceContainer.insertBefore(newExperienceEntry, addExperienceButton);
-      });
-  
-      profileForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          // Add logic to handle form submission, e.g., sending data to the server
-          alert('Profile completed successfully!');
-      });
-  });
-
-  document.querySelectorAll('.upload-icon').forEach(icon => {
-    icon.addEventListener('click', function () {
-        const inputId = this.getAttribute('for');
-        document.getElementById(inputId).click();
-    });
-});
-
-</script>
-
+<!--=== Landing-Pages Js ===-->
+<script src="assets/js/landing-pages.js"></script>
+<!--=== Empcomplete-Profile Js ===-->
+<script src="assets/js/empcomplete-profile.js"></script>
 <!--=== jQuery Modernizr Min Js ===-->
 <script src="assets/js/modernizr.js"></script>
 <!--=== jQuery Min Js ===-->
