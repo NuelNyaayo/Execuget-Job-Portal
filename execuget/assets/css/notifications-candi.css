@@ -16,30 +16,26 @@ body {
     margin-bottom: 15px;
 }
 .notifications-container {
-    margin: 20px auto;
     padding: 20px;
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid white;
     border-radius: 5px;
     max-width: 1200px;
     max-height: 500000px;
-    margin-bottom: 150px;
 }
 .mark-as-read button {
-
 padding: 10px 20px;
 background-color: #193768;
 color: white;
 border: none;
 border-radius: 5px;
 cursor: pointer;
-margin-left:1130px;
+margin-left:1000px;
+margin-right: 20px;
 }
 .mark-as-read button:hover {
 background-color: #0056b3;
-
 }
-
 
 .notifications-content-list {
 margin-top: 32px;
@@ -99,4 +95,14 @@ background-color: white; /* Background color for clicked notifications */
 background-color: #193768; /* Hover background color for clicked notifications */
 color: white; /* Hover text color for clicked notifications */
 border-color: #f4f7f7;
+}
+.content-container {
+    margin: 20px auto;
+    margin-bottom: 100px;
+    padding: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 1200px;
+    max-height: 50000px;
 }
